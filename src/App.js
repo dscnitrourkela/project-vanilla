@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Home from "./pages/Home";
-import Playground from "./pages/Playground";
+import Home from "./pages/Home.js";
+import Playground from "./pages/Playground.js";
 
 const App = () => {
   return (
