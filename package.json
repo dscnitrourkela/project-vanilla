@@ -22,7 +22,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
-    "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix"
+    "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix",
+    "prettier": "prettier --check \"./**/*.{ts,tsx,js,jsx,css,scss,md}\" --ignore-path .gitignore",
+    "prettier:fix": "prettier --write \"./**/*.{ts,tsx,js,jsx,css,scss,md}\" --ignore-pattern node_modules/"
   },
   "eslintConfig": {
     "extends": [

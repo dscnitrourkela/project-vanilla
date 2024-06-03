@@ -1,8 +1,8 @@
-# project Vanilla
+# Project Vanilla
 
 website for event SRC by AICHE chapter NIT Rourkela
 
-## Getting Started with setting up the project in local
+# Getting Started with setting up the project in local
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -31,6 +31,30 @@ pnpm install
    In the project directory, you can run:
 
 ### `pnpm start`
+
+6. For ESlint checks
+
+```bash
+pnpm lint
+```
+
+to fix using `ESlint`:
+
+```bash
+pnpm lint:fix
+```
+
+7. For Prettier checks
+
+```bash
+pnpm prettier
+```
+
+to fix using `Prettier`:
+
+```bash
+pnpm prettier:fix
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
