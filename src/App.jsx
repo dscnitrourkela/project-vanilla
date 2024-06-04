@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Home from './pages/Home.js'
-import Playground from './pages/Playground.js'
+import Home from './pages/Home.jsx'
+import Playground from './pages/Playground.jsx'
 import NavBar from './components/marginals/navbar/NavBar.jsx'
 
 const App = () => {

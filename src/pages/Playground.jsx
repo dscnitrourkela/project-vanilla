@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Playground = () => {
   return (
@@ -6,7 +6,7 @@ const Playground = () => {
       <h1>Playground page</h1>
       <p>For testing purpose</p>
     </div>
-  );
-};
+  )
+}
 
-export default Playground;
+export default Playground
