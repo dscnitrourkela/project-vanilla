@@ -18,7 +18,7 @@
 
 [![DSC NIT Rourkela][dsc-nitrourkela]](https://dscnitrourkela.org)
 
-  <h3 align="center">Project Huckleberry</h3>
+  <h3 align="center">Project vanilla</h3>
 
   <p align="center">
     Future Website of DSC NIT Rourkela
@@ -26,9 +26,9 @@
     <br />
     <a href="https://www.google.com">View Demo</a>
     ·
-    <a href="https://github.com/dscnitrourkela/project-huckleberry/issues">Report Webapp Bugs</a>
+    <a href="https://github.com/dscnitrourkela/project-vanilla/issues">Report Webapp Bugs</a>
     .
-    <a href="https://github.com/dscnitrourkela/project-huckleberry/issues">Report Server Bugs</a>
+    <a href="https://github.com/dscnitrourkela/project-vanilla/issues">Report Server Bugs</a>
   </p>
 </p>
 
@@ -138,9 +138,9 @@ Please refer to the project's style and contribution guidelines for submitting p
 4.  **Push** your work back up to your fork
 5.  Submit a **Pull request** so that we can review your changes
 
-NOTE 1: Please abide by the [Contributing Guidelines](https://github.com/dscnitrourkela/project-huckleberry/blob/main/CONTRIBUTING.md).
+NOTE 1: Please abide by the [Contributing Guidelines](https://github.com/dscnitrourkela/project-vanilla/blob/main/CONTRIBUTING.md).
 
-NOTE 2: Please abide by the [Code of Conduct](https://github.com/dscnitrourkela/project-huckleberry/blob/main/CODE_OF_CONDUCT.md).
+NOTE 2: Please abide by the [Code of Conduct](https://github.com/dscnitrourkela/project-vanilla/blob/main/CODE_OF_CONDUCT.md).
 
 NOTE 3: We follow the following [coventional commit types](https://github.com/pvdlg/conventional-commit-types)
 
@@ -194,7 +194,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Starware
 
-Project-huckleberry is Starware.
+Project-vanilla is Starware.
 This means you're free to use the project, as long as you star its GitHub repository.
 Your appreciation makes us grow and glow up. ⭐
 
@@ -207,7 +207,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/Srish_ty_"><img src="https://avatars.githubusercontent.com/u/68679980?v=4" width="100px;" alt=""/><br /><sub><b>Srishty M</b></sub></a><br /><a href="#maintenance-Shurtu-gal" title="Maintenance">🚧</a> <a href="#projectManagement-Shurtu-gal" title="Project Management">📆</a> <a href="https://github.com/dscnitrourkela/project-huckleberry/commits/main?author=Shurtu-gal" title="Documentation">📖</a> <a href="#ideas-Shurtu-gal" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/dscnitrourkela/project-huckleberry/commits/main?author=Shurtu-gal" title="Tests">⚠️</a>
+    <td align="center"><a href="https://github.com/Srish_ty_"><img src="https://avatars.githubusercontent.com/u/68679980?v=4" width="100px;" alt=""/><br /><sub><b>Srishty M</b></sub></a><br /><a href="#maintenance-Shurtu-gal" title="Maintenance">🚧</a> <a href="#projectManagement-Shurtu-gal" title="Project Management">📆</a> <a href="https://github.com/dscnitrourkela/project-vanilla/commits/main?author=Shurtu-gal" title="Documentation">📖</a> <a href="#ideas-Shurtu-gal" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/dscnitrourkela/project-vanilla/commits/main?author=Shurtu-gal" title="Tests">⚠️</a>
     <td align="center"><a href="https://allcontributors.org"><img src="https://avatars.githubusercontent.com/u/46410174?v=4?s=100" width="100px;" alt=""/><br /><sub><b>All Contributors</b></sub></a><br /><a href="#tool-all-contributors" title="Tools">🔧</a></td>
     <td align="center"><a href="https://github.com/actions"><img src="https://avatars.githubusercontent.com/u/65916846?v=4?s=100" width="100px;" alt=""/><br /><sub><b>actions-user</b></sub></a><br /><a href="#tool-actions-user" title="Tools">🔧</a></td>
   </tr>
@@ -223,14 +223,14 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/dscnitrourkela/project-huckleberry?style=for-the-badge
-[contributors-url]: https://github.com/dscnitrourkela/project-huckleberry/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/dscnitrourkela/project-huckleberry?style=for-the-badge
-[forks-url]: https://github.com/dscnitrourkela/project-huckleberry/network/members
-[stars-shield]: https://img.shields.io/github/stars/dscnitrourkela/project-huckleberry?style=for-the-badge
-[stars-url]: https://github.com/dscnitrourkela/project-huckleberry/stargazers
-[issues-shield]: https://img.shields.io/github/issues/dscnitrourkela/project-huckleberry?style=for-the-badge
-[issues-url]: https://github.com/dscnitrourkela/project-huckleberry/issues
-[license-shield]: https://img.shields.io/github/license/dscnitrourkela/project-huckleberry?style=for-the-badge
-[license-url]: https://github.com/dscnitrourkela/project-huckleberry/blob/main/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/dscnitrourkela/project-vanilla?style=for-the-badge
+[contributors-url]: https://github.com/dscnitrourkela/project-vanilla/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/dscnitrourkela/project-vanilla?style=for-the-badge
+[forks-url]: https://github.com/dscnitrourkela/project-vanilla/network/members
+[stars-shield]: https://img.shields.io/github/stars/dscnitrourkela/project-vanilla?style=for-the-badge
+[stars-url]: https://github.com/dscnitrourkela/project-vanilla/stargazers
+[issues-shield]: https://img.shields.io/github/issues/dscnitrourkela/project-vanilla?style=for-the-badge
+[issues-url]: https://github.com/dscnitrourkela/project-vanilla/issues
+[license-shield]: https://img.shields.io/github/license/dscnitrourkela/project-vanilla?style=for-the-badge
+[license-url]: https://github.com/dscnitrourkela/project-vanilla/blob/main/LICENSE
 [dsc-nitrourkela]: images/RepoCover.png
