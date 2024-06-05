@@ -21,6 +21,20 @@ import {
 import footerData from '../../../config/content/myFooterData'
 
 export default function MyFooter() {
+  function renderListItem(item, title) {
+    {
+      if (typeof item === 'string') {
+        if (title === 'Synergicon') {
+          return <a href="#">{item}</a>
+        } else {
+          return item
+        }
+      } else {
+        return `${item.name}:${item.number}`
+      }
+    }
+  }
+
   return (
     <>
       <Footer>
@@ -47,7 +61,8 @@ export default function MyFooter() {
                 <List>
                   {section.info.map((item, i) => (
                     <ListItems key={i}>
-                      {typeof item === 'string' ? item : `${item.name}:${item.number}`}
+                      {/* {typeof item === 'string' ? item : `${item.name}:${item.number}`} */}
+                      {renderListItem(item, section.title)}
                     </ListItems>
                   ))}
                 </List>
