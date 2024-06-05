@@ -57,7 +57,7 @@ export const AicheLogo2 = styled.img`
 
 export const Text = styled.div`
   ${tw`
-    flex flex-col custom:flex-row gap-[45px] custom:gap-[122px] justify-between h-[472px] w-[382px] custom:h-[306px] custom:w-[853.83px] order-1 custom:order-2 tracking-widest
+    flex flex-col custom:flex-row gap-[45px] custom:gap-[122px] justify-between h-[472px] customSmall:w-[382px] custom:h-[306px] custom:w-[853.83px] order-1 custom:order-2 tracking-widest
   `}
 `
 
