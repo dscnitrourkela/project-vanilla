@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import React from 'react'
 import { NavContainer, Items } from './navbar.styles'
 
 const NavBar = () => {
