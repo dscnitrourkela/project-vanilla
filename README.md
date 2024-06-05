@@ -1,5 +1,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
@@ -203,6 +205,7 @@ Your appreciation makes us grow and glow up. ⭐
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -210,24 +213,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="http://ashishpadhy.live"><img src="https://avatars.githubusercontent.com/u/100484401?v=4?s=100" width="100px;" alt="Ashish Padhy"/><br /><sub><b>Ashish Padhy</b></sub></a><br /><a href="#maintenance-Shurtu-gal" title="Maintenance">🚧</a> <a href="https://github.com/dscnitrourkela/project-vanilla/pulls?q=is%3Apr+reviewed-by%3AShurtu-gal" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/dscnitrourkela/project-vanilla/commits?author=Shurtu-gal" title="Code">💻</a> <a href="#ideas-Shurtu-gal" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://linktr.ee/m_srishty"><img src="https://avatars.githubusercontent.com/u/68679980?v=4?s=100" width="100px;" alt="Srishty Mangutte"/><br /><sub><b>Srishty Mangutte</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-vanilla/commits?author=Srish-ty" title="Code">💻</a> <a href="#ideas-Srish-ty" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/Srish_ty_"><img src="https://avatars.githubusercontent.com/u/68679980?v=4" width="100px;" alt=""/><br /><sub><b>Srishty M</b></sub></a><br /><a href="#maintenance-Shurtu-gal" title="Maintenance">🚧</a> <a href="#projectManagement-Shurtu-gal" title="Project Management">📆</a> <a href="https://github.com/dscnitrourkela/project-vanilla/commits/main?author=Shurtu-gal" title="Documentation">📖</a> <a href="#ideas-Shurtu-gal" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/dscnitrourkela/project-vanilla/commits/main?author=Shurtu-gal" title="Tests">⚠️</a>
-    <td align="center"><a href="https://allcontributors.org"><img src="https://avatars.githubusercontent.com/u/46410174?v=4?s=100" width="100px;" alt=""/><br /><sub><b>All Contributors</b></sub></a><br /><a href="#tool-all-contributors" title="Tools">🔧</a></td>
-    <td align="center"><a href="https://github.com/actions"><img src="https://avatars.githubusercontent.com/u/65916846?v=4?s=100" width="100px;" alt=""/><br /><sub><b>actions-user</b></sub></a><br /><a href="#tool-actions-user" title="Tools">🔧</a></td>
-  </tr>
 </table>
 
 <!-- markdownlint-restore -->
