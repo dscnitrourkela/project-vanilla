@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       screens: {
-        custom: '1450px'
+        custom: '1450px',
+        customSmall:'400px',
       },
       colors: {
         brown: {
