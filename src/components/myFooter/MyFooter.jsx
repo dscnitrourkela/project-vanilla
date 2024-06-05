@@ -24,12 +24,13 @@ export default function MyFooter() {
   function renderListItem(item, title) {
     {
       if (typeof item === 'string') {
-        if (title === 'Synergicon') {
-          return <a href="#">{item}</a>
-        } else {
-          return item
-        }
-      } else {
+        return item
+      }
+      else if (title === 'Synergicon') {
+          console.log(item.list)
+          return <a href={item.href}>{item.list}</a>
+        }  
+      else {
         return `${item.name}:${item.number}`
       }
     }
@@ -42,9 +43,9 @@ export default function MyFooter() {
           <Logos>
             <SocialLogo>
               <SocialLogoIndv>
-                {Object.entries(footerData.images.socials).map(([key, url]) => (
-                  <a key={key} href="#">
-                    <SocialImg src={url} alt={key} />
+                {footerData.images.socials.map(item => (
+                  <a key={item.key} href={item.href}>
+                    <SocialImg src={item.img} alt={item.key} />
                   </a>
                 ))}
               </SocialLogoIndv>
@@ -72,8 +73,8 @@ export default function MyFooter() {
         </FooterTop>
         <FooterBottom>
           {footerData.bottom.map((item, index) => (
-            <a key={index} href="#">
-              {item}
+            <a key={index} href={item.href}>
+              {item.item}
             </a>
           ))}
           <MadeBy>
