@@ -26,11 +26,14 @@ export default {
 
       boxShadow: {
         button: '3px 3px 0px #FFEEDA',
-        events: '5px 5px 0px #1D1D1D'
+        events: '5px 5px 0px #1D1D1D',
+        customShadow: '6px 5px 0px 0px rgba(64, 46, 50, 1)'
       },
-
+      borderRadius: {
+        'max': '241px',
+      },
       fontFamily: {
-        Poppins: 'Poppins'
+        'poppins': ['Poppins', 'sans-serif'],
       },
       rounded: {
         '4xl': '4rem'
