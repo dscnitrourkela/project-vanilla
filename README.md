@@ -170,7 +170,7 @@ pnpm lint:fix
 
 ### For Prettier checks
 pnpm prettier
-### To fix formatting using eslint
+### To fix formatting using prettier
 pnpm prettier:fix
 
 ## Build the app for production
