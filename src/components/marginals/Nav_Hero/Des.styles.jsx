@@ -1,7 +1,7 @@
 import tw from 'twin.macro'
 import styled from 'styled-components'
 
-export const DesCont = styled.div`
+export const DesCont = styled.article`
   ${tw`
   w-full 
   text-center 
@@ -83,19 +83,7 @@ export const Btn1 = styled.button`
 `
 
 export const InnerSpan = styled.span`
-  ${tw`
-  absolute 
-  inset-0 
-  transition 
-  duration-300 
-  ease-in-out 
-  transform 
-  translate-x-2 
-  translate-y-2 
-  active:translate-x-0 
-  active:translate-y-0 
-  rounded-xl
-  `}
+  ${tw`absolute inset-0 transition duration-300 ease-in-out transform translate-x-2 translate-y-2 active:translate-x-0 active:translate-y-0 rounded-xl`}
   border-right-width : 2px;
   border-bottom-width: 2px;
   border-right: solid;

@@ -8,11 +8,11 @@ import {
   DesPara,
   DesTitle
 } from './Des.styles'
-import { desContent } from './content/desContent'
+import { desContent } from "../../../config/content/desContent";
 
 const Des = () => {
   return (
-    <article>
+    
       <DesCont>
         <DesTitle>{desContent.title}</DesTitle>
         <DesPara>{desContent.content}</DesPara>
@@ -27,7 +27,7 @@ const Des = () => {
           </BtnCont>
         </BtnWrapper>
       </DesCont>
-    </article>
+    
   )
 }
 

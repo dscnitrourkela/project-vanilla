@@ -3,9 +3,9 @@ import { Wave, WaveCont } from './WaveDivider.style'
 const WaveDivider = () => {
   return (
     <WaveCont>
-      <Wave 
-      src="src/assets/Vector 346.png" 
-      alt="Wave Divider" 
+      <Wave
+        src="https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683273/Vector_346_dda6za.png"
+        alt="Wave Divider"
       />
     </WaveCont>
   )
