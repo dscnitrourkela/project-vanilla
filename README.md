@@ -70,8 +70,9 @@
 Following technologies and libraries are used for the development of this
 project.
 
-- [Next.js](https://nextjs.org/)
+- [React.js](https://react.dev/)
 - [Styled-Components](https://styled-components.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 <!-- GETTING STARTED -->
 
@@ -160,12 +161,17 @@ git checkout -b <branch-name>
 pnpm install
 
 ## Run the Project
-pnpm start
+pnpm run dev
 
 ### For ESlint checks
 pnpm lint
+### To fix formatting using eslint
+pnpm lint:fix
+
 ### For Prettier checks
 pnpm prettier
+### To fix formatting using eslint
+pnpm prettier:fix
 
 ## Build the app for production
 pnpm build
