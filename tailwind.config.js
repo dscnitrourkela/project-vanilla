@@ -36,15 +36,12 @@ export default {
         '4xl': '4rem'
       },
       screens: {
-        'brk-1': '1306px',
-        'brk-2': '1434px',
-        'brk-3': '1338px',
-        'brk-4': '1536px',
-        'brk-5': '1172px',
-        'brk-6': '1238px',
-        'brk-7': '1050px',
-        'brk-8': '538px',
-        'brk-9': '672px'
+        '2xl': '1434px',
+        '3xl': '1536px',
+        xl: '1280px',
+        lg: '1024px',
+        xsm: '538px',
+        md: '672px'
       }
     }
   },
