@@ -15,15 +15,15 @@ export default function Events() {
   const [currIndex, setCurrIndex] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
 
-  useEffect(() => {
-    if (!isHovered) {
-      const interval = setInterval(() => {
-        handleNext()
-      }, 3000)
+  // useEffect(() => {
+  //   if (!isHovered) {
+  //     const interval = setInterval(() => {
+  //       handleNext()
+  //     }, 3000)
 
-      return () => clearInterval(interval)
-    }
-  }, [isHovered, currIndex])
+  //     return () => clearInterval(interval)
+  //   }
+  // }, [isHovered, currIndex])
 
   function handleNext() {
     setCurrIndex((prevIndex) => (prevIndex + 1) % events.length)
@@ -40,6 +40,7 @@ export default function Events() {
           alt="left-arrow"
           onClick={handlePrev}
         />
+
         <EventWrapper
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
