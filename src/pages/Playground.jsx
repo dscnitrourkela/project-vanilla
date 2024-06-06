@@ -1,4 +1,4 @@
-import { TeamCarousel } from "../components/teamMembers/teamCarousel"
+import { TeamCarousel } from '../components/teamMembers/teamCarousel'
 
 const Playground = () => {
   return (

@@ -16,7 +16,7 @@ export const TeamCarousel = () => {
       <Marquee>
         {TeamMembers.map((member, index) => (
           <CardContainer key={index}>
-            <CardContainerImage key={index} bgimage={member.image}/>
+            <CardContainerImage key={index} bgimage={member.image} />
             <CardContainerText>
               <CardImageRole>{member.role}</CardImageRole>
               <CardImageName>{member.name}</CardImageName>

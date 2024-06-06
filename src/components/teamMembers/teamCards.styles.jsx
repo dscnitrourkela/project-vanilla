@@ -6,7 +6,7 @@ export const CardContainer = styled.div`
 `
 
 export const CardContainerImage = styled.div`
-  background-image: url(${props => props.bgimage});
+  background-image: url(${(props) => props.bgimage});
   ${tw`h-[160px] w-[160px] mt-[32px] md:h-[240px] md:w-[240px] md:mt-[32px] rounded-max`}
 `
 

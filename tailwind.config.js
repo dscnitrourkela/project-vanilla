@@ -30,10 +30,10 @@ export default {
         customShadow: '6px 5px 0px 0px rgba(64, 46, 50, 1)'
       },
       borderRadius: {
-        'max': '241px',
+        max: '241px'
       },
       fontFamily: {
-        Poppins: 'Poppins',
+        Poppins: 'Poppins'
       },
       rounded: {
         '4xl': '4rem'
