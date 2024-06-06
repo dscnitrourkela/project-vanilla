@@ -5,7 +5,7 @@ export default {
     extend: {
       screens: {
         custom: '1450px',
-        customSmall:'400px',
+        customSmall: '400px'
       },
       colors: {
         brown: {

@@ -25,12 +25,10 @@ export default function MyFooter() {
     {
       if (typeof item === 'string') {
         return item
-      }
-      else if (title === 'Synergicon') {
-          console.log(item.list)
-          return <a href={item.href}>{item.list}</a>
-        }  
-      else {
+      } else if (title === 'Synergicon') {
+        console.log(item.list)
+        return <a href={item.href}>{item.list}</a>
+      } else {
         return `${item.name}:${item.number}`
       }
     }
@@ -43,7 +41,7 @@ export default function MyFooter() {
           <Logos>
             <SocialLogo>
               <SocialLogoIndv>
-                {footerData.images.socials.map(item => (
+                {footerData.images.socials.map((item) => (
                   <a key={item.key} href={item.href}>
                     <SocialImg src={item.img} alt={item.key} />
                   </a>
