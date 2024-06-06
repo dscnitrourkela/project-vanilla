@@ -15,9 +15,9 @@ export const CardContainerText = styled.div`
 `
 
 export const CardImageRole = styled.div`
-  ${tw`text-brown-2 font-poppins font-bold text-[24px] md:text-[32px] flex justify-center`}
+  ${tw`text-brown-2 font-Poppins font-bold text-[24px] md:text-[32px] flex justify-center`}
 `
 
 export const CardImageName = styled.div`
-  ${tw`text-brown-2 font-poppins font-bold text-[24px] md:text-[32px] flex justify-center`}
+  ${tw`text-brown-2 font-Poppins font-bold text-[24px] md:text-[32px] flex justify-center`}
 `

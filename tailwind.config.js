@@ -33,7 +33,7 @@ export default {
         'max': '241px',
       },
       fontFamily: {
-        'poppins': ['Poppins', 'sans-serif'],
+        Poppins: 'Poppins',
       },
       rounded: {
         '4xl': '4rem'
