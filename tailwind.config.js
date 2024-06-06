@@ -3,9 +3,23 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      // screens: {
+      //   custom: '1450px',
+      //   customSmall: '400px'
+      // },
       screens: {
-        custom: '1450px',
-        customSmall: '400px'
+        'brk-1': '1306px',
+        'brk-2': '1434px',
+        'brk-3': '1338px',
+        'brk-4': '1536px',
+        'brk-5': '1172px',
+        'brk-6': '1238px',
+        'brk-7': '1050px',
+        'brk-8': '538px',
+        'brk-9': '672px',
+        'brk-10': '900px',
+        'brk-11': '400px',
+        'brk-12': '722px'
       },
       colors: {
         brown: {

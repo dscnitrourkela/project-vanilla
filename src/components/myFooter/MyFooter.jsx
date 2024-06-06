@@ -26,7 +26,6 @@ export default function MyFooter() {
       if (typeof item === 'string') {
         return item
       } else if (title === 'Synergicon') {
-        console.log(item.list)
         return <a href={item.href}>{item.list}</a>
       } else {
         return `${item.name}:${item.number}`
@@ -59,10 +58,7 @@ export default function MyFooter() {
                 <Heading>{section.title}</Heading>
                 <List>
                   {section.info.map((item, i) => (
-                    <ListItems key={i}>
-                      {/* {typeof item === 'string' ? item : `${item.name}:${item.number}`} */}
-                      {renderListItem(item, section.title)}
-                    </ListItems>
+                    <ListItems key={i}>{renderListItem(item, section.title)}</ListItems>
                   ))}
                 </List>
               </div>
