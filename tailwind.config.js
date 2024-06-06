@@ -44,7 +44,14 @@ export default {
         'brk-6': '1238px',
         'brk-7': '1050px',
         'brk-8': '538px',
-        'brk-9': '672px'
+        'brk-9': '672px',
+        'brk-10': '1090px',
+        'brk-11': '400px',
+        'brk-12': '710px',
+        'brk-13': '574px',
+        'brk-14': '468px',
+        'brk-15': '406px',
+        'brk-16': '380px'
       }
     }
   },
