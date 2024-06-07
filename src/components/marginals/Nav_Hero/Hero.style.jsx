@@ -16,7 +16,7 @@ export const MainImg = styled.img`
   ${tw`
   md:w-[60%] 
   sm:w-[40%] 
-  md:max-w-[1000px] 
+  md:max-w-[600px] 
   object-contain
   `}
 `

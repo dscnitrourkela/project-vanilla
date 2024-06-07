@@ -79,10 +79,10 @@ export const ResMen = styled.div`
 `
 export const ResList = styled.ul`
   background-image : url(${links.stars});
-  ${tw`flex flex-col items-end justify-end backdrop-blur-md`}
+  ${tw`flex flex-col items-center justify-center backdrop-blur-md`}
 `
 export const ResItem = styled.li`
-  ${tw`my-2 `}
+  ${tw`pb-1.5`}
 `
 
 export const ResAnchor = styled.a`
