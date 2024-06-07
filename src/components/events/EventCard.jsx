@@ -14,7 +14,7 @@ import {
   CardModalBtn,
   SeemoreIcon
 } from './eventCard.styles'
-import { seeMoreIcon } from '../../../config/content/events'
+import { seeMoreIcon } from '../../config/content/events/events'
 
 EventCard.propTypes = {
   event: PropTypes.shape({

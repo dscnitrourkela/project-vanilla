@@ -14,7 +14,7 @@ import {
   Section
 } from './eventModal.styles'
 
-import { XIcon } from '../../../config/content/events'
+import { XIcon } from '../../config/content/events/events'
 import PropTypes from 'prop-types'
 
 EventModal.propTypes = {

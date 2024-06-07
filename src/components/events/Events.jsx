@@ -8,7 +8,7 @@ import {
   Section,
   EventsTitleMobile
 } from './events.styles'
-import { events, nextArrowIcon, prevArrowIcon } from '../../../config/content/events'
+import { events, nextArrowIcon, prevArrowIcon } from '../../config/content/events/events'
 import EventModal from './EventModal'
 import EventsWrapper from './EventsWrapper'
 export default function Events() {
