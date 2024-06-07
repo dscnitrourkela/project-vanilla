@@ -2,7 +2,7 @@ import tw from 'twin.macro'
 import styled from 'styled-components'
 
 export const Container = styled.main`
-  ${tw`h-[878px] bg-orange-2 text-orange-2 py-[108px] brk-12:px-[42px] px-[14px]`}
+  ${tw`h-[878px] bg-orange-2 text-orange-2 py-[50px] brk-12:px-[42px] px-[14px]`}
 `
 export const Section = styled.section`
   ${tw`flex w-full justify-center brk-3:justify-between items-center gap-[25px] brk-10:gap-[53px]`}
@@ -19,6 +19,9 @@ export const EventsPillar = styled.div`
 `
 export const EventsTitle = styled.h3`
   ${tw`w-[300px] h-[128px] transform -rotate-90 font-semibold text-[85.57px]`}
+`
+export const EventsTitleMobile = styled.h3`
+  ${tw`font-semibold text-brown-4 text-[75px] brk-3:hidden ml-[40px]`}
 `
 export const EventsBgPillar = styled.div`
   ${tw`hidden brk-2:block w-[80px] h-[640px] rounded-[28.52px] bg-brown-5`}

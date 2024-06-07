@@ -42,6 +42,12 @@ export default {
       },
       screens: {
         'brk-1': '1306px',
+        '2xl': '1434px',
+        '3xl': '1536px',
+        xl: '1280px',
+        lg: '1024px',
+        xsm: '538px',
+        md: '672px',
         'brk-2': '1470px',
         'brk-3': '1430px',
         'brk-4': '1536px',

@@ -5,7 +5,8 @@ import {
   EventsBgPillar,
   EventsPillar,
   EventsTitle,
-  Section
+  Section,
+  EventsTitleMobile
 } from './events.styles'
 import { events, nextArrowIcon, prevArrowIcon } from '../../../config/content/events'
 import EventModal from './EventModal'
@@ -41,6 +42,7 @@ export default function Events() {
   return (
     <>
       {isModalOpen && <EventModal closeModal={handleModalClose} event={event} />}
+      <EventsTitleMobile>Events</EventsTitleMobile>
       <Container>
         <Section>
           <Arrow src={prevArrowIcon} alt="Previous" onClick={handlePrev} />
