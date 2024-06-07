@@ -15,7 +15,7 @@ export const CardHeader = styled.div`
   ${tw`flex flex-col items-center`}
 `
 export const CardImage = styled.img`
-  ${tw` h-[80px] w-[80px] brk-15:h-[100px] brk-15:w-[100px] brk-13:h-[144.14px] brk-13:w-[144.14px]`}
+  ${tw` h-[140px] w-[140px] brk-13:h-[144.14px] brk-13:w-[144.14px]`}
 `
 export const CardTitle = styled.h3`
   ${tw` mt-5 font-semibold text-[34.59px] leading-none text-center`}

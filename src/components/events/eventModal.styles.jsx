@@ -13,8 +13,7 @@ const fadeInAnimation = keyframes`
 `
 
 export const Container = styled.main`
-  ${tw`fixed inset-0 z-50 bg-brown-2 bg-opacity-75 backdrop-blur-md flex justify-center items-center`}
-  padding: 2rem;
+  ${tw`fixed inset-0 z-50 bg-brown-2 bg-opacity-75 backdrop-blur-md flex justify-center items-center  brk-19:p-[2rem] p-[10px]`}
   animation: ${fadeInAnimation} 0.3s ease-out; /* Apply the animation */
 `
 
@@ -23,7 +22,7 @@ export const Section = styled.section`
 `
 
 export const ContentWrapper = styled.div`
-  ${tw`p-10`}
+  ${tw`px-2 py-5 brk-19:p-10`}
 `
 
 export const CardHeader = styled.div`
@@ -39,11 +38,11 @@ export const CardImage = styled.img`
 `
 
 export const CardTitle = styled.h1`
-  ${tw`mt-5 font-semibold text-[34.59px] leading-none text-center`}
+  ${tw`mt-5 font-semibold text-[28px] brk-19:text-[34.59px] leading-none text-center`}
 `
 
 export const CardSubtitle = styled.h3`
-  ${tw`text-orange-1 font-medium text-[16px] leading-none mt-2 text-center`}
+  ${tw`text-orange-1 font-medium text-[14px] brk-19:text-[16px] leading-none mt-2 text-center`}
 `
 
 export const CardBody = styled.div`
@@ -51,13 +50,7 @@ export const CardBody = styled.div`
 `
 
 export const CardList = styled.ul`
-  ${tw`font-normal text-[12px] sm:text-[13px] md:text-[14.41px] list-disc px-2`}
-  @media (min-width: 640px) {
-    ${tw`text-[13px]`}
-  }
-  @media (min-width: 768px) {
-    ${tw`text-[14.41px]`}
-  }
+  ${tw`font-normal text-[12.8px] brk-19:text-[14.41px] list-disc px-2`}
 `
 
 export const ListItems = styled.li`
@@ -65,7 +58,7 @@ export const ListItems = styled.li`
 `
 
 export const CardFooter = styled.div`
-  ${tw`flex w-full justify-end mt-2`}
+  ${tw`flex w-full justify-end mt-2 px-5 pb-2`}
 `
 
 export const RegisterButton = styled.button`
