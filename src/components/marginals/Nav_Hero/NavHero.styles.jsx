@@ -15,9 +15,7 @@ export const NavHeroContainer = styled.div`
 export const NavHeroCont2 = styled.div`
   background-image: url(${links.stars});
   ${tw`
-  
   bg-[#151515]  
-  
   w-[100%] 
   bg-fixed  
   `}

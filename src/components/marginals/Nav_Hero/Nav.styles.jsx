@@ -64,7 +64,7 @@ export const Btn = styled.button`
 `
 
 export const MenuIcon = styled.div`
-  ${tw` mr-7`}
+  ${tw`mr-7`}
 `
 
 export const SvgIcon = styled.svg`
@@ -82,7 +82,7 @@ export const ResList = styled.ul`
   ${tw`flex flex-col items-center justify-center backdrop-blur-md`}
 `
 export const ResItem = styled.li`
-  ${tw`pb-1.5`}
+  ${tw`pb-[55px]`}
 `
 
 export const ResAnchor = styled.a`
