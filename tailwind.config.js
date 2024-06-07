@@ -37,8 +37,8 @@ export default {
       },
       screens: {
         'brk-1': '1306px',
-        'brk-2': '1434px',
-        'brk-3': '1338px',
+        'brk-2': '1470px',
+        'brk-3': '1430px',
         'brk-4': '1536px',
         'brk-5': '1172px',
         'brk-6': '1238px',
@@ -53,7 +53,7 @@ export default {
         'brk-15': '406px',
         'brk-16': '350px',
         'brk-17': '295px',
-        'brk-18': '1030px',
+        'brk-18': '1170px',
         'brk-19': '485px'
       }
     }

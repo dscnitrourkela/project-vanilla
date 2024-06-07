@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { AnimatePresence } from 'framer-motion'
-import EventsWrapper from './EventsWrapper'
+// import { AnimatePresence } from 'framer-motion'
+// import EventsWrapper from './EventsWrapper'
 import {
   Container,
   Arrow,
@@ -12,6 +12,7 @@ import {
 } from './events.styles'
 import { events } from '../../../config/content/events'
 import EventModal from './EventModal'
+import EventsWrapper from './EventsWrapper'
 export default function Events() {
   const [currIndex, setCurrIndex] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
@@ -59,19 +60,7 @@ export default function Events() {
             alt="left-arrow"
             onClick={handlePrev}
           />
-
-          <EventWrapper
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <AnimatePresence>
-              <EventsWrapper
-                events={events}
-                currIndex={currIndex}
-                handleSelectEvent={handleModalOpen}
-              />
-            </AnimatePresence>
-          </EventWrapper>
+          <EventsWrapper events={events} handleSelectEvent={handleModalOpen} />
           <EventsPillar>
             <EventsTitle>Events</EventsTitle>
           </EventsPillar>
@@ -85,4 +74,19 @@ export default function Events() {
       </Container>
     </>
   )
+}
+
+{
+  /* <EventWrapper
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <AnimatePresence>
+              <EventsWrapper
+                events={events}
+                currIndex={currIndex}
+                handleSelectEvent={handleModalOpen}
+              />
+            </AnimatePresence>
+          </EventWrapper> */
 }

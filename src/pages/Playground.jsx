@@ -1,4 +1,4 @@
-import About from '../components/about/About'
+// import About from '../components/about/About'
 import Events from '../components/events/Events'
 const Playground = () => {
   return (

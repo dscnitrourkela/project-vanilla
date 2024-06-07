@@ -9,17 +9,12 @@ export const Section = styled.section`
 `
 export const Arrow = styled.img`
   ${tw`brk-13:w-[79px] brk-13:h-[79px] 
-    brk-14:h-[60px] brk-14:w-[60px] h-[45px] w-[45px] cursor-pointer hidden brk-14:block`}
+      cursor-pointer hidden brk-13:block`}
 `
 
 export const EventWrapper = styled.div`
-  ${tw`overflow-hidden h-[640px] flex gap-10 justify-between`}
+  ${tw`overflow-hidden h-[640px]`}
 `
-
-// export const EventWrapper = styled.div`
-//   ${tw` brk-17:w-[265px] brk-16:w-[300px] brk-13:w-[354px] brk-10:w-[750px] gap-10 brk-10:gap-0 overflow-hidden h-[640px] flex  justify-between`}
-// `
-
 export const EventsPillar = styled.div`
   ${tw`hidden w-[180.95px] h-[640px] rounded-[28.52px] bg-brown-4 shadow-events brk-3:flex justify-center items-center`}
 `

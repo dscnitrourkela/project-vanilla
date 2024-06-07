@@ -2,7 +2,7 @@ import tw from 'twin.macro'
 import styled from 'styled-components'
 
 export const Container = styled.main`
-  ${tw`py-[20.18px] brk-18:w-[350px] h-[550px] brk-15:h-[600px] brk-13:h-[640px] bg-brown-5 text-orange-2 rounded-[23.06px] font-Poppins relative
+  ${tw`py-[20.18px] brk-18:w-[400px] h-[550px] brk-15:h-[600px] brk-13:h-[640px] bg-brown-5 text-orange-2 rounded-[23.06px] font-Poppins relative
 `}
 `
 export const Section = styled.section`
@@ -33,7 +33,7 @@ export const CardList = styled.ul`
 `
 
 export const CardModalBtn = styled.button`
-  ${tw`text-orange-1 font-light text-[12px] mt-5 flex items-center justify-center active:opacity-80 duration-100`}
+  ${tw`text-orange-1 font-light text-[14px] mt-5 flex items-center justify-center active:opacity-80 duration-100`}
 `
 export const SeemoreIcon = styled.img`
   ${tw`h-[15px] w-[15px] ml-1`}

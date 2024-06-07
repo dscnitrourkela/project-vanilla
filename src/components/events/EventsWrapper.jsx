@@ -1,48 +1,36 @@
-import { AnimatePresence } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import EventCard from './EventCard'
 import PropTypes from 'prop-types'
-import AnimatedEventCard from './AnimatedEventCard'
+import { EventWrapper } from './events.styles'
 
 EventsWrapper.propTypes = {
-  events: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      img: PropTypes.string,
-      title: PropTypes.string,
-      subtitle: PropTypes.string,
-      details: PropTypes.string
-    })
-  ),
-  currIndex: PropTypes.number,
-  handleSelectEvent: PropTypes.func
+  events: PropTypes.array.isRequired,
+  handleSelectEvent: PropTypes.func.isRequired
 }
 
-export default function EventsWrapper({ events, currIndex, handleSelectEvent }) {
-  const [mobileView, setMobileView] = useState(isMobile())
-  function isMobile() {
-    return window.innerWidth < 1030
-  }
-
-  useEffect(() => {
-    function handleResize() {
-      setMobileView(isMobile())
-    }
-    window.addEventListener('resize', handleResize)
-    // Cleanup listener on unmount
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
-
-  const currentEvents = mobileView
-    ? [events[currIndex]]
-    : [events[currIndex], events[(currIndex + 1) % events.length]]
-
+function EventsWrapper({ events, handleSelectEvent }) {
   return (
-    <AnimatePresence>
-      {currentEvents.map((event) => (
-        <AnimatedEventCard key={event.id} event={event} handleSelectEvent={handleSelectEvent} />
-      ))}
-    </AnimatePresence>
+    <EventWrapper>
+      <Swiper
+        spaceBetween={10}
+        slidesPerView={1}
+        navigation
+        breakpoints={{
+          1170: {
+            slidesPerView: 2,
+            spaceBetween: 10
+          }
+        }}
+      >
+        {events.map((event) => (
+          <SwiperSlide key={event.id}>
+            <EventCard event={event} handleSelectEvent={handleSelectEvent} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </EventWrapper>
   )
 }
+
+export default EventsWrapper
