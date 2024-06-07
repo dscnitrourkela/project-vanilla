@@ -14,8 +14,8 @@ export const MainFrame = styled.div`
 `
 export const MainImg = styled.img`
   ${tw`
-  md:w-[40%] 
-  sm:w-[30%] 
+  md:w-[60%] 
+  sm:w-[40%] 
   md:max-w-[1000px] 
   object-contain
   `}

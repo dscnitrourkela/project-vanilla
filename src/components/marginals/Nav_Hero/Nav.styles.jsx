@@ -75,7 +75,7 @@ export const SvgIcon = styled.svg`
 `
 
 export const ResMen = styled.div`
-  ${tw`z-10 mr-5 md:hidden`}
+  ${tw`z-10 mr-5  min-[854px]:hidden`}
 `
 export const ResList = styled.ul`
   background-image : url(${links.stars});
