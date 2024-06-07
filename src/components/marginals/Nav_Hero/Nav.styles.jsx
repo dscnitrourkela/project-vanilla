@@ -69,8 +69,8 @@ export const MenuIcon = styled.div`
 
 export const SvgIcon = styled.svg`
   ${tw`	
-  w-[2rem] 
-  h-[2rem] 
+  w-[2.5rem] 
+  h-[2.5rem] 
   `}
 `
 
@@ -82,7 +82,7 @@ export const ResList = styled.ul`
   ${tw`flex flex-col items-center justify-center backdrop-blur-md`}
 `
 export const ResItem = styled.li`
-  ${tw`pb-[55px]`}
+  ${tw`pb-[60px]`}
 `
 
 export const ResAnchor = styled.a`
