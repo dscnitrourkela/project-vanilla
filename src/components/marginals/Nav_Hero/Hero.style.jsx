@@ -13,9 +13,13 @@ export const MainFrame = styled.div`
   ${tw`flex justify-center `}
 `
 export const MainImg = styled.img`
+@media (max-width: 671px ) {
+  max-width: 400px;
+  width : 100%;
+}
   ${tw`
   md:w-[60%] 
-  sm:w-[40%] 
+  
   md:max-w-[600px] 
   object-contain
   `}
@@ -58,6 +62,7 @@ export const Img1 = styled.img`
   object-cover 
   md:(w-full  h-auto) 
   sm:(w-[60%] h-[60%])
+  z-10
   `}
 `
 
@@ -66,7 +71,11 @@ export const Img2 = styled.img`
     top: 60px;
     left: 65px;
   }
-  @media (min-width: 640px) and (max-width: 758px) {
+  @media (min-width: 640px) and (max-width: 671px) {
+    top: 20px;
+    left: 35px;
+  }
+  @media (min-width: 671px) and (max-width: 758px) {
     left : 60px;
     top:55px;
   }
