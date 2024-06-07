@@ -13,7 +13,7 @@ const fadeInAnimation = keyframes`
 `
 
 export const Container = styled.main`
-  ${tw`fixed inset-0 z-50 bg-brown-2 bg-opacity-75 backdrop-blur-md flex justify-center items-center  brk-19:p-[2rem] p-[10px]`}
+  ${tw`fixed inset-0 z-50 bg-brown-2 bg-opacity-75 backdrop-blur-md flex justify-center items-center  0.8xsm:p-[2rem] p-[10px]`}
   animation: ${fadeInAnimation} 0.3s ease-out;
 `
 
@@ -22,7 +22,7 @@ export const Section = styled.section`
 `
 
 export const ContentWrapper = styled.div`
-  ${tw`px-2 py-5 brk-19:p-10`}
+  ${tw`px-2 py-5 0.8xsm:p-10`}
 `
 
 export const CardHeader = styled.div`
@@ -38,11 +38,11 @@ export const CardImage = styled.img`
 `
 
 export const CardTitle = styled.h1`
-  ${tw`mt-5 font-semibold text-[28px] brk-19:text-[34.59px] leading-none text-center`}
+  ${tw`mt-5 font-semibold text-[28px] 0.8xsm:text-[34.59px] leading-none text-center`}
 `
 
 export const CardSubtitle = styled.h3`
-  ${tw`text-orange-1 font-medium text-[14px] brk-19:text-[16px] leading-none mt-2 text-center`}
+  ${tw`text-orange-1 font-medium text-[14px] 0.8xsm:text-[16px] leading-none mt-2 text-center`}
 `
 
 export const CardBody = styled.div`
@@ -50,7 +50,7 @@ export const CardBody = styled.div`
 `
 
 export const CardList = styled.ul`
-  ${tw`font-normal text-[12.8px] brk-19:text-[14.41px] list-disc px-2`}
+  ${tw`font-normal text-[12.8px] 0.8xsm:text-[14.41px] list-disc px-2`}
 `
 
 export const ListItems = styled.li`
@@ -62,7 +62,7 @@ export const CardFooter = styled.div`
 `
 
 export const RegisterButton = styled.button`
-  ${tw`h-[50.45px] w-[129.73px] px-2 py-1 rounded-[11.53px] bg-orange-1 text-brown-5 font-semibold text-[19px] sm:text-[25.95px] shadow-button border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none`}
+  ${tw`h-[50.45px] w-[129.73px] px-2 py-1 rounded-[11.53px] bg-orange-1 text-brown-5 font-semibold text-[19px] 1.5md:text-[25.95px] shadow-button border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none`}
   @media (min-width: 640px) {
     ${tw`text-[25.95px]`}
   }

@@ -2,7 +2,7 @@ import tw from 'twin.macro'
 import styled from 'styled-components'
 
 export const Container = styled.main`
-  ${tw`py-[20.18px] brk-18:w-[400px] h-[550px] brk-15:h-[600px] brk-13:h-[640px] bg-brown-5 rounded-[23.06px] font-Poppins relative overflow-hidden border-[2px] border-green-1
+  ${tw`py-[20.18px] 1.5lg:w-[400px] h-[550px] xxsm:h-[600px] sm:h-[640px] bg-brown-5 rounded-[23.06px] font-Poppins relative overflow-hidden border-[2px] border-green-1
 `}
   box-shadow: inset -1px -1px 2px #cafc00;
 `
@@ -19,16 +19,16 @@ export const Ellipse = styled.main`
 `
 
 export const Section = styled.section`
-  ${tw` flex flex-col justify-between items-center mt-[110px] brk-13:mt-0`}
+  ${tw` flex flex-col justify-between items-center mt-[110px] sm:mt-0`}
 `
 export const ContentWrapper = styled.div`
-  ${tw` brk-13:h-[500px]  px-5 flex justify-center items-center`}
+  ${tw` sm:h-[500px]  px-5 flex justify-center items-center`}
 `
 export const CardHeader = styled.div`
   ${tw`flex flex-col items-center`}
 `
 export const CardImage = styled.img`
-  ${tw` h-[80px] w-[80px] brk-15:h-[100px] brk-15:w-[100px] brk-13:h-[144.14px] brk-13:w-[144.14px]`}
+  ${tw` h-[80px] w-[80px] xxsm:h-[100px] xxsm:w-[100px] sm:h-[144.14px] sm:w-[144.14px]`}
 `
 export const CardTitle = styled.h3`
   ${tw` mt-5 font-semibold text-[34.59px] leading-none text-center text-green-2`}
