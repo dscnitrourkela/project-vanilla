@@ -43,8 +43,9 @@ export default {
         '3xl': '1536px',
         xl: '1280px',
         lg: '1024px',
-        xsm: '538px',
-        md: '672px'
+        xsm: '700px',
+        md: '976px',
+        sm: '471px'
       }
     }
   },
