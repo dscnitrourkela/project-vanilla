@@ -21,6 +21,11 @@ export default {
         orange: {
           1: '#FF8911',
           2: '#FFEEDA'
+        },
+        green: {
+          1: '#D9FC00',
+          2: '#CAFC00',
+          3: '#9E9E9E'
         }
       },
 

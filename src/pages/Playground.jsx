@@ -1,10 +1,12 @@
-import About from '../components/about/About'
-import Events from '../components/events/Events'
+// import About from '../components/about/About'
+// import Events from '../components/events/Events'
+import FlagshipCard from '../components/events/FlagshipCard'
 const Playground = () => {
   return (
     <div>
       {/* <About /> */}
-      <Events />
+      {/* <Events /> */}
+      <FlagshipCard />
     </div>
   )
 }
