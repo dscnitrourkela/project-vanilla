@@ -63,27 +63,15 @@ export const BtnCont = styled.div`
 
 export const Btn1 = styled.button`
   ${tw`
-  relative 
-  w-[140px] 
-  md:w-[180px] 
-  h-[50px] 
-  md:h-[70px] 
-  text-lg 
-  md:text-2xl 
-  font-semibold 
-  border-2 
-  rounded-2xl 
-  bg-[#FFEEDA] 
-  border-[#1D1D1D] 
-  transition 
-  ease-in-out 
-  duration-300
+  relative w-[140px] h-[50px]
+  px-2 py-1 rounded-[11.53px] bg-orange-2 text-brown-5 font-semibold text-[19px] md:text-2xl  border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px]  
   `}
   box-shadow: 3px 3px 0px #FFEEDA;
 `
 
 export const InnerSpan = styled.span`
-  ${tw`absolute inset-0 transition duration-300 ease-in-out transform translate-x-2 translate-y-2 active:translate-x-0 active:translate-y-0 rounded-xl`}
+  ${tw`absolute inset-0 transition duration-300 ease-in-out transform translate-x-2 translate-y-2  active:translate-x-0 active:translate-y-0 rounded-xl`}
+  
   border-right-width : 2px;
   border-bottom-width: 2px;
   border-right: solid;
@@ -93,22 +81,26 @@ export const InnerSpan = styled.span`
 `
 
 export const Btn2 = styled.button`
+
   ${tw`
   w-[140px]
-  md:w-[180px] 
-  h-[50px] 
-  md:h-[70px] 
-  active:shadow-none 
-  transition 
-  ease-in-out 
-  duration-300 
+  h-[50px]
+  px-2 
+  py-1 
+  rounded-[11.53px] 
+  bg-orange-1 
+  text-brown-5 
+  font-semibold 
+  text-[19px] 
+  md:text-2xl  
+  border-brown-5 
   border-2 
-  rounded-2xl 
-  border-[#1D1D1D] 
-  bg-[#FF8911] 
-  shadow-[4px 4px 0px #1D1D1D] 
-  text-lg 
-  md:text-2xl 
-  font-semibold
-  `}
-`
+  transition 
+  duration-300 
+  ease-in-out 
+  active:transform 
+  active:translate-x-[3px] 
+  active:translate-y-[3px] 
+  active:shadow-none 
+  shadow-[3px 3px 0px #1d1d1d ]`}`
+
