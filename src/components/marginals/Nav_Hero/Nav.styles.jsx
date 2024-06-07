@@ -1,16 +1,21 @@
 import tw from 'twin.macro'
 import styled from 'styled-components'
+import { links } from '../../../config/content/assetslink'
 
 const NavCont = styled.div`
   ${tw`
-  pb-[135px] 
   w-[100%]
+  fixed 
+  top-[30]
+  mr-3
+  z-10
   `}
 `
 
 export const InnrNavCont = styled.div`
-  ${tw`flex items-center justify-between `}
-`
+  background-image : url(${links.stars});
+  ${tw`flex items-center justify-between p-4 backdrop-blur-md`}
+` 
 
 export const Logo = styled.div`
   ${tw`
@@ -51,7 +56,7 @@ export const MenuItem = styled.div`
 `
 
 export const Menu2 = styled.div`
-  ${tw`flex items-center min-[854px]:hidden`}
+  ${tw`flex items-center min-[854px]:hidden `}
 `
 export const Btn = styled.button`
   ${tw`overflow-hidden focus:outline-none`}
@@ -72,7 +77,8 @@ export const ResMen = styled.div`
   ${tw`z-10 mr-5 md:hidden`}
 `
 export const ResList = styled.ul`
-  ${tw`flex flex-col items-end justify-end `}
+  background-image : url(${links.stars});
+  ${tw`flex flex-col items-end justify-end backdrop-blur-md`}
 `
 export const ResItem = styled.li`
   ${tw`my-2 `}

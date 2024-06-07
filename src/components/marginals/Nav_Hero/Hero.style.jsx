@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components'
 
 const HeroCont = styled.div`
   ${tw`
+  pt-[135px] 
   w-[100%] 
   h-[100%]
   `}
