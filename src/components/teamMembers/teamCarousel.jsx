@@ -6,7 +6,7 @@ import {
   CardImageName,
   CardImageRole
 } from './teamCards.styles'
-import { TeamMembers } from '../..//config/content/mycomp_data/team'
+import { TeamMembers } from '../..//config/content/teamsData/team'
 import Marquee from 'react-fast-marquee'
 
 export const TeamCarousel = () => {
