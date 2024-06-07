@@ -1,5 +1,5 @@
 import HeroCont, { Img1, Img2, MainFrame, MainImg, RegImgCont, RegisterCont } from './Hero.style'
-import { links } from '../../../config/content/assetslink'
+import { links } from '../../../config/content/Nav_Hero'
 const Hero = () => {
   return (
     <HeroCont>

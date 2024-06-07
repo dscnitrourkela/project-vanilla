@@ -1,5 +1,5 @@
 import { Wave, WaveCont } from './WaveDivider.style'
-import { links } from '../../../config/content/assetslink'
+import { links } from '../../../config/content/Nav_Hero'
 const WaveDivider = () => {
   return (
     <WaveCont>

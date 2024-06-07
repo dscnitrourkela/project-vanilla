@@ -1,6 +1,6 @@
 import tw from 'twin.macro'
 import styled from 'styled-components'
-import { links } from '../../../config/content/assetslink'
+import { links } from '../../../config/content/Nav_Hero'
 
 export const NavHeroContainer = styled.div`
   font-family: 'Poppins', sans-serif;
@@ -15,9 +15,9 @@ export const NavHeroContainer = styled.div`
 export const NavHeroCont2 = styled.div`
   background-image: url(${links.stars});
   ${tw`
-  md:py-5 
+  
   bg-[#151515]  
-  lg:max-w-[1440px] 
+  
   w-[100%] 
   bg-fixed  
   `}

@@ -1,21 +1,21 @@
 import tw from 'twin.macro'
 import styled from 'styled-components'
-import { links } from '../../../config/content/assetslink'
+import { links } from '../../../config/content/Nav_Hero'
 
-const NavCont = styled.div`
+const NavCont = styled.nav`
   ${tw`
-  lg:w-[95%]
+  bg-[#151515]
   w-[100%]
   fixed 
-  top-[30]
-  mr-3
+  top-0
   z-10
+  rounded-b
   `}
 `
 
 export const InnrNavCont = styled.div`
   background-image : url(${links.stars});
-  ${tw`flex items-center justify-between p-4 backdrop-blur-md`}
+  ${tw`flex items-center justify-between p-4`}
 ` 
 
 export const Logo = styled.div`

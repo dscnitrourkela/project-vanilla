@@ -17,8 +17,8 @@ import NavCont, {
   ResAnchor
 } from './Nav.styles'
 
-import { navContent } from "../../../config/content/navContent";
-import { links } from '../../../config/content/assetslink';
+import { navContent } from "../../../config/content/Nav_Hero";
+import { links } from '../../../config/content/Nav_Hero';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -29,7 +29,7 @@ const Nav = () => {
 
   return (
     <NavCont>
-      <nav>
+      
         <InnrNavCont>
           <Logo>
             <LogoImg 
@@ -96,7 +96,7 @@ const Nav = () => {
             </ResList>
           </ResMen>
         )}
-      </nav>
+      
     </NavCont>
   )
 }

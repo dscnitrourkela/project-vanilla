@@ -8,7 +8,7 @@ import {
   DesPara,
   DesTitle
 } from './Des.styles'
-import { desContent } from "../../../config/content/desContent";
+import { desContent } from "../../../config/content/Nav_Hero";
 
 const Des = () => {
   return (
