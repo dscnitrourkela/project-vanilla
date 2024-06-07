@@ -7,7 +7,7 @@ import {
   EventsTitle,
   Section
 } from './events.styles'
-import { events } from '../../../config/content/events'
+import { events, nextArrowIcon, prevArrowIcon } from '../../../config/content/events'
 import EventModal from './EventModal'
 import EventsWrapper from './EventsWrapper'
 export default function Events() {
@@ -18,7 +18,12 @@ export default function Events() {
   function handleModalOpen(id) {
     setIsModalOpen(true)
     const event = events.find((event) => event.id === id)
-    setEvent(event)
+    if (event) {
+      setEvent(event)
+    }
+  }
+  function handleModalClose() {
+    setIsModalOpen(false)
   }
 
   function handlePrev() {
@@ -32,20 +37,13 @@ export default function Events() {
       swiperRef.current.slideNext()
     }
   }
-  function handleModalClose() {
-    setIsModalOpen(false)
-  }
 
   return (
     <>
       {isModalOpen && <EventModal closeModal={handleModalClose} event={event} />}
       <Container>
         <Section>
-          <Arrow
-            src="https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717655995/nkmjcmohqhylatngyere.svg"
-            alt="left-arrow"
-            onClick={handlePrev}
-          />
+          <Arrow src={prevArrowIcon} alt="Previous" onClick={handlePrev} />
           <EventsWrapper
             events={events}
             handleSelectEvent={handleModalOpen}
@@ -55,11 +53,7 @@ export default function Events() {
             <EventsTitle>Events</EventsTitle>
           </EventsPillar>
           <EventsBgPillar></EventsBgPillar>
-          <Arrow
-            src="https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717655995/rl0mfre3kurcv4gwvem6.svg"
-            alt="right-arrow"
-            onClick={handleNext}
-          />
+          <Arrow src={nextArrowIcon} alt="Next" onClick={handleNext} />
         </Section>
       </Container>
     </>

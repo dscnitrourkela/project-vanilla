@@ -5,7 +5,7 @@ import 'swiper/css/navigation'
 import EventCard from './EventCard'
 import PropTypes from 'prop-types'
 import { EventWrapper } from './events.styles'
-import { Navigation } from 'swiper/modules'
+import { Navigation, Autoplay } from 'swiper/modules'
 
 EventsWrapper.propTypes = {
   events: PropTypes.array.isRequired,
@@ -26,9 +26,10 @@ function EventsWrapper({ events, handleSelectEvent, swiperRef }) {
     <EventWrapper>
       <Swiper
         ref={swiperRef}
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         spaceBetween={10}
         slidesPerView={1}
+        autoplay={false}
         breakpoints={{
           1170: {
             slidesPerView: 2,
