@@ -4,6 +4,7 @@ import { links } from '../../../config/content/assetslink'
 
 const NavCont = styled.div`
   ${tw`
+  lg:w-[95%]
   w-[100%]
   fixed 
   top-[30]
