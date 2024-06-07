@@ -34,7 +34,7 @@ export const LogoImg = styled.img`
   ${tw`object-contain w-full h-full `}
 `
 export const Menu = styled.div`
-  ${tw`items-center hidden min-[854px]:flex`}
+  ${tw`items-center hidden min-[903px]:flex`}
 `
 export const InnerMenu = styled.div`
   ${tw`
@@ -57,7 +57,7 @@ export const MenuItem = styled.div`
 `
 
 export const Menu2 = styled.div`
-  ${tw`flex items-center min-[854px]:hidden `}
+  ${tw`flex items-center min-[903px]:hidden `}
 `
 export const Btn = styled.button`
   ${tw`overflow-hidden focus:outline-none`}
@@ -75,7 +75,7 @@ export const SvgIcon = styled.svg`
 `
 
 export const ResMen = styled.div`
-  ${tw`z-10 mr-5  min-[854px]:hidden`}
+  ${tw`z-10 mr-5  min-[903px]:hidden`}
 `
 export const ResList = styled.ul`
   background-image : url(${links.stars});
