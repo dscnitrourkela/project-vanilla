@@ -51,7 +51,9 @@ export default {
         'brk-13': '574px',
         'brk-14': '468px',
         'brk-15': '406px',
-        'brk-16': '380px'
+        'brk-16': '350px',
+        'brk-17': '295px',
+        'brk-18': '1030px'
       }
     }
   },
