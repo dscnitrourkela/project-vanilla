@@ -9,15 +9,12 @@ const HeroCont = styled.div`
 `
 
 export const MainFrame = styled.div`
-  ${tw`
-  flex 
-  justify-center
-  `}
+  ${tw`flex justify-center `}
 `
 export const MainImg = styled.img`
   ${tw`
   md:w-[40%] 
-  sm:w-[70%] 
+  sm:w-[30%] 
   md:max-w-[1000px] 
   object-contain
   `}
@@ -53,10 +50,10 @@ const rotate = keyframes`
 export const Img1 = styled.img`
   animation: ${rotate} 5s linear infinite;
   ${tw`
-  object-cover
-  w-full
-  h-auto
-    `}
+  object-cover 
+  md:(w-full  h-auto) 
+  sm:(w-[60%] h-[60%])
+  `}
 `
 
 export const Img2 = styled.img`
@@ -68,9 +65,9 @@ export const Img2 = styled.img`
   absolute 
   lg:(left-[95px] top-[95px]) 
   md:(left-[80px] top-[80px]) 
-  sm:(left-[65px] top-[60px]) 
-  w-[26.71px] 
-  h-auto 
+  sm:(left-[70px] top-[60px]) 
+  md:(w-[26.71px] h-auto )
+  sm:(w-[20px] h-auto )
   object-contain
   `}
 `
