@@ -1,20 +1,28 @@
-import { motion, AnimatePresence } from 'framer-motion'
-import EventCard from './EventCard'
+import { AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
+import AnimatedEventCard from './AnimatedEventCard'
 
-function AnimatedEvent({ event: { id, img, title, subtitle, details } }) {
-  return (
-    <motion.div key={id} layout initial={{ x: 100 }} animate={{ x: 0 }}>
-      <EventCard id={id} img={img} title={title} subtitle={subtitle} details={details} />
-    </motion.div>
-  )
-}
-function isMobile() {
-  return window.innerWidth < 1030
+EventsWrapper.propTypes = {
+  events: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      img: PropTypes.string,
+      title: PropTypes.string,
+      subtitle: PropTypes.string,
+      details: PropTypes.string
+    })
+  ),
+  currIndex: PropTypes.number,
+  handleSelectEvent: PropTypes.func
 }
 
-export default function EventsWrapper({ events, currIndex }) {
+export default function EventsWrapper({ events, currIndex, handleSelectEvent }) {
   const [mobileView, setMobileView] = useState(isMobile())
+  function isMobile() {
+    return window.innerWidth < 1030
+  }
+
   useEffect(() => {
     function handleResize() {
       setMobileView(isMobile())
@@ -33,7 +41,7 @@ export default function EventsWrapper({ events, currIndex }) {
   return (
     <AnimatePresence>
       {currentEvents.map((event) => (
-        <AnimatedEvent key={event.id} event={event} />
+        <AnimatedEventCard key={event.id} event={event} handleSelectEvent={handleSelectEvent} />
       ))}
     </AnimatePresence>
   )

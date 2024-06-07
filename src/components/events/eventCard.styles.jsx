@@ -5,7 +5,6 @@ export const Container = styled.main`
   ${tw`py-[20.18px] brk-18:w-[350px] h-[550px] brk-15:h-[600px] brk-13:h-[640px] bg-brown-5 text-orange-2 rounded-[23.06px] font-Poppins relative
 `}
 `
-
 export const Section = styled.section`
   ${tw` flex flex-col justify-between items-center`}
 `
