@@ -52,8 +52,7 @@ export default {
         'brk-13': '574px',
         'brk-14': '468px',
         'brk-15': '406px',
-        'brk-16': '380px'
-
+        'brk-16': '380px',
         '2xl': '1434px',
         '3xl': '1536px',
         xl: '1280px',
