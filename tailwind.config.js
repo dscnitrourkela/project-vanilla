@@ -36,7 +36,6 @@ export default {
         '4xl': '4rem'
       },
       screens: {
-
         'brk-1': '1306px',
         'brk-2': '1434px',
         'brk-3': '1338px',
@@ -59,7 +58,6 @@ export default {
         lg: '1024px',
         xsm: '538px',
         md: '672px'
-
       }
     }
   },
