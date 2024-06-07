@@ -1,10 +1,10 @@
-import MyFooter from '../components/myFooter/MyFooter'
+import Footer from '../components/marginals/footer/Footer'
 const Playground = () => {
   return (
     <div>
       <h1>Playground page</h1>
       <p>For testing purpose</p>
-      <MyFooter />
+      <Footer />
     </div>
   )
 }
