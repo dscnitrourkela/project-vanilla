@@ -21,6 +21,11 @@ export default {
         orange: {
           1: '#FF8911',
           2: '#FFEEDA'
+        },
+        green: {
+          1: '#D9FC00',
+          2: '#CAFC00',
+          3: '#9E9E9E'
         }
       },
 
@@ -36,28 +41,26 @@ export default {
         '4xl': '4rem'
       },
       screens: {
-        'brk-1': '1306px',
-        'brk-2': '1434px',
-        'brk-3': '1338px',
-        'brk-4': '1536px',
-        'brk-5': '1172px',
-        'brk-6': '1238px',
-        'brk-7': '1050px',
-        'brk-8': '538px',
-        'brk-9': '672px',
-        'brk-10': '1090px',
-        'brk-11': '400px',
-        'brk-12': '710px',
-        'brk-13': '574px',
-        'brk-14': '468px',
-        'brk-15': '406px',
-        'brk-16': '380px',
-        '2xl': '1434px',
         '3xl': '1536px',
+        '2.5xl': '1470px',
+        '2.3xl': '1430px',
+        '2xl': '1434px',
         xl: '1280px',
+
+        '1.9lg': '1238px',
+        '1.5lg': '1172px',
+        '1.3lg': '1050px',
         lg: '1024px',
+
+        '1.5md': '710px',
+        md: '672px',
+
+        sm: '574px',
         xsm: '538px',
-        md: '672px'
+        '0.8xsm': '485px',
+        '0.5xsm': '468px',
+        xxsm: '400px',
+        '0.5xxsm': '350px'
       }
     }
   },
