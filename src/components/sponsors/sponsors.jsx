@@ -1,17 +1,16 @@
-import { Icon1,Icon2,Icon3,Icon4,Icon5,Icon6,SponsorsContainer } from "./sponsors.styles";
+import { Icon,SponsorsContainer } from "./sponsors.styles";
 import Marquee from "react-fast-marquee";
+import { SponsorsData } from "../../../config/sponsorsdata";
 
-export const Sponsors=()=>{
-    return(
-        <SponsorsContainer>
-          <Marquee>
-            <Icon1/>
-            <Icon2/>
-            <Icon3/>
-            <Icon4/>
-            <Icon5/>
-            <Icon6/>
-          </Marquee>
-        </SponsorsContainer>
-    )
-}
+export const Sponsors = () => {
+
+  return (
+    <SponsorsContainer>
+      <Marquee>
+        {SponsorsData.map((data,index ) => (
+          <Icon key={index} url={data.url} style={data.styles} />
+        ))}
+      </Marquee>
+    </SponsorsContainer>
+  );
+};
