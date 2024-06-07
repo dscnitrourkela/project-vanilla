@@ -1,6 +1,6 @@
 import { Icon,SponsorsContainer } from "./sponsors.styles";
 import Marquee from "react-fast-marquee";
-import { SponsorsData } from "../../config/content/mycomp_data/sponsorsdata";
+import { SponsorsData } from "../../config/content/mycomp_data/sponsors";
 
 export const Sponsors = () => {
 
