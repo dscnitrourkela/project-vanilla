@@ -19,3 +19,6 @@ export const aiche = {
     "The American Institute of Chemical Engineers (AIChE) serves as the Global Home of Chemical Engineers. It is the world's leading professional organization for students and professionals in Chemical Engineering. Established in 1910, and with currently over 60,000 members from 110 countries, AIChE Global provides a worldwide platform for aspiring minds to showcase their talents, and equips them with a vast wealth of resources and guidance, enabling the talented individuals to achieve success in their future endeavors. AIChE has the breadth of resources and expertise you need whether you are in core process industries or emerging areas, such as translational medicine.",
   bgColor: '#151515'
 }
+
+export const aboutImage =
+  'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717651216/uicuys5ldvlimqqlsojh.png'

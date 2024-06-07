@@ -1,5 +1,5 @@
 import AboutCard from './AboutCard'
-import { data, aiche } from '../../../config/content/about'
+import { data, aiche, aboutImage } from '../../../config/content/about'
 import { Container, CardContainer1, CardContainer2, Title, Image, SubSection } from './about.styles'
 function About() {
   return (
@@ -23,10 +23,7 @@ function About() {
             bgColor={aiche.bgColor}
             isSuperTitle={true}
           />
-          <Image
-            src="https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717651216/uicuys5ldvlimqqlsojh.png"
-            alt="aboutus"
-          />
+          <Image src={aboutImage} alt="aboutus" />
         </SubSection>
       </CardContainer2>
     </Container>

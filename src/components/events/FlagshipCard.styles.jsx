@@ -2,7 +2,7 @@ import tw from 'twin.macro'
 import styled from 'styled-components'
 
 export const Container = styled.main`
-  ${tw`py-[20.18px] brk-18:w-[350px] h-[550px] brk-15:h-[600px] brk-13:h-[640px] bg-brown-5 rounded-[23.06px] font-Poppins relative overflow-hidden border-[2px] border-green-1
+  ${tw`py-[20.18px] brk-18:w-[400px] h-[550px] brk-15:h-[600px] brk-13:h-[640px] bg-brown-5 rounded-[23.06px] font-Poppins relative overflow-hidden border-[2px] border-green-1
 `}
   box-shadow: inset -1px -1px 2px #cafc00;
 `

@@ -13,7 +13,7 @@ export const Section = styled.div`
 `
 export const Title = styled.h1(({ isSuperTitle }) => [
   isSuperTitle
-    ? tw`brk-8:text-[96px] text-[50px] brk-11:text-[60px] brk-11:mt-10 brk-8:mt-20`
+    ? tw`brk-12:text-[96px] brk-8:text-[70px] text-[40px] brk-11:text-[60px] brk-11:mt-10 brk-8:mt-20`
     : tw`brk-8:text-5xl text-[30px]  brk-8:mt-[3.5rem]`,
   tw`font-[600] leading-[50px] brk-8:leading-[72px] text-center`
 ])
