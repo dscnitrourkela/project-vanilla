@@ -36,6 +36,7 @@ export default {
         '4xl': '4rem'
       },
       screens: {
+
         '3xl': '1536px',
         '2.5xl': '1470px',
         '2.3xl': '1430px',
@@ -62,6 +63,7 @@ export default {
         '0.5xsm': '468px',
         xxsm: '400px',
         '0.5xxsm': '350px'
+
       }
     }
   },
