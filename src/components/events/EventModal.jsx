@@ -23,7 +23,7 @@ EventModal.propTypes = {
     img: PropTypes.string,
     title: PropTypes.string,
     subtitle: PropTypes.string,
-    details: PropTypes.string
+    details: PropTypes.array
   })
 }
 function EventModal({ closeModal, event: { img, title, subtitle, details } }) {

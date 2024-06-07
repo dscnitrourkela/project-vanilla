@@ -18,7 +18,7 @@ export const CardImage = styled.img`
   ${tw` h-[140px] w-[140px] sm:h-[144.14px] sm:w-[144.14px]`}
 `
 export const CardTitle = styled.h3`
-  ${tw` mt-5 font-semibold text-[34.59px] leading-none text-center`}
+  ${tw` mt-5 font-semibold text-[24px] 0.8xsm:text-[34.59px] leading-none text-center`}
 `
 export const CardSubtitle = styled.h4`
   ${tw` font-medium text-[16px] text-orange-1 leading-none mt-2 text-center`}
