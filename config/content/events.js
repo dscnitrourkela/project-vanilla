@@ -83,3 +83,6 @@ export const events = [
     ]
   }
 ]
+
+export const seeMoreIcon =
+  'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717748808/xycpeayh1uywatzl4rqa.svg'

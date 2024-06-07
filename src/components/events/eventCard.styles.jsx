@@ -30,8 +30,16 @@ export const CardBody = styled.div`
 `
 
 export const CardList = styled.ul`
-  ${tw`font-normal text-[12px] brk-15:text-[13px] brk-13:text-[14.41px] list-disc`}
+  ${tw`font-normal text-[12px] brk-15:text-[13px] brk-13:text-[14.41px] list-disc px-2`}
 `
+
+export const CardModalBtn = styled.button`
+  ${tw`text-orange-1 font-light text-[12px] mt-5 flex items-center justify-center active:opacity-80 duration-100`}
+`
+export const SeemoreIcon = styled.img`
+  ${tw`h-[15px] w-[15px] ml-1`}
+`
+
 export const CardFooter = styled.div`
   ${tw`absolute bottom-14 w-[85%] flex justify-end mt-5`}
 `

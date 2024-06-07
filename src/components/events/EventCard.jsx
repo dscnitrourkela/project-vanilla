@@ -9,10 +9,21 @@ import {
   Container,
   ContentWrapper,
   Section,
-  CardFooter
+  CardFooter,
+  CardModalBtn,
+  SeemoreIcon
 } from './eventCard.styles'
-
+import { seeMoreIcon } from '../../../config/content/events'
 export default function EventCard({ img, id, title, subtitle, details }) {
+  function genDetails(str, length) {
+    str = str.trim()
+    if (str.length > length) {
+      return str.slice(0, length - 3) + '...'
+    } else {
+      return str
+    }
+  }
+
   return (
     <Container>
       <Section>
@@ -24,20 +35,12 @@ export default function EventCard({ img, id, title, subtitle, details }) {
           </CardHeader>
           <CardBody>
             <CardList>
-              {/* {details.map((detail, index) => (
-                <li key={index}>{detail}</li>
-              ))} */}
-              <li>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur laborum,
-                voluptate fuga sapiente vero maxime, adipisci fugiat tenetur, pariatur est tempora
-                ab atque. Saepe natus quasi ipsam accusamus sint molestiae!
-              </li>
-              <li>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex hic, fuga ipsam
-                inventore ab consequatur? Sint et nostrum similique a saepe optio in aut sequi sed,
-                sunt, porro autem incidunt.
-              </li>
+              <li>{genDetails(details[0], 220)}</li>
             </CardList>
+            <CardModalBtn>
+              <span>See More</span>
+              <SeemoreIcon src={seeMoreIcon} />
+            </CardModalBtn>
           </CardBody>
           <CardFooter>
             <Button id={id}>Register</Button>
