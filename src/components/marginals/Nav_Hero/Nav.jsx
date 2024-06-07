@@ -21,7 +21,9 @@ import { navContent } from "../../../config/content/Nav_Hero";
 import { links } from '../../../config/content/Nav_Hero';
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  
+ 
 
   const handleToggle = () => {
     setIsOpen(!isOpen)
@@ -50,7 +52,7 @@ const Nav = () => {
 
           <Menu2>
             <Btn onClick={handleToggle}>
-              {isOpen ? (
+               
                 <MenuIcon>
                   <SvgIcon 
                   xmlns="http://www.w3.org/2000/svg" 
@@ -64,21 +66,8 @@ const Nav = () => {
                     />
                   </SvgIcon>
                 </MenuIcon>
-              ) : (
-                <MenuIcon>
-                  <SvgIcon 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  viewBox="0 0 24 24" 
-                  fill="#FFEEDA"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 5.25Zm0 4.5A.75.75 0 0 1 3.75 9h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 9.75Zm0 4.5a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Zm0 4.5a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
-                      clipRule="evenodd"
-                    />
-                  </SvgIcon>
-                </MenuIcon>
-              )}
+            
+              
             </Btn>
           </Menu2>
         </InnrNavCont>
