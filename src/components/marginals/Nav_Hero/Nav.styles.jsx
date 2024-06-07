@@ -68,8 +68,8 @@ export const MenuIcon = styled.div`
 
 export const SvgIcon = styled.svg`
   ${tw`	
-  w-[1.5rem] 
-  h-[1.5rem] 
+  w-[2rem] 
+  h-[2rem] 
   `}
 `
 
