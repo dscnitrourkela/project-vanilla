@@ -1,10 +1,10 @@
 import { Wave, WaveCont } from './WaveDivider.style'
-
+import { links } from '../../../config/content/assetslink'
 const WaveDivider = () => {
   return (
     <WaveCont>
       <Wave
-        src="https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683273/Vector_346_dda6za.png"
+        src={links.wave}
         alt="Wave Divider"
       />
     </WaveCont>

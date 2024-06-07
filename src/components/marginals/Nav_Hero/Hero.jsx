@@ -1,12 +1,12 @@
 import HeroCont, { Img1, Img2, MainFrame, MainImg, RegImgCont, RegisterCont } from './Hero.style'
-
+import { links } from '../../../config/content/assetslink'
 const Hero = () => {
   return (
     <HeroCont>
       <section>
         <MainFrame>
           <MainImg
-            src="https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683326/Frame-h-m_rb3rh9.png"
+            src={links.main}
             alt="Main Frame"
           />
         </MainFrame>
@@ -14,11 +14,11 @@ const Hero = () => {
       <RegisterCont>
         <RegImgCont>
           <Img1
-            src="https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683299/Group_2_rfdbbh.png"
+            src={links.registernow}
             alt="Back"
           />
           <Img2
-            src="https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683287/Vector_9_piw4n5.png"
+            src={links.down}
             alt="Overlay"
           />
         </RegImgCont>

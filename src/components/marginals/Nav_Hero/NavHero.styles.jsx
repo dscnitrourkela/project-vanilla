@@ -12,7 +12,7 @@ export const NavHeroContainer = styled.div`
  `}
 `
 export const NavHeroCont2 = styled.div`
-  background-image: url('src/assets/Noise & Texture.png');
+  background-image: url('https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717682617/Noise_Texture_xvsg7b.png');
   ${tw`
   md:py-5 
   bg-[#151515]  

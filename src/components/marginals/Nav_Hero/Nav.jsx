@@ -18,6 +18,7 @@ import NavCont, {
 } from './Nav.styles'
 
 import { navContent } from "../../../config/content/navContent";
+import { links } from '../../../config/content/assetslink';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -32,7 +33,7 @@ const Nav = () => {
         <InnrNavCont>
           <Logo>
             <LogoImg 
-            src="https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683310/Mask_group_ep6tgv.png" 
+            src={links.logo}
             alt="logo" 
             />
           </Logo>

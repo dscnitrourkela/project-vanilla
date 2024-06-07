@@ -9,38 +9,26 @@ const NavCont = styled.div`
 `
 
 export const InnrNavCont = styled.div`
-  ${tw`
-  flex 
-  items-center 
-  justify-between 
-  `}
+  ${tw`flex items-center justify-between `}
 `
 
 export const Logo = styled.div`
   ${tw`
   h-[48px]
   w-[48px] 
-  sm:h-[56px] 
-  sm:w-[56px] 
-  md:h-[64px] 
-  md:w-[64px] 
+  sm:h-[40px] 
+  sm:w-[40px] 
+  md:h-[54px] 
+  md:w-[54px] 
   ml-5 
   mt-2
   `}
 `
 export const LogoImg = styled.img`
-  ${tw`
-  object-contain 
-  w-full 
-  h-full
-  `}
+  ${tw`object-contain w-full h-full `}
 `
 export const Menu = styled.div`
-  ${tw`
-  items-center 
-  hidden 
-  md:flex
-  `}
+  ${tw`items-center hidden min-[854px]:flex`}
 `
 export const InnerMenu = styled.div`
   ${tw`
@@ -63,23 +51,14 @@ export const MenuItem = styled.div`
 `
 
 export const Menu2 = styled.div`
-  ${tw`
-  flex 
-  items-center 
-  md:hidden
-  `}
+  ${tw`flex items-center min-[854px]:hidden`}
 `
 export const Btn = styled.button`
-  ${tw`
-  overflow-hidden 
-  focus:outline-none
-  `}
+  ${tw`overflow-hidden focus:outline-none`}
 `
 
 export const MenuIcon = styled.div`
-  ${tw`
-  mr-7
-  `}
+  ${tw` mr-7`}
 `
 
 export const SvgIcon = styled.svg`
@@ -90,24 +69,13 @@ export const SvgIcon = styled.svg`
 `
 
 export const ResMen = styled.div`
-  ${tw`
-  z-10 
-  mr-5 
-  md:hidden
-  `}
+  ${tw`z-10 mr-5 md:hidden`}
 `
 export const ResList = styled.ul`
-  ${tw`
-  flex 
-  flex-col 
-  items-end 
-  justify-end
-  `}
+  ${tw`flex flex-col items-end justify-end `}
 `
 export const ResItem = styled.li`
-  ${tw`
-  my-2
-  `}
+  ${tw`my-2 `}
 `
 
 export const ResAnchor = styled.a`
