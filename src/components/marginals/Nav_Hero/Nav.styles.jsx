@@ -59,20 +59,12 @@ export const MenuItem = styled.div`
 export const Menu2 = styled.div`
   ${tw`flex items-center min-[903px]:hidden `}
 `
-export const Btn = styled.button`
-  ${tw`overflow-hidden focus:outline-none`}
-`
+
 
 export const MenuIcon = styled.div`
   ${tw`mr-7`}
 `
 
-export const SvgIcon = styled.svg`
-  ${tw`	
-  w-[2.5rem] 
-  h-[2.5rem] 
-  `}
-`
 
 export const ResMen = styled.div`
   ${tw`z-10 mr-5  min-[903px]:hidden`}
