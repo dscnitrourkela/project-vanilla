@@ -18,7 +18,7 @@ import {
   HeartIcon
 } from './Styles'
 
-import footerData from '../../../../config/content/Footer'
+import footerData from '../../../config/content/Footer'
 
 export default function MyFooter() {
   function renderListItem(item, title) {
