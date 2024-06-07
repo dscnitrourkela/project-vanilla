@@ -14,7 +14,7 @@ const fadeInAnimation = keyframes`
 
 export const Container = styled.main`
   ${tw`fixed inset-0 z-50 bg-brown-2 bg-opacity-75 backdrop-blur-md flex justify-center items-center  brk-19:p-[2rem] p-[10px]`}
-  animation: ${fadeInAnimation} 0.3s ease-out; /* Apply the animation */
+  animation: ${fadeInAnimation} 0.3s ease-out;
 `
 
 export const Section = styled.section`

@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import EventCard from './EventCard'
+import FlagshipCard from './FlagshipCard'
 import PropTypes from 'prop-types'
 import { EventWrapper } from './events.styles'
 import { Navigation, Autoplay } from 'swiper/modules'
@@ -45,6 +46,9 @@ function EventsWrapper({ events, handleSelectEvent, swiperRef }) {
             <EventCard event={event} handleSelectEvent={handleSelectEvent} />
           </SwiperSlide>
         ))}
+        <SwiperSlide>
+          <FlagshipCard />
+        </SwiperSlide>
       </Swiper>
     </EventWrapper>
   )
