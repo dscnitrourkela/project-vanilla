@@ -16,7 +16,7 @@ import {
   FooterBottom,
   MadeBy,
   HeartIcon
-} from './Footer.styles'
+} from './Styles'
 
 import footerData from '../../../../config/content/Footer'
 
