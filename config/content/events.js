@@ -86,3 +86,12 @@ export const events = [
 
 export const seeMoreIcon =
   'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717748808/xycpeayh1uywatzl4rqa.svg'
+
+export const XIcon =
+  'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717754485/qg1yajbmbtlt79ut99he.svg'
+
+export const nextArrowIcon =
+  'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717655995/rl0mfre3kurcv4gwvem6.svg'
+
+export const prevArrowIcon =
+  'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717655995/nkmjcmohqhylatngyere.svg'

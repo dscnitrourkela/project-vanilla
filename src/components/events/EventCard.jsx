@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import {
   Button,
   CardBody,
@@ -14,7 +15,21 @@ import {
   SeemoreIcon
 } from './eventCard.styles'
 import { seeMoreIcon } from '../../../config/content/events'
-export default function EventCard({ img, id, title, subtitle, details }) {
+
+EventCard.propTypes = {
+  event: PropTypes.shape({
+    img: PropTypes.string,
+    id: PropTypes.number,
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    details: PropTypes.array
+  }),
+  handleSelectEvent: PropTypes.func
+}
+export default function EventCard({
+  event: { img, id, title, subtitle, details },
+  handleSelectEvent
+}) {
   function genDetails(str, length) {
     str = str.trim()
     if (str.length > length) {
@@ -37,7 +52,7 @@ export default function EventCard({ img, id, title, subtitle, details }) {
             <CardList>
               <li>{genDetails(details[0], 220)}</li>
             </CardList>
-            <CardModalBtn>
+            <CardModalBtn onClick={() => handleSelectEvent(id)}>
               <span>See More</span>
               <SeemoreIcon src={seeMoreIcon} />
             </CardModalBtn>

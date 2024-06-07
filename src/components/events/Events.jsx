@@ -1,64 +1,61 @@
-import { useState, useEffect } from 'react'
-import { AnimatePresence } from 'framer-motion'
-import EventsWrapper from './EventsWrapper'
+import { useState, useRef } from 'react'
 import {
   Container,
   Arrow,
-  EventWrapper,
   EventsBgPillar,
   EventsPillar,
   EventsTitle,
   Section
 } from './events.styles'
-import { events } from '../../../config/content/events'
+import { events, nextArrowIcon, prevArrowIcon } from '../../../config/content/events'
+import EventModal from './EventModal'
+import EventsWrapper from './EventsWrapper'
 export default function Events() {
-  const [currIndex, setCurrIndex] = useState(0)
-  const [isHovered, setIsHovered] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [event, setEvent] = useState(null)
+  const swiperRef = useRef(null)
 
-  // useEffect(() => {
-  //   if (!isHovered) {
-  //     const interval = setInterval(() => {
-  //       handleNext()
-  //     }, 3000)
+  function handleModalOpen(id) {
+    setIsModalOpen(true)
+    const event = events.find((event) => event.id === id)
+    if (event) {
+      setEvent(event)
+    }
+  }
+  function handleModalClose() {
+    setIsModalOpen(false)
+  }
 
-  //     return () => clearInterval(interval)
-  //   }
-  // }, [isHovered, currIndex])
+  function handlePrev() {
+    if (swiperRef.current && swiperRef.current) {
+      swiperRef.current.slidePrev()
+    }
+  }
 
   function handleNext() {
-    setCurrIndex((prevIndex) => (prevIndex + 1) % events.length)
-  }
-  function handlePrev() {
-    setCurrIndex((prevIndex) => (prevIndex === 0 ? events.length - 1 : prevIndex - 1))
+    if (swiperRef.current && swiperRef.current) {
+      swiperRef.current.slideNext()
+    }
   }
 
   return (
-    <Container>
-      <Section>
-        <Arrow
-          src="https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717655995/nkmjcmohqhylatngyere.svg"
-          alt="left-arrow"
-          onClick={handlePrev}
-        />
-
-        <EventWrapper
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <AnimatePresence>
-            <EventsWrapper events={events} currIndex={currIndex} />
-          </AnimatePresence>
-        </EventWrapper>
-        <EventsPillar>
-          <EventsTitle>Events</EventsTitle>
-        </EventsPillar>
-        <EventsBgPillar></EventsBgPillar>
-        <Arrow
-          src="https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717655995/rl0mfre3kurcv4gwvem6.svg"
-          alt="right-arrow"
-          onClick={handleNext}
-        />
-      </Section>
-    </Container>
+    <>
+      {isModalOpen && <EventModal closeModal={handleModalClose} event={event} />}
+      <Container>
+        <Section>
+          <Arrow src={prevArrowIcon} alt="Previous" onClick={handlePrev} />
+          <EventsWrapper
+            events={events}
+            handleSelectEvent={handleModalOpen}
+            swiperRef={swiperRef}
+          />
+          <EventsPillar>
+            <EventsTitle>Events</EventsTitle>
+          </EventsPillar>
+          <EventsBgPillar></EventsBgPillar>
+          <Arrow src={nextArrowIcon} alt="Next" onClick={handleNext} />
+        </Section>
+      </Container>
+    </>
   )
 }

@@ -1,40 +1,53 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/navigation'
 import EventCard from './EventCard'
-import { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
+import { EventWrapper } from './events.styles'
+import { Navigation, Autoplay } from 'swiper/modules'
 
-function AnimatedEvent({ event: { id, img, title, subtitle, details } }) {
-  return (
-    <motion.div key={id} layout initial={{ x: 100 }} animate={{ x: 0 }}>
-      <EventCard id={id} img={img} title={title} subtitle={subtitle} details={details} />
-    </motion.div>
-  )
-}
-function isMobile() {
-  return window.innerWidth < 1030
+EventsWrapper.propTypes = {
+  events: PropTypes.array.isRequired,
+  handleSelectEvent: PropTypes.func.isRequired,
+  swiperRef: PropTypes.object.isRequired
 }
 
-export default function EventsWrapper({ events, currIndex }) {
-  const [mobileView, setMobileView] = useState(isMobile())
+function EventsWrapper({ events, handleSelectEvent, swiperRef }) {
   useEffect(() => {
-    function handleResize() {
-      setMobileView(isMobile())
+    if (swiperRef.current) {
+      const swiper = swiperRef.current
+      swiper.navigation.init()
+      swiper.navigation.update()
     }
-    window.addEventListener('resize', handleResize)
-    // Cleanup listener on unmount
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
-
-  const currentEvents = mobileView
-    ? [events[currIndex]]
-    : [events[currIndex], events[(currIndex + 1) % events.length]]
+  }, [swiperRef])
 
   return (
-    <AnimatePresence>
-      {currentEvents.map((event) => (
-        <AnimatedEvent key={event.id} event={event} />
-      ))}
-    </AnimatePresence>
+    <EventWrapper>
+      <Swiper
+        ref={swiperRef}
+        modules={[Navigation, Autoplay]}
+        spaceBetween={10}
+        slidesPerView={1}
+        autoplay={{ delay: 2000 }}
+        breakpoints={{
+          1170: {
+            slidesPerView: 2,
+            spaceBetween: 10
+          }
+        }}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper
+        }}
+      >
+        {events.map((event) => (
+          <SwiperSlide key={event.id}>
+            <EventCard event={event} handleSelectEvent={handleSelectEvent} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </EventWrapper>
   )
 }
+
+export default EventsWrapper

@@ -2,10 +2,9 @@ import tw from 'twin.macro'
 import styled from 'styled-components'
 
 export const Container = styled.main`
-  ${tw`py-[20.18px] brk-18:w-[350px] h-[550px] brk-15:h-[600px] brk-13:h-[640px] bg-brown-5 text-orange-2 rounded-[23.06px] font-Poppins relative
+  ${tw`py-[20.18px] brk-18:w-[400px] h-[550px] brk-15:h-[600px] brk-13:h-[640px] bg-brown-5 text-orange-2 rounded-[23.06px] font-Poppins relative
 `}
 `
-
 export const Section = styled.section`
   ${tw` flex flex-col justify-between items-center`}
 `
@@ -16,7 +15,7 @@ export const CardHeader = styled.div`
   ${tw`flex flex-col items-center`}
 `
 export const CardImage = styled.img`
-  ${tw` h-[80px] w-[80px] brk-15:h-[100px] brk-15:w-[100px] brk-13:h-[144.14px] brk-13:w-[144.14px]`}
+  ${tw` h-[140px] w-[140px] brk-13:h-[144.14px] brk-13:w-[144.14px]`}
 `
 export const CardTitle = styled.h3`
   ${tw` mt-5 font-semibold text-[34.59px] leading-none text-center`}
@@ -34,14 +33,14 @@ export const CardList = styled.ul`
 `
 
 export const CardModalBtn = styled.button`
-  ${tw`text-orange-1 font-light text-[12px] mt-5 flex items-center justify-center active:opacity-80 duration-100`}
+  ${tw`text-orange-1 font-light text-[14px] mt-5 flex items-center justify-center active:opacity-80 duration-100 mb-2`}
 `
 export const SeemoreIcon = styled.img`
   ${tw`h-[15px] w-[15px] ml-1`}
 `
 
 export const CardFooter = styled.div`
-  ${tw`absolute bottom-14 w-[85%] flex justify-end mt-5`}
+  ${tw`absolute bottom-10 md:bottom-14 w-[85%] flex justify-end mt-5`}
 `
 export const Button = styled.button`
   ${tw`brk-13:h-[50.45px] brk-13:w-[129.73px] 
