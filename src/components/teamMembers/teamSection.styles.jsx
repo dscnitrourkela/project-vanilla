@@ -6,5 +6,5 @@ export const TeamSectionContainer = styled.div`
 `
 
 export const TeamSectionHeading = styled.div`
-  ${tw`font-Poppins text-brown-4 text-[40px] font-bold md:text-[128px] xsm:text-[90px] sm:text-[60px]`}
+  ${tw`font-Poppins text-brown-4 text-[40px] font-bold 3md:text-[128px] 2.5md:text-[90px] 0.7xsm:text-[60px]`}
 `

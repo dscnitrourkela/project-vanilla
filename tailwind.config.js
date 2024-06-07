@@ -39,13 +39,29 @@ export default {
         '4xl': '4rem'
       },
       screens: {
-        '2xl': '1434px',
         '3xl': '1536px',
+        '2.5xl': '1470px',
+        '2.3xl': '1430px',
+        '2xl': '1434px',
         xl: '1280px',
+
+        '1.9lg': '1238px',
+        '1.5lg': '1172px',
+        '1.3lg': '1050px',
         lg: '1024px',
-        xsm: '700px',
-        md: '976px',
-        sm: '471px'
+
+        '3md': '976px',
+        '2.5md': '700px',
+        '1.5md': '710px',
+        md: '672px',
+
+        sm: '574px',
+        xsm: '538px',
+        '0.8xsm': '485px',
+        '0.7xsm': '471px',
+        '0.5xsm': '468px',
+        xxsm: '400px',
+        '0.5xxsm': '350px'
       }
     }
   },
