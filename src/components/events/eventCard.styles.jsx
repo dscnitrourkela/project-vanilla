@@ -33,14 +33,14 @@ export const CardList = styled.ul`
 `
 
 export const CardModalBtn = styled.button`
-  ${tw`text-orange-1 font-light text-[14px] mt-5 flex items-center justify-center active:opacity-80 duration-100`}
+  ${tw`text-orange-1 font-light text-[14px] mt-5 flex items-center justify-center active:opacity-80 duration-100 mb-2`}
 `
 export const SeemoreIcon = styled.img`
   ${tw`h-[15px] w-[15px] ml-1`}
 `
 
 export const CardFooter = styled.div`
-  ${tw`absolute bottom-14 w-[85%] flex justify-end mt-5`}
+  ${tw`absolute bottom-10 md:bottom-14 w-[85%] flex justify-end mt-5`}
 `
 export const Button = styled.button`
   ${tw`brk-13:h-[50.45px] brk-13:w-[129.73px] 
