@@ -3,7 +3,7 @@ export const TeamMembers = [
     role: 'Accommodation',
     name: 'Umesh',
     image:
-      'https://res.cloudinary.com/dhv234qct/image/upload/v1717692334/AICHE_SRC/team_members/Accommodation.jpg'
+      'https://res.cloudinary.com/dhv234qct/image/upload/t_tchc1/AICHE_SRC/team_members/Accommodation.jpg'
   },
   {
     role: 'Finance',
@@ -21,13 +21,13 @@ export const TeamMembers = [
     role: 'Bookings',
     name: 'Rajdeep',
     image:
-      'https://res.cloudinary.com/dhv234qct/image/upload/v1717692334/AICHE_SRC/team_members/Bookings.jpg'
+      'https://res.cloudinary.com/dhv234qct/image/upload/t_hc2/AICHE_SRC/team_members/Bookings.jpg'
   },
   {
     role: 'Guest Lectures',
     name: 'Prayash',
     image:
-      'https://res.cloudinary.com/dhv234qct/image/upload/v1717692334/AICHE_SRC/team_members/Guest_lectures.jpg'
+      'https://res.cloudinary.com/dhv234qct/image/upload/t_hc3/AICHE_SRC/team_members/Guest_lectures.jpg'
   },
   {
     role: 'Requirements',
@@ -51,7 +51,7 @@ export const TeamMembers = [
     role: 'Design',
     name: 'Anuj',
     image:
-      'https://res.cloudinary.com/dhv234qct/image/upload/v1717692333/AICHE_SRC/team_members/Design.jpg'
+      'https://res.cloudinary.com/dhv234qct/image/upload/t_hc4/AICHE_SRC/team_members/Design.jpg'
   },
   {
     role: 'Chem-E-Car',
