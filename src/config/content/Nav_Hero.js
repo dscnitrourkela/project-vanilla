@@ -7,7 +7,14 @@ export const links = {
   stars: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717682617/Noise_Texture_xvsg7b.png'
 }
 
-export const navContent = ['Home', 'About', 'Events', 'Committee', 'Sponsors', 'Contact Us']
+export const navLinks = [
+  { name: 'Home', id: 'home' },
+  { name: 'About', id: 'about' },
+  { name: 'Events', id: 'events' },
+  { name: 'Team', id: 'team' },
+  { name: 'Sponsors', id: 'sponsors' },
+  { name: 'Contact Us', id: 'contact' }
+]
 
 export const desContent = {
   title: 'Conference Registration',

@@ -11,7 +11,7 @@ import Marquee from 'react-fast-marquee'
 
 export const TeamCarousel = () => {
   return (
-    <TeamSectionContainer>
+    <TeamSectionContainer id="team">
       <TeamSectionHeading>Meet the team</TeamSectionHeading>
       <Marquee>
         {TeamMembers.map((member, index) => (

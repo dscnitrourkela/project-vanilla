@@ -40,7 +40,7 @@ export default function Events() {
   }
 
   return (
-    <>
+    <div id="events">
       {isModalOpen && <EventModal closeModal={handleModalClose} event={event} />}
       <EventsTitleMobile>Events</EventsTitleMobile>
       <Container>
@@ -58,6 +58,6 @@ export default function Events() {
           <Arrow src={nextArrowIcon} alt="Next" onClick={handleNext} />
         </Section>
       </Container>
-    </>
+    </div>
   )
 }

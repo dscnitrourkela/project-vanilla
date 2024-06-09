@@ -72,7 +72,7 @@ export const ResList = styled.ul`
   ${tw`flex flex-col items-center fixed top-0 left-0 h-full w-full justify-center gap-10`}
 `
 export const ResItem = styled.li`
-  ${tw` mb-3`}
+  ${tw` mb-3 cursor-pointer`}
 `
 
 export const ResAnchor = styled.a`
