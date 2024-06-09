@@ -1,5 +1,6 @@
 import { Sponsors } from '../components/sponsors/sponsors'
 import { TeamCarousel } from '../components/teamMembers/teamCarousel'
+import Footer from '../components/marginals/footer/Footer'
 
 const Playground = () => {
   return (
@@ -8,6 +9,7 @@ const Playground = () => {
       <p>For testing purpose</p>
       <TeamCarousel />
       <Sponsors />
+      <Footer />
     </div>
   )
 }
