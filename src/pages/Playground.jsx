@@ -1,8 +1,8 @@
-import About from '../components/about/About';
-import Events from '../components/events/Events';
-import { Sponsors } from '../components/sponsors/sponsors';
-import { TeamCarousel } from '../components/teamMembers/teamCarousel';
-import Footer from '../components/marginals/footer/Footer';
+import About from '../components/about/About'
+import Events from '../components/events/Events'
+import { Sponsors } from '../components/sponsors/sponsors'
+import { TeamCarousel } from '../components/teamMembers/teamCarousel'
+import Footer from '../components/marginals/footer/Footer'
 
 const Playground = () => {
   return (
@@ -15,7 +15,7 @@ const Playground = () => {
       <Sponsors />
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Playground;
+export default Playground
