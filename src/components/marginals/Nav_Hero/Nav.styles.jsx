@@ -14,9 +14,9 @@ const NavCont = styled.nav`
 `
 
 export const InnrNavCont = styled.div`
-  background-image : url(${links.stars});
+  background-image: url(${links.stars});
   ${tw`flex items-center justify-between p-4`}
-` 
+`
 
 export const Logo = styled.div`
   ${tw`
@@ -60,17 +60,15 @@ export const Menu2 = styled.div`
   ${tw`flex items-center min-[903px]:hidden `}
 `
 
-
 export const MenuIcon = styled.div`
   ${tw`mr-7`}
 `
-
 
 export const ResMen = styled.div`
   ${tw`z-10 mr-5  min-[903px]:hidden`}
 `
 export const ResList = styled.ul`
-  background-image : url(${links.stars});
+  background-image: url(${links.stars});
   ${tw`flex flex-col items-center justify-center pt-6 backdrop-blur-md`}
 `
 export const ResItem = styled.li`

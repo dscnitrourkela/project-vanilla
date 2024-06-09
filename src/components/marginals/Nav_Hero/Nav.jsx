@@ -44,11 +44,7 @@ const Nav = () => {
 
         <Menu2>
           <MenuIcon>
-            <Hamburger
-              color="#FFEEDA"
-              toggled={isOpen}
-              toggle={handleToggle}
-            />
+            <Hamburger color="#FFEEDA" toggled={isOpen} toggle={handleToggle} />
           </MenuIcon>
         </Menu2>
       </InnrNavCont>

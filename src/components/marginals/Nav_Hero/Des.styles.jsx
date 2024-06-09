@@ -71,7 +71,7 @@ export const Btn1 = styled.button`
 
 export const InnerSpan = styled.span`
   ${tw`absolute inset-0 transition duration-300 ease-in-out transform translate-x-2 translate-y-2  active:translate-x-0 active:translate-y-0 rounded-xl`}
-  
+
   border-right-width : 2px;
   border-bottom-width: 2px;
   border-right: solid;
@@ -81,7 +81,6 @@ export const InnerSpan = styled.span`
 `
 
 export const Btn2 = styled.button`
-
   ${tw`
   w-[140px]
   h-[50px]
@@ -102,5 +101,5 @@ export const Btn2 = styled.button`
   active:translate-x-[3px] 
   active:translate-y-[3px] 
   active:shadow-none 
-  shadow-[3px 3px 0px #1d1d1d ]`}`
-
+  shadow-[3px 3px 0px #1d1d1d ]`}
+`

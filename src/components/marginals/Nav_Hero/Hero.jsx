@@ -5,22 +5,13 @@ const Hero = () => {
     <HeroCont>
       <section>
         <MainFrame>
-          <MainImg
-            src={links.main}
-            alt="Main Frame"
-          />
+          <MainImg src={links.main} alt="Main Frame" />
         </MainFrame>
       </section>
       <RegisterCont>
         <RegImgCont>
-          <Img1
-            src={links.registernow}
-            alt="Back"
-          />
-          <Img2
-            src={links.down}
-            alt="Overlay"
-          />
+          <Img1 src={links.registernow} alt="Back" />
+          <Img2 src={links.down} alt="Overlay" />
         </RegImgCont>
       </RegisterCont>
     </HeroCont>

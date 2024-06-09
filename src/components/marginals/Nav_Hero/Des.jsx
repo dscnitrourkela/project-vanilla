@@ -8,26 +8,24 @@ import {
   DesPara,
   DesTitle
 } from './Des.styles'
-import { desContent } from "../../../config/content/Nav_Hero";
+import { desContent } from '../../../config/content/Nav_Hero'
 
 const Des = () => {
   return (
-    
-      <DesCont>
-        <DesTitle>{desContent.title}</DesTitle>
-        <DesPara>{desContent.content}</DesPara>
-        <BtnWrapper>
-          <BtnCont>
-            <Btn1>
-              {desContent.btn1}
-              <InnerSpan />
-            </Btn1>
+    <DesCont>
+      <DesTitle>{desContent.title}</DesTitle>
+      <DesPara>{desContent.content}</DesPara>
+      <BtnWrapper>
+        <BtnCont>
+          <Btn1>
+            {desContent.btn1}
+            <InnerSpan />
+          </Btn1>
 
-            <Btn2>{desContent.btn2}</Btn2>
-          </BtnCont>
-        </BtnWrapper>
-      </DesCont>
-    
+          <Btn2>{desContent.btn2}</Btn2>
+        </BtnCont>
+      </BtnWrapper>
+    </DesCont>
   )
 }
 
