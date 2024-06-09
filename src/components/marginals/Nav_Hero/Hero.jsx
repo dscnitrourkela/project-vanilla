@@ -1,4 +1,15 @@
-import HeroCont, { Img1, Img2, MainFrame, MainImg, RegImgCont, RegisterCont,LogoImg, LogoCont, Presents, DateTime } from './Hero.style'
+import HeroCont, {
+  Img1,
+  Img2,
+  MainFrame,
+  MainImg,
+  RegImgCont,
+  RegisterCont,
+  LogoImg,
+  LogoCont,
+  Presents,
+  DateTime
+} from './Hero.style'
 import { links } from '../../../config/content/Nav_Hero'
 const Hero = () => {
   return (
@@ -6,7 +17,6 @@ const Hero = () => {
       <section>
         <MainFrame>
           <LogoCont>
-            
             <LogoImg src={links.logoipsum} alt="Main Frame" />
             <Presents>Presents</Presents>
             <MainImg src={links.main} alt="Main Frame" />

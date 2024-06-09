@@ -5,8 +5,8 @@ export const links = {
   down: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683287/Vector_9_piw4n5.png',
   wave: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683273/Vector_346_dda6za.png',
   stars: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717682617/Noise_Texture_xvsg7b.png',
-  logoipsum : 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717954088/Logo_j2ngq9.png',
-  main : 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717954088/Frame_1410125826_rqokwk.png'
+  logoipsum: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717954088/Logo_j2ngq9.png',
+  main: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717954088/Frame_1410125826_rqokwk.png'
 }
 
 export const navLinks = [

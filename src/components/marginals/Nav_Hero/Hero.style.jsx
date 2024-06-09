@@ -14,18 +14,18 @@ export const MainFrame = styled.div`
 `
 
 export const LogoCont = styled.div`
-${tw`flex flex-col items-center justify-center`}
+  ${tw`flex flex-col items-center justify-center`}
 `
 export const Presents = styled.div`
   ${tw`text-[#FFEEDA ] text-3xl font-Poppins font-bold mt-5`}
 `
 
-export const LogoImg= styled.img`
-@media (max-width: 671px) {
-  max-width: 300px;
-  width: 50%;
-  height: auto;
-}
+export const LogoImg = styled.img`
+  @media (max-width: 671px) {
+    max-width: 300px;
+    width: 50%;
+    height: auto;
+  }
   ${tw`w-[45%] h-[20%] max-w-[400px]`}
 `
 
@@ -44,14 +44,12 @@ export const MainImg = styled.img`
 `
 
 export const DateTime = styled.div`
-@media (max-width: 671px) {
-  width: 70%;
-  height : 50px;
-  
-}
+  @media (max-width: 671px) {
+    width: 70%;
+    height: 50px;
+  }
   ${tw`w-[245px] h-[70px] font-semibold text-2xl bg-orange-1 text-black-1 font-Poppins rounded-2xl flex justify-evenly items-center mt-6`}
 `
-
 
 export const RegisterCont = styled.div`
   ${tw`
