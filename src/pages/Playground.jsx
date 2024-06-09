@@ -1,4 +1,7 @@
+
 import NavHero from '../components/marginals/Nav_Hero/NavHero'
+import { TeamCarousel } from '../components/teamMembers/teamCarousel'
+
 
 const Playground = () => {
   return (
@@ -7,6 +10,7 @@ const Playground = () => {
       <h1>Playground page</h1>
       <p>For testing purpose</p>
       <NavHero />
+      <TeamCarousel />
     </div>
   )
 }
