@@ -58,12 +58,33 @@ export const ListItems = styled.li`
 `
 
 export const CardFooter = styled.div`
-  ${tw`flex w-full justify-end mt-2 px-5 pb-2`}
+  ${tw`flex w-full justify-between mt-2 px-5 pb-2`}
 `
 
 export const RegisterButton = styled.button`
-  ${tw`h-[50.45px] w-[129.73px] px-2 py-1 rounded-[11.53px] bg-orange-1 text-brown-5 font-semibold text-[19px] 1.5md:text-[25.95px] shadow-button border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none`}
-  @media (min-width: 640px) {
-    ${tw`text-[25.95px]`}
-  }
+  ${tw` h-[50.45px] w-[129.73px] px-2 py-1 rounded-[11.53px] bg-orange-1 text-brown-5 font-semibold text-[19px] 1.5md:text-[25.95px] shadow-button border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none`}
+`
+export const ButtonRules = styled.button`
+  ${tw`
+    w-[140px]
+  h-[50px]
+  px-2 
+  py-1 
+  rounded-[11.53px] 
+  bg-brown-2
+  text-brown-5 
+  font-semibold 
+  text-[19px] 
+  md:text-2xl  
+  border-brown-5 
+  border-2 
+  transition 
+  duration-300 
+  ease-in-out 
+  active:transform 
+  active:translate-x-[3px] 
+  active:translate-y-[3px] 
+  active:shadow-none 
+  shadow-[3px 3px 0px #1d1d1d ]
+  `}
 `

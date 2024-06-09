@@ -12,7 +12,8 @@ import {
   Section,
   CardFooter,
   CardModalBtn,
-  SeemoreIcon
+  SeemoreIcon,
+  ButtonRules
 } from './eventCard.styles'
 import { seeMoreIcon } from '../../config/content/events/events'
 
@@ -58,6 +59,7 @@ export default function EventCard({
             </CardModalBtn>
           </CardBody>
           <CardFooter>
+            <ButtonRules id={id}>Rules</ButtonRules>
             <Button id={id}>Register</Button>
           </CardFooter>
         </ContentWrapper>

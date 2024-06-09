@@ -11,6 +11,8 @@ import {
 import { events, nextArrowIcon, prevArrowIcon } from '../../config/content/events/events'
 import EventModal from './EventModal'
 import EventsWrapper from './EventsWrapper'
+import { createPortal } from 'react-dom'
+
 export default function Events() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [event, setEvent] = useState(null)
@@ -39,9 +41,13 @@ export default function Events() {
     }
   }
 
+  const overlay = document.getElementById('overlay')
   return (
     <div id="events">
-      {isModalOpen && <EventModal closeModal={handleModalClose} event={event} />}
+      {createPortal(
+        isModalOpen && <EventModal closeModal={handleModalClose} event={event} />,
+        overlay
+      )}
       <EventsTitleMobile>Events</EventsTitleMobile>
       <Container>
         <Section>

@@ -39,9 +39,33 @@ export const SeemoreIcon = styled.img`
 `
 
 export const CardFooter = styled.div`
-  ${tw`absolute bottom-10 md:bottom-14 w-[85%] flex justify-end mt-5`}
+  ${tw`items-center w-full  flex justify-between mt-5`}
 `
 export const Button = styled.button`
   ${tw`sm:h-[50.45px] sm:w-[129.73px] 
   px-2 py-1 rounded-[11.53px] bg-orange-1 text-brown-5 font-semibold text-[19px] sm:text-[25.95px] shadow-button border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none`}
+`
+export const ButtonRules = styled.button`
+  ${tw`
+    w-[140px]
+  h-[50px]
+  px-2 
+  py-1 
+  rounded-[11.53px] 
+  bg-brown-2
+  text-brown-5 
+  font-semibold 
+  text-[19px] 
+  md:text-2xl  
+  border-brown-5 
+  border-2 
+  transition 
+  duration-300 
+  ease-in-out 
+  active:transform 
+  active:translate-x-[3px] 
+  active:translate-y-[3px] 
+  active:shadow-none 
+  shadow-[3px 3px 0px #1d1d1d ]
+  `}
 `

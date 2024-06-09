@@ -11,7 +11,8 @@ import {
   CardSubtitle,
   CardList,
   ListItems,
-  Section
+  Section,
+  ButtonRules
 } from './eventModal.styles'
 
 import { XIcon } from '../../config/content/events/events'
@@ -47,6 +48,7 @@ function EventModal({ closeModal, event: { img, title, subtitle, details } }) {
             </CardList>
           </CardBody>
           <CardFooter>
+            <ButtonRules>Rules</ButtonRules>
             <RegisterButton>Register</RegisterButton>
           </CardFooter>
         </ContentWrapper>
