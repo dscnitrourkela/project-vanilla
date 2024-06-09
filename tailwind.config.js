@@ -48,6 +48,7 @@ export default {
         '2.5xl': '1470px',
         '2.3xl': '1430px',
         '2xl': '1434px',
+        '1.5xl': '1306px',
         xl: '1280px',
 
         '1.9lg': '1238px',
@@ -56,6 +57,8 @@ export default {
         lg: '1024px',
 
         '3md': '976px',
+        '2.7md': '900px',
+        '2.6md': '722px',
         '2.5md': '700px',
         '1.5md': '710px',
         md: '672px',
