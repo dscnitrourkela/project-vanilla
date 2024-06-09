@@ -145,9 +145,21 @@ export const Img2 = styled.img`
     left: 85px;
     top: 80px;
   }
-  @media (min-width: 1400px) {
+  @media (min-width: 1400px) and (max-width: 1552px) {
     left: 95px;
     top: 90px;
+  }
+  @media (min-width: 1552px) and (max-width: 1777px) {
+    left: 110px;
+    top: 105px;
+  }
+  @media (min-width: 1777px) and (max-width: 1920px) {
+    left: 120px;
+    top: 120px;
+  }
+  @media (min-width: 1920px) {
+    left: 130px;
+    top: 125px;
   }
 
   ${tw`
