@@ -22,6 +22,7 @@ export const MainImg = styled.img`
   
   md:max-w-[600px] 
   object-contain
+  px-5
   `}
 `
 

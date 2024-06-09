@@ -2,8 +2,7 @@ import tw from 'twin.macro'
 import styled from 'styled-components'
 
 export const Container = styled.main`
-  ${tw`py-[20.18px] 1.5lg:w-[400px] h-[550px] xxsm:h-[600px] sm:h-[640px] bg-brown-5 rounded-[23.06px] font-Poppins relative overflow-hidden border-[2px] border-green-1
-`}
+  ${tw`py-[20.18px] h-[550px] xxsm:h-[600px] sm:h-[640px] bg-brown-5 rounded-[23.06px] font-Poppins relative overflow-hidden border-[2px] border-green-1`}
   box-shadow: inset -1px -1px 2px #cafc00;
 `
 export const GradientContainer = styled.main`
