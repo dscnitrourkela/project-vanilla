@@ -5,10 +5,10 @@ import { TeamCarousel } from '../components/teamMembers/teamCarousel'
 const Playground = () => {
   return (
     <div>
-      <About />
-      <Events />
       <h1>Playground page</h1>
       <p>For testing purpose</p>
+      <About />
+      <Events />
       <TeamCarousel />
     </div>
   )
