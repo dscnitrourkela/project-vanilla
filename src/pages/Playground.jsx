@@ -1,4 +1,3 @@
-
 import NavHero from '../components/marginals/Nav_Hero/NavHero'
 import { Sponsors } from '../components/sponsors/sponsors'
 import { TeamCarousel } from '../components/teamMembers/teamCarousel'
