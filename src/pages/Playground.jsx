@@ -1,8 +1,6 @@
-
 import About from '../components/about/About'
 import Events from '../components/events/Events'
 import { TeamCarousel } from '../components/teamMembers/teamCarousel'
-
 
 const Playground = () => {
   return (

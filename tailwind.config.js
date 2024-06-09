@@ -55,7 +55,6 @@ export default {
         '1.3lg': '1050px',
         lg: '1024px',
 
-
         '3md': '976px',
         '2.5md': '700px',
         '1.5md': '710px',
