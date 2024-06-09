@@ -2,7 +2,7 @@ import tw from 'twin.macro'
 import styled from 'styled-components'
 
 export const Container = styled.main`
-  ${tw`px-3 xsm:px-8 py-10 flex flex-col-reverse 1.9lg:flex-row items-center gap-10 w-full justify-center`}
+  ${tw`px-3 xsm:px-8 py-10 flex flex-col-reverse 1.9lg:flex-row items-center gap-10 w-full justify-center font-Poppins`}
 `
 export const CardContainer1 = styled.section`
   ${tw`flex flex-col 1.3lg:flex-row 1.9lg:flex-col gap-10`}
