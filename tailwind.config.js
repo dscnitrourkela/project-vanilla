@@ -31,9 +31,12 @@ export default {
 
       boxShadow: {
         button: '3px 3px 0px #FFEEDA',
-        events: '5px 5px 0px #1D1D1D'
+        events: '5px 5px 0px #1D1D1D',
+        customShadow: '6px 5px 0px 0px rgba(64, 46, 50, 1)'
       },
-
+      borderRadius: {
+        max: '241px'
+      },
       fontFamily: {
         Poppins: 'Poppins'
       },
@@ -52,12 +55,16 @@ export default {
         '1.3lg': '1050px',
         lg: '1024px',
 
+
+        '3md': '976px',
+        '2.5md': '700px',
         '1.5md': '710px',
         md: '672px',
 
         sm: '574px',
         xsm: '538px',
         '0.8xsm': '485px',
+        '0.7xsm': '471px',
         '0.5xsm': '468px',
         xxsm: '400px',
         '0.5xxsm': '350px'
