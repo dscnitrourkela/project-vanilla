@@ -2,7 +2,7 @@ import tw from 'twin.macro'
 import styled from 'styled-components'
 
 export const Container = styled.main`
-  ${tw`h-[878px] bg-orange-2 text-orange-2 mt-5  1.5md:px-[42px] px-[14px]`}
+  ${tw`bg-orange-2 text-orange-2 mt-5  1.5md:px-[42px] px-[14px] mb-10`}
 `
 export const Section = styled.section`
   ${tw`flex w-full justify-center 2.3xl:justify-between items-center gap-[25px] 1.5lg:gap-[53px]`}

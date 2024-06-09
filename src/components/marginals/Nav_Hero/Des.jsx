@@ -1,13 +1,4 @@
-import {
-  Btn1,
-  Btn2,
-  BtnCont,
-  BtnWrapper,
-  InnerSpan,
-  DesCont,
-  DesPara,
-  DesTitle
-} from './Des.styles'
+import { Btn1, Btn2, BtnCont, BtnWrapper, DesCont, DesPara, DesTitle } from './Des.styles'
 import { desContent } from '../../../config/content/Nav_Hero'
 
 const Des = () => {
@@ -17,10 +8,7 @@ const Des = () => {
       <DesPara>{desContent.content}</DesPara>
       <BtnWrapper>
         <BtnCont>
-          <Btn1>
-            {desContent.btn1}
-            <InnerSpan />
-          </Btn1>
+          <Btn1>{desContent.btn1}</Btn1>
 
           <Btn2>{desContent.btn2}</Btn2>
         </BtnCont>

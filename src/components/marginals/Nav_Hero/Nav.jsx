@@ -13,16 +13,39 @@ import NavCont, {
   ResItem,
   ResAnchor
 } from './Nav.styles'
-
-import { navContent } from '../../../config/content/Nav_Hero'
+import { Link } from 'react-router-dom'
+import { navLinks } from '../../../config/content/Nav_Hero'
 import { links } from '../../../config/content/Nav_Hero'
 import Hamburger from 'hamburger-react'
+import SmoothScroll from 'smooth-scroll'
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleToggle = () => {
+  function handleToggle() {
     setIsOpen(!isOpen)
+  }
+  function newScrollObject() {
+    return new SmoothScroll('', {
+      offset: () => 100
+    })
+  }
+
+  function handleScroll(id) {
+    if (typeof window !== 'undefined' && id) {
+      const isHome = window.location.pathname === '/' || window.location.pathname === '/playground'
+      if (isHome) {
+        const scroll = newScrollObject()
+        const anchor = document.getElementById(id)
+        scroll.animateScroll(anchor)
+      }
+    }
+  }
+
+  function onClick(id) {
+    handleScroll(id)
+    console.log(id)
+    handleToggle()
   }
 
   return (
@@ -34,9 +57,15 @@ const Nav = () => {
 
         <Menu>
           <InnerMenu>
-            {navContent.map((item) => (
-              <MenuItem key={item}>
-                <a href="#">{item}</a>
+            {navLinks.map((navLink) => (
+              <MenuItem key={navLink.id}>
+                <Link
+                  to={navLink.href}
+                  tabIndex={0}
+                  onClick={navLink.href ? null : () => onClick(navLink.id)}
+                >
+                  {navLink.name}
+                </Link>
               </MenuItem>
             ))}
           </InnerMenu>
@@ -52,10 +81,14 @@ const Nav = () => {
       {isOpen && (
         <ResMen>
           <ResList>
-            {navContent.map((item) => (
-              <ResItem key={item}>
-                <ResAnchor href="#" onClick={() => setIsOpen(false)}>
-                  {item}
+            {navLinks.map((navLink) => (
+              <ResItem key={navLink.id}>
+                <ResAnchor
+                  // onClick={() => setIsOpen(false)}
+                  tabIndex={0}
+                  onClick={navLink.href ? null : () => onClick(navLink.id)}
+                >
+                  {navLink.name}
                 </ResAnchor>
               </ResItem>
             ))}

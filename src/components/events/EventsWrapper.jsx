@@ -30,7 +30,7 @@ function EventsWrapper({ events, handleSelectEvent, swiperRef }) {
         modules={[Navigation, Autoplay]}
         spaceBetween={10}
         slidesPerView={1}
-        autoplay={{ delay: 2000 }}
+        autoplay={{ delay: 3000 }}
         breakpoints={{
           1170: {
             slidesPerView: 2,

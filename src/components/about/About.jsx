@@ -3,7 +3,7 @@ import { data, aiche, aboutImage } from '../../config/content/about/about'
 import { Container, CardContainer1, CardContainer2, Title, Image, SubSection } from './about.styles'
 function About() {
   return (
-    <Container>
+    <Container id="about">
       <CardContainer1>
         {data.map((details, index) => (
           <AboutCard

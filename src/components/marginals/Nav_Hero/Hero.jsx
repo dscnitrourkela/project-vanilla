@@ -2,7 +2,7 @@ import HeroCont, { Img1, Img2, MainFrame, MainImg, RegImgCont, RegisterCont } fr
 import { links } from '../../../config/content/Nav_Hero'
 const Hero = () => {
   return (
-    <HeroCont>
+    <HeroCont id="home">
       <section>
         <MainFrame>
           <MainImg src={links.main} alt="Main Frame" />

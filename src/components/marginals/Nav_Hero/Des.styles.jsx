@@ -63,10 +63,26 @@ export const BtnCont = styled.div`
 
 export const Btn1 = styled.button`
   ${tw`
-  relative w-[140px] h-[50px]
-  px-2 py-1 rounded-[11.53px] bg-orange-2 text-brown-5 font-semibold text-[19px] md:text-2xl  border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px]  
-  `}
-  box-shadow: 3px 3px 0px #FFEEDA;
+  w-[140px]
+  h-[50px]
+  px-2 
+  py-1 
+  rounded-[11.53px] 
+  bg-brown-2
+  text-brown-5 
+  font-semibold 
+  text-[19px] 
+  md:text-2xl  
+  border-brown-5 
+  border-2 
+  transition 
+  duration-300 
+  ease-in-out 
+  active:transform 
+  active:translate-x-[3px] 
+  active:translate-y-[3px] 
+  active:shadow-none 
+  shadow-[3px 3px 0px #1d1d1d ]`}
 `
 
 export const InnerSpan = styled.span`
