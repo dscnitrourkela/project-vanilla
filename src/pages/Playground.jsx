@@ -1,7 +1,5 @@
 
 import { Sponsors } from '../components/sponsors/sponsors'
-import { TeamCarousel } from '../components/teamMembers/teamCarousel'
-
 
 const Playground = () => {
   return (
@@ -9,7 +7,6 @@ const Playground = () => {
       <h1>Playground page</h1>
       <p>For testing purpose</p>
       <Sponsors />
-      <TeamCarousel />
     </div>
   )
 }
