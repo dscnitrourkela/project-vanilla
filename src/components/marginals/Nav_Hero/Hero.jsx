@@ -10,17 +10,17 @@ import HeroCont, {
   Presents,
   DateTime
 } from './Hero.style'
-import { links } from '../../../config/content/Nav_Hero'
+import { links, heroContent } from '../../../config/content/Nav_Hero'
 const Hero = () => {
   return (
     <HeroCont id="home">
       <section>
         <MainFrame>
           <LogoCont>
-            <LogoImg src={links.logoipsum} alt="Main Frame" />
-            <Presents>Presents</Presents>
+            <LogoImg src={links.Alche} alt="Main Frame" />
+            <Presents>{heroContent.Presents}</Presents>
             <MainImg src={links.main} alt="Main Frame" />
-            <DateTime>18th - 20th August</DateTime>
+            <DateTime>{heroContent.Dates}</DateTime>
           </LogoCont>
         </MainFrame>
       </section>

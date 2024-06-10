@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components'
 
 const HeroCont = styled.div`
   ${tw`
-  pt-[135px] 
+  pt-[180px] 
   w-[100%] 
   h-[100%]
   `}
@@ -14,10 +14,10 @@ export const MainFrame = styled.div`
 `
 
 export const LogoCont = styled.div`
-  ${tw`flex flex-col items-center justify-center`}
+  ${tw`flex flex-col items-center justify-center mb-2`}
 `
 export const Presents = styled.div`
-  ${tw`text-[#FFEEDA ] text-3xl font-Poppins font-bold mt-5`}
+  ${tw`text-[#FFEEDA ] text-3xl font-Poppins font-bold mt-6`}
 `
 
 export const LogoImg = styled.img`
