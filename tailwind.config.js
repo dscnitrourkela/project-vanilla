@@ -26,6 +26,9 @@ export default {
           1: '#D9FC00',
           2: '#CAFC00',
           3: '#9E9E9E'
+        },
+        blue: {
+          1: '#00A1FC'
         }
       },
 
@@ -62,9 +65,11 @@ export default {
         '2.5md': '700px',
         '1.5md': '710px',
         md: '672px',
+        '0.8md': '612px',
 
         sm: '574px',
         xsm: '538px',
+        '0.9xsm': '520px',
         '0.8xsm': '485px',
         '0.7xsm': '471px',
         '0.5xsm': '468px',
