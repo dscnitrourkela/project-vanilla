@@ -18,8 +18,8 @@ export const TeamCarousel = () => {
           <CardContainer key={index}>
             <CardContainerImage key={index} bgimage={member.image} />
             <CardContainerText>
-              <CardImageRole>{member.role}</CardImageRole>
               <CardImageName>{member.name}</CardImageName>
+              <CardImageRole>{member.role}</CardImageRole>
             </CardContainerText>
           </CardContainer>
         ))}

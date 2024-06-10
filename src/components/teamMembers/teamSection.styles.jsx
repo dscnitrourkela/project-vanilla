@@ -2,7 +2,7 @@ import tw from 'twin.macro'
 import styled from 'styled-components'
 
 export const TeamSectionContainer = styled.div`
-  ${tw`bg-brown-2  pl-3 pr-3`}
+  ${tw`bg-brown-2 pl-3 pr-3`}
 `
 
 export const TeamSectionHeading = styled.div`
