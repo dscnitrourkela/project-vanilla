@@ -14,6 +14,7 @@ import NavCont, {
   ResAnchor,
   NitImg,
   Register,
+  SecRegister,
   
 } from './Nav.styles'
 import { Link } from 'react-router-dom'
@@ -87,6 +88,7 @@ const Nav = () => {
       {isOpen && (
         <ResMen>
           <ResList>
+            <SecRegister>Register</SecRegister>
             {navLinks.map((navLink) => (
               <ResItem key={navLink.id}>
                 <ResAnchor

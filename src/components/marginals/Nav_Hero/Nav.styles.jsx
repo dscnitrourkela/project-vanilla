@@ -84,6 +84,22 @@ export const Register = styled.div`
   sm:mt-4
   `}
 `
+export const SecRegister = styled.div`
+  ${tw`
+  w-[50%] 
+  h-[50px] 
+  font-semibold 
+  text-2xl 
+  bg-orange-1 
+  text-black-1 
+  font-Poppins 
+  rounded-2xl 
+  flex 
+  justify-evenly 
+  items-center 
+  cursor-pointer 
+  `}
+`
 export const Menu2 = styled.div`
   ${tw`min-[1090px]:hidden items-center flex z-50`}
 `
@@ -100,7 +116,7 @@ export const ResList = styled.ul`
   ${tw`flex flex-col items-center fixed top-0 left-0 h-full w-full justify-center gap-10`}
 `
 export const ResItem = styled.li`
-  ${tw` mb-3 cursor-pointer`}
+  ${tw` mb-1 cursor-pointer`}
 `
 
 export const ResAnchor = styled.a`
