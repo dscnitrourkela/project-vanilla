@@ -23,12 +23,13 @@ EventCard.propTypes = {
     id: PropTypes.number,
     title: PropTypes.string,
     subtitle: PropTypes.string,
-    details: PropTypes.array
+    details: PropTypes.array,
+    rules: PropTypes.string
   }),
   handleSelectEvent: PropTypes.func
 }
 export default function EventCard({
-  event: { img, id, title, subtitle, details },
+  event: { img, id, title, subtitle, details, rules },
   handleSelectEvent
 }) {
   function genDetails(str, length) {
@@ -38,6 +39,10 @@ export default function EventCard({
     } else {
       return str
     }
+  }
+
+  function redirectToRules() {
+    window.open(rules, '_blank')
   }
 
   return (
@@ -59,7 +64,7 @@ export default function EventCard({
             </CardModalBtn>
           </CardBody>
           <CardFooter>
-            <ButtonRules id={id}>Rules</ButtonRules>
+            <ButtonRules onClick={redirectToRules}>Rules</ButtonRules>
             <Button id={id}>Register</Button>
           </CardFooter>
         </ContentWrapper>

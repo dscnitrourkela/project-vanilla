@@ -1,11 +1,11 @@
 import AboutCard from './AboutCard'
 import { data, srcData } from '../../config/content/about/about'
-import { Container, CardContainer1, CardContainer2, Title } from './about.styles'
+import { Container, CardContainer, Title } from './about.styles'
 import AboutCarousel from './AboutCarousel'
 function About() {
   return (
     <Container id="about">
-      <CardContainer1>
+      <CardContainer>
         {data.map((details) => (
           <AboutCard
             title={details.title}
@@ -14,8 +14,8 @@ function About() {
             key={details.id}
           />
         ))}
-      </CardContainer1>
-      <CardContainer2>
+      </CardContainer>
+      <CardContainer>
         <Title>About Us</Title>
         <AboutCarousel />
         <AboutCard
@@ -24,7 +24,7 @@ function About() {
           bgColor={srcData.bgColor}
           key={srcData.id}
         />
-      </CardContainer2>
+      </CardContainer>
     </Container>
   )
 }

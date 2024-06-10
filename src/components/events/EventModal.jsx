@@ -24,10 +24,14 @@ EventModal.propTypes = {
     img: PropTypes.string,
     title: PropTypes.string,
     subtitle: PropTypes.string,
-    details: PropTypes.array
+    details: PropTypes.array,
+    rules: PropTypes.string
   })
 }
-function EventModal({ closeModal, event: { img, title, subtitle, details } }) {
+function EventModal({ closeModal, event: { img, title, subtitle, details, rules } }) {
+  function redirectToRules() {
+    window.open(rules, '_blank')
+  }
   return (
     <Container>
       <Section>
@@ -48,7 +52,7 @@ function EventModal({ closeModal, event: { img, title, subtitle, details } }) {
             </CardList>
           </CardBody>
           <CardFooter>
-            <ButtonRules>Rules</ButtonRules>
+            <ButtonRules onClick={redirectToRules}>Rules</ButtonRules>
             <RegisterButton>Register</RegisterButton>
           </CardFooter>
         </ContentWrapper>

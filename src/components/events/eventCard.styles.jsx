@@ -24,7 +24,7 @@ export const CardSubtitle = styled.h4`
 `
 
 export const CardBody = styled.div`
-  ${tw`h-[200px] overflow-clip px-2 0.5xsm:px-5 mt-5`}
+  ${tw`h-[200px] overflow-clip px-2 0.5xsm:px-5 mt-5 relative`}
 `
 
 export const CardList = styled.ul`
@@ -39,15 +39,15 @@ export const SeemoreIcon = styled.img`
 `
 
 export const CardFooter = styled.div`
-  ${tw`items-center w-full  flex justify-between mt-5`}
+  ${tw`items-center w-[90%] flex justify-between absolute bottom-5 xxsm:bottom-10 `}
 `
 export const Button = styled.button`
-  ${tw`sm:h-[50.45px] sm:w-[129.73px] 
+  ${tw`
   px-2 py-1 rounded-[11.53px] bg-orange-1 text-brown-5 font-semibold text-[19px] sm:text-[25.95px] shadow-button border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none`}
 `
 export const ButtonRules = styled.button`
   ${tw`
-    w-[140px]
+    
   h-[50px]
   px-2 
   py-1 
