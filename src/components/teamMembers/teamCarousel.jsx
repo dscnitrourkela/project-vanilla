@@ -16,14 +16,14 @@ export const TeamCarousel = () => {
       <TeamSectionHeading>Meet the team</TeamSectionHeading>
       <Marquee>
         {TeamMembers.map((member, index) => (
-          <Suspense fallback={<Loading>Loading...</Loading>}>
-          <CardContainer key={index}>
-            <CardContainerImage key={index} bgimage={member.image} />
-            <CardContainerText>
-              <CardImageName>{member.name}</CardImageName>
-              <CardImageRole>{member.role}</CardImageRole>
-            </CardContainerText>
-          </CardContainer>
+          <Suspense key={index} fallback={<Loading>Loading...</Loading>}>
+            <CardContainer key={index}>
+              <CardContainerImage key={index} bgimage={member.image} />
+              <CardContainerText>
+                <CardImageName>{member.name}</CardImageName>
+                <CardImageRole>{member.role}</CardImageRole>
+              </CardContainerText>
+            </CardContainer>
           </Suspense>
         ))}
       </Marquee>
