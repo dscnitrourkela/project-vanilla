@@ -56,7 +56,7 @@ export default function EventCard({
           </CardHeader>
           <CardBody>
             <CardList>
-              <li>{genDetails(details[0], 220)}</li>
+              <li>{genDetails(details[0], 190)}</li>
             </CardList>
             <CardModalBtn onClick={() => handleSelectEvent(id)}>
               <span>See More</span>
