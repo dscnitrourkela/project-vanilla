@@ -1,13 +1,5 @@
 import { useState, useRef } from 'react'
-import {
-  Container,
-  Arrow,
-  EventsBgPillar,
-  EventsPillar,
-  EventsTitle,
-  Section,
-  EventsTitleMobile
-} from './events.styles'
+import { Container, Arrow, Section, EventsTitleMobile } from './events.styles'
 import { events, nextArrowIcon, prevArrowIcon } from '../../config/content/events/events'
 import EventModal from './EventModal'
 import EventsWrapper from './EventsWrapper'
@@ -57,10 +49,6 @@ export default function Events() {
             handleSelectEvent={handleModalOpen}
             swiperRef={swiperRef}
           />
-          <EventsPillar>
-            <EventsTitle>Events</EventsTitle>
-          </EventsPillar>
-          <EventsBgPillar></EventsBgPillar>
           <Arrow src={nextArrowIcon} alt="Next" onClick={handleNext} />
         </Section>
       </Container>
