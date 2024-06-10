@@ -1,4 +1,4 @@
-import { TeamSectionContainer, TeamSectionHeading } from './teamSection.styles'
+import { TeamSectionContainer, TeamSectionHeading, Loading } from './teamSection.styles'
 import {
   CardContainer,
   CardContainerImage,
@@ -8,6 +8,7 @@ import {
 } from './teamCards.styles'
 import { TeamMembers } from '../..//config/content/teamsData/team'
 import Marquee from 'react-fast-marquee'
+import { Suspense } from 'react'
 
 export const TeamCarousel = () => {
   return (
@@ -15,13 +16,15 @@ export const TeamCarousel = () => {
       <TeamSectionHeading>Meet the team</TeamSectionHeading>
       <Marquee>
         {TeamMembers.map((member, index) => (
-          <CardContainer key={index}>
-            <CardContainerImage key={index} bgimage={member.image} />
-            <CardContainerText>
-              <CardImageRole>{member.role}</CardImageRole>
-              <CardImageName>{member.name}</CardImageName>
-            </CardContainerText>
-          </CardContainer>
+          <Suspense key={index} fallback={<Loading>Loading...</Loading>}>
+            <CardContainer key={index}>
+              <CardContainerImage key={index} bgimage={member.image} />
+              <CardContainerText>
+                <CardImageName>{member.name}</CardImageName>
+                <CardImageRole>{member.role}</CardImageRole>
+              </CardContainerText>
+            </CardContainer>
+          </Suspense>
         ))}
       </Marquee>
     </TeamSectionContainer>

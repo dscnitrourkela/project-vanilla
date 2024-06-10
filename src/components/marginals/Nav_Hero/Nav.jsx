@@ -11,7 +11,10 @@ import NavCont, {
   ResMen,
   ResList,
   ResItem,
-  ResAnchor
+  ResAnchor,
+  NitImg,
+  Register,
+  SecRegister
 } from './Nav.styles'
 import { Link } from 'react-router-dom'
 import { navLinks } from '../../../config/content/Nav_Hero'
@@ -52,6 +55,7 @@ const Nav = () => {
     <NavCont>
       <InnrNavCont>
         <Logo>
+          <NitImg src={links.nit} alt="NIT Rkl" />
           <LogoImg src={links.logo} alt="logo" />
         </Logo>
 
@@ -76,11 +80,14 @@ const Nav = () => {
             <Hamburger color="#FFEEDA" toggled={isOpen} toggle={handleToggle} />
           </MenuIcon>
         </Menu2>
+
+        <Register>Register</Register>
       </InnrNavCont>
 
       {isOpen && (
         <ResMen>
           <ResList>
+            <SecRegister>Register</SecRegister>
             {navLinks.map((navLink) => (
               <ResItem key={navLink.id}>
                 <ResAnchor

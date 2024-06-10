@@ -84,7 +84,7 @@ export const ListItems = styled.li`
 
 export const FooterBottom = styled.div`
   ${tw`
-    px-[12px] 1.5xl:px-[34px] py-5 1.5xl:py-[27.65px] h-full 2.7md:h-[34px] 1.5xl:h-[82.7px] flex gap-[9px] 1.5xl:gap-[41px] 2.7md:gap-[18px] bg-brown-5 text-brown-1 items-center justify-evenly 2.6md:justify-start text-[10px] 0.5xsm:flex-row flex-col  1.5xl:text-[18px] font-medium
+    px-[12px] 1.5xl:px-[34px] py-5 1.5xl:py-[27.65px] h-full 2.7md:h-[34px] 1.5xl:h-[82.7px] flex gap-[9px] 1.5xl:gap-[41px] 2.7md:gap-[18px] bg-brown-5 text-brown-1 items-center justify-evenly 2.6md:justify-start text-[12px] 0.9xsm:flex-row flex-col  1.5xl:text-[18px] font-medium
   `}
 `
 
