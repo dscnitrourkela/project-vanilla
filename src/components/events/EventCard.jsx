@@ -12,7 +12,8 @@ import {
   Section,
   CardFooter,
   CardModalBtn,
-  SeemoreIcon
+  SeemoreIcon,
+  ButtonRules
 } from './eventCard.styles'
 import { seeMoreIcon } from '../../config/content/events/events'
 
@@ -22,12 +23,13 @@ EventCard.propTypes = {
     id: PropTypes.number,
     title: PropTypes.string,
     subtitle: PropTypes.string,
-    details: PropTypes.array
+    details: PropTypes.array,
+    rules: PropTypes.string
   }),
   handleSelectEvent: PropTypes.func
 }
 export default function EventCard({
-  event: { img, id, title, subtitle, details },
+  event: { img, id, title, subtitle, details, rules },
   handleSelectEvent
 }) {
   function genDetails(str, length) {
@@ -37,6 +39,10 @@ export default function EventCard({
     } else {
       return str
     }
+  }
+
+  function redirectToRules() {
+    window.open(rules, '_blank')
   }
 
   return (
@@ -50,7 +56,7 @@ export default function EventCard({
           </CardHeader>
           <CardBody>
             <CardList>
-              <li>{genDetails(details[0], 220)}</li>
+              <li>{genDetails(details[0], 190)}</li>
             </CardList>
             <CardModalBtn onClick={() => handleSelectEvent(id)}>
               <span>See More</span>
@@ -58,6 +64,7 @@ export default function EventCard({
             </CardModalBtn>
           </CardBody>
           <CardFooter>
+            <ButtonRules onClick={redirectToRules}>Rules</ButtonRules>
             <Button id={id}>Register</Button>
           </CardFooter>
         </ContentWrapper>
