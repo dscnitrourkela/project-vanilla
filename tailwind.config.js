@@ -26,6 +26,9 @@ export default {
           1: '#D9FC00',
           2: '#CAFC00',
           3: '#9E9E9E'
+        },
+        blue: {
+          1: '#00A1FC'
         }
       },
 

@@ -2,7 +2,7 @@ import tw, { css } from 'twin.macro'
 import styled from 'styled-components'
 
 export const Container = styled.div(({ bgColor }) => [
-  tw`rounded-[4.4rem] grid place-items-center py-16 px-6 xsm:px-10 1.9lg:w-[90%]`,
+  tw`rounded-[4.4rem] grid place-items-center py-16 px-6 xsm:px-10 `,
   css`
     background-color: ${bgColor};
   `
@@ -22,3 +22,7 @@ export const Paragraph = styled.p(({ isSuperTitle }) => [
   tw`w-full font-[400] leading-[27px] xsm:text-[16.5px] text-[13.5px] xxsm:text-[15px] 1.3lg:text-[18px]  xsm:tracking-tight`,
   isSuperTitle ? tw`mt-10 xxsm:mt-16 xsm:mt-20 xsm:mb-10` : tw`xxsm:my-10 mt-10`
 ])
+
+export const AboutCarouselContainer = styled.div`
+  ${tw`w-96 flex justify-center`}
+`

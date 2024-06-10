@@ -1,30 +1,29 @@
 import AboutCard from './AboutCard'
-import { data, aiche, aboutImage } from '../../config/content/about/about'
-import { Container, CardContainer1, CardContainer2, Title, Image, SubSection } from './about.styles'
+import { data, srcData } from '../../config/content/about/about'
+import { Container, CardContainer1, CardContainer2, Title } from './about.styles'
+import AboutCarousel from './AboutCarousel'
 function About() {
   return (
     <Container id="about">
       <CardContainer1>
-        {data.map((details, index) => (
+        {data.map((details) => (
           <AboutCard
             title={details.title}
             description={details.description}
             bgColor={details.bgColor}
-            key={index}
+            key={details.id}
           />
         ))}
       </CardContainer1>
       <CardContainer2>
         <Title>About Us</Title>
-        <SubSection>
-          <AboutCard
-            title={aiche.title}
-            description={aiche.description}
-            bgColor={aiche.bgColor}
-            isSuperTitle={true}
-          />
-          <Image src={aboutImage} alt="aboutus" />
-        </SubSection>
+        <AboutCarousel />
+        <AboutCard
+          title={srcData.title}
+          description={srcData.description}
+          bgColor={srcData.bgColor}
+          key={srcData.id}
+        />
       </CardContainer2>
     </Container>
   )

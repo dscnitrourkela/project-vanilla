@@ -66,6 +66,6 @@ export const ButtonRules = styled.button`
   active:translate-x-[3px] 
   active:translate-y-[3px] 
   active:shadow-none 
-  shadow-[3px 3px 0px #1d1d1d ]
+  shadow-[3px 3px 0px #ffeeda ]
   `}
 `
