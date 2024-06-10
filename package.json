@@ -13,6 +13,7 @@
     "prettier:fix": "prettier --write \"./**/*.{ts,tsx,js,jsx,css,scss,md}\" --ignore-pattern node_modules/"
   },
   "dependencies": {
+    "framer-motion": "^11.2.10",
     "hamburger-react": "^2.5.1",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
