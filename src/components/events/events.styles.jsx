@@ -12,7 +12,7 @@ export const Arrow = styled.img`
       cursor-pointer hidden sm:block`}
 `
 export const EventWrapper = styled.div`
-  ${tw`overflow-hidden md:h-[640px]  flex items-center justify-center`}
+  ${tw`overflow-hidden md:h-[650px]  flex items-center justify-center`}
 `
 export const EventsPillar = styled.div`
   ${tw`hidden w-[180.95px] h-[640px] rounded-[28.52px] bg-brown-4 shadow-events 2.3xl:flex justify-center items-center`}
