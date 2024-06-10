@@ -3,7 +3,7 @@ import { NavHeroCont2, NavHeroContainer } from './NavHero.styles'
 import Nav from './Nav'
 import Hero from './Hero'
 import WaveDivider from './WaveDivider'
-import Des from './Des'
+import Description from './Description'
 
 const NavHero = () => {
   return (
@@ -12,7 +12,7 @@ const NavHero = () => {
         <Nav />
         <Hero />
         <WaveDivider />
-        <Des />
+        <Description />
       </NavHeroCont2>
     </NavHeroContainer>
   )

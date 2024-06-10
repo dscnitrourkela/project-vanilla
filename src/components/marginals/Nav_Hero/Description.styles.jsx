@@ -1,7 +1,7 @@
 import tw from 'twin.macro'
 import styled from 'styled-components'
 
-export const DesCont = styled.article`
+export const DescriptionContainer = styled.article`
   ${tw`
   w-full 
   text-center 
@@ -9,7 +9,7 @@ export const DesCont = styled.article`
   `}
 `
 
-export const DesTitle = styled.h1`
+export const DescriptionTitle = styled.h1`
   ${tw`
   py-3 
   text-4xl 
@@ -20,7 +20,7 @@ export const DesTitle = styled.h1`
   `}
 `
 
-export const DesPara = styled.p`
+export const DescriptionParagraph = styled.p`
   ${tw`
   w-full 
   py-5 
@@ -37,7 +37,7 @@ export const DesPara = styled.p`
   `}
 `
 
-export const BtnWrapper = styled.div`
+export const ButtonWrapper = styled.div`
   ${tw`
   w-full 
   flex 
@@ -48,7 +48,7 @@ export const BtnWrapper = styled.div`
   `}
 `
 
-export const BtnCont = styled.div`
+export const ButtonContainer = styled.div`
   ${tw`
   w-full 
   md:max-w-[1000px] 
@@ -61,7 +61,7 @@ export const BtnCont = styled.div`
   `}
 `
 
-export const Btn1 = styled.button`
+export const HelpButton = styled.button`
   ${tw`
   w-[140px]
   h-[50px]
@@ -96,7 +96,7 @@ export const InnerSpan = styled.span`
   border-bottom-color: #1d1d1d;
 `
 
-export const Btn2 = styled.button`
+export const RegisterButton = styled.button`
   ${tw`
   w-[140px]
   h-[50px]
