@@ -13,7 +13,8 @@ import {
   CardFooter,
   CardModalBtn,
   SeemoreIcon,
-  ButtonRules
+  ButtonRules,
+  SeeMoreText
 } from './eventCard.styles'
 import { seeMoreIcon } from '../../config/content/events/events'
 
@@ -56,10 +57,10 @@ export default function EventCard({
           </CardHeader>
           <CardBody>
             <CardList>
-              <li>{genDetails(details[0], 190)}</li>
+              <div>{genDetails(details[0], 220)}</div>
             </CardList>
             <CardModalBtn onClick={() => handleSelectEvent(id)}>
-              <span>See More</span>
+              <SeeMoreText>See More</SeeMoreText>
               <SeemoreIcon src={seeMoreIcon} />
             </CardModalBtn>
           </CardBody>
