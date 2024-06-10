@@ -6,7 +6,7 @@ import {
   RegisterCardImageName,
   RegisterCardContainerText,
   RegistrationHelpContent,
-  RegistrationHelpContentText,
+  RegistrationHelpContentText
 } from './registrationhelp.styles'
 
 export const RegistrationHelp = () => {

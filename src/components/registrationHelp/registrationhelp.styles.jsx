@@ -29,7 +29,7 @@ export const RegisterCardImageName = styled.div`
 
 export const RegistrationHelpContent = styled.div`
   ${tw`relative text-brown-4 font-Poppins font-normal 0.7xsm:text-[20px] 3md:text-[26px] flex justify-center items-center text-center max-w-[1000px] pr-2 pl-2`}
-`;
+`
 
 export const RegistrationHelpContentText = styled.div`
   position: relative;
@@ -55,8 +55,9 @@ export const RegistrationHelpContentText = styled.div`
   }
 
   @media (max-width: 1094px) {
-    &:before, &:after {
+    &:before,
+    &:after {
       display: none;
     }
   }
-`;
+`

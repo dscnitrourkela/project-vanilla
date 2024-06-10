@@ -1,4 +1,4 @@
-import { FaqContainer, FaqContent, FaqHeading } from "./faq.styles";
+import { FaqContainer, FaqContent, FaqHeading } from './faq.styles'
 
 export const Faq = () => {
   return (
@@ -7,4 +7,4 @@ export const Faq = () => {
       <FaqContent>Coming Soon...</FaqContent>
     </FaqContainer>
   )
-};
+}

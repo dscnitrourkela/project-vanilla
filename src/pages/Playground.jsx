@@ -5,7 +5,7 @@ import { Sponsors } from '../components/sponsors/sponsors'
 import { TeamCarousel } from '../components/teamMembers/teamCarousel'
 import Footer from '../components/marginals/footer/Footer'
 import { Faq } from '../components/faq/faq'
-import {TimeLine} from '../components/timeline/timeLine'
+import { TimeLine } from '../components/timeline/timeLine'
 import { RegistrationHelp } from '../components/registrationHelp/registrationhelp'
 
 const Playground = () => {
