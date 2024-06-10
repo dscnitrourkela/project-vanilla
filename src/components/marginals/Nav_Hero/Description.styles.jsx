@@ -6,6 +6,7 @@ export const DescriptionContainer = styled.article`
   w-full 
   text-center 
   bg-[#FFEEDA]
+  py-[84px]
   `}
 `
 
@@ -43,7 +44,7 @@ export const ButtonWrapper = styled.div`
   flex 
   justify-center 
   h-full 
-  md:h-[340.42px] 
+ 
   pb-5
   `}
 `
@@ -55,9 +56,10 @@ export const ButtonContainer = styled.div`
   h-full 
   flex 
   md:flex-row 
-  justify-evenly 
-  gap-4 
-  md:gap-[90px]
+  justify-center
+  gap-8
+  md:gap-[80px]
+  2xl:gap-[110px]
   `}
 `
 

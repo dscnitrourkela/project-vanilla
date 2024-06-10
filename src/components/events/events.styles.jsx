@@ -21,7 +21,7 @@ export const EventsTitle = styled.h3`
   ${tw`w-[300px] h-[128px] transform -rotate-90 font-semibold text-[85.57px]`}
 `
 export const EventsTitleMobile = styled.h3`
-  ${tw`text-[40px] xxsm:text-[50px] xsm:text-[65px] mb-1 md:text-[80px] 1.5lg:text-[100px] 2.3xl:text-[115px] 2.5xl:text-[128px] font-[700] text-brown-4 ml-5 2xl:hidden block`}
+  ${tw`text-[40px] xxsm:text-[50px] xsm:text-[65px] mb-1 md:text-[80px] 1.5lg:text-[100px] 2.3xl:text-[115px] 2.5xl:text-[128px] font-[700] text-brown-4 ml-5 2xl:text-[141px] block`}
 `
 export const EventsBgPillar = styled.div`
   ${tw`hidden 2.5xl:block w-[80px] h-[640px] rounded-[28.52px] bg-brown-5`}

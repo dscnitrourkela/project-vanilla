@@ -40,7 +40,7 @@ export const events = [
     id: 4,
     img: 'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717655995/kspdwtblyqcwoqqqeddc.svg',
     title: 'Student Poster Competition',
-    subtitle: '',
+    subtitle: 'unleash ur poster making skills',
     details: [
       'To stimulate student creativity, the annual AIChE Poster Competition empowers chemical engineering students to showcase their research journey – methodology, findings, and groundbreaking conclusions – through informative and visually stunning posters. Impress a panel of expert chemical engineers with your research and communication skills.',
       'This event fosters a dynamic exchange of ideas, where students connect with fellow attendees and the wider audience, gaining valuable insights from industry experts who convene to discuss the latest advancements, research breakthroughs, and specific topics.',
