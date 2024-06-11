@@ -93,7 +93,7 @@ export const Register = styled.div`
 `
 export const SecRegister = styled.div`
   ${tw`
-  w-[28%] 
+  w-[120px] 
   h-[50px] 
   font-semibold 
   text-2xl 
