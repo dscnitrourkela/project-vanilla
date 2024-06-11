@@ -25,7 +25,7 @@ export default function MyFooter() {
     {
       if (typeof item === 'string') {
         return item
-      } else if (title === 'Synergicon') {
+      } else if (title === 'Sthitivartana') {
         return <a href={item.href}>{item.list}</a>
       } else {
         return `${item.name}:${item.number}`

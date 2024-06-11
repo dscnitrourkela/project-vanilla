@@ -18,9 +18,9 @@ export default {
       info: ['abc@gmail.com', 'qwerty@gmail.com']
     },
     {
-      title: 'Synergicon',
+      title: 'Sthitivartana',
       info: [
-        { list: 'ChES-NITR', href: '#' },
+        { list: 'AIChE-NITR', href: '#' },
         { list: 'National Institute of Technology', href: '#' },
         { list: 'Donation', href: '#' },
         { list: 'Schedule', href: '#' },
