@@ -31,16 +31,16 @@ export const Logo = styled.div`
   `}
 `
 export const LogoImg = styled.img`
-@media (max-width: 573px) {
-  margin-top: 10px;
-}
+  @media (max-width: 573px) {
+    margin-top: 10px;
+  }
   ${tw`object-contain w-full sm:h-full h-[65%] `}
 `
 export const NitImg = styled.img`
-@media (max-width: 573px) {
-  margin-top: 10px;
-  margin-right:5px
-}
+  @media (max-width: 573px) {
+    margin-top: 10px;
+    margin-right: 5px;
+  }
   ${tw`object-contain w-full sm:h-[130%] ml-3 h-[80%]`}
 `
 
@@ -77,7 +77,7 @@ export const Register = styled.div`
   }
   ${tw`
   w-[150px] 
-  h-[70px] 
+  h-[60px] 
   font-semibold 
   text-2xl 
   bg-orange-1 
@@ -93,7 +93,7 @@ export const Register = styled.div`
 `
 export const SecRegister = styled.div`
   ${tw`
-  w-[50%] 
+  w-[40%] 
   h-[50px] 
   font-semibold 
   text-2xl 
