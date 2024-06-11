@@ -19,19 +19,22 @@ import {
 } from './Styles'
 
 import footerData from '../../../config/content/footerData/Footer.js'
+import PropTypes from 'prop-types';
+
+RenderListItem.propTypes = {
+  item: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      href: PropTypes.string,
+      list: PropTypes.string,
+      name: PropTypes.string,
+      number: PropTypes.number,
+    }),
+  ]).isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 export default function MyFooter() {
-  function renderListItem(item, title) {
-    {
-      if (typeof item === 'string') {
-        return item
-      } else if (title === 'Synergicon') {
-        return <a href={item.href}>{item.list}</a>
-      } else {
-        return `${item.name}:${item.number}`
-      }
-    }
-  }
 
   return (
     <>
@@ -58,7 +61,7 @@ export default function MyFooter() {
                 <Heading>{section.title}</Heading>
                 <List>
                   {section.info.map((item, i) => (
-                    <ListItems key={i}>{renderListItem(item, section.title)}</ListItems>
+                    <ListItems key={i}><RenderListItem item={item} title={section.title}/></ListItems>
                   ))}
                 </List>
               </div>
@@ -67,7 +70,7 @@ export default function MyFooter() {
         </FooterTop>
         <FooterBottom>
           {footerData.bottom.map((item, index) => (
-            <a key={index} href={item.href}>
+            <a key={index} target="_blank" href={item.href}>
               {item.item}
             </a>
           ))}
@@ -80,4 +83,17 @@ export default function MyFooter() {
       </Footer>
     </>
   )
+}
+
+
+function RenderListItem({item, title}) {
+  {
+    if (typeof item === 'string') {
+      return <div>{item}</div>
+    } else if (title === 'Synergicon') {
+      return <a href={item.href}>{item.list}</a>
+    } else {
+      return <div> <div>{item.name}:</div><div>{item.number}</div></div>
+    }
+  }
 }

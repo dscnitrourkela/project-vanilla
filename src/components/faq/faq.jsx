@@ -2,7 +2,7 @@ import { FaqContainer, FaqContent, FaqHeading } from './faq.styles'
 
 export const Faq = () => {
   return (
-    <FaqContainer>
+    <FaqContainer id="Faq">
       <FaqHeading>FAQs</FaqHeading>
       <FaqContent>Coming Soon...</FaqContent>
     </FaqContainer>
