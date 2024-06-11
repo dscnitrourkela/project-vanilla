@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { apostrophe } from '../../config/content/registrationHelp/registrationHelp'
 
 export const RegistrationHelpContainer = styled.div`
-  ${tw`bg-brown-2 mb-14 0.7xsm:mb-20 flex flex-col justify-center items-center`}
+  ${tw`bg-brown-2 mb-14 0.7xsm:mb-14 flex flex-col justify-center items-center`}
 `
 
 export const RegisterCardContainer = styled.div`
