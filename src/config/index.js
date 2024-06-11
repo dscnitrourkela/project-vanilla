@@ -19,3 +19,6 @@ export { links, navLinks, DescriptionContent, heroContent }
 // Events data
 import { events, seeMoreIcon, XIcon, nextArrowIcon, prevArrowIcon } from './content/events/events'
 export { events, seeMoreIcon, XIcon, nextArrowIcon, prevArrowIcon }
+
+// AboutUs data
+export { default as AboutUsData } from './content/about/about'

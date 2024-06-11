@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
-import { aicheData } from '../../config/content/about/about'
+import { AboutUsData } from '../../config/index'
 import { Section, Title, Paragraph } from './aboutCarouselCard.styles'
 import { AboutCarouselContainer } from './about.styles'
 
@@ -15,7 +15,7 @@ function AboutCarousel() {
         spaceBetween={30}
         pagination={{ clickable: true }}
       >
-        {aicheData.map((details) => (
+        {AboutUsData.aicheData.map((details) => (
           <SwiperSlide key={details.title}>
             <Section>
               <Title>{details.title}</Title>
