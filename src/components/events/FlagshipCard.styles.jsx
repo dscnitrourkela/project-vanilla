@@ -30,11 +30,11 @@ export const CardImage = styled.img`
   ${tw` h-[80px] w-[80px] xxsm:h-[100px] xxsm:w-[100px] sm:h-[144.14px] sm:w-[144.14px]`}
 `
 export const CardTitle = styled.h3`
-  ${tw` mt-5 font-semibold text-[34.59px] leading-none text-center text-blue-1`}
+  ${tw` mt-5 font-semibold text-3.5xl leading-none text-center text-blue-1`}
 `
 export const CardSubtitle = styled.h5`
-  ${tw` font-[400] text-[14px] text-[#ffffff7c] leading-none mt-3 text-center`}
+  ${tw` font-[400] text-sm text-[#ffffff7c] leading-none mt-3 text-center`}
 `
 export const CardHeaderText = styled.h4`
-  ${tw` mt-[40px] font-semibold text-[24px] leading-none text-center text-orange-1`}
+  ${tw` mt-[40px] font-semibold text-2xl leading-none text-center text-orange-1`}
 `

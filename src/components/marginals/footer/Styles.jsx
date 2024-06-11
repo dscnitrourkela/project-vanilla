@@ -63,13 +63,13 @@ export const Text = styled.div`
 
 export const Heading = styled.h4`
   ${tw`
-    mb-[16px] 1.5xl:mb-[32px] text-brown-3 font-semibold text-[17px] 2.6md:text-[15px] 2.7md:text-[20px] 1.5xl:text-[32px] 
+    mb-[16px] 1.5xl:mb-[32px] text-brown-3 font-semibold text-1.5base 2.6md:text-1.5sm 2.7md:text-xl 1.5xl:text-3.3xl 
   `}
 `
 
 export const List = styled.ul`
   ${tw`
-    text-[12px] 2.6md:text-[10px] 2.7md:text-[12.5px] 1.5xl:text-[18px] font-medium text-brown-2
+    text-xs 2.6md:text-0.5xs 2.7md:text-1.3xs 1.5xl:text-lg font-medium text-brown-2
   `}
 `
 
@@ -84,7 +84,7 @@ export const ListItems = styled.li`
 
 export const FooterBottom = styled.div`
   ${tw`
-    px-[12px] 1.5xl:px-[34px] py-5 1.5xl:py-[27.65px] h-full 2.7md:h-[34px] 1.5xl:h-[82.7px] flex gap-[9px] 1.5xl:gap-[41px] 2.7md:gap-[18px] bg-brown-5 text-brown-1 items-center justify-evenly 2.6md:justify-start text-[12px] 0.9xsm:flex-row flex-col  1.5xl:text-[18px] font-medium
+    px-[12px] 1.5xl:px-[34px] py-5 1.5xl:py-[27.65px] h-full 2.7md:h-[34px] 1.5xl:h-[82.7px] flex gap-[9px] 1.5xl:gap-[41px] 2.7md:gap-[18px] bg-brown-5 text-brown-1 items-center justify-evenly 2.6md:justify-start text-xs 0.9xsm:flex-row flex-col  1.5xl:text-lg font-medium
   `}
 `
 
