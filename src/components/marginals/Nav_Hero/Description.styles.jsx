@@ -73,7 +73,7 @@ export const HelpButton = styled.button`
   bg-brown-2
   text-brown-5 
   font-semibold 
-  text-[19px] 
+  text-1.5lg 
   md:text-2xl  
   border-brown-5 
   border-2 
@@ -108,7 +108,7 @@ export const RegisterButton = styled.button`
   bg-orange-1 
   text-brown-5 
   font-semibold 
-  text-[19px] 
+  text-1.5lg 
   md:text-2xl  
   border-brown-5 
   border-2 

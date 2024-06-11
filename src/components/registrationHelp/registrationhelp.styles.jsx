@@ -11,7 +11,7 @@ export const RegisterCardContainer = styled.div`
 `
 
 export const RegisterCardContainerImage = styled.div`
-  background-image: url(${(props) => props.bgimage});
+  background-image: url('https://res.cloudinary.com/dhv234qct/image/upload/v1718101986/AICHE_SRC/team_members/quote.jpg');
   ${tw`h-[160px] w-[160px] mt-[32px] 3md:h-[245px] 3md:w-[245px] 3md:mt-[32px] rounded-max aspect-auto bg-cover bg-center`}
 `
 
@@ -20,15 +20,15 @@ export const RegisterCardContainerText = styled.div`
 `
 
 export const RegisterCardImageRole = styled.div`
-  ${tw`text-brown-4 font-Poppins font-semibold text-[15px] 3md:text-[22px] flex justify-center`}
+  ${tw`text-brown-4 font-Poppins font-semibold text-1.5sm 3md:text-1.5xl flex justify-center`}
 `
 
 export const RegisterCardImageName = styled.div`
-  ${tw`text-brown-5 font-Poppins font-bold text-[16px] 3md:text-[28px] flex justify-center mb-[4px]`}
+  ${tw`text-brown-5 font-Poppins font-bold text-base 3md:text-2.5xl flex justify-center mb-[4px]`}
 `
 
 export const RegistrationHelpContent = styled.div`
-  ${tw`relative text-brown-4 font-Poppins font-normal 0.7xsm:text-[20px] 3md:text-[26px] flex justify-center items-center text-center max-w-[1000px] pr-2 pl-2`}
+  ${tw`relative text-brown-4 font-Poppins font-normal 0.7xsm:text-xl 3md:text-2.3xl flex justify-center items-center text-center max-w-[1000px] pr-2 pl-2`}
 `
 
 export const RegistrationHelpContentText = styled.div`

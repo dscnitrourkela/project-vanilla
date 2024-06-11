@@ -38,11 +38,11 @@ export const CardImage = styled.img`
 `
 
 export const CardTitle = styled.h1`
-  ${tw`mt-5 font-semibold text-[28px] 0.8xsm:text-[34.59px] leading-none text-center`}
+  ${tw`mt-5 font-semibold text-2.5xl 0.8xsm:text-3.5xl leading-none text-center`}
 `
 
 export const CardSubtitle = styled.h3`
-  ${tw`text-orange-1 font-medium text-[14px] 0.8xsm:text-[16px] leading-none mt-2 text-center`}
+  ${tw`text-orange-1 font-medium text-sm 0.8xsm:text-base leading-none mt-2 text-center`}
 `
 
 export const CardBody = styled.div`
@@ -50,7 +50,7 @@ export const CardBody = styled.div`
 `
 
 export const CardList = styled.ul`
-  ${tw`font-normal text-[12.8px] 0.8xsm:text-[14.41px] list-disc px-2`}
+  ${tw`font-normal text-[12.8px] 0.8xsm:text-1.1sm list-disc px-2`}
 `
 
 export const ListItems = styled.li`
@@ -62,7 +62,7 @@ export const CardFooter = styled.div`
 `
 
 export const RegisterButton = styled.button`
-  ${tw` xxsm:w-[150px] w-full p-2 rounded-[11.53px] bg-orange-1 text-brown-5 font-semibold text-[19px] 1.5md:text-[25.95px] shadow-button border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none`}
+  ${tw` xxsm:w-[150px] w-full p-2 rounded-[11.53px] bg-orange-1 text-brown-5 font-semibold text-1.5lg 1.5md:text-2.2xl shadow-button border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none`}
 `
 export const ButtonRules = styled.button`
   ${tw`
@@ -73,7 +73,7 @@ export const ButtonRules = styled.button`
   bg-brown-2
   text-brown-5 
   font-semibold 
-  text-[19px] 
+  text-1.5lg 
   md:text-2xl  
   border-brown-5 
   border-2 
