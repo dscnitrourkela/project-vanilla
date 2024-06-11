@@ -11,7 +11,7 @@ export const RegisterCardContainer = styled.div`
 `
 
 export const RegisterCardContainerImage = styled.div`
-  background-image: url(${(props) => props.bgimage});
+  background-image: url('https://res.cloudinary.com/dhv234qct/image/upload/v1718101986/AICHE_SRC/team_members/quote.jpg');
   ${tw`h-[160px] w-[160px] mt-[32px] 3md:h-[245px] 3md:w-[245px] 3md:mt-[32px] rounded-max aspect-auto bg-cover bg-center`}
 `
 

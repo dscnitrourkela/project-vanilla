@@ -75,7 +75,8 @@ export default {
         '0.5xsm': '468px',
         xxsm: '400px',
         '0.5xxsm': '350px'
-      }
+      },
+      fontSize: {}
     }
   },
   plugins: []

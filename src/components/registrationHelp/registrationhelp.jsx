@@ -13,7 +13,7 @@ export const RegistrationHelp = () => {
   return (
     <RegistrationHelpContainer>
       <RegisterCardContainer>
-        <RegisterCardContainerImage bgimage="https://res.cloudinary.com/dhv234qct/image/upload/v1717692333/AICHE_SRC/team_members/SRC%20Chair.jpg"></RegisterCardContainerImage>
+        <RegisterCardContainerImage></RegisterCardContainerImage>
         <RegisterCardContainerText>
           <RegisterCardImageName>Aiswarya R. Behera</RegisterCardImageName>
           <RegisterCardImageRole>SRC Chair</RegisterCardImageRole>
