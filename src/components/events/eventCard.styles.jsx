@@ -2,7 +2,7 @@ import tw from 'twin.macro'
 import styled from 'styled-components'
 
 export const Container = styled.main`
-  ${tw`py-[20.18px]  h-auto sm:h-[650px] bg-brown-5 text-orange-2 rounded-[23.06px] font-Poppins relative`}
+  ${tw`py-[20.18px] h-auto md:h-[550px] bg-brown-5 text-orange-2 rounded-[23.06px] font-Poppins relative`}
 `
 export const Section = styled.section`
   ${tw` flex flex-col justify-between items-center`}
@@ -20,11 +20,11 @@ export const CardTitle = styled.h3`
   ${tw` mt-5 font-semibold text-[24px] 0.8xsm:text-[34.59px] leading-none text-center`}
 `
 export const CardSubtitle = styled.h4`
-  ${tw` font-medium max-sm:text-[10px] text-[16px] text-orange-1 leading-none mt-2 text-center`}
+  ${tw` font-medium  text-[16px] text-orange-1 leading-none mt-2 text-center`}
 `
 
 export const CardBody = styled.div`
-  ${tw`h-[200px] overflow-clip px-2 0.5xsm:px-5 mt-5`}
+  ${tw` px-2 0.5xsm:px-5 mt-5 md:relative`}
 `
 
 export const CardList = styled.ul`
@@ -39,7 +39,7 @@ export const SeemoreIcon = styled.img`
 `
 
 export const CardFooter = styled.div`
-  ${tw`items-center px-3 xxsm:px-5 w-full flex flex-row gap-5 justify-between py-5`}
+  ${tw`items-center px-3 xxsm:px-5 w-full  md:w-[95%] flex flex-row gap-5 justify-between md:absolute md:bottom-8 mb-5 md:mb-0`}
 `
 export const Button = styled.button`
   ${tw`h-[50px] w-full

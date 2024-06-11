@@ -9,10 +9,10 @@ export const Section = styled.section`
 `
 export const Arrow = styled.img`
   ${tw` sm:w-[79px] sm:h-[79px] 
-      cursor-pointer hidden sm:block`}
+      cursor-pointer hidden md:block active:transform active:scale-95 duration-300 ease-in-out`}
 `
 export const EventWrapper = styled.div`
-  ${tw`overflow-hidden md:h-[650px] flex items-center justify-center`}
+  ${tw`overflow-hidden md:h-[700px] flex items-center justify-center`}
 `
 export const EventsPillar = styled.div`
   ${tw`hidden w-[180.95px] h-[640px] rounded-[28.52px] bg-brown-4 shadow-events 2.3xl:flex justify-center items-center`}

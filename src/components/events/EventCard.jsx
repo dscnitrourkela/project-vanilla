@@ -29,6 +29,7 @@ EventCard.propTypes = {
   }),
   handleSelectEvent: PropTypes.func
 }
+
 export default function EventCard({
   event: { img, id, title, subtitle, details, rules },
   handleSelectEvent
@@ -57,7 +58,7 @@ export default function EventCard({
           </CardHeader>
           <CardBody>
             <CardList>
-              <div>{genDetails(details[0], 220)}</div>
+              <div>{genDetails(details[0], 150)}</div>
             </CardList>
             <CardModalBtn onClick={() => handleSelectEvent(id)}>
               <SeeMoreText>See More</SeeMoreText>
