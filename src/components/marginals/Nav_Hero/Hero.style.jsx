@@ -106,55 +106,55 @@ export const Img2 = styled.img`
     left: 60px;
     top: 55px;
   }
-  @media (min-width: 758px)  {
+  @media (min-width: 758px) {
     left: 65px;
     top: 65px;
   }
-  @media (min-width: 850px)  {
+  @media (min-width: 850px) {
     left: 70px;
     top: 70px;
   }
-  @media (min-width: 892px)  {
+  @media (min-width: 892px) {
     left: 75px;
     top: 70px;
   }
-  @media (min-width: 927px)  {
+  @media (min-width: 927px) {
     left: 75px;
     top: 75px;
   }
-  @media (min-width: 990px)  {
+  @media (min-width: 990px) {
     left: 90px;
     top: 80px;
   }
-  @media (min-width: 1024px)  {
+  @media (min-width: 1024px) {
     left: 65px;
     top: 65px;
   }
-  @media (min-width: 1100px)  {
+  @media (min-width: 1100px) {
     left: 70px;
     top: 65px;
   }
-  @media (min-width: 1180px)  {
+  @media (min-width: 1180px) {
     left: 75px;
     top: 70px;
   }
-  @media (min-width: 1278px)  {
+  @media (min-width: 1278px) {
     left: 80px;
     top: 75px;
   }
-  @media (min-width: 1325px)  {
+  @media (min-width: 1325px) {
     left: 85px;
     top: 80px;
   }
-  @media (min-width: 1400px)  {
+  @media (min-width: 1400px) {
     left: 95px;
     top: 90px;
   }
-  @media (min-width: 1552px)  {
+  @media (min-width: 1552px) {
     left: 110px;
     top: 105px;
   }
-  @media (min-width: 1777px)  {
+  @media (min-width: 1777px) {
     left: 120px;
     top: 120px;
   }
