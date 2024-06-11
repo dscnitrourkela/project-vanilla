@@ -9,22 +9,22 @@ import {
   LeadCardOrganization,
   Loading
 } from './leads.styles'
-import { Lead, SRCchair } from '../../config/content/leads/leads'
+import { LeadsData } from '../../config/index'
 import { Suspense } from 'react'
 
 export const Leads = () => {
   return (
     <LeadSectionContainer>
       <LeadsCard>
-        <LeadCardImage bgimage={SRCchair.image} />
+        <LeadCardImage bgimage={LeadsData[0].image} />
         <LeadCardContainerText>
-          <LeadCardName>{SRCchair.name}</LeadCardName>
-          <LeadCardRole>{SRCchair.role}</LeadCardRole>
-          <LeadCardOrganization>{SRCchair.organization}</LeadCardOrganization>
+          <LeadCardName>{LeadsData[0].name}</LeadCardName>
+          <LeadCardRole>{LeadsData[0].role}</LeadCardRole>
+          <LeadCardOrganization>{LeadsData[0].organization}</LeadCardOrganization>
         </LeadCardContainerText>
       </LeadsCard>
       <LeadSectionContainer2>
-        {Lead.map((lead) => (
+        {LeadsData[1].map((lead) => (
           <Suspense key={lead.id} fallback={<Loading>Loading...</Loading>}>
             <LeadsCard key={lead.id}>
               <LeadCardImage bgimage={lead.image} />

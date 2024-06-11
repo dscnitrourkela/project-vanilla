@@ -1,4 +1,4 @@
-export const apostrophe = [
+export default [
   {
     startApostrophe:
       'https://res.cloudinary.com/dhv234qct/image/upload/v1718024792/AICHE_SRC/assets/idcibohlqkcymp4dedfs.png'

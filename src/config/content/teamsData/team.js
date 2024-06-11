@@ -1,4 +1,4 @@
-export const TeamMembers = [
+export default [
   {
     role: 'Head',
     name: 'Umesh Chandra Sahoo',

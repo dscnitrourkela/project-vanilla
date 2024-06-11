@@ -10,7 +10,7 @@ import HeroCont, {
   Presents,
   DateTime
 } from './Hero.style'
-import { links, heroContent } from '../../../config/content/Nav_Hero'
+import { links, heroContent } from '../../../config/index'
 const Hero = () => {
   return (
     <HeroCont id="home">
