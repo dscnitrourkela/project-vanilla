@@ -33,3 +33,6 @@ export const LeadCardOrganization = styled.div`
 export const LeadCardName = styled.div`
   ${tw`text-brown-5 font-Poppins font-bold text-base 3md:text-2.3xl flex justify-center`}
 `
+export const Loading = styled.h2`
+  ${tw`text-white-1`}
+`
