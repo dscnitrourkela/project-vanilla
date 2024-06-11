@@ -11,7 +11,7 @@ import { ButtonWrapper } from './Description.styles'
 
 const Description = () => {
   return (
-    <DescriptionContainer>
+    <DescriptionContainer id="registerRefId">
       <DescriptionTitle>{DescriptionContent.title}</DescriptionTitle>
       <DescriptionParagraph>{DescriptionContent.content}</DescriptionParagraph>
       <ButtonWrapper>

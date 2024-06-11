@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 
 export const RegisterCardContainer = styled.div`
-  ${tw`bg-brown-2 h-[322px] w-[232px] 3md:h-[422px] 3md:w-[332px] flex flex-col items-center rounded-[16px] mx-auto mt-[15px] mb-6`}
+  ${tw`bg-brown-2 h-[322px] w-[232px] 3md:h-[422px] 3md:w-[332px] flex flex-col items-center rounded-[16px] mx-auto mt-[15px] mb-10`}
 `
 
 export const RegisterCardContainerImage = styled.div`

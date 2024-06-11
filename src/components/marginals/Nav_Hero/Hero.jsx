@@ -1,3 +1,5 @@
+import React from 'react'
+import SmoothScroll from 'smooth-scroll'
 import HeroCont, {
   Img1,
   Img2,
@@ -11,7 +13,32 @@ import HeroCont, {
   DateTime
 } from './Hero.style'
 import { links, heroContent } from '../../../config/content/navData/Nav_Hero'
+
 const Hero = () => {
+  const registerRefId = 'registerRefId'
+  function newScrollObject() {
+    return new SmoothScroll('', {
+      offset: () => 100
+    })
+  }
+  function handleScroll(id) {
+    if (typeof window !== 'undefined' && id) {
+      const isHome = window.location.pathname === '/' || window.location.pathname === '/playground'
+      if (isHome) {
+        const scroll = newScrollObject()
+        const anchor = document.getElementById(id)
+        if (anchor) {
+          scroll.animateScroll(anchor)
+        }
+      }
+    }
+  }
+
+  function onClick(id) {
+    handleScroll(id)
+    console.log(id)
+  }
+
   return (
     <HeroCont id="home">
       <section>
@@ -25,7 +52,12 @@ const Hero = () => {
         </MainFrame>
       </section>
       <RegisterCont>
-        <RegImgCont>
+        <RegImgCont
+          onClick={(e) => {
+            e.preventDefault()
+            onClick(registerRefId)
+          }}
+        >
           <Img1 src={links.registernow} alt="Back" />
           <Img2 src={links.down} alt="Overlay" />
         </RegImgCont>
