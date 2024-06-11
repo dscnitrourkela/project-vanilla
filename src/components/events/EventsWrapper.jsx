@@ -28,7 +28,7 @@ function EventsWrapper({ events, handleSelectEvent, swiperRef }) {
       <Swiper
         ref={swiperRef}
         modules={[Navigation, Autoplay]}
-        spaceBetween={50}
+        spaceBetween={30}
         slidesPerView={1}
         autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
         breakpoints={{

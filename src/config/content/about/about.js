@@ -8,7 +8,7 @@ export const data = [
   },
   {
     id: 2,
-    title: 'Chemical Engineering Society',
+    title: 'Department of Chemical Engineering',
     description:
       'Chemical Engineering is a field that influences numerous areas of technology. This branch deals with the operation of chemical plants, understanding the mystery of technology, fundamentals of chemicals, petrochemicals, and fertilizers, the production process, and converting raw materials, living cells, and energy into useful final products. The Chemical Engineering department was established in 1963 with an undergraduate program and initiated a postgraduate program in Coal Chemicals and Fertilizers in 1981 at NIT Rourkela. The Chemical Engineering department at NIT Rourkela specializes in modern spheres such as modeling and simulation, computational fluid dynamics, process control, reaction engineering, transfer operations, thermodynamics, environmental engineering, biochemical engineering, nanotechnology, renewable energy, and so on. There are also numerous achievements related to this department of our institute, such as research publications, industry collaborations, recognitions, awards and placements for students, infrastructure development, workshops and conferences, innovative projects, alumni contributions, and engaging in interdisciplinary research initiatives with the institute and other organizations. The department has a marvelous ensemble of dynamic, goal-oriented, highly qualified, and experienced faculty members. A degree in chemical engineering is associated with various domains of engineering.',
     bgColor: '#402E32'
