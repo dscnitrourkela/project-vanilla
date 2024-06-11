@@ -12,7 +12,7 @@ export const TeamMembers = [
       'https://res.cloudinary.com/dhv234qct/image/upload/v1717692334/AICHE_SRC/team_members/Finance.png'
   },
   {
-    role: 'Content',
+    role: 'Content lead',
     name: 'Priya Dutta',
     image:
       'https://res.cloudinary.com/dhv234qct/image/upload/v1717692334/AICHE_SRC/team_members/Content.jpg'
@@ -48,7 +48,7 @@ export const TeamMembers = [
       'https://res.cloudinary.com/dhv234qct/image/upload/v1717692333/AICHE_SRC/team_members/Registration.jpg'
   },
   {
-    role: 'Design',
+    role: 'Design lead',
     name: 'Anuj Sankhwar',
     image:
       'https://res.cloudinary.com/dhv234qct/image/upload/t_hc4/AICHE_SRC/team_members/Design.jpg'

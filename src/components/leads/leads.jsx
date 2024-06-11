@@ -1,5 +1,6 @@
 import {
   LeadSectionContainer,
+  LeadSectionContainer1,
   LeadSectionContainer2,
   LeadsCard,
   LeadCardImage,
@@ -9,20 +10,24 @@ import {
   LeadCardOrganization,
   Loading
 } from './leads.styles'
-import { Lead, SRCchair } from '../../config/content/leads/leads'
+import { Lead, SRCchairs } from '../../config/content/leads/leads'
 import { Suspense } from 'react'
 
 export const Leads = () => {
   return (
     <LeadSectionContainer>
-      <LeadsCard>
-        <LeadCardImage bgimage={SRCchair.image} />
-        <LeadCardContainerText>
-          <LeadCardName>{SRCchair.name}</LeadCardName>
-          <LeadCardRole>{SRCchair.role}</LeadCardRole>
-          <LeadCardOrganization>{SRCchair.organization}</LeadCardOrganization>
-        </LeadCardContainerText>
-      </LeadsCard>
+      <LeadSectionContainer1>
+        {SRCchairs.map((SRCchair) => (
+          <LeadsCard>
+            <LeadCardImage bgimage={SRCchair.image} />
+            <LeadCardContainerText>
+              <LeadCardName>{SRCchair.name}</LeadCardName>
+              <LeadCardRole>{SRCchair.role}</LeadCardRole>
+              <LeadCardOrganization>{SRCchair.organization}</LeadCardOrganization>
+            </LeadCardContainerText>
+          </LeadsCard>
+        ))}
+      </LeadSectionContainer1>
       <LeadSectionContainer2>
         {Lead.map((lead) => (
           <Suspense key={lead.id} fallback={<Loading>Loading...</Loading>}>
