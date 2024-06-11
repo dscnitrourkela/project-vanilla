@@ -3,27 +3,52 @@ import styled, { keyframes } from 'styled-components'
 
 const HeroCont = styled.div`
   ${tw`
-  pt-[135px] 
+  pt-[180px] 
   w-[100%] 
   h-[100%]
   `}
 `
 
 export const MainFrame = styled.div`
-  ${tw`flex justify-center `}
+  ${tw`flex justify-center`}
 `
+
+export const LogoCont = styled.div`
+  ${tw`flex flex-col items-center justify-center mb-2`}
+`
+export const Presents = styled.div`
+  ${tw`text-[#FFEEDA ] text-3xl font-Poppins font-bold mt-6`}
+`
+
+export const LogoImg = styled.img`
+  @media (max-width: 671px) {
+    max-width: 300px;
+    width: 50%;
+    height: auto;
+  }
+  ${tw`w-[45%] h-[20%] max-w-[400px]`}
+`
+
 export const MainImg = styled.img`
   @media (max-width: 671px) {
     max-width: 400px;
     width: 100%;
   }
   ${tw`
-  md:w-[60%] 
+  md:w-[100%] 
   
-  md:max-w-[600px] 
+  md:max-w-[800px] 
   object-contain
-  px-5
+  
   `}
+`
+
+export const DateTime = styled.div`
+  @media (max-width: 671px) {
+    width: 70%;
+    height: 50px;
+  }
+  ${tw`w-[245px] h-[70px] font-semibold text-2xl bg-orange-1 text-black-1 font-Poppins rounded-2xl flex justify-evenly items-center mt-6`}
 `
 
 export const RegisterCont = styled.div`
@@ -120,9 +145,21 @@ export const Img2 = styled.img`
     left: 85px;
     top: 80px;
   }
-  @media (min-width: 1400px) {
+  @media (min-width: 1400px) and (max-width: 1552px) {
     left: 95px;
     top: 90px;
+  }
+  @media (min-width: 1552px) and (max-width: 1777px) {
+    left: 110px;
+    top: 105px;
+  }
+  @media (min-width: 1777px) and (max-width: 1920px) {
+    left: 120px;
+    top: 120px;
+  }
+  @media (min-width: 1920px) {
+    left: 130px;
+    top: 125px;
   }
 
   ${tw`
