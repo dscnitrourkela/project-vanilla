@@ -2,7 +2,7 @@ import tw from 'twin.macro'
 import styled from 'styled-components'
 
 export const LeadSectionContainer = styled.div`
-  ${tw`bg-brown-2 flex flex-col items-center justify-around 3md:mb-4 mb-10`}
+  ${tw`bg-brown-2 flex flex-col items-center justify-around 3md:mb-7 mb-10`}
 `
 
 export const LeadSectionContainer2 = styled.div`
