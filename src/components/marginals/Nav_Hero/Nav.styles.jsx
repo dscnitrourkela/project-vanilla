@@ -72,7 +72,7 @@ export const Register = styled.div`
     width: 20%;
     height: 50px;
   }
-  @media (max-width: 620px) {
+  @media (max-width: 1090px) {
     display: none;
   }
   ${tw`
@@ -105,6 +105,7 @@ export const SecRegister = styled.div`
   justify-evenly 
   items-center 
   cursor-pointer 
+  mt-4
   `}
 `
 export const Menu2 = styled.div`
