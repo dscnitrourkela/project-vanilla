@@ -9,22 +9,20 @@ import {
   RegistrationHelpContentText
 } from './registrationhelp.styles'
 
+import { apostrophe } from '../../config/content/registrationHelp/registrationHelp'
+
 export const RegistrationHelp = () => {
   return (
     <RegistrationHelpContainer>
       <RegisterCardContainer>
         <RegisterCardContainerImage></RegisterCardContainerImage>
         <RegisterCardContainerText>
-          <RegisterCardImageName>Aiswarya R. Behera</RegisterCardImageName>
-          <RegisterCardImageRole>SRC Chair</RegisterCardImageRole>
+          <RegisterCardImageName>{apostrophe[4].quoteImageName}</RegisterCardImageName>
+          <RegisterCardImageRole>{apostrophe[5].quoteImageDesignation}</RegisterCardImageRole>
         </RegisterCardContainerText>
       </RegisterCardContainer>
       <RegistrationHelpContent>
-        <RegistrationHelpContentText>
-          Attention students! Registrations for Student Regional Conference 2023 are LIVE! Click on
-          the REGISTER link given below . For the steps on how to register click on HELP link . Join
-          us for knowledge, in
-        </RegistrationHelpContentText>
+        <RegistrationHelpContentText>{apostrophe[3].quote}</RegistrationHelpContentText>
       </RegistrationHelpContent>
     </RegistrationHelpContainer>
   )

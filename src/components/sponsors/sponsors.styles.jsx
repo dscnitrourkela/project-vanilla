@@ -14,5 +14,5 @@ export const Icon = styled.img(({ src, style }) => ({
 }))
 
 export const SponsorsSectionHeading = styled.h1`
-  ${tw`font-Poppins text-brown-4 text-[40px] font-bold 3md:text-[128px] 2.5md:text-[90px] 0.7xsm:text-[60px] pl-3`}
+  ${tw`font-Poppins text-brown-4 text-4.5xl font-bold 3md:text-9xl 2.5md:text-7.5xl 0.7xsm:text-6xl pl-3`}
 `

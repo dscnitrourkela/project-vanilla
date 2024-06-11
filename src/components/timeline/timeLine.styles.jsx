@@ -5,8 +5,8 @@ export const TimelineContainer = styled.div`
   ${tw`bg-brown-2 mb-12 3md:mb-14 pl-3`}
 `
 export const TimelineHeading = styled.div`
-  ${tw`font-Poppins text-brown-4 text-[40px] font-bold 3md:text-[128px] 2.5md:text-[90px] 0.7xsm:text-[60px]`}
+  ${tw`font-Poppins text-brown-4 text-4.5xl font-bold 3md:text-9xl 2.5md:text-7.5xl 0.7xsm:text-6xl`}
 `
 export const TimeLineContent = styled.div`
-  ${tw`font-Poppins text-brown-4 text-[20px] font-bold 3md:text-[60px] 2.5md:text-[50px] 0.7xsm:text-[40px] flex justify-center mt-10`}
+  ${tw`font-Poppins text-brown-4 text-xl font-bold 3md:text-6xl 2.5md:text-5.5xl 0.7xsm:text-4.5xl flex justify-center mt-10`}
 `
