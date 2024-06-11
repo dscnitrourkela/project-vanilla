@@ -14,7 +14,7 @@ import { Suspense } from 'react'
 
 export const Leads = () => {
   return (
-    <LeadSectionContainer id="lead">
+    <LeadSectionContainer>
       <LeadsCard>
         <LeadCardImage bgimage={SRCchair.image} />
         <LeadCardContainerText>
@@ -24,9 +24,9 @@ export const Leads = () => {
         </LeadCardContainerText>
       </LeadsCard>
       <LeadSectionContainer2>
-        {Lead.map((lead, index) => (
-          <Suspense key={index} fallback={<Loading>Loading...</Loading>}>
-            <LeadsCard key={index}>
+        {Lead.map((lead) => (
+          <Suspense key={lead.id} fallback={<Loading>Loading...</Loading>}>
+            <LeadsCard key={lead.id}>
               <LeadCardImage bgimage={lead.image} />
               <LeadCardContainerText>
                 <LeadCardName>{lead.name}</LeadCardName>
