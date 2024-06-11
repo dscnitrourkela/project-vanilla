@@ -9,7 +9,7 @@ export const CardContainer = styled.section`
 `
 
 export const Title = styled.h1`
-  ${tw`text-[40px] xxsm:text-[50px] xsm:text-[65px]  md:text-[80px] 1.5lg:text-[100px] 2.3xl:text-[115px] 2.5xl:text-[115px] font-[700] text-brown-4 text-left w-full leading-[50px] xsm:leading-[100px] mb-5`}
+  ${tw`text-4.5xl xxsm:text-5.5xl xsm:text-6.5xl  md:text-7.2xl 1.5lg:text-8.5xl 2.3xl:text-8.55xl 2.5xl:text-8.55xl font-[700] text-brown-4 text-left w-full leading-[50px] xsm:leading-[100px] mb-5`}
 `
 export const AboutCarouselContainer = styled.div`
   ${tw`bg-[#402E32] flex justify-center rounded-[4.4rem] w-full py-10 px-6 xsm:px-10`}

@@ -30,7 +30,7 @@ export const CardHeader = styled.div`
 `
 
 export const CloseButton = styled.button`
-  ${tw`absolute top-5 right-5 font-semibold text-[25px]`}
+  ${tw`absolute top-5 right-5 font-semibold text-2xl`}
 `
 
 export const CardImage = styled.img`
@@ -50,7 +50,7 @@ export const CardBody = styled.div`
 `
 
 export const CardList = styled.ul`
-  ${tw`font-normal text-[12.8px] 0.8xsm:text-1.1sm list-disc px-2`}
+  ${tw`font-normal text-1.5xs 0.8xsm:text-1.1sm list-disc px-2`}
 `
 
 export const ListItems = styled.li`
