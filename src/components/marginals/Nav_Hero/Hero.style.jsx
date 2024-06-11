@@ -57,6 +57,7 @@ export const RegisterCont = styled.div`
   flex 
   justify-end 
   mt-5 
+  mr-10
   mb-[-1]
   `}
 `
