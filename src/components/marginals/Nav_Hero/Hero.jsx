@@ -1,4 +1,3 @@
-import React from 'react'
 import SmoothScroll from 'smooth-scroll'
 import HeroCont, {
   Img1,

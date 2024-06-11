@@ -18,7 +18,7 @@ export const Leads = () => {
     <LeadSectionContainer>
       <LeadSectionContainer1>
         {SRCchairs.map((SRCchair) => (
-          <LeadsCard>
+          <LeadsCard key={SRCchair.id}>
             <LeadCardImage bgimage={SRCchair.image} />
             <LeadCardContainerText>
               <LeadCardName>{SRCchair.name}</LeadCardName>

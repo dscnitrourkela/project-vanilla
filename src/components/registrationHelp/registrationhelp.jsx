@@ -1,10 +1,5 @@
 import {
   RegistrationHelpContainer,
-  RegisterCardContainer,
-  RegisterCardContainerImage,
-  RegisterCardImageRole,
-  RegisterCardImageName,
-  RegisterCardContainerText,
   RegistrationHelpContent,
   RegistrationHelpContentText
 } from './registrationhelp.styles'
