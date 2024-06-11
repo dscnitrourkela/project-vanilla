@@ -48,7 +48,7 @@ export const DateTime = styled.div`
     width: 70%;
     height: 50px;
   }
-  ${tw`w-[245px] h-[70px] font-semibold text-2xl bg-orange-1 text-black-1 font-Poppins rounded-2xl flex justify-evenly items-center mt-6`}
+  ${tw`w-[245px] h-[70px] font-semibold text-xl md:text-2xl bg-orange-1 text-black-1 font-Poppins rounded-2xl flex justify-evenly items-center mt-6`}
 `
 
 export const RegisterCont = styled.div`
