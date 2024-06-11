@@ -31,9 +31,16 @@ export const Logo = styled.div`
   `}
 `
 export const LogoImg = styled.img`
-  ${tw`object-contain w-full sm:h-full h-[70%] `}
+@media (max-width: 573px) {
+  margin-top: 10px;
+}
+  ${tw`object-contain w-full sm:h-full h-[65%] `}
 `
 export const NitImg = styled.img`
+@media (max-width: 573px) {
+  margin-top: 10px;
+  margin-right:5px
+}
   ${tw`object-contain w-full sm:h-[130%] ml-3 h-[80%]`}
 `
 
