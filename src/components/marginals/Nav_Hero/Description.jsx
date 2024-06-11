@@ -6,7 +6,7 @@ import {
   DescriptionParagraph,
   DescriptionTitle
 } from './Description.styles'
-import { DescriptionContent } from '../../../config/content/Nav_Hero'
+import { DescriptionContent } from '../../../config/content/navData/Nav_Hero'
 import { ButtonWrapper } from './Description.styles'
 
 const Description = () => {

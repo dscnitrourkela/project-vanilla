@@ -1,6 +1,6 @@
 import tw from 'twin.macro'
 import styled from 'styled-components'
-import { links } from '../../../config/content/Nav_Hero'
+import { links } from '../../../config/content/navData/Nav_Hero'
 
 const NavCont = styled.nav`
   ${tw`
