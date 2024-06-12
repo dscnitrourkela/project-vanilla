@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 
 export const RegisterCardContainer = styled.div`
-  ${tw`bg-brown-2 h-[322px] w-[232px] 3md:h-[422px] 3md:w-[332px] flex flex-col items-center rounded-[16px] mx-auto mt-[15px] mb-10`}
+  ${tw`bg-brown-2 h-[322px] w-[232px] 3md:h-[422px] 3md:w-[332px] flex flex-col items-center rounded-[16px] mx-auto mt-[10px] mb-6`}
 `
 
 export const RegisterCardContainerImage = styled.div`
@@ -19,4 +19,7 @@ export const RegisterCardImageRole = styled.div`
 `
 export const RegisterCardImageName = styled.div`
   ${tw`text-brown-5 font-Poppins font-bold text-base 3md:text-2.5xl flex justify-center mb-[4px]`}
+`
+export const TeamSectionHeading = styled.div`
+  ${tw`font-Poppins text-brown-4 text-4.5xl font-bold 3md:text-9xl 2.5md:text-7.5xl 0.7xsm:text-6xl mx-6`}
 `

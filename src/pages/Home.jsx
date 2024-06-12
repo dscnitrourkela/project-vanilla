@@ -15,8 +15,8 @@ const Home = () => {
       <About />
       <Events />
       <RegistrationHelp />
-      <TeamCarousel />
       <Leads />
+      <TeamCarousel />
       <Sponsors />
       <Faq />
       <Footer />

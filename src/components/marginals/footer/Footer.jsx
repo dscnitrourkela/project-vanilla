@@ -90,7 +90,7 @@ function RenderListItem({ item, title }) {
   {
     if (typeof item === 'string') {
       return <div>{item}</div>
-    } else if (title === 'Synergicon') {
+    } else if (title === 'Sthitivartana') {
       return <a href={item.href}>{item.list}</a>
     } else {
       return (
