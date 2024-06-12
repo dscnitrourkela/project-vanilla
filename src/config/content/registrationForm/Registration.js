@@ -1,4 +1,4 @@
-export const date = '18th - 20th August'
+export const date = '9th - 11th August'
 
 export const bg =
   'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1718177861/p85bmwlzffgz01ffhklu.png'
