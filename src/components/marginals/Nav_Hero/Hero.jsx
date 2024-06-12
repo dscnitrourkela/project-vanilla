@@ -9,7 +9,8 @@ import HeroCont, {
   LogoImg,
   LogoCont,
   Presents,
-  DateTime
+  DateTime,
+  InnerLogoCont
 } from './Hero.style'
 import { links, heroContent } from '../../../config/content/navData/Nav_Hero'
 
@@ -43,7 +44,10 @@ const Hero = () => {
       <section>
         <MainFrame>
           <LogoCont>
-            <LogoImg src={links.Alche} alt="Main Frame" />
+            <InnerLogoCont>
+              <LogoImg src={links.Alche} alt="Main Frame" />
+              <LogoImg src={links.AlcheNITR} alt="Main Frame" />
+            </InnerLogoCont>
             <Presents>{heroContent.Presents}</Presents>
             <MainImg src={links.main} alt="Main Frame" />
             <DateTime>{heroContent.Dates}</DateTime>
