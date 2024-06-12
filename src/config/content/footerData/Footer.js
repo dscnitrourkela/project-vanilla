@@ -4,7 +4,7 @@ export default {
       title: 'Call Us',
       info: [
         {
-          name: 'Aishwarya R Behera',
+          name: 'Aiswarya R Behera',
           number: '+91 79789 69870'
         },
         {
@@ -21,7 +21,7 @@ export default {
       title: 'Sthitivartana',
       info: [
         { list: 'AIChE-NITR', href: '#' },
-        { list: 'National Institute of Technology', href: 'https://www.nitrkl.ac.in/' },
+        { list: 'National Institute of Technology, Rourkela', href: 'https://www.nitrkl.ac.in/' },
         { list: 'Donation', href: '#' },
         { list: 'Schedule', href: '#TIMELINE' },
         { list: 'FAQ', href: '#FAQ' }
