@@ -1,5 +1,5 @@
 export const links = {
-  logo: 'https://res.cloudinary.com/dhv234qct/image/upload/v1718187810/AICHE_SRC/assets/l4xiyfmf8zewj1egm2by.png',
+  logo: 'https://res.cloudinary.com/dhv234qct/image/upload/v1718189887/AICHE_SRC/assets/hjnj2fhscpaspmrjwyzj.png',
   nit: 'https://res.cloudinary.com/dhv234qct/image/upload/v1718187589/AICHE_SRC/assets/wvcluuak7ckr9ytpd0dq.png',
   registernow: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683299/Group_2_rfdbbh.png',
   down: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683287/Vector_9_piw4n5.png',
