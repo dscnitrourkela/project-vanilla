@@ -28,6 +28,7 @@ export const Logo = styled.div`
   cursor-pointer
   z-50
   flex
+  md:mb-5
   `}
 `
 export const LogoImg = styled.img`
