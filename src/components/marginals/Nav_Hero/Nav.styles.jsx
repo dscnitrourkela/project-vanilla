@@ -32,9 +32,9 @@ export const Logo = styled.div`
 `
 export const LogoImg = styled.img`
   @media (max-width: 573px) {
-    margin-top: 10px;
+    margin-top: 20px;
   }
-  ${tw`object-contain w-full sm:h-full h-[65%] `}
+  ${tw`object-contain w-full sm:h-full h-[65%] mt-3`}
 `
 export const NitImg = styled.img`
   @media (max-width: 573px) {
