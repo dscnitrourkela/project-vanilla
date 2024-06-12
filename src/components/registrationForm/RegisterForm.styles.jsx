@@ -7,8 +7,8 @@ export const Container = styled.div`
 `
 
 export const BackgroundImage = styled.div`
-  ${tw`bg-cover bg-center h-full w-full  z-0`}
-  background-image: url(${(props) => props.src});
+  ${tw`bg-cover bg-center h-full w-full z-0  bg-brown-4
+`}/* background-image: url(${(props) => props.src}); */
 `
 export const LogoSection = styled.section`
   ${tw`md:flex flex-col justify-center items-center h-full w-full relative hidden `}

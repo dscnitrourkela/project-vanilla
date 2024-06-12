@@ -81,7 +81,9 @@ const Nav = () => {
           </MenuIcon>
         </Menu2>
 
-        <Register>Register</Register>
+        <Link to="/register">
+          <Register>Register</Register>
+        </Link>
       </InnrNavCont>
 
       {isOpen && (

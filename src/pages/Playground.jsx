@@ -1,18 +1,17 @@
-// import About from '../components/about/About'
-// import Events from '../components/events/Events'
-// import NavHero from '../components/marginals/Nav_Hero/NavHero'
-// import { Sponsors } from '../components/sponsors/sponsors'
-// import { TeamCarousel } from '../components/teamMembers/teamCarousel'
-// import Footer from '../components/marginals/footer/Footer'
-// import { Faq } from '../components/faq/faq'
-// import { TimeLine } from '../components/timeline/timeLine'
-// import { RegistrationHelp } from '../components/registrationHelp/registrationhelp'
+import About from '../components/about/About'
+import Events from '../components/events/Events'
+import NavHero from '../components/marginals/Nav_Hero/NavHero'
+import { Sponsors } from '../components/sponsors/sponsors'
+import { TeamCarousel } from '../components/teamMembers/teamCarousel'
+import Footer from '../components/marginals/footer/Footer'
+import { Faq } from '../components/faq/faq'
+import { TimeLine } from '../components/timeline/timeLine'
+import { RegistrationHelp } from '../components/registrationHelp/registrationhelp'
 
-import RegistrationForm from '../components/registrationForm/RegistrationForm'
 const Playground = () => {
   return (
     <div>
-      {/* <NavHero />
+      <NavHero />
       <About />
       <Events />
       <TimeLine />
@@ -20,8 +19,7 @@ const Playground = () => {
       <TeamCarousel />
       <Sponsors />
       <Faq />
-      <Footer /> */}
-      <RegistrationForm />
+      <Footer />
     </div>
   )
 }

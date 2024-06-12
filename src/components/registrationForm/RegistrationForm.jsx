@@ -30,7 +30,7 @@ export default function RegistrationForm() {
   return (
     <Container>
       <LogoSection>
-        <BackgroundImage src={bg} alt="background image" />
+        <BackgroundImage src={bg} />
         <LogoContainer>
           <img src={logo1} alt="logo" />
           <img src={logo2} alt="logo2" />
