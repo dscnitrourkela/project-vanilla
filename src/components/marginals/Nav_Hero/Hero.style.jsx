@@ -17,7 +17,7 @@ export const LogoCont = styled.div`
   ${tw`flex flex-col items-center justify-center mb-2`}
 `
 export const LogoInn = styled.div`
-  ${tw`flex items-center justify-between w-[400px] h-[100px]`}
+  ${tw`flex items-center justify-center sm:justify-between w-[400px] h-[100px]`}
 `
 
 export const Presents = styled.div`
@@ -26,20 +26,20 @@ export const Presents = styled.div`
 
 export const LogoImg = styled.img`
   @media (max-width: 671px) {
-    max-width: 300px;
-    width: 50%;
+    max-width: 125px;
+    width: 30%;
     height: auto;
   }
   ${tw`w-[45%] h-[52%] max-w-[400px]`}
 `
 export const And = styled.p`
-  ${tw`text-4xl text-orange-2`}
+  ${tw`px-5 text-4xl text-orange-2`}
 `
 
 export const LogoImg1 = styled.img`
   @media (max-width: 671px) {
-    max-width: 300px;
-    width: 50%;
+    max-width: 125px;
+    width: 30%;
     height: auto;
   }
   ${tw`w-[40%] h-[100%] max-w-[400px]`}
