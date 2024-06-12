@@ -45,6 +45,7 @@ const Hero = () => {
       <section>
         <MainFrame>
           <LogoCont>
+
             <LogoInn>
               <LogoImg src={links.Alche} alt="Main Frame" />
               <And> & </And>

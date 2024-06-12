@@ -16,6 +16,7 @@ export const MainFrame = styled.div`
 export const LogoCont = styled.div`
   ${tw`flex flex-col items-center justify-center mb-2`}
 `
+
 export const LogoInn = styled.div`
   ${tw`flex items-center justify-center sm:justify-between w-[400px] h-[100px]`}
 `
@@ -49,6 +50,7 @@ export const MainImg = styled.img`
   @media (max-width: 671px) {
     max-width: 400px;
     width: 100%;
+    margin-left: 5px;
   }
   ${tw`
   md:w-[100%] 
