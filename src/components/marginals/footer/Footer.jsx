@@ -94,7 +94,7 @@ function RenderListItem({ item, title }) {
       return <a href={item.href}>{item.list}</a>
     } else {
       return (
-        <div className=''>
+        <div className="">
           <div>{item.name}:</div>
           <div>{item.number}</div>
         </div>
