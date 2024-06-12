@@ -32,6 +32,7 @@ export const Leads = () => {
           <RegisterCardContainerText>
             <RegisterCardImageName>{apostrophe[4].quoteImageName}</RegisterCardImageName>
             <RegisterCardImageRole>{apostrophe[5].quoteImageDesignation}</RegisterCardImageRole>
+            <LeadCardOrganization>{apostrophe[6].organization}</LeadCardOrganization>
           </RegisterCardContainerText>
         </RegisterCardContainer>
         <LeadSectionContainer1>

@@ -16,9 +16,12 @@ export const apostrophe = [
       'Attention students! Registrations for Student Regional Conference 2023 are live! Click on the Register link given below. For the steps on how to register, click on the Help link. Join us for knowledge, in.'
   },
   {
-    quoteImageName: 'Dr. Sujit Sen'
+    quoteImageName: 'Prof. Sujit Sen'
   },
   {
-    quoteImageDesignation: 'Assitant Professor'
+    quoteImageDesignation: 'Principal Coordinator'
+  },
+  {
+    organization: 'India Student Regional Conf. 2024'
   }
 ]

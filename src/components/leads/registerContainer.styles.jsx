@@ -15,7 +15,7 @@ export const RegisterCardContainerText = styled.div`
 `
 
 export const RegisterCardImageRole = styled.div`
-  ${tw`text-brown-4 font-Poppins font-semibold text-1.5sm 3md:text-1.5xl flex justify-center`}
+  ${tw`text-brown-4 font-Poppins font-semibold text-1.5sm 3md:text-1.5xl flex justify-center mb-2`}
 `
 export const RegisterCardImageName = styled.div`
   ${tw`text-brown-5 font-Poppins font-bold text-base 3md:text-2.5xl flex justify-center mb-[4px]`}
