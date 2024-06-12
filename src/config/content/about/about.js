@@ -48,7 +48,7 @@ export const aicheData = [
 ]
 
 export const srcData = {
-  title: 'SRC',
+  title: 'Student Regional Conference',
   description: `Held annually over three days, the Student Regional Conference (SRC) is organised by a student chapter of the American Institute of Chemical Engineers (AIChE) representing each of the 14 regions. This year's event will be organised by AIChE NITR, in continuation of the successful implementation put together by AIChE SVNIT the preceding year. Experts, professionals, and enthusiasts from all over the globe come together for this conference to exchange ideas on a broad spectrum of subjects. It's an excellent opportunity to broaden your horizons, network with other like-minded individuals, and consume from a pool of industry experts. At the AIChE Global Annual Student Conference (ASC), which is hosted in the USA, the winners from each of the 14 regions will compete against themselves.`,
   bgColor: '#1a1a1a'
 }

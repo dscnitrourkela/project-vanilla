@@ -12,19 +12,19 @@ export const TeamMembers = [
       'https://res.cloudinary.com/dhv234qct/image/upload/v1717692334/AICHE_SRC/team_members/Finance.png'
   },
   {
-    role: 'Content',
+    role: 'Content lead',
     name: 'Priya Dutta',
     image:
       'https://res.cloudinary.com/dhv234qct/image/upload/v1717692334/AICHE_SRC/team_members/Content.jpg'
   },
   {
-    role: 'Bookings and Permission',
+    role: 'Bookings & permissions',
     name: 'Rajdeep Garnayak',
     image:
       'https://res.cloudinary.com/dhv234qct/image/upload/t_hc2/AICHE_SRC/team_members/Bookings.jpg'
   },
   {
-    role: 'Guest Lecture and Workshop',
+    role: 'Guest Lecture & Workshop',
     name: 'Prayash Pratim Swain',
     image:
       'https://res.cloudinary.com/dhv234qct/image/upload/t_hc3/AICHE_SRC/team_members/Guest_lectures.jpg'
@@ -42,28 +42,16 @@ export const TeamMembers = [
       'https://res.cloudinary.com/dhv234qct/image/upload/v1717692333/AICHE_SRC/team_members/Public_relations.png'
   },
   {
-    role: 'Registration and Helpdesk',
+    role: 'Registration & Helpdesk',
     name: 'Bijaya Subhadarshini',
     image:
       'https://res.cloudinary.com/dhv234qct/image/upload/v1717692333/AICHE_SRC/team_members/Registration.jpg'
   },
   {
-    role: 'Design',
+    role: 'Design lead',
     name: 'Anuj Sankhwar',
     image:
       'https://res.cloudinary.com/dhv234qct/image/upload/t_hc4/AICHE_SRC/team_members/Design.jpg'
-  },
-  {
-    role: 'Chem-E-Car Chair',
-    name: 'Aniket Nayak',
-    image:
-      'https://res.cloudinary.com/dhv234qct/image/upload/v1717692333/AICHE_SRC/team_members/Chem-E-Car%20Chair.jpg'
-  },
-  {
-    role: 'SRC Chair',
-    name: 'Aiswarya R. Behera',
-    image:
-      'https://res.cloudinary.com/dhv234qct/image/upload/v1717692333/AICHE_SRC/team_members/SRC%20Chair.jpg'
   },
   {
     role: 'Event Management',
