@@ -35,7 +35,7 @@ export const formInputs = [
   },
   {
     id: 'aicheID',
-    label: 'AIChE ID',
+    label: 'AIChE Membership ID',
     placeholder: 'Enter Your ID here',
     type: 'text'
   },
@@ -47,13 +47,13 @@ export const formInputs = [
   },
   {
     id: 'rollNo',
-    label: 'Roll No.',
+    label: 'College Roll No.',
     placeholder: 'Enter Your Roll No. here',
     type: 'text'
   },
   {
     id: 'idCard',
-    label: 'Upload ID Card',
+    label: 'Upload Institute ID Card',
     placeholder: 'Upload ID Card',
     type: 'file'
   },

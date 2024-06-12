@@ -10,7 +10,7 @@ export const RegistrationHelp = () => {
   return (
     <RegistrationHelpContainer>
       <RegistrationHelpContent>
-        <RegistrationHelpContentText>{apostrophe[3].quote}</RegistrationHelpContentText>
+        <RegistrationHelpContentText>{apostrophe.quote}</RegistrationHelpContentText>
       </RegistrationHelpContent>
     </RegistrationHelpContainer>
   )
