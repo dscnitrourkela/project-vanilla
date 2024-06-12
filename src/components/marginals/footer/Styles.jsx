@@ -69,7 +69,7 @@ export const Heading = styled.h4`
 
 export const List = styled.ul`
   ${tw`
-    text-xs 2.7md:text-0.5xs 2.6md:text-[7px] 1.5xl:text-1.3xs font-medium text-brown-2
+    text-xs 2.7md:text-xs 2.6md:text-[7px] lg:text-base font-medium text-brown-2
   `}
 `
 
