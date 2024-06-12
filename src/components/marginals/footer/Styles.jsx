@@ -57,7 +57,7 @@ export const AicheLogo2 = styled.img`
 
 export const Text = styled.div`
   ${tw`
-    flex flex-col 2.6md:flex-row gap-[45px] 2.6md:gap-[20px] 2.7md:gap-[50px] 1.5xl:gap-[122px] justify-between h-[472px] xxsm:w-[382px] 2.6md:h-auto 2.6md:w-auto 1.5xl:h-[306px] 1.5xl:w-[853.83px] order-1 2.6md:order-2 tracking-widest
+    flex flex-col 2.6md:flex-row gap-[45px] 2.6md:gap-[30px] 2.7md:gap-[20px] 1.5xl:gap-[100px] justify-between h-[472px] xxsm:w-[382px] 2.6md:h-auto 2.6md:w-auto 1.5xl:h-[306px] 1.5xl:w-[853.83px] order-1 2.6md:order-2 tracking-widest
   `}
 `
 
@@ -69,7 +69,7 @@ export const Heading = styled.h4`
 
 export const List = styled.ul`
   ${tw`
-    text-xs 2.6md:text-0.5xs 2.7md:text-1.3xs 1.5xl:text-lg font-medium text-brown-2
+    text-xs 2.7md:text-0.5xs 2.6md:text-[7px] 1.5xl:text-1.3xs font-medium text-brown-2
   `}
 `
 
