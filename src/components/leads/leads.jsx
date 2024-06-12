@@ -30,9 +30,9 @@ export const Leads = () => {
         <RegisterCardContainer>
           <RegisterCardContainerImage />
           <RegisterCardContainerText>
-            <RegisterCardImageName>{apostrophe[4].quoteImageName}</RegisterCardImageName>
-            <RegisterCardImageRole>{apostrophe[5].quoteImageDesignation}</RegisterCardImageRole>
-            <LeadCardOrganization>{apostrophe[6].organization}</LeadCardOrganization>
+            <RegisterCardImageName>{apostrophe.quoteImageName}</RegisterCardImageName>
+            <RegisterCardImageRole>{apostrophe.quoteImageDesignation}</RegisterCardImageRole>
+            <LeadCardOrganization>{apostrophe.organization}</LeadCardOrganization>
           </RegisterCardContainerText>
         </RegisterCardContainer>
         <LeadSectionContainer1>
