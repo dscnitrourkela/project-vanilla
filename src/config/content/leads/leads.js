@@ -9,7 +9,7 @@ export const Lead = [
   },
   {
     id: 2,
-    role: 'Co-Convenor',
+    role: 'Convenor',
     name: 'Abhilash Sabat',
     organization: 'India Student Regional conf. 2024',
     image:
@@ -17,7 +17,7 @@ export const Lead = [
   },
   {
     id: 3,
-    role: 'Content',
+    role: 'Treasurer',
     name: 'Umesh Chandra Sahoo',
     organization: 'India Student Regional conf. 2024',
     image:
@@ -25,10 +25,21 @@ export const Lead = [
   }
 ]
 
-export const SRCchair = {
-  role: 'Chair',
-  name: 'Aiswarya R. Behera',
-  organization: 'India Student Regional conf. 2024',
-  image:
-    'https://res.cloudinary.com/dhv234qct/image/upload/v1717692333/AICHE_SRC/team_members/SRC%20Chair.jpg'
-}
+export const SRCchairs = [
+  {
+    id: 1,
+    role: 'Chair',
+    name: 'Aiswarya R. Behera',
+    organization: 'India Student Regional conf. 2024',
+    image:
+      'https://res.cloudinary.com/dhv234qct/image/upload/v1717692333/AICHE_SRC/team_members/SRC%20Chair.jpg'
+  },
+  {
+    id: 2,
+    role: 'Chem-E-Car Chair',
+    name: 'Aniket Nayak',
+    organization: 'India Student Regional conf. 2024',
+    image:
+      'https://res.cloudinary.com/dhv234qct/image/upload/v1717692333/AICHE_SRC/team_members/Chem-E-Car%20Chair.jpg'
+  }
+]

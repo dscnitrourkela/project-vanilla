@@ -66,7 +66,7 @@ export default function EventCard({
             </CardModalBtn>
           </CardBody>
           <CardFooter>
-            <ButtonRules onClick={redirectToRules}>Rules</ButtonRules>
+            <ButtonRules onClick={redirectToRules}>Rulebook</ButtonRules>
             <Button id={id}>Register</Button>
           </CardFooter>
         </ContentWrapper>

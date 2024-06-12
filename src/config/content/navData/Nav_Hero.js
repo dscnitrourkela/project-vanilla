@@ -27,5 +27,5 @@ export const DescriptionContent = {
 
 export const heroContent = {
   Presents: 'Presents',
-  Dates: '18th - 20th August'
+  Dates: '9th - 11th August'
 }

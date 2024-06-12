@@ -6,12 +6,12 @@ import {
   DescriptionParagraph,
   DescriptionTitle
 } from './Description.styles'
-import { DescriptionContent } from '../../../config/content/Nav_Hero'
+import { DescriptionContent } from '../../../config/content/navData/Nav_Hero'
 import { ButtonWrapper } from './Description.styles'
 
 const Description = () => {
   return (
-    <DescriptionContainer>
+    <DescriptionContainer id="registerRefId">
       <DescriptionTitle>{DescriptionContent.title}</DescriptionTitle>
       <DescriptionParagraph>{DescriptionContent.content}</DescriptionParagraph>
       <ButtonWrapper>

@@ -18,9 +18,9 @@ export default {
       info: ['aiche.nitrkl@gmail.com', 'sthitivartana@gmail.com']
     },
     {
-      title: 'Synergicon',
+      title: 'Sthitivartana',
       info: [
-        { list: 'ChES-NITR', href: '#' },
+        { list: 'AIChE-NITR', href: '#' },
         { list: 'National Institute of Technology', href: 'https://www.nitrkl.ac.in/' },
         { list: 'Donation', href: '#' },
         { list: 'Schedule', href: '#TIMELINE' },
