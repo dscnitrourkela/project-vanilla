@@ -1,4 +1,4 @@
-import { TeamSectionContainer, TeamSectionHeading, Loading } from './teamSection.styles'
+import { TeamSectionContainer, Loading } from './teamSection.styles'
 import {
   CardContainer,
   CardContainerImage,
@@ -13,7 +13,6 @@ import { Suspense } from 'react'
 export const TeamCarousel = () => {
   return (
     <TeamSectionContainer id="team">
-      <TeamSectionHeading>Meet the team</TeamSectionHeading>
       <Marquee>
         {TeamMembers.map((member, index) => (
           <Suspense key={index} fallback={<Loading>Loading...</Loading>}>

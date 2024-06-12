@@ -63,6 +63,7 @@ export const RegisterCont = styled.div`
 `
 export const RegImgCont = styled.div`
   ${tw`
+  cursor-pointer	
   relative 
   lg:w-[15%] 
   md:w-[20%] 

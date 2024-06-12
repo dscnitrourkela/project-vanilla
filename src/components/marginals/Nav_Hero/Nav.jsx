@@ -17,8 +17,8 @@ import NavCont, {
   SecRegister
 } from './Nav.styles'
 import { Link } from 'react-router-dom'
-import { navLinks } from '../../../config/content/Nav_Hero'
-import { links } from '../../../config/content/Nav_Hero'
+import { navLinks } from '../../../config/content/navData/Nav_Hero'
+import { links } from '../../../config/content/navData/Nav_Hero'
 import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
 

@@ -4,27 +4,27 @@ export default {
       title: 'Call Us',
       info: [
         {
-          name: 'abc',
-          number: '9999999999'
+          name: 'Aishwarya R Behera',
+          number: '+91 79789 69870'
         },
         {
-          name: 'def',
-          number: '9999999999'
+          name: 'Ayush Sehgal',
+          number: '+91 99199 94984'
         }
       ]
     },
     {
       title: 'Email Us',
-      info: ['abc@gmail.com', 'qwerty@gmail.com']
+      info: ['aiche.nitrkl@gmail.com', 'sthitivartana@gmail.com']
     },
     {
-      title: 'Synergicon',
+      title: 'Sthitivartana',
       info: [
-        { list: 'ChES-NITR', href: '#' },
-        { list: 'National Institute of Technology', href: '#' },
+        { list: 'AIChE-NITR', href: '#' },
+        { list: 'National Institute of Technology', href: 'https://www.nitrkl.ac.in/' },
         { list: 'Donation', href: '#' },
-        { list: 'Schedule', href: '#' },
-        { list: 'FAQ', href: '#' }
+        { list: 'Schedule', href: '#TIMELINE' },
+        { list: 'FAQ', href: '#FAQ' }
       ]
     }
   ],
@@ -37,22 +37,22 @@ export default {
       {
         key: 'fb',
         img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1717321887/Facebook_Mask_yhwtjf.svg',
-        href: '#'
+        href: 'https://www.facebook.com/share/ZrKDqF4mQtGcnKET/?mibextid=qi2Omg'
       },
       {
         key: 'insta',
         img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1717321890/Insta_Mask_azvhlm.svg',
-        href: '#'
+        href: 'https://www.instagram.com/aiche.nitrkl?utm_source=qr&igsh=emsxaDhjcmQyMDB2'
       },
       {
         key: 'youtube',
         img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1717321885/Youtube_Mask_atoact.svg',
-        href: '#'
+        href: 'https://www.youtube.com/@aichenitr4693'
       },
       {
         key: 'linkedin',
         img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1717321885/Linkdin_Mask_ydmzzr.svg',
-        href: '#'
+        href: 'https://www.linkedin.com/company/aiche-nitr/'
       }
     ],
     aichelogo1:
