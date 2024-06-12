@@ -78,13 +78,12 @@ const Nav = () => {
         <Link to="/register">
           <Register>Register</Register>
         </Link>
-        
+
         <Menu2>
           <MenuIcon>
             <Hamburger color="#FFEEDA" toggled={isOpen} toggle={handleToggle} />
           </MenuIcon>
         </Menu2>
-
       </InnrNavCont>
 
       {isOpen && (
