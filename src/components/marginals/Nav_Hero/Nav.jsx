@@ -89,7 +89,9 @@ const Nav = () => {
       {isOpen && (
         <ResMen>
           <ResList>
-            <SecRegister>Register</SecRegister>
+            <Link to="/register">
+              <SecRegister>Register</SecRegister>
+            </Link>
             {navLinks.map((navLink) => (
               <ResItem key={navLink.id}>
                 <ResAnchor
