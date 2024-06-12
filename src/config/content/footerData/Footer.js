@@ -4,27 +4,27 @@ export default {
       title: 'Call Us',
       info: [
         {
-          name: 'abc',
-          number: '9999999999'
+          name: 'Aishwarya R Behera',
+          number: '+91 79789 69870'
         },
         {
-          name: 'def',
-          number: '9999999999'
+          name: 'Ayush Sehgal',
+          number: '+91 99199 94984'
         }
       ]
     },
     {
       title: 'Email Us',
-      info: ['abc@gmail.com', 'qwerty@gmail.com']
+      info: ['aiche.nitrkl@gmail.com', 'sthitivartana@gmail.com']
     },
     {
       title: 'Sthitivartana',
       info: [
         { list: 'AIChE-NITR', href: '#' },
-        { list: 'National Institute of Technology', href: '#' },
+        { list: 'National Institute of Technology', href: 'https://www.nitrkl.ac.in/' },
         { list: 'Donation', href: '#' },
-        { list: 'Schedule', href: '#' },
-        { list: 'FAQ', href: '#' }
+        { list: 'Schedule', href: '#TIMELINE' },
+        { list: 'FAQ', href: '#FAQ' }
       ]
     }
   ],
