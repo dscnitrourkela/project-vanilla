@@ -17,7 +17,7 @@ export const RegistrationHelpContentText = styled.div`
     position: absolute;
     width: 45px;
     height: 45px;
-    background-image: url(${apostrophe[0].startApostrophe});
+    background-image: url(${apostrophe.startApostrophe});
     background-size: cover;
     left: -50px;
     top: -10px;
@@ -27,7 +27,7 @@ export const RegistrationHelpContentText = styled.div`
     position: absolute;
     width: 45px;
     height: 45px;
-    background-image: url(${apostrophe[1].endApostrophe});
+    background-image: url(${apostrophe.endApostrophe});
     background-size: cover;
     right: -50px;
     bottom: -10px;
