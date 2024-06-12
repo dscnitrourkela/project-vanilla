@@ -8,7 +8,10 @@ import HeroCont, {
   LogoImg,
   LogoCont,
   Presents,
-  DateTime
+  DateTime,
+  LogoInn,
+  LogoImg1,
+  And
 } from './Hero.style'
 import { links, heroContent } from '../../../config/content/Nav_Hero'
 const Hero = () => {
@@ -17,7 +20,12 @@ const Hero = () => {
       <section>
         <MainFrame>
           <LogoCont>
-            <LogoImg src={links.Alche} alt="Main Frame" />
+            <LogoInn>
+              <LogoImg src={links.Alche} alt="Main Frame" />
+              <And> & </And>
+              <LogoImg1 src={links.alcheNitr} alt="Main Frame" />
+            </LogoInn>
+
             <Presents>{heroContent.Presents}</Presents>
             <MainImg src={links.main} alt="Main Frame" />
             <DateTime>{heroContent.Dates}</DateTime>

@@ -16,6 +16,10 @@ export const MainFrame = styled.div`
 export const LogoCont = styled.div`
   ${tw`flex flex-col items-center justify-center mb-2`}
 `
+export const LogoInn = styled.div`
+  ${tw`flex items-center justify-between w-[400px] h-[100px]`}
+`
+
 export const Presents = styled.div`
   ${tw`text-[#FFEEDA ] text-3xl font-Poppins font-bold mt-6`}
 `
@@ -26,7 +30,19 @@ export const LogoImg = styled.img`
     width: 50%;
     height: auto;
   }
-  ${tw`w-[45%] h-[20%] max-w-[400px]`}
+  ${tw`w-[45%] h-[52%] max-w-[400px]`}
+`
+export const And = styled.p`
+  ${tw`text-4xl text-orange-2`}
+`
+
+export const LogoImg1 = styled.img`
+  @media (max-width: 671px) {
+    max-width: 300px;
+    width: 50%;
+    height: auto;
+  }
+  ${tw`w-[40%] h-[100%] max-w-[400px]`}
 `
 
 export const MainImg = styled.img`
@@ -70,6 +86,7 @@ export const RegImgCont = styled.div`
   md:max-w-[600px] 
   `}
 `
+
 const rotate = keyframes`
     from{
         transform: rotate(360deg);
@@ -78,7 +95,6 @@ const rotate = keyframes`
         transform: rotate(0deg);
     }
 `
-
 export const Img1 = styled.img`
   animation: ${rotate} 5s linear infinite;
   @media (min-width: 650px) and (max-width: 892px) {
