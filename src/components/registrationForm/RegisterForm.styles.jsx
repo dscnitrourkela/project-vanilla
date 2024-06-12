@@ -7,7 +7,7 @@ export const Container = styled.div`
 `
 
 export const BackgroundImage = styled.div`
-  ${tw`bg-cover bg-center h-full w-full z-0
+  ${tw`bg-cover bg-center h-full w-full
 `}
   background-image: url(${(props) => props.src});
 `
@@ -21,7 +21,7 @@ export const Date = styled.h1`
   ${tw`text-brown-2 2.7md:text-4xl font-semibold text-3xl`}
 `
 export const FormContainer = styled.form`
-  ${tw`flex flex-col justify-center items-center h-full w-full gap-[24px] md:gap-4 py-5 md:py-10 px-4 md:px-14 `}
+  ${tw`flex flex-col justify-center items-center h-full w-full gap-[24px] md:gap-4 py-5 md:py-10 px-4 md:px-14 bg-transparent`}
 `
 
 export const Button = styled.button`
