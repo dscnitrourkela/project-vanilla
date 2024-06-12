@@ -1,11 +1,7 @@
 import SmoothScroll from 'smooth-scroll'
 import HeroCont, {
-  Img1,
-  Img2,
   MainFrame,
   MainImg,
-  RegImgCont,
-  RegisterCont,
   LogoImg,
   LogoCont,
   Presents,
@@ -42,7 +38,12 @@ const Hero = () => {
   return (
     <HeroCont id="home">
       <section>
-        <MainFrame>
+        <MainFrame
+          onClick={(e) => {
+            e.preventDefault()
+            onClick(registerRefId)
+          }}
+        >
           <LogoCont>
             <InnerLogoCont>
               <LogoImg src={links.Alche} alt="Main Frame" />
@@ -54,17 +55,6 @@ const Hero = () => {
           </LogoCont>
         </MainFrame>
       </section>
-      <RegisterCont>
-        <RegImgCont
-          onClick={(e) => {
-            e.preventDefault()
-            onClick(registerRefId)
-          }}
-        >
-          <Img1 src={links.registernow} alt="Back" />
-          <Img2 src={links.down} alt="Overlay" />
-        </RegImgCont>
-      </RegisterCont>
     </HeroCont>
   )
 }
