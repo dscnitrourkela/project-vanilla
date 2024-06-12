@@ -16,6 +16,11 @@ export const MainFrame = styled.div`
 export const LogoCont = styled.div`
   ${tw`flex flex-col items-center justify-center mb-2`}
 `
+
+export const InnerLogoCont = styled.div`
+  ${tw` flex flex-col items-center justify-center gap-10 xsm:flex xsm:flex-row xsm:items-center xsm:justify-center xsm:gap-14`}
+`
+
 export const Presents = styled.div`
   ${tw`text-[#FFEEDA ] text-3xl font-Poppins font-bold mt-6`}
 `
@@ -23,16 +28,17 @@ export const Presents = styled.div`
 export const LogoImg = styled.img`
   @media (max-width: 671px) {
     max-width: 300px;
-    width: 50%;
+    width: 60%;
     height: auto;
   }
-  ${tw`w-[45%] h-[20%] max-w-[400px]`}
+  ${tw`w-auto h-auto max-w-[400px]`}
 `
 
 export const MainImg = styled.img`
   @media (max-width: 671px) {
     max-width: 400px;
     width: 100%;
+    margin-left: 5px;
   }
   ${tw`
   md:w-[100%] 
