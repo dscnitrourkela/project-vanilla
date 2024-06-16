@@ -12,7 +12,7 @@ import { Suspense } from 'react'
 
 export const TeamCarousel = () => {
   return (
-    <TeamSectionContainer id="team">
+    <TeamSectionContainer >
       <Marquee>
         {TeamMembers.map((member, index) => (
           <Suspense key={index} fallback={<Loading>Loading...</Loading>}>
