@@ -3,7 +3,7 @@ import tw from 'twin.macro'
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  ${tw`grid md:grid-cols-2 grid-cols-1 font-Poppins`}
+  ${tw`grid md:grid-cols-2 grid-cols-1 font-Poppins mt-20`}
 `
 
 export const BackgroundImage = styled.div`

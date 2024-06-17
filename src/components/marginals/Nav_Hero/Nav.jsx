@@ -24,7 +24,8 @@ import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
 
 const Nav = () => {
-  const { userInfo, setUserData, handleGoogleSignIn } = useContext(AuthContext)
+  const { userInfo, setUserData, handleGoogleSignIn, handleSignOut } = useContext(AuthContext)
+  console.log(userInfo)
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -66,20 +67,24 @@ const Nav = () => {
           <InnerMenu>
             {navLinks.map((navLink) => (
               <MenuItem key={navLink.id}>
-                <Link
-                  to={navLink.href}
-                  tabIndex={0}
-                  onClick={navLink.href ? null : () => onClick(navLink.id)}
-                >
-                  {navLink.name}
-                </Link>
+                {navLink.id == 'home' ? (
+                  <Link to="/">{navLink.name}</Link>
+                ) : (
+                  <Link
+                    to={navLink.href}
+                    tabIndex={0}
+                    onClick={navLink.href ? null : () => onClick(navLink.id)}
+                  >
+                    {navLink.name}
+                  </Link>
+                )}
               </MenuItem>
             ))}
           </InnerMenu>
         </Menu>
 
-        <Link to="/register" onClick={handleGoogleSignIn}>
-          <Register>Register</Register>
+        <Link to="/register" onClick={userInfo.name ? handleSignOut : handleGoogleSignIn}>
+          <Register>{userInfo.name ? 'Logout' : 'Register'}</Register>
         </Link>
 
         <Menu2>
@@ -91,9 +96,9 @@ const Nav = () => {
 
       {isOpen && (
         <ResMen>
-          <ResList onClick={handleGoogleSignIn}>
-            <Link to="/register" onClick={handleGoogleSignIn}>
-              <SecRegister>Register</SecRegister>
+          <ResList>
+            <Link to="/register" onClick={userInfo.name ? handleSignOut : handleGoogleSignIn}>
+              <SecRegister>{userInfo.name ? 'Logout' : 'Register'}</SecRegister>
             </Link>
             {navLinks.map((navLink) => (
               <ResItem key={navLink.id}>

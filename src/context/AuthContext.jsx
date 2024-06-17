@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react'
-import { auth, signInWithGoogle } from '../firebase/login'
+import { auth, signInWithGoogle, signOutUser } from '../firebase/login'
 import { onAuthStateChanged } from 'firebase/auth'
 import { toast } from 'react-toastify'
 
@@ -39,8 +39,19 @@ export const AuthProvider = ({ children }) => {
     }
   }
 
+  const handleSignOut = async () => {
+    try {
+      await signOutUser()
+      setUserData({})
+      toast.success('Successfully signed out.')
+    } catch (error) {
+      console.error('Error signing out:', error)
+      toast.error('Error signing out. Please try again.')
+    }
+  }
+
   return (
-    <AuthContext.Provider value={{ userInfo, setUserData, handleGoogleSignIn }}>
+    <AuthContext.Provider value={{ userInfo, setUserData, handleGoogleSignIn, handleSignOut }}>
       {children}
     </AuthContext.Provider>
   )
