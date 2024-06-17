@@ -25,7 +25,7 @@ import { apostrophe } from '../../config/content/registrationHelp/registrationHe
 export const Leads = () => {
   return (
     <section>
-      <TeamSectionHeading>Meet the team</TeamSectionHeading>
+      <TeamSectionHeading id="team">Meet the team</TeamSectionHeading>
       <LeadSectionContainer>
         <RegisterCardContainer>
           <RegisterCardContainerImage />
