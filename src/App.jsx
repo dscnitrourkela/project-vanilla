@@ -3,10 +3,13 @@ import Home from './pages/Home.jsx'
 import Playground from './pages/Playground.jsx'
 import Registration from './pages/Registration.jsx'
 import { AuthProvider } from './context/AuthContext.jsx'
-
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { Slide } from 'react-toastify'
 const App = () => {
   return (
     <AuthProvider>
+      <ToastContainer transition={Slide} position="top-center" />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

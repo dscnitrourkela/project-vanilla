@@ -17,15 +17,17 @@ FileInput.propTypes = {
     label: propTypes.string.isRequired,
     type: propTypes.string.isRequired,
     placeholder: propTypes.string.isRequired
-  }).isRequired
+  }).isRequired,
+  handleFormData: propTypes.func.isRequired
 }
 
-export default function FileInput({ input: { id, label, type, placeholder } }) {
+export default function FileInput({ input: { id, label, type, placeholder }, handleFormData }) {
   const [fileName, setFileName] = useState(placeholder)
 
   const handleFileChange = (event) => {
     const file = event.target.files[0]
     setFileName(file ? file.name : placeholder)
+    handleFormData(event)
   }
 
   const handleClick = () => {

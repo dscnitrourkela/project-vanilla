@@ -17,15 +17,22 @@ InputField.propTypes = {
     placeholder: propTypes.string.isRequired,
     type: propTypes.string.isRequired,
     extras: propTypes.string
-  }).isRequired
+  }).isRequired,
+  handleFormData: propTypes.func.isRequired
 }
 
-function InputField({ input: { id, label, placeholder, type, extras } }) {
+function InputField({ input: { id, label, placeholder, type, extras }, handleFormData }) {
   return (
     <InputContainer key={id}>
       <Label htmlFor={id}>{label}</Label>
       <OuterBorder>
-        <Input id={id} placeholder={placeholder} type={type} containsIcon={extras ? true : false} />
+        <Input
+          id={id}
+          placeholder={placeholder}
+          type={type}
+          containsIcon={extras ? true : false}
+          onChange={handleFormData}
+        />
         {extras && (
           <InfoBtn>
             <Info src={info} alt="info-icon" />
