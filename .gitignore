@@ -11,6 +11,9 @@ lerna-debug.log*
 pnpm-lock.yaml
 package-lock.json
 
+# env files
+.env
+
 node_modules
 dist
 dist-ssr
