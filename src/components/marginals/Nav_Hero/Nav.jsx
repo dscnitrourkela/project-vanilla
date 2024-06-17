@@ -24,7 +24,7 @@ import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
 
 const Nav = () => {
-  const { userInfo, setUserData } = useContext(AuthContext)
+  const { userInfo, setUserData, handleGoogleSignIn } = useContext(AuthContext)
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -78,7 +78,7 @@ const Nav = () => {
           </InnerMenu>
         </Menu>
 
-        <Link to="/register">
+        <Link to="/register" onClick={handleGoogleSignIn}>
           <Register>Register</Register>
         </Link>
 
@@ -91,8 +91,8 @@ const Nav = () => {
 
       {isOpen && (
         <ResMen>
-          <ResList onClick={setUserData}>
-            <Link to="/register">
+          <ResList onClick={handleGoogleSignIn}>
+            <Link to="/register" onClick={handleGoogleSignIn}>
               <SecRegister>Register</SecRegister>
             </Link>
             {navLinks.map((navLink) => (
