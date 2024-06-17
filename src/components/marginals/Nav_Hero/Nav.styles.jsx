@@ -67,7 +67,7 @@ export const MenuItem = styled.div`
   `}
 `
 
-export const Register = styled.div`
+export const Register = styled.button`
   @media (max-width: 671px) {
     width: 20%;
     height: 50px;
@@ -91,7 +91,8 @@ export const Register = styled.div`
   sm:mt-4
   `}
 `
-export const SecRegister = styled.div`
+
+export const SecRegister = styled.button`
   ${tw`
   w-[120px] 
   h-[50px] 

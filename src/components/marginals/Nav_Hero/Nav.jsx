@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { AuthContext } from '../../../context/AuthContext'
 import NavCont, {
   InnerMenu,
   InnrNavCont,
@@ -23,6 +24,9 @@ import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
 
 const Nav = () => {
+  const { userInfo, handleGoogleSignIn, handleSignOut } = useContext(AuthContext)
+  console.log(userInfo)
+
   const [isOpen, setIsOpen] = useState(false)
 
   function handleToggle() {
@@ -63,33 +67,44 @@ const Nav = () => {
           <InnerMenu>
             {navLinks.map((navLink) => (
               <MenuItem key={navLink.id}>
-                <Link
-                  to={navLink.href}
-                  tabIndex={0}
-                  onClick={navLink.href ? null : () => onClick(navLink.id)}
-                >
-                  {navLink.name}
-                </Link>
+                {navLink.id == 'home' ? (
+                  <Link to="/">{navLink.name}</Link>
+                ) : (
+                  <Link
+                    to={navLink.href}
+                    tabIndex={0}
+                    onClick={navLink.href ? null : () => onClick(navLink.id)}
+                  >
+                    {navLink.name}
+                  </Link>
+                )}
               </MenuItem>
             ))}
           </InnerMenu>
         </Menu>
 
+        {userInfo.name ? (
+          <Link to="/" onClick={handleSignOut}>
+            <Register>Logout</Register>
+          </Link>
+        ) : (
+          <Link to="/register" onClick={handleGoogleSignIn}>
+            <Register>Register</Register>
+          </Link>
+        )}
         <Menu2>
           <MenuIcon>
             <Hamburger color="#FFEEDA" toggled={isOpen} toggle={handleToggle} />
           </MenuIcon>
         </Menu2>
-
-        <Link to="/register">
-          <Register>Register</Register>
-        </Link>
       </InnrNavCont>
 
       {isOpen && (
         <ResMen>
           <ResList>
-            <SecRegister>Register</SecRegister>
+            <Link to="/register" onClick={userInfo.name ? handleSignOut : handleGoogleSignIn}>
+              <SecRegister>{userInfo.name ? 'Logout' : 'Register'}</SecRegister>
+            </Link>
             {navLinks.map((navLink) => (
               <ResItem key={navLink.id}>
                 <ResAnchor

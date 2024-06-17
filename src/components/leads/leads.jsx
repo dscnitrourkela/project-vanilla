@@ -25,13 +25,14 @@ import { apostrophe } from '../../config/content/registrationHelp/registrationHe
 export const Leads = () => {
   return (
     <section>
-      <TeamSectionHeading>Meet the team</TeamSectionHeading>
+      <TeamSectionHeading id="team">Meet the team</TeamSectionHeading>
       <LeadSectionContainer>
         <RegisterCardContainer>
           <RegisterCardContainerImage />
           <RegisterCardContainerText>
-            <RegisterCardImageName>{apostrophe[4].quoteImageName}</RegisterCardImageName>
-            <RegisterCardImageRole>{apostrophe[5].quoteImageDesignation}</RegisterCardImageRole>
+            <RegisterCardImageName>{apostrophe.quoteImageName}</RegisterCardImageName>
+            <RegisterCardImageRole>{apostrophe.quoteImageDesignation}</RegisterCardImageRole>
+            <LeadCardOrganization>{apostrophe.organization}</LeadCardOrganization>
           </RegisterCardContainerText>
         </RegisterCardContainer>
         <LeadSectionContainer1>

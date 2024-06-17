@@ -37,7 +37,7 @@ RenderListItem.propTypes = {
 export default function MyFooter() {
   return (
     <>
-      <Footer>
+      <Footer id="contact">
         <FooterTop>
           <Logos>
             <SocialLogo>
@@ -78,7 +78,7 @@ export default function MyFooter() {
           <MadeBy>
             Architected with
             <HeartIcon src={footerData.images.heart} alt="heart" />
-            by GDSC NITR Team
+            <a href="https://dscnitrourkela.org/">by GDSC NITR Team</a>
           </MadeBy>
         </FooterBottom>
       </Footer>
@@ -88,8 +88,8 @@ export default function MyFooter() {
 
 function RenderListItem({ item, title }) {
   {
-    if (typeof item === 'string') {
-      return <div>{item}</div>
+    if (title === 'Email Us') {
+      return <a href={`mailto:${item}`}>{item}</a>
     } else if (title === 'Sthitivartana') {
       return <a href={item.href}>{item.list}</a>
     } else {
