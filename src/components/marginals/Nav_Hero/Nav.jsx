@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { AuthContext } from '../../../context/AuthContext'
 import NavCont, {
   InnerMenu,
   InnrNavCont,
@@ -23,6 +24,8 @@ import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
 
 const Nav = () => {
+  const { userInfo, setUserData } = useContext(AuthContext)
+
   const [isOpen, setIsOpen] = useState(false)
 
   function handleToggle() {
@@ -88,7 +91,7 @@ const Nav = () => {
 
       {isOpen && (
         <ResMen>
-          <ResList>
+          <ResList onClick={setUserData}>
             <Link to="/register">
               <SecRegister>Register</SecRegister>
             </Link>
