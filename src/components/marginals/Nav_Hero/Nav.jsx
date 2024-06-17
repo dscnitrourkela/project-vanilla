@@ -24,7 +24,7 @@ import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
 
 const Nav = () => {
-  const { userInfo, setUserData, handleGoogleSignIn, handleSignOut } = useContext(AuthContext)
+  const { userInfo, handleGoogleSignIn, handleSignOut } = useContext(AuthContext)
   console.log(userInfo)
 
   const [isOpen, setIsOpen] = useState(false)

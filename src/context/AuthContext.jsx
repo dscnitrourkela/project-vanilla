@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import { auth, signInWithGoogle, signOutUser } from '../firebase/login'
 import { onAuthStateChanged } from 'firebase/auth'
 import { toast } from 'react-toastify'
@@ -55,4 +56,8 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   )
+}
+
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired
 }
