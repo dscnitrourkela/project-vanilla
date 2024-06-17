@@ -83,10 +83,15 @@ const Nav = () => {
           </InnerMenu>
         </Menu>
 
-        <Link to="/register" onClick={userInfo.name ? handleSignOut : handleGoogleSignIn}>
-          <Register>{userInfo.name ? 'Logout' : 'Register'}</Register>
-        </Link>
-
+        {userInfo.name ? (
+          <Link to="/" onClick={handleSignOut}>
+            <Register>Logout</Register>
+          </Link>
+        ) : (
+          <Link to="/register" onClick={handleGoogleSignIn}>
+            <Register>Register</Register>
+          </Link>
+        )}
         <Menu2>
           <MenuIcon>
             <Hamburger color="#FFEEDA" toggled={isOpen} toggle={handleToggle} />
