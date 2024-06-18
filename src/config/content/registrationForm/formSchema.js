@@ -14,13 +14,20 @@ export const formSchema = z.object({
   aicheID: z.string().min(1, 'AICHE ID is required'),
   college: z.string().min(1, 'College Name is required'),
   rollNo: z.string().min(1, 'Roll number is required'),
-  idCard: z.instanceof(File).refine(
-    (file) => {
-      return file !== null && file !== undefined && isImageFile(file)
-    },
-    {
-      message: 'ID Card must be a valid image file (jpg, jpeg, png, gif)'
-    }
-  ),
+  idCard: z
+    .union([
+      z.instanceof(File),
+      z.string().refine((value) => isImageFile(value), {
+        message: 'ID Card must be a valid image URL (jpg, jpeg, png, gif)'
+      })
+    ])
+    .refine(
+      (value) => {
+        return value !== null && value !== undefined
+      },
+      {
+        message: 'ID Card is required'
+      }
+    ),
   tShirtSize: z.string().min(1, 'T-Shirt size is required')
 })
