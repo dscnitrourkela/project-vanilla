@@ -1,5 +1,6 @@
 import { useState, useContext, useEffect } from 'react'
 import { AuthContext } from '../../context/AuthContext'
+import { useMutation } from '@apollo/client'
 import { toast } from 'react-toastify'
 import Loader from '../loader/Loader'
 import {
@@ -25,6 +26,7 @@ import {
 import InputField from './InputField'
 import FileInput from './FileInput'
 import { uploadToCloudinary } from './uploadToCloudinary'
+import { ADD_USER } from '../../graphQL/mutations/userMutation'
 
 export default function RegistrationForm() {
   const [formData, setformData] = useState({
@@ -37,13 +39,13 @@ export default function RegistrationForm() {
     idCard: null,
     tShirtSize: ''
   })
-  const [loading, setLoading] = useState(false)
+  const [isloading, setIsLoading] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-
   const { userInfo, handleGoogleSignIn } = useContext(AuthContext)
+  const [addUser, { loading, data }] = useMutation(ADD_USER)
 
   async function signInWithGoogle() {
-    setLoading(true)
+    setIsLoading(true)
     try {
       await handleGoogleSignIn()
       setIsLoggedIn(true)
@@ -51,17 +53,18 @@ export default function RegistrationForm() {
       console.error(e)
       toast.error('Failed to sign in!')
     } finally {
-      setLoading(false)
+      setIsLoading(false)
     }
   }
 
   useEffect(() => {
-    const userObjectKeys = Object.keys(userInfo)
-    if (userObjectKeys.length === 0) {
-      setIsLoggedIn(false)
-    } else {
-      setIsLoggedIn(true)
+    if (data) {
+      console.log(data)
     }
+  }, [data])
+
+  useEffect(() => {
+    userInfo.name ? setIsLoggedIn(true) : setIsLoggedIn(false)
   }, [userInfo])
 
   async function handleSubmit(e) {
@@ -71,19 +74,23 @@ export default function RegistrationForm() {
       toast.error('Please fill all the fields!')
       return
     }
-    console.log(formData)
-    setLoading(true)
+    setIsLoading(true)
     try {
       if (!isLoggedIn) return
       const imageUrl = await uploadToCloudinary(formData.idCard)
       if (!imageUrl) return
-      setformData({ ...formData, idCard: imageUrl })
-      toast.success('Image uploaded successfully!')
+      const newFormData = { ...formData, idCard: imageUrl }
+      await addUser({
+        variables: {
+          user: newFormData
+        }
+      })
+      toast.success('You have been registered successfully!')
     } catch (e) {
       console.error(e)
-      toast.error('Failed to upload image!')
+      toast.error('Failed to register! Please try again!')
     } finally {
-      setLoading(false)
+      setIsLoading(false)
     }
   }
 
@@ -110,7 +117,7 @@ export default function RegistrationForm() {
 
   return (
     <Container>
-      {loading && <Loader />}
+      {(isloading || loading) && <Loader />}
       <LogoSection>
         <BackgroundImage src={bg} />
         <LogoContainer>
@@ -135,13 +142,13 @@ export default function RegistrationForm() {
               <InputField key={input.id} input={input} handleFormData={handleFormData} />
             )
           )}
-          <Button onClick={(e) => handleSubmit(e)} disabled={loading}>
+          <Button onClick={(e) => handleSubmit(e)} disabled={isloading}>
             Register
           </Button>
         </FormContainer>
       ) : (
         <SignInContainer>
-          <Button onClick={signInWithGoogle} disabled={loading}>
+          <Button onClick={signInWithGoogle} disabled={isloading}>
             Sign in with Google
           </Button>
         </SignInContainer>
