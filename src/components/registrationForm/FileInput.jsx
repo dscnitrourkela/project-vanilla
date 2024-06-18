@@ -6,7 +6,8 @@ import {
   ImageButton,
   Input,
   InputContainer,
-  Label
+  Label,
+  ErrorMessage
 } from './FileInput.styles'
 import { imageBtn } from '../../config/content/registrationForm/Registration'
 import propTypes from 'prop-types'
@@ -18,16 +19,21 @@ FileInput.propTypes = {
     type: propTypes.string.isRequired,
     placeholder: propTypes.string.isRequired
   }).isRequired,
-  handleFormData: propTypes.func.isRequired
+  handleFormData: propTypes.func.isRequired,
+  error: propTypes.string
 }
 
-export default function FileInput({ input: { id, label, type, placeholder }, handleFormData }) {
+export default function FileInput({
+  input: { id, label, type, placeholder },
+  handleFormData,
+  error
+}) {
   const [fileName, setFileName] = useState(placeholder)
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0]
+  const handleFileChange = (e) => {
+    const file = e.target.files[0]
     setFileName(file ? file.name : placeholder)
-    handleFormData(event)
+    handleFormData(id, file)
   }
 
   const handleClick = () => {
@@ -46,6 +52,7 @@ export default function FileInput({ input: { id, label, type, placeholder }, han
           <FileName>{fileName}</FileName>
         </Input>
       </InputContainer>
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </Container>
   )
 }

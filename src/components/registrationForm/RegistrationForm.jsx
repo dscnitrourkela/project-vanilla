@@ -27,6 +27,7 @@ import InputField from './InputField'
 import FileInput from './FileInput'
 import { uploadToCloudinary } from './uploadToCloudinary'
 import { ADD_USER } from '../../graphQL/mutations/userMutation'
+import { formSchema } from '../../config/content/registrationForm/formSchema'
 
 export default function RegistrationForm() {
   const [formData, setformData] = useState({
@@ -39,6 +40,17 @@ export default function RegistrationForm() {
     idCard: null,
     tShirtSize: ''
   })
+  const initialFormErrors = {
+    name: '',
+    email: '',
+    phone: '',
+    aicheID: '',
+    college: '',
+    rollNo: '',
+    idCard: '',
+    tShirtSize: ''
+  }
+  const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [isloading, setIsLoading] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const { userInfo, handleGoogleSignIn } = useContext(AuthContext)
@@ -70,15 +82,16 @@ export default function RegistrationForm() {
   async function handleSubmit(e) {
     e.preventDefault()
 
-    if (!checkValidations()) {
-      toast.error('Please fill all the fields!')
-      return
-    }
+    if (!isFormValid()) return
+
     setIsLoading(true)
     try {
       if (!isLoggedIn) return
       const imageUrl = await uploadToCloudinary(formData.idCard)
-      if (!imageUrl) return
+      if (!imageUrl) {
+        toast.error('Failed to upload ID card! Please try again!')
+        return
+      }
       const newFormData = { ...formData, idCard: imageUrl }
       await addUser({
         variables: {
@@ -94,25 +107,32 @@ export default function RegistrationForm() {
     }
   }
 
-  function handleFormData(e) {
-    setformData({
-      ...formData,
-      [e.target.id]: e.target.id === 'idCard' ? e.target.files[0] : e.target.value
-    })
+  const handleFormData = (fieldId, value) => {
+    setformData((prevData) => ({
+      ...prevData,
+      [fieldId]: value
+    }))
+
+    if (formErrors[fieldId]) {
+      setFormErrors((prevErrors) => ({
+        ...prevErrors,
+        [fieldId]: ''
+      }))
+    }
   }
 
-  function checkValidations() {
-    const keys = Object.keys(formData)
-    const isValid = keys.every((key) => {
-      return formData[key] !== '' && formData[key] !== undefined && formData[key] !== null
-    })
-    if (isValid) {
-      if (formData.phone.length !== 10 || isNaN(formData.phone)) {
-        toast.error('Phone number should be 10 digits long and should contain only numbers!')
-        return false
-      }
+  function isFormValid() {
+    const parseResult = formSchema.safeParse(formData)
+    if (!parseResult.success) {
+      const newFormErrors = {}
+      parseResult.error.errors.forEach((err) => {
+        newFormErrors[err.path[0]] = err.message
+      })
+      setFormErrors(newFormErrors)
+      return false
+    } else {
+      return true
     }
-    return isValid
   }
 
   return (
@@ -137,12 +157,22 @@ export default function RegistrationForm() {
         <FormContainer>
           {formInputs.map((input) =>
             input.type === 'file' ? (
-              <FileInput key={input.id} input={input} handleFormData={handleFormData} />
+              <FileInput
+                key={input.id}
+                input={input}
+                handleFormData={handleFormData}
+                error={formErrors[input.id]}
+              />
             ) : (
-              <InputField key={input.id} input={input} handleFormData={handleFormData} />
+              <InputField
+                key={input.id}
+                input={input}
+                handleFormData={handleFormData}
+                error={formErrors[input.id]}
+              />
             )
           )}
-          <Button onClick={(e) => handleSubmit(e)} disabled={isloading}>
+          <Button onClick={(e) => handleSubmit(e)} disabled={loading}>
             Register
           </Button>
         </FormContainer>
