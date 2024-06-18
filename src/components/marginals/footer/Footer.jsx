@@ -37,7 +37,7 @@ RenderListItem.propTypes = {
 export default function MyFooter() {
   return (
     <>
-      <Footer>
+      <Footer id="contact">
         <FooterTop>
           <Logos>
             <SocialLogo>
