@@ -13,6 +13,7 @@
     "prettier:fix": "prettier --write \"./**/*.{ts,tsx,js,jsx,css,scss,md}\" --ignore-pattern node_modules/"
   },
   "dependencies": {
+    "axios": "^1.7.2",
     "firebase": "^10.12.2",
     "framer-motion": "^11.2.10",
     "hamburger-react": "^2.5.1",

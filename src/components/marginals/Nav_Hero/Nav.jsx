@@ -22,12 +22,25 @@ import { navLinks } from '../../../config/content/navData/Nav_Hero'
 import { links } from '../../../config/content/navData/Nav_Hero'
 import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
-
+import Loader from '../../loader/Loader'
+import { useNavigate } from 'react-router-dom'
 const Nav = () => {
   const { userInfo, handleGoogleSignIn, handleSignOut } = useContext(AuthContext)
-  console.log(userInfo)
-
+  const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  async function signInWithGoogle() {
+    setLoading(true)
+    try {
+      await handleGoogleSignIn()
+      navigate('/register')
+    } catch (e) {
+      console.error(e)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   function handleToggle() {
     setIsOpen(!isOpen)
@@ -56,70 +69,73 @@ const Nav = () => {
   }
 
   return (
-    <NavCont>
-      <InnrNavCont>
-        <Logo>
-          <NitImg src={links.nit} alt="NIT Rkl" />
-          <LogoImg src={links.logo} alt="logo" />
-        </Logo>
+    <>
+      {loading && <Loader />}
+      <NavCont>
+        <InnrNavCont>
+          <Logo>
+            <NitImg src={links.nit} alt="NIT Rkl" />
+            <LogoImg src={links.logo} alt="logo" />
+          </Logo>
 
-        <Menu>
-          <InnerMenu>
-            {navLinks.map((navLink) => (
-              <MenuItem key={navLink.id}>
-                {navLink.id == 'home' ? (
-                  <Link to="/">{navLink.name}</Link>
-                ) : (
-                  <Link
-                    to={navLink.href}
+          <Menu>
+            <InnerMenu>
+              {navLinks.map((navLink) => (
+                <MenuItem key={navLink.id}>
+                  {navLink.id == 'home' ? (
+                    <Link to="/">{navLink.name}</Link>
+                  ) : (
+                    <Link
+                      to={navLink.href}
+                      tabIndex={0}
+                      onClick={navLink.href ? null : () => onClick(navLink.id)}
+                    >
+                      {navLink.name}
+                    </Link>
+                  )}
+                </MenuItem>
+              ))}
+            </InnerMenu>
+          </Menu>
+
+          {userInfo.name ? (
+            <Link to="/" onClick={handleSignOut}>
+              <Register>Logout</Register>
+            </Link>
+          ) : (
+            <button onClick={signInWithGoogle}>
+              <Register>Register</Register>
+            </button>
+          )}
+          <Menu2>
+            <MenuIcon>
+              <Hamburger color="#FFEEDA" toggled={isOpen} toggle={handleToggle} />
+            </MenuIcon>
+          </Menu2>
+        </InnrNavCont>
+
+        {isOpen && (
+          <ResMen>
+            <ResList>
+              <button onClick={userInfo.name ? handleSignOut : signInWithGoogle}>
+                <SecRegister>{userInfo.name ? 'Logout' : 'Register'}</SecRegister>
+              </button>
+              {navLinks.map((navLink) => (
+                <ResItem key={navLink.id}>
+                  <ResAnchor
+                    // onClick={() => setIsOpen(false)}
                     tabIndex={0}
                     onClick={navLink.href ? null : () => onClick(navLink.id)}
                   >
                     {navLink.name}
-                  </Link>
-                )}
-              </MenuItem>
-            ))}
-          </InnerMenu>
-        </Menu>
-
-        {userInfo.name ? (
-          <Link to="/" onClick={handleSignOut}>
-            <Register>Logout</Register>
-          </Link>
-        ) : (
-          <Link to="/register" onClick={handleGoogleSignIn}>
-            <Register>Register</Register>
-          </Link>
+                  </ResAnchor>
+                </ResItem>
+              ))}
+            </ResList>
+          </ResMen>
         )}
-        <Menu2>
-          <MenuIcon>
-            <Hamburger color="#FFEEDA" toggled={isOpen} toggle={handleToggle} />
-          </MenuIcon>
-        </Menu2>
-      </InnrNavCont>
-
-      {isOpen && (
-        <ResMen>
-          <ResList>
-            <Link to="/register" onClick={userInfo.name ? handleSignOut : handleGoogleSignIn}>
-              <SecRegister>{userInfo.name ? 'Logout' : 'Register'}</SecRegister>
-            </Link>
-            {navLinks.map((navLink) => (
-              <ResItem key={navLink.id}>
-                <ResAnchor
-                  // onClick={() => setIsOpen(false)}
-                  tabIndex={0}
-                  onClick={navLink.href ? null : () => onClick(navLink.id)}
-                >
-                  {navLink.name}
-                </ResAnchor>
-              </ResItem>
-            ))}
-          </ResList>
-        </ResMen>
-      )}
-    </NavCont>
+      </NavCont>
+    </>
   )
 }
 

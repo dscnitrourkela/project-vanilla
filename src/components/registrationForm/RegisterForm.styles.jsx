@@ -3,7 +3,7 @@ import tw from 'twin.macro'
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  ${tw`grid md:grid-cols-2 grid-cols-1 font-Poppins mt-20`}
+  ${tw`grid md:grid-cols-2 grid-cols-1 font-Poppins mt-32 md:mt-20`}
 `
 
 export const BackgroundImage = styled.div`
@@ -22,6 +22,10 @@ export const Date = styled.h1`
 `
 export const FormContainer = styled.form`
   ${tw`flex flex-col justify-center items-center h-full w-full gap-[24px] md:gap-4 py-5 md:py-10 px-4 md:px-14 bg-transparent`}
+`
+
+export const SignInContainer = styled.div`
+  ${tw`flex flex-col justify-center items-center gap-4 h-[50vh] md:h-screen w-full`}
 `
 
 export const Button = styled.button`

@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useContext, useEffect } from 'react'
+import { AuthContext } from '../../context/AuthContext'
 import { toast } from 'react-toastify'
 import Loader from '../loader/Loader'
 import {
@@ -18,10 +19,12 @@ import {
   FormContainer,
   Button,
   MobileHeader,
-  MobileDate
+  MobileDate,
+  SignInContainer
 } from './RegisterForm.styles'
 import InputField from './InputField'
 import FileInput from './FileInput'
+import { uploadToCloudinary } from './uploadToCloudinary'
 
 export default function RegistrationForm() {
   const [formData, setformData] = useState({
@@ -35,6 +38,31 @@ export default function RegistrationForm() {
     tShirtSize: ''
   })
   const [loading, setLoading] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  const { userInfo, handleGoogleSignIn } = useContext(AuthContext)
+
+  async function signInWithGoogle() {
+    setLoading(true)
+    try {
+      await handleGoogleSignIn()
+      setIsLoggedIn(true)
+    } catch (e) {
+      console.error(e)
+      toast.error('Failed to sign in!')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    const userObjectKeys = Object.keys(userInfo)
+    if (userObjectKeys.length === 0) {
+      setIsLoggedIn(false)
+    } else {
+      setIsLoggedIn(true)
+    }
+  }, [userInfo])
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -44,38 +72,15 @@ export default function RegistrationForm() {
       return
     }
     console.log(formData)
-
-    const imageUrl = await uploadToCloudinary()
-    if (!imageUrl) return
-    toast.success('Image uploaded successfully!')
-  }
-
-  async function uploadToCloudinary() {
-    const image = formData.idCard
-    if (!image) return toast.error('Please select an image!')
-
-    const cloudName = import.meta.env.VITE_PUBLIC_CLOUDINARY_CLOUD_NAME
-    const uploadPreset = import.meta.env.VITE_PUBLIC_CLOUDINARY_UPLOAD_PRESET
-    const url = `https://api.cloudinary.com/v1_1/${cloudName}/upload`
-
-    const form = new FormData()
-    form.append('file', image)
-    form.append('upload_preset', uploadPreset)
-
     setLoading(true)
     try {
-      const response = await fetch(url, {
-        method: 'POST',
-        body: form
-      })
-
-      if (!response.ok) {
-        throw new Error(`Failed to upload image: ${response.statusText}`)
-      }
-      const res = await response.json()
-      return res.url
-    } catch (err) {
-      console.error(err)
+      if (!isLoggedIn) return
+      const imageUrl = await uploadToCloudinary(formData.idCard)
+      if (!imageUrl) return
+      setformData({ ...formData, idCard: imageUrl })
+      toast.success('Image uploaded successfully!')
+    } catch (e) {
+      console.error(e)
       toast.error('Failed to upload image!')
     } finally {
       setLoading(false)
@@ -94,8 +99,15 @@ export default function RegistrationForm() {
     const isValid = keys.every((key) => {
       return formData[key] !== '' && formData[key] !== undefined && formData[key] !== null
     })
+    if (isValid) {
+      if (formData.phone.length !== 10 || isNaN(formData.phone)) {
+        toast.error('Phone number should be 10 digits long and should contain only numbers!')
+        return false
+      }
+    }
     return isValid
   }
+
   return (
     <Container>
       {loading && <Loader />}
@@ -114,16 +126,26 @@ export default function RegistrationForm() {
         <MobileDate>{date}</MobileDate>
       </MobileHeader>
 
-      <FormContainer action="">
-        {formInputs.map((input) =>
-          input.type === 'file' ? (
-            <FileInput key={input.id} input={input} handleFormData={handleFormData} />
-          ) : (
-            <InputField key={input.id} input={input} handleFormData={handleFormData} />
-          )
-        )}
-        <Button onClick={(e) => handleSubmit(e)}>Register</Button>
-      </FormContainer>
+      {isLoggedIn ? (
+        <FormContainer>
+          {formInputs.map((input) =>
+            input.type === 'file' ? (
+              <FileInput key={input.id} input={input} handleFormData={handleFormData} />
+            ) : (
+              <InputField key={input.id} input={input} handleFormData={handleFormData} />
+            )
+          )}
+          <Button onClick={(e) => handleSubmit(e)} disabled={loading}>
+            Register
+          </Button>
+        </FormContainer>
+      ) : (
+        <SignInContainer>
+          <Button onClick={signInWithGoogle} disabled={loading}>
+            Sign in with Google
+          </Button>
+        </SignInContainer>
+      )}
     </Container>
   )
 }
