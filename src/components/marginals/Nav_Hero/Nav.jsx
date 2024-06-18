@@ -102,18 +102,31 @@ const Nav = () => {
       {isOpen && (
         <ResMen>
           <ResList>
-            <Link to="/register" onClick={userInfo.name ? handleSignOut : handleGoogleSignIn}>
-              <SecRegister>{userInfo.name ? 'Logout' : 'Register'}</SecRegister>
-            </Link>
+            {userInfo.name ? (
+              <Link to="/" onClick={handleSignOut}>
+                <SecRegister>Logout</SecRegister>
+              </Link>
+            ) : (
+              <Link to="/register" onClick={handleGoogleSignIn}>
+                <SecRegister>Register</SecRegister>
+              </Link>
+            )}
+
             {navLinks.map((navLink) => (
               <ResItem key={navLink.id}>
-                <ResAnchor
-                  // onClick={() => setIsOpen(false)}
-                  tabIndex={0}
-                  onClick={navLink.href ? null : () => onClick(navLink.id)}
-                >
-                  {navLink.name}
-                </ResAnchor>
+                {navLink.id == 'home' ? (
+                  <ResAnchor>
+                    <Link to="/">{navLink.name}</Link>
+                  </ResAnchor>
+                ) : (
+                  <ResAnchor
+                    // onClick={() => setIsOpen(false)}
+                    tabIndex={0}
+                    onClick={navLink.href ? null : () => onClick(navLink.id)}
+                  >
+                    {navLink.name}
+                  </ResAnchor>
+                )}
               </ResItem>
             ))}
           </ResList>
