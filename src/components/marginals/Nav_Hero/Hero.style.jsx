@@ -50,7 +50,6 @@ export const MainImg = styled.img`
 `
 
 export const MainImgText = styled.div`
-
   ${tw`
    flex 
    font-Poppins
@@ -63,9 +62,6 @@ export const MainImgText = styled.div`
   
   `}
 `
-
-
-
 
 export const DateTime = styled.div`
   @media (max-width: 671px) {
