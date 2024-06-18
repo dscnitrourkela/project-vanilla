@@ -13,8 +13,12 @@
     "prettier:fix": "prettier --write \"./**/*.{ts,tsx,js,jsx,css,scss,md}\" --ignore-pattern node_modules/"
   },
   "dependencies": {
+    "@apollo/client": "^3.10.5",
+    "apollo-boost": "^0.4.9",
+    "axios": "^1.7.2",
     "firebase": "^10.12.2",
     "framer-motion": "^11.2.10",
+    "graphql": "^15.8.0",
     "hamburger-react": "^2.5.1",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",

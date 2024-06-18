@@ -8,7 +8,7 @@ export const links = {
   Alche: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717977767/image_8118_ojllyo.png',
   AlcheNITR:
     'https://res.cloudinary.com/dhv234qct/image/upload/v1718187589/AICHE_SRC/assets/p29vg9kdmwyrhwwngcxf.png',
-  main: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717954088/Frame_1410125826_rqokwk.png'
+  main: 'https://res.cloudinary.com/dfe8sdlkc/image/upload/v1718648656/1_1_ityono.png'
 }
 
 export const navLinks = [
@@ -29,5 +29,6 @@ export const DescriptionContent = {
 
 export const heroContent = {
   Presents: 'Presents',
-  Dates: '9th - 11th August'
+  Dates: '9th - 11th August',
+  ImgText:'Student Regional Conference 2024'
 }

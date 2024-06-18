@@ -35,19 +35,37 @@ export const LogoImg = styled.img`
 `
 
 export const MainImg = styled.img`
-  @media (max-width: 671px) {
-    max-width: 400px;
+  @media (max-width: 800px) {
+    max-width: 500px;
     width: 100%;
     margin-left: 5px;
   }
   ${tw`
   md:w-[100%] 
   
-  md:max-w-[800px] 
+  md:max-w-[1000px] 
   object-contain
   
   `}
 `
+
+export const MainImgText = styled.div`
+
+  ${tw`
+   flex 
+   font-Poppins
+   justify-center
+   text-xl
+   md:text-2.5xl
+   
+   font-semibold
+   text-[#FFEEDA ]
+  
+  `}
+`
+
+
+
 
 export const DateTime = styled.div`
   @media (max-width: 671px) {
