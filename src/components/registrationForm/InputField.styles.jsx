@@ -41,3 +41,6 @@ export const Info = styled.img`
 export const InfoBtn = styled.button`
   ${tw`w-5 h-5 top-3 right-2 absolute z-10`}
 `
+export const ErrorMessage = styled.p`
+  ${tw`text-red-500 text-sm mt-2 font-[500]`}
+`
