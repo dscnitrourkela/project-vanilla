@@ -1,8 +1,11 @@
 import { useState, useContext, useEffect } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import { useMutation } from '@apollo/client'
+import Cookies from 'js-cookie'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import Loader from '../loader/Loader'
+
 import {
   logo2,
   logo1,
@@ -16,7 +19,7 @@ import {
   BackgroundImage,
   LogoSection,
   LogoContainer,
-  Date,
+  DateTxT,
   FormContainer,
   Button,
   MobileHeader,
@@ -55,6 +58,7 @@ export default function RegistrationForm() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const { userInfo, handleGoogleSignIn } = useContext(AuthContext)
   const [createUser, { loading, data }] = useMutation(CREATE_USER)
+  const navigate = useNavigate()
 
   async function signInWithGoogle() {
     setIsLoading(true)
@@ -70,29 +74,38 @@ export default function RegistrationForm() {
   }
 
   useEffect(() => {
-    if (data) {
-      console.log(data)
+    const user = Cookies.get('user')
+    if (user) {
+      navigate(`/`)
+    } else {
+      userInfo.name ? setIsLoggedIn(true) : setIsLoggedIn(false)
+      userInfo.name && setformData((p) => ({ ...p, name: userInfo.name, email: userInfo.email }))
     }
-  }, [data])
 
-  useEffect(() => {
-    userInfo.name ? setIsLoggedIn(true) : setIsLoggedIn(false)
-  }, [userInfo])
+    if (data) {
+      Cookies.set('user', JSON.stringify(data.createUser), { expires: 10 })
+      navigate(`/`)
+    }
+  }, [userInfo, data, navigate])
 
   async function handleSubmit(e) {
     e.preventDefault()
 
     if (!isFormValid()) return
+    if (!userInfo.name) return
 
     setIsLoading(true)
     try {
-      if (!isLoggedIn) return
       const imageUrl = await uploadToCloudinary(formData.idCardPhoto)
+
       if (!imageUrl) {
         toast.error('Failed to upload ID card! Please try again!')
         return
       }
-      const newFormData = { ...formData, idCardPhoto: imageUrl }
+
+      const createdAt = new Date().toISOString()
+      const uid = userInfo.uid
+      const newFormData = { ...formData, idCardPhoto: imageUrl, uid, createdAt }
       await createUser({
         variables: {
           user: newFormData
@@ -143,7 +156,7 @@ export default function RegistrationForm() {
         <LogoContainer>
           <img src={logo1} alt="logo" />
           <img src={logo2} alt="logo2" />
-          <Date>{date}</Date>
+          <DateTxT>{date}</DateTxT>
         </LogoContainer>
       </LogoSection>
 
@@ -167,6 +180,7 @@ export default function RegistrationForm() {
               <InputField
                 key={input.id}
                 input={input}
+                value={formData[input.id]}
                 handleFormData={handleFormData}
                 error={formErrors[input.id]}
               />
