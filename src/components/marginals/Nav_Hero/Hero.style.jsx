@@ -35,7 +35,6 @@ export const LogoImg = styled.img`
 `
 
 export const MainImg = styled.img`
-
   ${tw`
  
   w-[500px] 0.9xsm:w-[550px] sm:w-[600px] md:w-[650px] 2.6md:w-[700px] 
