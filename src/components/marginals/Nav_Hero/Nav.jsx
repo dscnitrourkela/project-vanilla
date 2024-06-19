@@ -22,25 +22,10 @@ import { navLinks } from '../../../config/content/navData/Nav_Hero'
 import { links } from '../../../config/content/navData/Nav_Hero'
 import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
-import Loader from '../../loader/Loader'
-import { useNavigate } from 'react-router-dom'
-const Nav = () => {
-  const { userInfo, handleGoogleSignIn, handleSignOut } = useContext(AuthContext)
-  const navigate = useNavigate()
-  const [isOpen, setIsOpen] = useState(false)
-  const [loading, setLoading] = useState(false)
 
-  async function signInWithGoogle() {
-    setLoading(true)
-    try {
-      await handleGoogleSignIn()
-      navigate('/register')
-    } catch (e) {
-      console.error(e)
-    } finally {
-      setLoading(false)
-    }
-  }
+const Nav = () => {
+  const { userInfo, handleSignOut } = useContext(AuthContext)
+  const [isOpen, setIsOpen] = useState(false)
 
   function handleToggle() {
     setIsOpen(!isOpen)
@@ -70,7 +55,6 @@ const Nav = () => {
 
   return (
     <NavCont>
-      {loading && <Loader />}
       <InnrNavCont>
         <Logo>
           <NitImg src={links.nit} alt="NIT Rkl" />
@@ -102,9 +86,9 @@ const Nav = () => {
             <Register>Logout</Register>
           </Link>
         ) : (
-          <button onClick={signInWithGoogle}>
+          <Link to="/register">
             <Register>Register</Register>
-          </button>
+          </Link>
         )}
         <Menu2>
           <MenuIcon>
@@ -116,7 +100,7 @@ const Nav = () => {
       {isOpen && (
         <ResMen>
           <ResList>
-            <button onClick={userInfo.name ? handleSignOut : signInWithGoogle}>
+            <button onClick={userInfo.name && handleSignOut}>
               <SecRegister>{userInfo.name ? 'Logout' : 'Register'}</SecRegister>
             </button>
             {navLinks.map((navLink) => (

@@ -26,35 +26,35 @@ import {
 import InputField from './InputField'
 import FileInput from './FileInput'
 import { uploadToCloudinary } from './uploadToCloudinary'
-import { ADD_USER } from '../../graphQL/mutations/userMutation'
+import { CREATE_USER } from '../../graphQL/mutations/userMutation'
 import { formSchema } from '../../config/content/registrationForm/formSchema'
 
 export default function RegistrationForm() {
   const [formData, setformData] = useState({
     name: '',
     email: '',
-    phone: '',
-    aicheID: '',
+    mobile: '',
+    aicheRegID: '',
     college: '',
-    rollNo: '',
-    idCard: null,
-    tShirtSize: ''
+    rollNumber: '',
+    idCardPhoto: null,
+    tSize: ''
   })
   const initialFormErrors = {
     name: '',
     email: '',
-    phone: '',
-    aicheID: '',
+    mobile: '',
+    aicheRegID: '',
     college: '',
-    rollNo: '',
-    idCard: '',
-    tShirtSize: ''
+    rollNumber: '',
+    idCardPhoto: '',
+    tSize: ''
   }
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [isloading, setIsLoading] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const { userInfo, handleGoogleSignIn } = useContext(AuthContext)
-  const [addUser, { loading, data }] = useMutation(ADD_USER)
+  const [createUser, { loading, data }] = useMutation(CREATE_USER)
 
   async function signInWithGoogle() {
     setIsLoading(true)
@@ -87,13 +87,13 @@ export default function RegistrationForm() {
     setIsLoading(true)
     try {
       if (!isLoggedIn) return
-      const imageUrl = await uploadToCloudinary(formData.idCard)
+      const imageUrl = await uploadToCloudinary(formData.idCardPhoto)
       if (!imageUrl) {
         toast.error('Failed to upload ID card! Please try again!')
         return
       }
-      const newFormData = { ...formData, idCard: imageUrl }
-      await addUser({
+      const newFormData = { ...formData, idCardPhoto: imageUrl }
+      await createUser({
         variables: {
           user: newFormData
         }
