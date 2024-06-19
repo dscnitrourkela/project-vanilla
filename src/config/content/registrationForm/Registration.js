@@ -28,13 +28,13 @@ export const formInputs = [
     type: 'email'
   },
   {
-    id: 'phone',
+    id: 'mobile',
     label: 'Phone No.',
     placeholder: 'Enter Your Ph No. here',
     type: 'number'
   },
   {
-    id: 'aicheID',
+    id: 'aicheRegID',
     label: 'AIChE Membership ID',
     placeholder: 'Enter Your ID here',
     type: 'text'
@@ -46,19 +46,19 @@ export const formInputs = [
     type: 'text'
   },
   {
-    id: 'rollNo',
+    id: 'rollNumber',
     label: 'College Roll No.',
     placeholder: 'Enter Your Roll No. here',
     type: 'text'
   },
   {
-    id: 'idCard',
+    id: 'idCardPhoto',
     label: 'Upload Institute ID Card',
     placeholder: 'Upload ID Card',
     type: 'file'
   },
   {
-    id: 'tShirtSize',
+    id: 'tSize',
     label: 'T-Shirt Size',
     placeholder: 'Enter Your Size of T-shirt',
     type: 'text',

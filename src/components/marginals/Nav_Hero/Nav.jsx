@@ -24,9 +24,7 @@ import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
 
 const Nav = () => {
-  const { userInfo, handleGoogleSignIn, handleSignOut } = useContext(AuthContext)
-  console.log(userInfo)
-
+  const { userInfo, handleSignOut } = useContext(AuthContext)
   const [isOpen, setIsOpen] = useState(false)
 
   function handleToggle() {
@@ -88,7 +86,7 @@ const Nav = () => {
             <Register>Logout</Register>
           </Link>
         ) : (
-          <Link to="/register" onClick={handleGoogleSignIn}>
+          <Link to="/register">
             <Register>Register</Register>
           </Link>
         )}
@@ -102,9 +100,9 @@ const Nav = () => {
       {isOpen && (
         <ResMen>
           <ResList>
-            <Link to="/register" onClick={userInfo.name ? handleSignOut : handleGoogleSignIn}>
+            <button onClick={userInfo.name && handleSignOut}>
               <SecRegister>{userInfo.name ? 'Logout' : 'Register'}</SecRegister>
-            </Link>
+            </button>
             {navLinks.map((navLink) => (
               <ResItem key={navLink.id}>
                 <ResAnchor
