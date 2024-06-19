@@ -35,16 +35,31 @@ export const LogoImg = styled.img`
 `
 
 export const MainImg = styled.img`
-  @media (max-width: 671px) {
-    max-width: 400px;
-    width: 100%;
-    margin-left: 5px;
-  }
+
   ${tw`
-  md:w-[100%] 
-  
-  md:max-w-[800px] 
-  object-contain
+ 
+  w-[500px] 0.9xsm:w-[550px] sm:w-[600px] md:w-[650px] 2.6md:w-[700px] 
+
+ 
+  `}
+`
+
+export const MainImgText = styled.div`
+  ${tw`
+   flex 
+   font-Poppins
+   justify-center
+   text-base
+   0.5xxsm:text-lg
+   xxsm:text-xl
+   0.5xsm:text-1.5xl
+   0.9xsm:text-2xl
+   
+   xsm:text-2.5xl
+   text-brown-2
+   
+   font-semibold
+   text-[#FFEEDA ]
   
   `}
 `

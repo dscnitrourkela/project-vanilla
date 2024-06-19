@@ -73,6 +73,7 @@ export default {
         '0.8xsm': '485px',
         '0.7xsm': '471px',
         '0.5xsm': '468px',
+        '0.4xsm': '430px',
         xxsm: '400px',
         '0.5xxsm': '350px'
       },
