@@ -100,9 +100,8 @@ export const HeartIcon = styled.img`
   `}
 `
 
-export const PhoneNumberContainer=styled.div`
-white-space: nowrap;
-width: auto;
-${tw` `}
-`;
-
+export const PhoneNumberContainer = styled.div`
+  white-space: nowrap;
+  width: auto;
+  ${tw` `}
+`

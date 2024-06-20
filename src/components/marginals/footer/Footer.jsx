@@ -99,7 +99,7 @@ function RenderListItem({ item, title }) {
           <PhoneNumberContainer>
             <div>{item.name}:</div>
             <div>{item.number}</div>
-          </ PhoneNumberContainer>
+          </PhoneNumberContainer>
         </div>
       )
     }
