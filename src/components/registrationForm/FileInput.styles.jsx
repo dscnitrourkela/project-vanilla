@@ -46,3 +46,6 @@ export const Input = styled.div`
   position: relative;
   z-index: 1;
 `
+export const ErrorMessage = styled.p`
+  ${tw`text-red-500 text-sm mt-2 font-[500]`}
+`

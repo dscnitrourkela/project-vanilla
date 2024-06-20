@@ -1,6 +1,6 @@
 export const links = {
   logo: 'https://res.cloudinary.com/dhv234qct/image/upload/v1718189887/AICHE_SRC/assets/hjnj2fhscpaspmrjwyzj.png',
-  nit: 'https://res.cloudinary.com/dhv234qct/image/upload/v1718187589/AICHE_SRC/assets/wvcluuak7ckr9ytpd0dq.png',
+  nit: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/NIT_Rourkela_Colour_Logo.svg/1200px-NIT_Rourkela_Colour_Logo.svg.png',
   registernow: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683299/Group_2_rfdbbh.png',
   down: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683287/Vector_9_piw4n5.png',
   wave: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683273/Vector_346_dda6za.png',
@@ -8,7 +8,7 @@ export const links = {
   Alche: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717977767/image_8118_ojllyo.png',
   AlcheNITR:
     'https://res.cloudinary.com/dhv234qct/image/upload/v1718187589/AICHE_SRC/assets/p29vg9kdmwyrhwwngcxf.png',
-  main: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717954088/Frame_1410125826_rqokwk.png'
+  main: 'https://res.cloudinary.com/dfe8sdlkc/image/upload/v1718648656/1_1_ityono.png'
 }
 
 export const navLinks = [
@@ -29,5 +29,6 @@ export const DescriptionContent = {
 
 export const heroContent = {
   Presents: 'Presents',
-  Dates: '9th - 11th August'
+  Dates: '9th - 11th August',
+  ImgText: 'Student Regional Conference 2024'
 }
