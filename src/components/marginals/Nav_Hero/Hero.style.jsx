@@ -3,15 +3,9 @@ import styled, { keyframes } from 'styled-components'
 
 const HeroCont = styled.div`
   ${tw`
-  grid
-  place-items-center
-  mt-10
-  0.4xsm:mt-20
+  pt-[180px] 
   w-[100%] 
-  h-screen
-  md:px-10
-  px-4
-  font-Poppins
+  h-[100%]
   `}
 `
 
@@ -20,7 +14,7 @@ export const MainFrame = styled.div`
 `
 
 export const LogoCont = styled.div`
-  ${tw`flex flex-col items-center justify-center `}
+  ${tw`flex flex-col items-center justify-center mb-2`}
 `
 
 export const InnerLogoCont = styled.div`
@@ -28,30 +22,53 @@ export const InnerLogoCont = styled.div`
 `
 
 export const Presents = styled.div`
-  ${tw`text-[#FFEEDA ] text-base md:text-xl  font-[600] mt-10`}
+  ${tw`text-[#FFEEDA ] text-3xl font-Poppins font-bold mt-6`}
 `
 
-export const AicheNit = styled.img`
-  ${tw`w-auto h-[60px] 0.4xsm:h-[70px] md:h-[80px]`}
-`
-
-export const AicheLogo = styled.img`
-  ${tw`w-auto h-[40px]  0.4xsm:h-[45px] md:h-[60px] `}
+export const LogoImg = styled.img`
+  @media (max-width: 671px) {
+    max-width: 300px;
+    width: 60%;
+    height: auto;
+  }
+  ${tw`w-auto h-auto max-w-[400px]`}
 `
 
 export const MainImg = styled.img`
-  ${tw` w-auto scale-[1.08] md:(h-[200px])`}
+  ${tw`
+ 
+  w-[500px] 0.9xsm:w-[550px] sm:w-[600px] md:w-[650px] 2.6md:w-[700px] 
+
+ 
+  `}
 `
 
 export const MainImgText = styled.div`
   ${tw`
-  text-center text-lg xxsm:text-xl 0.5xsm:text-1.5xl 0.9xsm:text-2xl xsm:text-2.5xl text-brown-2 font-[600] text-[#FFEEDA ]
+   flex 
+   font-Poppins
+   justify-center
+   text-base
+   0.5xxsm:text-lg
+   xxsm:text-xl
+   0.5xsm:text-1.5xl
+   0.9xsm:text-2xl
+   
+   xsm:text-2.5xl
+   text-brown-2
+   
+   font-semibold
+   text-[#FFEEDA ]
   
   `}
 `
 
 export const DateTime = styled.div`
-  ${tw` px-5 h-[55px] font-[600] text-lg xxsm:text-xl 0.5xsm:text-1.5xl 0.9xsm:text-2xl xsm:text-2.5xl bg-orange-1 text-black-1  rounded-2xl flex justify-evenly items-center mt-10`}
+  @media (max-width: 671px) {
+    width: 70%;
+    height: 50px;
+  }
+  ${tw`w-[245px] h-[70px] font-semibold text-xl md:text-2xl bg-orange-1 text-black-1 font-Poppins rounded-2xl flex justify-evenly items-center mt-6`}
 `
 
 export const RegisterCont = styled.div`
