@@ -6,7 +6,10 @@ export const DescriptionContainer = styled.article`
   w-full 
   text-center 
   bg-[#FFEEDA]
-  py-[84px]
+  py-[100px]
+  md:pt-[110px]
+  md:pb-[150px]
+  px-4
   `}
 `
 
@@ -100,8 +103,7 @@ export const InnerSpan = styled.span`
 
 export const RegisterButton = styled.button`
   ${tw`
-  w-[140px]
-  h-[50px]
+  
   px-2 
   py-1 
   rounded-[11.53px] 
