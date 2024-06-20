@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { auth, signInWithGoogle, signOutUser } from '../firebase/login'
 import { onAuthStateChanged } from 'firebase/auth'
 import { toast } from 'react-toastify'
-import Cookies from 'js-cookie'
 
 export const AuthContext = createContext()
 
@@ -45,7 +44,6 @@ export const AuthProvider = ({ children }) => {
     try {
       await signOutUser()
       setUserData({})
-      Cookies.remove('user')
       toast.success('Successfully signed out.')
     } catch (error) {
       console.error('Error signing out:', error)
