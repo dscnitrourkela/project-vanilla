@@ -1,7 +1,6 @@
 import { useState, useContext, useEffect } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import { useMutation, skipToken, useSuspenseQuery } from '@apollo/client'
-// import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import Loader from '../loader/Loader'

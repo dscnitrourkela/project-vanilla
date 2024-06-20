@@ -100,18 +100,30 @@ const Nav = () => {
       {isOpen && (
         <ResMen>
           <ResList>
-            <button onClick={userInfo.name && handleSignOut}>
-              <SecRegister>{userInfo.name ? 'Logout' : 'Register'}</SecRegister>
-            </button>
+            {userInfo.name ? (
+              <Link to="/" onClick={handleSignOut}>
+                <SecRegister>Logout</SecRegister>
+              </Link>
+            ) : (
+              <Link to="/register">
+                <SecRegister>Register</SecRegister>
+              </Link>
+            )}
             {navLinks.map((navLink) => (
               <ResItem key={navLink.id}>
-                <ResAnchor
-                  // onClick={() => setIsOpen(false)}
-                  tabIndex={0}
-                  onClick={navLink.href ? null : () => onClick(navLink.id)}
-                >
-                  {navLink.name}
-                </ResAnchor>
+                {navLink.id == 'home' ? (
+                  <ResAnchor>
+                    <Link to="/">{navLink.name} </Link>
+                  </ResAnchor>
+                ) : (
+                  <ResAnchor
+                    // onClick={() => setIsOpen(false)}
+                    tabIndex={0}
+                    onClick={navLink.href ? null : () => onClick(navLink.id)}
+                  >
+                    {navLink.name}
+                  </ResAnchor>
+                )}
               </ResItem>
             ))}
           </ResList>
