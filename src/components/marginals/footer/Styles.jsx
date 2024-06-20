@@ -99,3 +99,9 @@ export const HeartIcon = styled.img`
     w-[9.88px] h-[9.88px] 1.5xl:w-[18px] 1.5xl:h-[18px]
   `}
 `
+
+export const PhoneNumberContainer = styled.div`
+  white-space: nowrap;
+  width: auto;
+  ${tw` `}
+`

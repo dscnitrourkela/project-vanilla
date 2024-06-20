@@ -15,7 +15,8 @@ import {
   ListItems,
   FooterBottom,
   MadeBy,
-  HeartIcon
+  HeartIcon,
+  PhoneNumberContainer
 } from './Styles'
 
 import footerData from '../../../config/content/footerData/Footer.js'
@@ -95,8 +96,10 @@ function RenderListItem({ item, title }) {
     } else {
       return (
         <div className="">
-          <div>{item.name}:</div>
-          <div>{item.number}</div>
+          <PhoneNumberContainer>
+            <div>{item.name}:</div>
+            <div>{item.number}</div>
+          </PhoneNumberContainer>
         </div>
       )
     }
