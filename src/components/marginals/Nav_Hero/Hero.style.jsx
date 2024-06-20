@@ -18,7 +18,7 @@ export const LogoCont = styled.div`
 `
 
 export const InnerLogoCont = styled.div`
-  ${tw` flex flex-col items-center justify-center gap-10 xsm:flex xsm:flex-row xsm:items-center xsm:justify-center xsm:gap-14`}
+  ${tw`flex flex-col items-center justify-center gap-10 xsm:flex xsm:flex-row xsm:items-center xsm:justify-center xsm:gap-14`}
 `
 
 export const Presents = styled.div`
@@ -49,12 +49,12 @@ export const MainImgText = styled.div`
    font-Poppins
    justify-center
    text-base
-   0.5xxsm:text-lg
+   0.5xxsm:text-1.5sm
    xxsm:text-xl
-   0.5xsm:text-1.5xl
-   0.9xsm:text-2xl
+   0.5xsm:text-xl
+   0.9xsm:text-1.5xl
    
-   xsm:text-2.5xl
+   xsm:text-2xl
    text-brown-2
    
    font-semibold
@@ -65,7 +65,7 @@ export const MainImgText = styled.div`
 
 export const DateTime = styled.div`
   @media (max-width: 671px) {
-    width: 70%;
+    width: [120px];
     height: 50px;
   }
   ${tw`w-[245px] h-[70px] font-semibold text-xl md:text-2xl bg-orange-1 text-black-1 font-Poppins rounded-2xl flex justify-evenly items-center mt-6`}
