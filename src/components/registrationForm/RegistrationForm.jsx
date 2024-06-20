@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from 'react'
 import { AuthContext } from '../../context/AuthContext'
-import { useMutation } from '@apollo/client'
-import Cookies from 'js-cookie'
+import { useMutation, skipToken, useSuspenseQuery } from '@apollo/client'
+// import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import Loader from '../loader/Loader'
@@ -31,7 +31,7 @@ import FileInput from './FileInput'
 import { uploadToCloudinary } from './uploadToCloudinary'
 import { CREATE_USER } from '../../graphQL/mutations/userMutation'
 import { formSchema } from '../../config/content/registrationForm/formSchema'
-
+import { GET_USER_BY_ID } from '../../graphQL/queries/userQueries'
 export default function RegistrationForm() {
   const [formData, setformData] = useState({
     name: '',
@@ -56,15 +56,21 @@ export default function RegistrationForm() {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [isloading, setIsLoading] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [uid, setUid] = useState(null)
   const { userInfo, handleGoogleSignIn } = useContext(AuthContext)
-  const [createUser, { loading, data }] = useMutation(CREATE_USER)
+  const [createUser, { loading: createUserLoading, data: createUserData }] =
+    useMutation(CREATE_USER)
+  const { data: userDataInDb } = useSuspenseQuery(
+    GET_USER_BY_ID,
+    uid ? { variables: { userId: uid } } : skipToken
+  )
+
   const navigate = useNavigate()
 
   async function signInWithGoogle() {
     setIsLoading(true)
     try {
       await handleGoogleSignIn()
-      setIsLoggedIn(true)
     } catch (e) {
       console.error(e)
       toast.error('Failed to sign in!')
@@ -73,26 +79,31 @@ export default function RegistrationForm() {
     }
   }
 
+  const loading = createUserLoading
+
   useEffect(() => {
-    const user = Cookies.get('user')
-    if (user) {
-      navigate(`/`)
-    } else {
-      userInfo.name ? setIsLoggedIn(true) : setIsLoggedIn(false)
-      userInfo.name && setformData((p) => ({ ...p, name: userInfo.name, email: userInfo.email }))
+    if (userInfo.uid) {
+      setIsLoggedIn(true)
+      setUid(userInfo.uid)
+      const userData = userDataInDb
+      if (userData?.user) {
+        toast.info('You have already registered!')
+        navigate(`/`)
+      }
+      setformData((p) => ({ ...p, name: userInfo.name, email: userInfo.email }))
     }
 
-    if (data) {
-      Cookies.set('user', JSON.stringify(data.createUser), { expires: 10 })
+    if (createUserData) {
+      console.log(createUserData)
       navigate(`/`)
     }
-  }, [userInfo, data, navigate])
+  }, [userInfo, createUserData, navigate, userDataInDb])
 
   async function handleSubmit(e) {
     e.preventDefault()
 
     if (!isFormValid()) return
-    if (!userInfo.name) return
+    if (!userInfo.name) return toast.error('Please sign in with Google!')
 
     setIsLoading(true)
     try {
