@@ -61,7 +61,7 @@ export default function RegistrationForm() {
     useMutation(CREATE_USER)
   const { data: userDataInDb } = useSuspenseQuery(
     GET_USER_BY_ID,
-    uid ? { variables: { userId: uid } } : skipToken
+    uid ? { variables: { uid: uid } } : skipToken
   )
 
   const navigate = useNavigate()
@@ -85,7 +85,7 @@ export default function RegistrationForm() {
       setIsLoggedIn(true)
       setUid(userInfo.uid)
       const userData = userDataInDb
-      if (userData?.user) {
+      if (userData?.getUser) {
         toast.info('You have already registered!')
         navigate(`/`)
       }
