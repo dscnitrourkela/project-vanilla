@@ -30,5 +30,5 @@ export const DescriptionContent = {
 export const heroContent = {
   Presents: 'Presents',
   Dates: '9th - 11th August',
-  ImgText: 'Student Regional Conference 2024'
+  ImgText: 'India Student Conference 2024'
 }
