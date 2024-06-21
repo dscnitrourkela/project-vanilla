@@ -15,7 +15,8 @@ import NavCont, {
   ResAnchor,
   NitImg,
   Register,
-  SecRegister
+  SecRegister,
+  ProfileBtn
 } from './Nav.styles'
 import { Link } from 'react-router-dom'
 import { navLinks } from '../../../config/content/navData/Nav_Hero'
@@ -25,8 +26,9 @@ import SmoothScroll from 'smooth-scroll'
 import ProfileMenu from './ProfileMenu'
 
 const Nav = () => {
-  const { userInfo, handleSignOut } = useContext(AuthContext)
+  const { userInfo } = useContext(AuthContext)
   const [isOpen, setIsOpen] = useState(false)
+  const [profileOpen, setProfileOpen] = useState(false)
 
   function handleToggle() {
     setIsOpen(!isOpen)
@@ -46,6 +48,11 @@ const Nav = () => {
         scroll.animateScroll(anchor)
       }
     }
+  }
+
+  function handleProfileOpen() {
+    setIsOpen(false)
+    setProfileOpen(true)
   }
 
   function onClick(id) {
@@ -86,9 +93,10 @@ const Nav = () => {
           // <Link to="/" onClick={handleSignOut}>
           //   <Register>Logout</Register>
           // </Link>
-          <ResItem>
-            <ProfileMenu />
-          </ResItem>
+
+          <ProfileBtn onMouseEnter={() => setProfileOpen(true)}>
+            <ProfileMenu isProfileOpen={profileOpen} setProfileOpen={setProfileOpen} />
+          </ProfileBtn>
         ) : (
           <Link to="/register">
             <Register>Register</Register>
@@ -105,9 +113,12 @@ const Nav = () => {
         <ResMen>
           <ResList>
             {userInfo.name ? (
-              <Link to="/" onClick={handleSignOut}>
-                <SecRegister>Logout</SecRegister>
-              </Link>
+              // <Link to="/" onClick={handleSignOut}>
+              //   <SecRegister>Logout</SecRegister>
+              // </Link>
+              <button onClick={handleProfileOpen}>
+                <ProfileMenu isProfileOpen={profileOpen} setProfileOpen={setProfileOpen} />
+              </button>
             ) : (
               <Link to="/register">
                 <SecRegister>Register</SecRegister>

@@ -11,39 +11,77 @@ export const ProfileMenuButton = styled.button`
   w-[45px]
   h-[45px]
   cursor-pointer
+  font-Poppins
   `}
+`
+export const Container = styled.div`
+  ${tw`px-5`}
 `
 
 export const ProfileDropDown = styled.div`
   ${tw`
   absolute
-  top-20
-  right-7
+  z-[999]
+  1.4lg:top-[6rem]
+  1.4lg:right-4
   w-[300px]
   bg-[#402e32]
-  rounded-md
-  shadow-lg
-  py-5
+  pt-10
+  pb-5
   font-[500]
-  grid
-  place-items-center
+  flex 
+  flex-col
+  gap-2
+  px-5
+  w-full
+  max-w-[300px]
   `}
+  border : 2px solid #000;
+  border-radius: 14px;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0);
+
   &::before {
     content: '';
     position: absolute;
-    top: -10px;
-    right: 10px;
-    border-width: 5px;
+    top: -19px;
+    right: 20px;
+    border-width: 10px;
     border-style: solid;
     border-color: transparent transparent #402e32 transparent;
   }
+
+  @media (max-width: 1090px) {
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    position: fixed;
+    &::before {
+      content: none;
+    }
+  }
+`
+export const CloseButton = styled.button`
+  ${tw`
+  absolute
+  top-3
+  right-3
+  duration-300
+  active:scale-50
+  rounded-full
+  w-[30px]
+  h-[30px]
+  cursor-pointer
+  font-Poppins
+  1.4lg:hidden
+  `}
 `
 export const ProfileDropDownItem = styled.div`
   ${tw`
-  p-2
+  text-lg
   text-brown-2
   cursor-pointer
-  // hover:bg-[#1D1D1D]
+  font-Poppins
+  font-[500]
   `}
 `
 
@@ -60,11 +98,19 @@ export const Value = styled.label`
 `
 export const LogoutButton = styled.button`
   ${tw`
+  mt-5
   bg-[#1D1D1D]
   text-[#FFEEDA]
   rounded-md
   py-2
   px-4
   cursor-pointer
+  font-[500]
+  font-Poppins
+  duration-300
+  ease-in-out
+  hover:bg-[#FFEEDA]
+  hover:text-[#1D1D1D]
+  active:scale-95
   `}
 `
