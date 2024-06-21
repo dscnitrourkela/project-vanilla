@@ -2,8 +2,7 @@ import SmoothScroll from 'smooth-scroll'
 import HeroCont, {
   MainFrame,
   MainImg,
-  AicheLogo,
-  AicheNit,
+  LogoImg,
   LogoCont,
   Presents,
   DateTime,
@@ -48,8 +47,8 @@ const Hero = () => {
         >
           <LogoCont>
             <InnerLogoCont>
-              <AicheLogo src={links.Alche} alt="Main Frame" />
-              <AicheNit src={links.AlcheNITR} alt="Main Frame" />
+              <LogoImg src={links.Alche} alt="Main Frame" />
+              <LogoImg src={links.AlcheNITR} alt="Main Frame" />
             </InnerLogoCont>
             <Presents>{heroContent.Presents}</Presents>
             <MainImg src={links.main} alt="Main Frame" />
