@@ -16,7 +16,7 @@ export const navLinks = [
   { name: 'About', id: 'about' },
   { name: 'Events', id: 'events' },
   { name: 'Team', id: 'team' },
-  { name: 'Sponsors', id: 'sponsors' },
+  // { name: 'Sponsors', id: 'sponsors' },
   { name: 'Contact Us', id: 'contact' }
 ]
 
