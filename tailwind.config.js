@@ -76,6 +76,7 @@ export default {
         '0.5xsm': '468px',
         '0.4xsm': '430px',
         xxsm: '400px',
+        '0.6xxsm': '380px',
         '0.5xxsm': '350px'
       },
       fontSize: {

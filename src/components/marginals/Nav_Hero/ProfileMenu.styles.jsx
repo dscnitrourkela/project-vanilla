@@ -20,10 +20,10 @@ export const Container = styled.div`
 
 export const ProfileDropDown = styled.div`
   ${tw`
-  absolute
+  fixed
   z-[999]
   1.4lg:top-[6rem]
-  1.4lg:right-4
+  1.4lg:right-[0.9rem]
   w-[300px]
   bg-[#402e32]
   pt-10
@@ -35,6 +35,8 @@ export const ProfileDropDown = styled.div`
   px-5
   w-full
   max-w-[300px]
+  0.6xxsm:max-w-[350px]
+  0.5xsm:max-w-[400px]
   `}
   border : 2px solid #000;
   border-radius: 14px;
@@ -84,10 +86,20 @@ export const ProfileDropDownItem = styled.div`
   font-[500]
   `}
 `
+export const NotRegistered = styled.div`
+  ${tw`
+  text-lg
+  text-brown-2
+  font-Poppins
+  font-[500]
+  text-center
+  `}
+`
 
 export const Label = styled.label`
   ${tw`
   text-brown-2
+  capitalize
   `}
 `
 export const Value = styled.label`

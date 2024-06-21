@@ -93,8 +93,7 @@ export default function RegistrationForm() {
     }
 
     if (createUserData) {
-      console.log(createUserData)
-      navigate(`/`)
+      window.location.href = '/'
     }
   }, [userInfo, createUserData, navigate, userDataInDb])
 
