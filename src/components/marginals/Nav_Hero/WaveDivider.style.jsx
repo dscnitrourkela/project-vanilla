@@ -4,7 +4,6 @@ import styled from 'styled-components'
 export const WaveCont = styled.div`
   ${tw`
   w-full
-  -mt-10
   `}
 `
 

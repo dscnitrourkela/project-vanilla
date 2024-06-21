@@ -17,8 +17,7 @@ const Description = () => {
       <ButtonWrapper>
         <ButtonContainer>
           <HelpButton>{DescriptionContent.HeroButton}</HelpButton>
-          {/* <RegisterButton>{DescriptionContent.RegisterButton}</RegisterButton> */}
-          <RegisterButton>Starting From 22nd</RegisterButton>
+          <RegisterButton>{DescriptionContent.RegisterButton}</RegisterButton>
         </ButtonContainer>
       </ButtonWrapper>
     </DescriptionContainer>

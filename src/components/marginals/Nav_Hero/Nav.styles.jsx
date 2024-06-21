@@ -9,6 +9,7 @@ const NavCont = styled.nav`
   fixed
   top-0
   z-50
+  
   `}
 `
 
@@ -19,18 +20,28 @@ export const InnrNavCont = styled.div`
 
 export const Logo = styled.div`
   ${tw`
+  h-[80px]
+  md:w-[160px]
+  sm:h-[40px] 
+  sm:w-[80px] 
+  md:h-[54px] 
   cursor-pointer
   z-50
   flex
-  items-center
-  gap-1
   `}
 `
 export const LogoImg = styled.img`
-  ${tw`object-contain w-auto h-[50px] sm:h-[70px]`}
+  @media (max-width: 573px) {
+    margin-top: 20px;
+  }
+  ${tw`object-contain w-full sm:h-full h-[65%] mt-3`}
 `
 export const NitImg = styled.img`
-  ${tw`object-contain w-auto h-[50px] sm:h-[70px]`}
+  @media (max-width: 573px) {
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+  ${tw`object-contain w-full sm:h-[130%] ml-3 h-[80%]`}
 `
 
 export const Menu = styled.div`
@@ -66,10 +77,9 @@ export const Register = styled.button`
   }
   ${tw`
   w-[150px] 
-  py-2
-  px-4
+  h-[60px] 
   font-semibold 
-  text-xl 
+  text-2xl 
   bg-orange-1 
   text-black-1 
   font-Poppins 
@@ -84,10 +94,8 @@ export const Register = styled.button`
 
 export const SecRegister = styled.button`
   ${tw`
-  w-auto 
-  h-auto
-  py-2
-  px-4
+  w-[120px] 
+  h-[50px] 
   font-semibold 
   text-2xl 
   bg-orange-1 

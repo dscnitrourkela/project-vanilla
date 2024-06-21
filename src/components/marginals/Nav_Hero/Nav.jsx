@@ -86,9 +86,9 @@ const Nav = () => {
             <Register>Logout</Register>
           </Link>
         ) : (
-          <button to="/register">
-            <Register>Starting from 22nd</Register>
-          </button>
+          <Link to="/register">
+            <Register>Register</Register>
+          </Link>
         )}
         <Menu2>
           <MenuIcon>
@@ -105,9 +105,9 @@ const Nav = () => {
                 <SecRegister>Logout</SecRegister>
               </Link>
             ) : (
-              <button to="/register">
-                <SecRegister>Starting from 22nd</SecRegister>
-              </button>
+              <Link to="/register">
+                <SecRegister>Register</SecRegister>
+              </Link>
             )}
             {navLinks.map((navLink) => (
               <ResItem key={navLink.id}>

@@ -8,7 +8,6 @@ import 'react-toastify/dist/ReactToastify.css'
 import { Slide } from 'react-toastify'
 import { Suspense } from 'react'
 import Loader from './components/loader/Loader.jsx'
-
 const App = () => {
   return (
     <AuthProvider>
