@@ -93,7 +93,9 @@ export default function RegistrationForm() {
     }
 
     if (createUserData) {
-      window.location.href = '/'
+      setTimeout(() => {
+        window.location.href = '/'
+      }, 2000)
     }
   }, [userInfo, createUserData, navigate, userDataInDb])
 

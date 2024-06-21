@@ -23,6 +23,7 @@ function ProfileMenuDropDown({ setProfileOpen, user }) {
   const userDetails = [
     { label: 'Name', value: user.name },
     { label: 'Email', value: user.email },
+    { label: 'College', value: user.college },
     { label: 'Src Id', value: user.srcID }
   ]
   const { handleSignOut } = useContext(AuthContext)
