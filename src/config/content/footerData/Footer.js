@@ -53,6 +53,11 @@ export default {
         key: 'linkedin',
         img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1717321885/Linkdin_Mask_ydmzzr.svg',
         href: 'https://www.linkedin.com/company/aiche-nitr/'
+      },
+      {
+        key: 'twitter',
+        img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1718912310/Mediamodifier-Design_1_dukwat.svg',
+        href: 'https://x.com/AicheNit'
       }
     ],
     aichelogo1:
