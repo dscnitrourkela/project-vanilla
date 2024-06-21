@@ -1,8 +1,10 @@
 import { gql } from '@apollo/client'
 
-export const GET_TEAM_REGISTRATIONS_BY_USER = gql`
-  query GetTeamRegistrationsByUser($userID: ID!) {
-    teamRegistrationsByUser(userID: $userID) {
+export const CREATE_TEAM_REGISTRATIONS = gql`
+  mutation CreateTeamEventRegistration(
+    $teamEventRegistration: TeamEventRegistrationCreateInputType!
+  ) {
+    createTeamEventRegistration(teamEventRegistration: $teamEventRegistration) {
       eventID
       teamName
       userIDs

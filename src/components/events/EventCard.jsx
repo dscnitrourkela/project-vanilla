@@ -21,18 +21,21 @@ import { seeMoreIcon } from '../../config/content/events/events'
 EventCard.propTypes = {
   event: PropTypes.shape({
     img: PropTypes.string,
-    id: PropTypes.number,
-    title: PropTypes.string,
+    EventId: PropTypes.number,
+    EventTitle: PropTypes.string,
     subtitle: PropTypes.string,
     details: PropTypes.array,
     rules: PropTypes.string
   }),
-  handleSelectEvent: PropTypes.func
+  handleSelectEvent: PropTypes.func,
+  handleRegisterEvent: PropTypes.func,
+  handleTeamRegisterEvent: PropTypes.func
 }
 
 export default function EventCard({
-  event: { img, id, title, subtitle, details, rules },
-  handleSelectEvent
+  event: { img, EventId, EventTitle, subtitle, details, rules },
+  handleSelectEvent,
+  handleRegisterEvent
 }) {
   function genDetails(str, length) {
     str = str.trim()
@@ -52,22 +55,22 @@ export default function EventCard({
       <Section>
         <ContentWrapper>
           <CardHeader>
-            <CardImage src={img} alt={title} />
-            <CardTitle>{title}</CardTitle>
+            <CardImage src={img} alt={EventTitle} />
+            <CardTitle>{EventTitle}</CardTitle>
             {subtitle !== '' && <CardSubtitle>{subtitle}</CardSubtitle>}
           </CardHeader>
           <CardBody>
             <CardList>
               <div>{genDetails(details[0], 150)}</div>
             </CardList>
-            <CardModalBtn onClick={() => handleSelectEvent(id)}>
+            <CardModalBtn onClick={() => handleSelectEvent(EventId)}>
               <SeeMoreText>See More</SeeMoreText>
               <SeemoreIcon src={seeMoreIcon} />
             </CardModalBtn>
           </CardBody>
           <CardFooter>
             <ButtonRules onClick={redirectToRules}>Rulebook</ButtonRules>
-            <Button id={id}>Register</Button>
+            <Button onClick={() => handleRegisterEvent(EventId)}>Register</Button>
           </CardFooter>
         </ContentWrapper>
       </Section>
