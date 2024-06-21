@@ -6,7 +6,10 @@ export const DescriptionContainer = styled.article`
   w-full 
   text-center 
   bg-[#FFEEDA]
-  py-[84px]
+  py-[100px]
+  md:pt-[110px]
+  md:pb-[150px]
+  px-4
   `}
 `
 
@@ -55,7 +58,8 @@ export const ButtonContainer = styled.div`
   md:max-w-[1000px] 
   h-full 
   flex 
-  md:flex-row 
+  flex-col
+  0.4xsm:flex-row 
   justify-center
   gap-8
   md:gap-[80px]
@@ -65,10 +69,11 @@ export const ButtonContainer = styled.div`
 
 export const HelpButton = styled.button`
   ${tw`
-  w-[140px]
-  h-[50px]
+  0.4xsm:w-[140px]
+  0.4xsm:h-[50px]
   px-2 
-  py-1 
+  py-2
+  0.4xsm:py-1 
   rounded-[11.53px] 
   bg-brown-2
   text-brown-5 
@@ -100,10 +105,8 @@ export const InnerSpan = styled.span`
 
 export const RegisterButton = styled.button`
   ${tw`
-  w-[140px]
-  h-[50px]
   px-2 
-  py-1 
+  py-2
   rounded-[11.53px] 
   bg-orange-1 
   text-brown-5 
