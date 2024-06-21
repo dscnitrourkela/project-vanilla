@@ -22,6 +22,7 @@ import { navLinks } from '../../../config/content/navData/Nav_Hero'
 import { links } from '../../../config/content/navData/Nav_Hero'
 import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
+import ProfileMenu from './ProfileMenu'
 
 const Nav = () => {
   const { userInfo, handleSignOut } = useContext(AuthContext)
@@ -82,9 +83,12 @@ const Nav = () => {
         </Menu>
 
         {userInfo.name ? (
-          <Link to="/" onClick={handleSignOut}>
-            <Register>Logout</Register>
-          </Link>
+          // <Link to="/" onClick={handleSignOut}>
+          //   <Register>Logout</Register>
+          // </Link>
+          <ResItem>
+            <ProfileMenu />
+          </ResItem>
         ) : (
           <Link to="/register">
             <Register>Register</Register>
