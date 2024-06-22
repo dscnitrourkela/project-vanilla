@@ -16,7 +16,7 @@ export const navLinks = [
   { name: 'About', id: 'about' },
   { name: 'Events', id: 'events' },
   { name: 'Team', id: 'team' },
-  { name: 'Sponsors', id: 'sponsors' },
+  // { name: 'Sponsors', id: 'sponsors' },
   { name: 'Contact Us', id: 'contact' }
 ]
 
@@ -30,5 +30,5 @@ export const DescriptionContent = {
 export const heroContent = {
   Presents: 'Presents',
   Dates: '9th - 11th August',
-  ImgText: 'Student Regional Conference 2024'
+  ImgText: 'India Student Regional Conference 2024'
 }
