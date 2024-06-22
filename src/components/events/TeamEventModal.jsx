@@ -49,7 +49,6 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
       setError(validationError)
       return
     }
-    
 
     try {
       const response = await teamRegisterEvent({
