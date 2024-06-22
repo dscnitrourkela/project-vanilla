@@ -2,11 +2,13 @@ import SmoothScroll from 'smooth-scroll'
 import HeroCont, {
   MainFrame,
   MainImg,
-  LogoImg,
+  AicheLogo,
+  AicheNit,
   LogoCont,
   Presents,
   DateTime,
-  InnerLogoCont
+  InnerLogoCont,
+  MainImgText
 } from './Hero.style'
 import { links, heroContent } from '../../../config/content/navData/Nav_Hero'
 
@@ -46,11 +48,12 @@ const Hero = () => {
         >
           <LogoCont>
             <InnerLogoCont>
-              <LogoImg src={links.Alche} alt="Main Frame" />
-              <LogoImg src={links.AlcheNITR} alt="Main Frame" />
+              <AicheLogo src={links.Alche} alt="Main Frame" />
+              <AicheNit src={links.AlcheNITR} alt="Main Frame" />
             </InnerLogoCont>
             <Presents>{heroContent.Presents}</Presents>
             <MainImg src={links.main} alt="Main Frame" />
+            <MainImgText>{heroContent.ImgText}</MainImgText>
             <DateTime>{heroContent.Dates}</DateTime>
           </LogoCont>
         </MainFrame>

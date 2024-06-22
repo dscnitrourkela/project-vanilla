@@ -24,9 +24,7 @@ import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
 
 const Nav = () => {
-  const { userInfo, handleGoogleSignIn, handleSignOut } = useContext(AuthContext)
-  console.log(userInfo)
-
+  const { userInfo, handleSignOut } = useContext(AuthContext)
   const [isOpen, setIsOpen] = useState(false)
 
   function handleToggle() {
@@ -88,9 +86,9 @@ const Nav = () => {
             <Register>Logout</Register>
           </Link>
         ) : (
-          <Link to="/register" onClick={handleGoogleSignIn}>
-            <Register>Register</Register>
-          </Link>
+          <button to="/register">
+            <Register>Starting from 22nd</Register>
+          </button>
         )}
         <Menu2>
           <MenuIcon>
@@ -102,18 +100,30 @@ const Nav = () => {
       {isOpen && (
         <ResMen>
           <ResList>
-            <Link to="/register" onClick={userInfo.name ? handleSignOut : handleGoogleSignIn}>
-              <SecRegister>{userInfo.name ? 'Logout' : 'Register'}</SecRegister>
-            </Link>
+            {userInfo.name ? (
+              <Link to="/" onClick={handleSignOut}>
+                <SecRegister>Logout</SecRegister>
+              </Link>
+            ) : (
+              <button to="/register">
+                <SecRegister>Starting from 22nd</SecRegister>
+              </button>
+            )}
             {navLinks.map((navLink) => (
               <ResItem key={navLink.id}>
-                <ResAnchor
-                  // onClick={() => setIsOpen(false)}
-                  tabIndex={0}
-                  onClick={navLink.href ? null : () => onClick(navLink.id)}
-                >
-                  {navLink.name}
-                </ResAnchor>
+                {navLink.id == 'home' ? (
+                  <ResAnchor>
+                    <Link to="/">{navLink.name} </Link>
+                  </ResAnchor>
+                ) : (
+                  <ResAnchor
+                    // onClick={() => setIsOpen(false)}
+                    tabIndex={0}
+                    onClick={navLink.href ? null : () => onClick(navLink.id)}
+                  >
+                    {navLink.name}
+                  </ResAnchor>
+                )}
               </ResItem>
             ))}
           </ResList>

@@ -5,33 +5,40 @@ import {
   Input,
   ExtrasContainer,
   Info,
-  InfoBtn
+  InfoBtn,
+  ErrorMessage
 } from './InputField.styles'
 import { info } from '../../config/content/registrationForm/Registration'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
-InputField.propTypes = {
-  input: propTypes.shape({
-    id: propTypes.string.isRequired,
-    label: propTypes.string.isRequired,
-    placeholder: propTypes.string.isRequired,
-    type: propTypes.string.isRequired,
-    extras: propTypes.string
-  }).isRequired
-}
+function InputField({
+  input: { id, label, placeholder, type, extras },
+  handleFormData,
+  value,
+  error
+}) {
+  const handleChange = (e) => {
+    handleFormData(id, e.target.value)
+  }
 
-function InputField({ input: { id, label, placeholder, type, extras } }) {
   return (
     <InputContainer key={id}>
       <Label htmlFor={id}>{label}</Label>
       <OuterBorder>
-        <Input id={id} placeholder={placeholder} type={type} containsIcon={extras ? true : false} />
+        <Input
+          id={id}
+          placeholder={placeholder}
+          type={type}
+          value={value}
+          onChange={handleChange}
+        />
         {extras && (
           <InfoBtn>
             <Info src={info} alt="info-icon" />
           </InfoBtn>
         )}
       </OuterBorder>
+      {error && <ErrorMessage>{error}</ErrorMessage>}
       {extras && (
         <ExtrasContainer>
           <Info src={info} alt="info-icon" />
@@ -40,6 +47,19 @@ function InputField({ input: { id, label, placeholder, type, extras } }) {
       )}
     </InputContainer>
   )
+}
+
+InputField.propTypes = {
+  input: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    extras: PropTypes.string
+  }).isRequired,
+  handleFormData: PropTypes.func.isRequired,
+  value: PropTypes.string,
+  error: PropTypes.string
 }
 
 export default InputField
