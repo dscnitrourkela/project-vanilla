@@ -49,7 +49,7 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
       setError(validationError)
       return
     }
-    setShow(false)
+    
 
     try {
       const response = await teamRegisterEvent({
@@ -61,7 +61,7 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
       })
 
       if (response.data.createTeamRegistration.success) {
-        null
+        setShow(false)
       } else {
         setError(
           response.data.createTeamRegistration.message || 'Error registering. Please try again.'
@@ -75,7 +75,7 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
   return (
     <>
       {show ? (
-        <div>
+        <>
           <Text>{EventTitle}</Text>
           <TextSub>(*Team Participation*)</TextSub>
           <GridContainer>
@@ -114,7 +114,7 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
           </Button1>
 
           {mutationError && <Text className="error">{mutationError.message}</Text>}
-        </div>
+        </>
       ) : (
         <div className="flex justify-center items-center">
           <Text>Hurray! Ur Registration Completed</Text>

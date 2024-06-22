@@ -23,7 +23,7 @@ export const IndiEventModal = ({ EventId, EventTitle }) => {
       setError(validationError)
       return
     }
-    setShow(false)
+    
 
     try {
       console.log('Submitting Registration: ', { EventId, userId: alcheID })
@@ -33,10 +33,12 @@ export const IndiEventModal = ({ EventId, EventTitle }) => {
       })
 
       console.log('Mutation Response: ', response)
-      console.log('Registration successful!')
+      
+      
 
       if (response.data.createEventRegistration.success) {
         console.log('Registration successful!')
+        setShow(false)
       } else {
         setError(
           response.data.createEventRegistration.message || 'Error registering. Please try again.'
