@@ -28,7 +28,7 @@ export const InnerLogoCont = styled.div`
 `
 
 export const Presents = styled.div`
-  ${tw`text-[#FFEEDA ] text-base md:text-3xl  font-[600] mt-10`}
+  ${tw`text-[#FFEEDA ] text-xl md:text-3xl  font-[600] mt-10`}
 `
 
 export const AicheNit = styled.img`
