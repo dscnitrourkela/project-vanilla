@@ -4,7 +4,12 @@ import { useMutation } from '@apollo/client'
 import { Button1, Input, InputContainer1, Text, TextHead, TextSub } from './registerModal.style'
 import { RegistrationSchema } from '../../config/content/teamRegistration/registerSchema'
 import { CREATE_EVENT_REGISTRATION } from '../../graphQL/mutations/eventRegistration'
-import CustomAlert from '../customcomponents/CustomAlert' // Import CustomAlert component
+import CustomAlert from '../customcomponents/CustomAlert'
+import { toast } from 'react-toastify'
+import {
+  RegisterCompleteCardText,
+  RegisterCompleteCardTextContainer
+} from './teamRegistrationModal'
 
 export const IndiEventModal = ({ EventId, EventTitle }) => {
   const [alcheID, setAlcheID] = useState('')
@@ -15,7 +20,7 @@ export const IndiEventModal = ({ EventId, EventTitle }) => {
   async function handleSubmit() {
     const validationResult = RegistrationSchema.safeParse({
       alcheID,
-      EventId
+      eventID: EventId
     })
 
     if (!validationResult.success) {
@@ -25,22 +30,15 @@ export const IndiEventModal = ({ EventId, EventTitle }) => {
     }
 
     try {
-      console.log('Submitting Registration: ', { EventId, userId: alcheID })
+      console.log('Submitting Registration: ', { eventID: Number(EventId), userID: alcheID })
 
       const response = await registerEvent({
-        variables: { eventRegistration: { EventId, userId: alcheID } }
+        variables: { eventRegistration: { eventID: EventId, userID: alcheID } }
       })
 
       console.log('Mutation Response: ', response)
-
-      if (response.data.createEventRegistration.success) {
-        console.log('Registration successful!')
-        setShow(false)
-      } else {
-        setError(
-          response.data.createEventRegistration.message || 'Error registering. Please try again.'
-        )
-      }
+      toast.success('You have been registered successfully!')
+      setShow(false)
     } catch (error) {
       console.error('Error registering:', error)
       setError(error.message || 'Error registering. Please try again.')
@@ -74,16 +72,16 @@ export const IndiEventModal = ({ EventId, EventTitle }) => {
           {mutationError && <Text className="error">{mutationError.message}</Text>}
         </div>
       ) : (
-        <div className="flex justify-center items-center">
-          <Text>Hurray! Ur Registration Completed</Text>
-        </div>
+        <RegisterCompleteCardTextContainer>
+          <RegisterCompleteCardText>Hurray! Ur Registration Completed</RegisterCompleteCardText>
+        </RegisterCompleteCardTextContainer>
       )}
     </>
   )
 }
 
 IndiEventModal.propTypes = {
-  EventId: PropTypes.number.isRequired,
+  EventId: PropTypes.string.isRequired,
   EventTitle: PropTypes.string.isRequired,
   closeRegisterModal: PropTypes.func
 }

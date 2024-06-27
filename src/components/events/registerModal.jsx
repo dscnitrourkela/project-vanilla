@@ -1,24 +1,18 @@
 import PropTypes from 'prop-types'
 import { Button2, Container, Section } from './registerModal.style'
 import TeamEventModal from './TeamEventModal'
-import { IndiEventModal } from './IndiEventModal'
+import { IndiEventModal } from './IndividualEventModal'
 
-export const RegisterModal = ({ event: { EventId, EventTitle, isTeamEvent }, closeModal }) => {
+export const RegisterModal = ({ event: { id, name, isTeamEvent }, closeModal }) => {
   return (
     <Container>
       <Section>
         <Button2 onClick={closeModal}>Back</Button2>
         {isTeamEvent ? (
-          <TeamEventModal EventId={EventId} EventTitle={EventTitle} />
+          <TeamEventModal EventId={id} EventTitle={name} />
         ) : (
-          <IndiEventModal EventId={EventId} EventTitle={EventTitle} />
+          <IndiEventModal EventId={id} EventTitle={name} />
         )}
-
-        {/*                     <div>
-                        <Text>Registration successful!</Text>
-                        <Button1 onClick={closeModal}>Close</Button1>
-                    </div> */}
-        {/*   )} */}
       </Section>
     </Container>
   )
@@ -26,8 +20,8 @@ export const RegisterModal = ({ event: { EventId, EventTitle, isTeamEvent }, clo
 
 RegisterModal.propTypes = {
   event: PropTypes.shape({
-    EventId: PropTypes.number.isRequired,
-    EventTitle: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     isTeamEvent: PropTypes.bool
   }),
   closeModal: PropTypes.func

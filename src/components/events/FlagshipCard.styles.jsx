@@ -18,7 +18,7 @@ export const Ellipse = styled.main`
 `
 
 export const Section = styled.section`
-  ${tw` flex flex-col justify-between items-center mt-[110px] sm:mt-0`}
+  ${tw` flex flex-col justify-between items-center mt-[110px] sm:mt-0 `}
 `
 export const ContentWrapper = styled.div`
   ${tw` sm:h-[500px]  px-5 flex flex-col justify-center items-center`}
@@ -40,5 +40,5 @@ export const CardHeaderText = styled.h4`
 `
 
 export const Button1 = styled.button`
-  ${tw`h-[50px]  w-[80%] ml-[10%]   mt-[24vh]    rounded-[11.53px] bg-orange-1 text-brown-5 font-semibold text-[19px] sm:text-[25.95px] shadow-button border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none`}
+  ${tw`h-[50px]  w-[80%] ml-[10%]   mt-[80px]    rounded-[11.53px] bg-orange-1 text-brown-5 font-semibold text-[19px] sm:text-[25.95px] shadow-button border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none`}
 `

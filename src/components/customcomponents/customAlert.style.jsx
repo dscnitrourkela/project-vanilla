@@ -23,7 +23,27 @@ export const Section = styled.section`
 `
 
 export const Button = styled.button`
-  ${tw`h-[30px]  w-[40%] ml-[25%]  mt-10  rounded-[11.53px] bg-orange-1 text-brown-5 font-semibold text-[15px] shadow-button border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none`}
+  ${tw`p-1
+    mt-[40px]
+    w-[40%]
+    ml-[25%]
+  
+  rounded-[11.53px] 
+  bg-orange-1 
+  text-brown-5 
+  font-semibold 
+  text-base
+   
+  border-brown-5 
+  border-2 
+  transition 
+  duration-300 
+  ease-in-out 
+  active:transform 
+  active:translate-x-[3px] 
+  active:translate-y-[3px] 
+  active:shadow-none 
+  shadow-[3px 3px 0px #1d1d1d ]`}
 `
 
 export const Mssg = styled.button`

@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Button1 } from './registerModal.style'
-import { TeamRegistrationSchema } from '../../config/content/teamRegistration/registerSchema'
-import { InputData } from '../../config/content/teamRegistration/registermodal'
 import { useMutation } from '@apollo/client'
 import { CREATE_TEAM_REGISTRATIONS } from '../../graphQL/mutations/teamRegistration'
 import CustomAlert from '../customcomponents/CustomAlert'
@@ -14,16 +12,23 @@ import {
   Input2,
   Text,
   TextHead,
-  TextSub
+  TextSub,
+  AddMemberButton,
+  RemoveButton,
+  IconButtonContainer,
+  RegisterCompleteCardText,
+  RegisterCompleteCardTextContainer
 } from './teamRegistrationModal'
+import { TeamRegistrationSchema } from '../../config/content/teamRegistration/registerSchema'
+import { toast } from 'react-toastify'
+import { MinusButtonUrl, PlusButtonUrl } from '../../config/content/teamRegistration/registermodal'
 
 export const TeamEventModal = ({ EventId, EventTitle }) => {
-  const [formData, setFormData] = useState(
-    InputData.reduce((acc, item) => {
-      acc[item.key] = ''
-      return acc
-    }, {})
-  )
+  const [formData, setFormData] = useState({
+    teamname: '',
+    teamleadid: '',
+    userIds: ['']
+  })
 
   const [show, setShow] = useState(true)
   const [error, setError] = useState(null)
@@ -31,14 +36,42 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
   const [teamRegisterEvent, { loading, error: mutationError }] =
     useMutation(CREATE_TEAM_REGISTRATIONS)
 
-  const userId = [formData.teamleadid, formData.m1id, formData.m2id, formData.m3id]
-
   const handleChange = (key, value) => {
     setFormData({
       ...formData,
       [key]: value
     })
     setError(null)
+  }
+
+  const handleUserIdChange = (index, value) => {
+    const newUserIds = [...formData.userIds]
+    newUserIds[index] = value
+    setFormData({
+      ...formData,
+      userIds: newUserIds
+    })
+  }
+
+  const addUserId = () => {
+    if (formData.userIds.length > 4) {
+      return toast.error("you've reached maximum team limit")
+    }
+    setFormData({
+      ...formData,
+      userIds: [...formData.userIds, '']
+    })
+  }
+
+  const removeUserId = () => {
+    if (formData.userIds.length > 1) {
+      const newUserIds = [...formData.userIds]
+      newUserIds.pop()
+      setFormData({
+        ...formData,
+        userIds: newUserIds
+      })
+    }
   }
 
   async function handleSubmit() {
@@ -53,19 +86,17 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
     try {
       const response = await teamRegisterEvent({
         variables: {
-          eventId: EventId,
-          teamName: formData.teamname,
-          userIds: userId
+          teamEventRegistration: {
+            eventID: EventId,
+            teamName: formData.teamname,
+            userIDs: [formData.teamleadid, ...formData.userIds]
+          }
         }
       })
+      console.log('mutation response', response)
 
-      if (response.data.createTeamRegistration.success) {
-        setShow(false)
-      } else {
-        setError(
-          response.data.createTeamRegistration.message || 'Error registering. Please try again.'
-        )
-      }
+      toast.success('You have been registered successfully!')
+      setShow(false)
     } catch (err) {
       setError('Error registering. Please try again.')
     }
@@ -79,27 +110,42 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
           <TextSub>(*Team Participation*)</TextSub>
           <GridContainer>
             <Grid1>
-              {InputData.slice(0, 2).map((item, index) => (
-                <div key={index}>
-                  <TextHead>{item.head}</TextHead>
-                  <Input
-                    type={item.type}
-                    placeholder={item.placeholder}
-                    value={formData[item.key]}
-                    onChange={(e) => handleChange(item.key, e.target.value)}
-                  />
-                </div>
-              ))}
+              <div>
+                <TextHead>Team Name</TextHead>
+                <Input
+                  type="text"
+                  placeholder="Enter Team Name"
+                  value={formData.teamname}
+                  onChange={(e) => handleChange('teamname', e.target.value)}
+                />
+              </div>
+              <div>
+                <TextHead>Team Lead ID</TextHead>
+                <Input
+                  type="text"
+                  placeholder="Enter Team Lead ID"
+                  value={formData.teamleadid}
+                  onChange={(e) => handleChange('teamleadid', e.target.value)}
+                />
+              </div>
             </Grid1>
+            <IconButtonContainer>
+              <AddMemberButton onClick={addUserId}>
+                <img style={{ width: '40px', height: '40px' }} src={PlusButtonUrl} alt="Add" />
+              </AddMemberButton>
+              <RemoveButton onClick={removeUserId}>
+                <img style={{ width: '40px', height: '40px' }} src={MinusButtonUrl} alt="Remove" />
+              </RemoveButton>
+            </IconButtonContainer>
             <Grid2>
-              {InputData.slice(2).map((item, index) => (
-                <div key={index}>
-                  <TextHead>{item.head}</TextHead>
+              {formData.userIds.map((userId, index) => (
+                <div className="flex" key={index}>
+                  <TextHead>{`Member ${index + 1} ID`}</TextHead>
                   <Input2
-                    type={item.type}
-                    placeholder={item.placeholder}
-                    value={formData[item.key]}
-                    onChange={(e) => handleChange(item.key, e.target.value)}
+                    type="text"
+                    placeholder={`Enter Member ${index + 1}'s ID`}
+                    value={userId}
+                    onChange={(e) => handleUserIdChange(index, e.target.value)}
                   />
                 </div>
               ))}
@@ -115,9 +161,9 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
           {mutationError && <Text className="error">{mutationError.message}</Text>}
         </>
       ) : (
-        <div className="flex justify-center items-center">
-          <Text>Hurray! Ur Registration Completed</Text>
-        </div>
+        <RegisterCompleteCardTextContainer>
+          <RegisterCompleteCardText>Hurray! Your Registration Completed</RegisterCompleteCardText>
+        </RegisterCompleteCardTextContainer>
       )}
     </>
   )

@@ -18,7 +18,7 @@ export const Container = styled.main`
 `
 
 export const Section = styled.section`
-  ${tw`bg-brown-2 border-4 border-black-1 relative max-w-[600px] w-full rounded-[23.06px] font-Poppins h-[90vh] `}
+  ${tw`bg-brown-2 border-4 border-black-1 relative max-w-[600px] w-full rounded-[23.06px] font-Poppins h-auto overflow-y-auto`}
 `
 export const Text = styled.div`
   ${tw`text-[34px] 0.8xsm:text-[37px]
@@ -60,8 +60,50 @@ export const Input = styled.input`
 `
 
 export const Button1 = styled.button`
-  ${tw`h-[50px]  w-[80%] ml-[10%]   mt-[9vh]    rounded-[11.53px] bg-orange-1 text-brown-5 font-semibold text-[19px] sm:text-[25.95px] shadow-button border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none`}
+  ${tw`  px-2 
+    mt-16
+    mb-12
+    w-[80%]
+    ml-[10%]
+  py-2
+  rounded-[11.53px] 
+  bg-orange-1 
+  text-brown-5 
+  font-semibold 
+  text-1.5lg 
+  md:text-2xl  
+  border-brown-5 
+  border-2 
+  transition 
+  duration-300 
+  ease-in-out 
+  active:transform 
+  active:translate-x-[3px] 
+  active:translate-y-[3px] 
+  active:shadow-none 
+  shadow-[3px 3px 0px #1d1d1d ]`}
 `
 export const Button2 = styled.button`
-  ${tw`h-[30px]  w-[15%] ml-[5%]   mt-2  rounded-[11.53px] bg-orange-1 text-brown-5 font-semibold text-[15px] shadow-button border-brown-5 border-2 transition duration-300 ease-in-out active:transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none`}
+  ${tw`p-1
+   
+   mt-6 ml-6 mr-6
+    w-[20%]
+    
+  
+  rounded-[11.53px] 
+  bg-orange-1 
+  text-brown-5 
+  font-semibold 
+  text-sm 
+  md:text-base 
+  border-brown-5 
+  border-2 
+  transition 
+  duration-300 
+  ease-in-out 
+  active:transform 
+  active:translate-x-[3px] 
+  active:translate-y-[3px] 
+  active:shadow-none 
+  shadow-[3px 3px 0px #1d1d1d ]`}
 `

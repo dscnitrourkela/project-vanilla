@@ -1,24 +1,30 @@
 import { useState, useRef } from 'react'
 import { Container, Arrow, Section, EventsTitleMobile } from './events.styles'
-import { events, eventss, nextArrowIcon, prevArrowIcon } from '../../config/content/events/events'
+import { events, nextArrowIcon, prevArrowIcon } from '../../config/content/events/events'
 import EventModal from './EventModal'
 import EventsWrapper from './EventsWrapper'
 import { createPortal } from 'react-dom'
-import { RegisterModal } from './registerModal'
+import { RegisterModal } from './RegisterModal'
 import PropTypes from 'prop-types'
-/* import { TeamRegisterModal } from './teamregisterModal' */
+import useGetEventsByOrgid from '../eventsqueries/getventbyorgid'
 
 export default function Events() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false)
   const [isFlagshipEventModalOpen, setIsFlagshipEventModalOpen] = useState(false)
-
   const [event, setEvent] = useState(null)
   const swiperRef = useRef(null)
 
+  const { events: eventsArr, loading, error } = useGetEventsByOrgid('aiche')
+
+  console.log(eventsArr)
+
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error: {error.message}</p>
+
   function handleRegisterModalOpen(EventId) {
     setIsRegisterModalOpen(true)
-    const event = events.find((event) => event.EventId === EventId)
+    const event = eventsArr.find((event) => event.id === EventId)
     if (event) {
       setEvent(event)
     }
@@ -26,7 +32,7 @@ export default function Events() {
 
   function handleFlagshipCardModalOpen(EventId) {
     setIsFlagshipEventModalOpen(true)
-    const event = eventss.find((event) => event.EventId === EventId)
+    const event = eventsArr.find((event) => event.id === EventId)
     if (event) {
       setEvent(event)
     }
@@ -34,14 +40,16 @@ export default function Events() {
 
   function handleModalOpen(EventId) {
     setIsModalOpen(true)
-    const event = events.find((event) => event.EventId === EventId)
+    const event = events.find((event) => event.id === EventId)
     if (event) {
       setEvent(event)
     }
   }
+
   function handleModalClose() {
     setIsModalOpen(false)
   }
+
   function handleFlagshipModalClose() {
     setIsFlagshipEventModalOpen(false)
   }
@@ -51,18 +59,19 @@ export default function Events() {
   }
 
   function handlePrev() {
-    if (swiperRef.current && swiperRef.current) {
+    if (swiperRef.current) {
       swiperRef.current.slidePrev()
     }
   }
 
   function handleNext() {
-    if (swiperRef.current && swiperRef.current) {
+    if (swiperRef.current) {
       swiperRef.current.slideNext()
     }
   }
 
   const overlay = document.getElementById('overlay')
+
   return (
     <div id="events">
       {createPortal(
@@ -89,7 +98,7 @@ export default function Events() {
         <Section>
           <Arrow src={prevArrowIcon} alt="Previous" onClick={handlePrev} />
           <EventsWrapper
-            events={events}
+            events={eventsArr} //
             handleSelectEvent={handleModalOpen}
             handleRegisterEvent={handleRegisterModalOpen}
             handlerFlagshipEvent={handleFlagshipCardModalOpen}
@@ -103,5 +112,5 @@ export default function Events() {
 }
 
 Events.propTypes = {
-  eventsarr: PropTypes.array.isRequired
+  eventsArr: PropTypes.array.isRequired
 }

@@ -1,4 +1,4 @@
-import gql from 'graphql-tag'
+import { gql } from '@apollo/client'
 
 export const GET_EVENTS_BY_ORGID = gql`
   query GetEvents($orgID: String!, $pagination: PaginationInputType) {
