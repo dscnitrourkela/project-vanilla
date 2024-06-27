@@ -24,11 +24,11 @@ export const LogoCont = styled.div`
 `
 
 export const InnerLogoCont = styled.div`
-  ${tw` flex flex-col items-center justify-center gap-10 xsm:flex xsm:flex-row xsm:items-center xsm:justify-center xsm:gap-14`}
+  ${tw`flex flex-col items-center justify-center gap-10 xsm:flex xsm:flex-row xsm:items-center xsm:justify-center xsm:gap-14`}
 `
 
 export const Presents = styled.div`
-  ${tw`text-[#FFEEDA ] text-base md:text-xl  font-[600] mt-10`}
+  ${tw`text-[#FFEEDA ] text-xl md:text-3xl  font-[600] mt-10`}
 `
 
 export const AicheNit = styled.img`
@@ -37,6 +37,9 @@ export const AicheNit = styled.img`
 
 export const AicheLogo = styled.img`
   ${tw`w-auto h-[40px]  0.4xsm:h-[45px] md:h-[60px] `}
+`
+export const AicheLogonit = styled.img`
+  ${tw`w-auto h-[50px]  0.4xsm:h-[60px] md:h-[100px] `}
 `
 
 export const MainImg = styled.img`

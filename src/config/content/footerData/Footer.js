@@ -22,7 +22,7 @@ export default {
       info: [
         { list: 'AIChE-NITR', href: '#' },
         { list: 'National Institute of Technology, Rourkela', href: 'https://www.nitrkl.ac.in/' },
-        { list: 'Donation', href: '#' },
+        // { list: 'Donation', href: '#' },
         { list: 'Schedule', href: '#TIMELINE' },
         { list: 'FAQ', href: '#FAQ' }
       ]

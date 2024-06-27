@@ -1,5 +1,5 @@
 import {
-  HelpButton,
+  // HelpButton,
   RegisterButton,
   ButtonContainer,
   DescriptionContainer,
@@ -11,14 +11,14 @@ import { ButtonWrapper } from './Description.styles'
 
 const Description = () => {
   return (
-    <DescriptionContainer id="registerRefId">
+    <DescriptionContainer id="home">
       <DescriptionTitle>{DescriptionContent.title}</DescriptionTitle>
       <DescriptionParagraph>{DescriptionContent.content}</DescriptionParagraph>
       <ButtonWrapper>
         <ButtonContainer>
-          <HelpButton>{DescriptionContent.HeroButton}</HelpButton>
+          {/* <HelpButton>{DescriptionContent.HeroButton}</HelpButton> */}
           {/* <RegisterButton>{DescriptionContent.RegisterButton}</RegisterButton> */}
-          <RegisterButton>Starting From 22nd</RegisterButton>
+          <RegisterButton>Starting Soon....</RegisterButton>
         </ButtonContainer>
       </ButtonWrapper>
     </DescriptionContainer>

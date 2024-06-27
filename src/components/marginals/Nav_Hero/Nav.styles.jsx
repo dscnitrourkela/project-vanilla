@@ -34,7 +34,7 @@ export const NitImg = styled.img`
 `
 
 export const Menu = styled.div`
-  ${tw`items-center hidden min-[1090px]:flex`}
+  ${tw`items-center hidden min-[1090px]:flex ml-[8.25rem]`}
 `
 export const InnerMenu = styled.div`
   ${tw`
@@ -58,16 +58,16 @@ export const MenuItem = styled.div`
 
 export const Register = styled.button`
   @media (max-width: 671px) {
-    width: 20%;
+    width: 30%;
     height: 50px;
   }
   @media (max-width: 1090px) {
     display: none;
   }
   ${tw`
-  w-[150px] 
+  w-[190px] 
   py-2
-  px-4
+  px-2
   font-semibold 
   text-xl 
   bg-orange-1 
