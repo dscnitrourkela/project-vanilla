@@ -11,7 +11,7 @@ import HeroCont, {
   MainImgText,
   AicheLogonit
 } from './Hero.style'
-import { links, heroContent } from '../../../config/content/navData/Nav_Hero'
+import { links, heroContent } from '../../../config/index'
 
 const Hero = () => {
   const registerRefId = 'registerRefId'

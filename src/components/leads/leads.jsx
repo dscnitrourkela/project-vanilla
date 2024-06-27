@@ -10,7 +10,7 @@ import {
   LeadCardOrganization,
   Loading
 } from './leads.styles'
-import { Lead, SRCchairs } from '../../config/content/leads/leads'
+import { Lead, SRCchairs } from '../../config/index'
 import { Suspense } from 'react'
 import {
   RegisterCardContainer,

@@ -6,10 +6,12 @@ export const DescriptionContainer = styled.article`
   w-full 
   text-center 
   bg-[#FFEEDA]
-  py-[100px]
-  md:pt-[110px]
-  md:pb-[150px]
+  py-[90px]
+  md:pt-[70px]
+  md:pb-[120px]
   px-4
+  xsm:pb-[60px]
+  pb-[30px]
   `}
 `
 
