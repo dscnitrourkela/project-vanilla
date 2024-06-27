@@ -1,6 +1,7 @@
 export const links = {
   logo: 'https://res.cloudinary.com/dhv234qct/image/upload/v1718189887/AICHE_SRC/assets/hjnj2fhscpaspmrjwyzj.png',
-  nit: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/NIT_Rourkela_Colour_Logo.svg/1200px-NIT_Rourkela_Colour_Logo.svg.png',
+  nit: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1719426265/nitr_white_1_cwniur.png',
+  // nit: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/NIT_Rourkela_Colour_Logo.svg/1200px-NIT_Rourkela_Colour_Logo.svg.png',
   registernow: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683299/Group_2_rfdbbh.png',
   down: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683287/Vector_9_piw4n5.png',
   wave: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1717683273/Vector_346_dda6za.png',

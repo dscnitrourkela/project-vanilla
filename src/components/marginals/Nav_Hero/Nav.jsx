@@ -13,7 +13,7 @@ import NavCont, {
   ResList,
   ResItem,
   ResAnchor,
-  NitImg,
+  // NitImg,
   Register,
   SecRegister,
   ProfileBtn
@@ -65,7 +65,7 @@ const Nav = () => {
     <NavCont>
       <InnrNavCont>
         <Logo>
-          <NitImg src={links.nit} alt="NIT Rkl" />
+          {/* <NitImg src={links.nit} alt="NIT Rkl" /> */}
           <LogoImg src={links.logo} alt="logo" />
         </Logo>
 
@@ -74,7 +74,9 @@ const Nav = () => {
             {navLinks.map((navLink) => (
               <MenuItem key={navLink.id}>
                 {navLink.id == 'home' ? (
-                  <Link to="/">{navLink.name}</Link>
+                  <Link to="/" onClick={navLink.href ? null : () => onClick(navLink.id)}>
+                    {navLink.name}
+                  </Link>
                 ) : (
                   <Link
                     to={navLink.href}
@@ -99,7 +101,7 @@ const Nav = () => {
           </ProfileBtn>
         ) : (
           <button to="/register">
-            <Register>Starting from 22nd</Register>
+            <Register>Starting Soon...</Register>
           </button>
         )}
         <Menu2>
@@ -121,7 +123,7 @@ const Nav = () => {
               </button>
             ) : (
               <button to="/register">
-                <SecRegister>Starting from 22nd</SecRegister>
+                <SecRegister>Starting Soon...</SecRegister>
               </button>
             )}
             {navLinks.map((navLink) => (
