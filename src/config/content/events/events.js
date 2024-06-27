@@ -9,7 +9,7 @@ export const events = [
       "The challenge is to design and build a miniature car propelled by the power of chemistry! The rounds include a poster competition that showcases your car's design and the know-how of the chemicals used. The ultimate test arrives when the car needs to cover a specified distance within a strict time limit. Safety comes first, and for that, teams are tested by a comprehensive safety program ensuring safe handling and disposal of chemicals throughout the competition, from preparation to operation. Chem-E-Car champions are finalized based on poster presentation, vehicle precision, safety consistency, and collaborative spirit."
     ],
     rules:
-      'https://docs.google.com/document/d/1APqVwdXNsxPZMzA3S1zQXkGnXlz-ud6j/edit?usp=sharing&ouid=100456363558753448293&rtpof=true&sd=true'
+      'https://drive.google.com/file/d/1EPdT6qUFLCotilmC0hG2W-Eh2PLg_ZbS/view?usp=drivesdk'
   },
   {
     id: 2,
