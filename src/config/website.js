@@ -1,5 +1,3 @@
-/* eslint-disable*/
-
 const config = {
   pathPrefix: '/',
   siteTitle: 'SRC 2024',
