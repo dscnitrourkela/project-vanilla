@@ -25,7 +25,7 @@ export const events = [
   {
     id: 3,
     img: 'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717655996/ndoqb3l9m6no38kehat8.svg',
-    title: 'K-12 STEM OUTREACH',
+    title: 'K-12 STEM',
     subtitle: 'Unleash the STEM genius within!',
     details: [
       'The K-12 STEM Outreach Program empowers you to ignite a passion for science, technology, engineering, and math (STEM) in students from kindergarten through 12th grade.',
