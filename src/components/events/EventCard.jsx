@@ -44,9 +44,7 @@ export default function EventCard({
   useEffect(() => {
     console.log('eventsarr', eventsArr)
     const checkIfRegistered = () => {
-      // Check if eventsArr is defined and has elements
       if (eventsArr && eventsArr.length > 0) {
-        // Use .find() to check if any event in eventsArr has the same id
         const isRegistered = eventsArr.find((event) => event.eventID === id)
         if (isRegistered) {
           setIsRegistered(true)

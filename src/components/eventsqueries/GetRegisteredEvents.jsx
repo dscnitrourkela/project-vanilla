@@ -1,12 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useQuery } from '@apollo/client'
 import { GET_EVENTS_REGISTERED } from '../../graphQL/queries/eventRegistration'
+import { AuthContext } from '../../context/AuthContext'
 
 const useRegisteredEvents = (orgID) => {
+  const { userInfo } = useContext(AuthContext)
+  const { uid } = userInfo
+
   const { loading, error, data } = useQuery(GET_EVENTS_REGISTERED, {
-    variables: { userID: 3, orgID }
+    variables: { userID: uid, orgID },
+    skip: !uid
   })
-  const [registeredevents, setRegisteredEvents] = useState([])
+
+  const [registeredEvents, setRegisteredEvents] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,12 +29,12 @@ const useRegisteredEvents = (orgID) => {
     fetchData()
   }, [data])
 
-  console.log(registeredevents)
+  console.log(registeredEvents)
 
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error.message}</p>
 
-  return { registeredevents, loading, error }
+  return { registeredEvents, loading, error }
 }
 
 export default useRegisteredEvents
