@@ -25,3 +25,6 @@ export { events, seeMoreIcon, XIcon, nextArrowIcon, prevArrowIcon }
 // AboutUs data
 import { data, srcData, data2, aicheData, aboutImage } from './content/about/about'
 export { data, srcData, data2, aicheData, aboutImage }
+
+// Faq data
+export { default as FaqData } from './content/faqData/Faqs'
