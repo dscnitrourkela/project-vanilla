@@ -1,15 +1,15 @@
 const config = {
   pathPrefix: '/',
-  siteTitle: 'SRC 2024',
-  siteTitleAlt: 'Official Website for SRC 2024',
-  siteTitleShort: 'SRC 2024',
+  siteTitle: 'Sthitivartana',
+  siteTitleAlt: 'Official Website for Sthitivartana',
+  siteTitleShort: 'Sthitivartana',
   siteUrl: 'https://sthitivartana.in',
   siteLanguage: 'en',
   siteLogo: '/logo.png', // Used for SEO and manifest, path to your image you placed in the 'static' folder
   siteDescription:
     "Held annually over three days, the Student Regional Conference (SRC) is organised by a student chapter of the American Institute of Chemical Engineers (AIChE) representing each of the 14 regions. This year's event will be organised by AIChE NITR, in continuation of the successful implementation put together by AIChE SVNIT the preceding year.",
-  author: 'SRC2024', // Author for schemaORGJSONLD
-  organization: 'SRC2024',
+  author: 'Sthitivartana', // Author for schemaORGJSONLD
+  organization: 'Sthitivartana',
 
   //   siteFBAppID: '100644471452393', // Facebook App ID
   userTwitter: '@AicheNit', // Twitter Username
