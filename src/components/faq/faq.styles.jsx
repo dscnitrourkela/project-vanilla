@@ -9,11 +9,11 @@ export const FaqContainer = styled.div`
 export const AccordionItem = styled.div`
   ${({ isActive }) =>
     !isActive
-      ? tw`w-full border-2 border-solid border-brown-5 rounded-xl mb-10 transition-all duration-300 shadow-customShadow2 `
-      : tw`w-full border-2 border-solid border-brown-5 rounded-xl mb-10 transition-all duration-300 shadow-customShadow bg-brown-1 `}
+      ? tw`w-full border-2 border-solid border-brown-5 rounded-xl mb-8 transition-all duration-300 shadow-customShadow2 `
+      : tw`w-full border-2 border-solid border-brown-5 rounded-xl mb-8 transition-all duration-300 shadow-customShadow bg-brown-1 `}
 `
 export const TitleContainer = styled.div`
-  ${tw`flex items-center text-1.5xl justify-between cursor-pointer font-bold text-brown-5 px-2 py-3`}
+  ${tw`flex items-center text-xl justify-between cursor-pointer font-bold text-brown-5 px-2 py-3`}
 `
 
 export const FaqHeading = styled.div`
