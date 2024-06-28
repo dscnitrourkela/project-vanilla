@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 import propTypes from 'prop-types'
 import { siteMetadata } from '../../../config/siteMetaData'
 
-function SEO({ title, description, img }) {
+export default function SEO({ title, description, img }) {
   const { pathname } = useLocation()
 
   const seo = {
@@ -39,7 +39,6 @@ function SEO({ title, description, img }) {
   )
 }
 
-export default SEO
 SEO.propTypes = {
   title: propTypes.string,
   description: propTypes.string,

@@ -10,21 +10,13 @@ import 'react-toastify/dist/ReactToastify.css'
 import { Slide } from 'react-toastify'
 import { Suspense } from 'react'
 import Loader from './components/loader/Loader.jsx'
-import SEO from './components/shared/SEO/SEO.jsx'
-
+import SEO from './components/shared/SEO/SeoComponent.jsx'
 const App = () => {
   return (
     <AuthProvider>
       <ToastContainer transition={Slide} position="top-center" />
       <Router>
         <Helmet>
-          <script
-            type="text/javascript"
-            id="hs-script-loader"
-            async
-            defer
-            src="//js.hs-scripts.com/8898157.js"
-          />
           <script type="application/ld+json">{JSON.stringify(eventData)}</script>
           <script type="application/ld+json">{JSON.stringify(logoData)}</script>
           <script type="application/ld+json">{JSON.stringify(breadcrumbsData)}</script>
