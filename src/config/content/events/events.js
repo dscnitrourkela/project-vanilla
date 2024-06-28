@@ -8,8 +8,7 @@ export const events = [
       "Calling all future chemical engineers! The AIChE's Chem-E-Car competition is a two-round challenge held at regional conferences, culminating at the annual Student Conference.",
       "The challenge is to design and build a miniature car propelled by the power of chemistry! The rounds include a poster competition that showcases your car's design and the know-how of the chemicals used. The ultimate test arrives when the car needs to cover a specified distance within a strict time limit. Safety comes first, and for that, teams are tested by a comprehensive safety program ensuring safe handling and disposal of chemicals throughout the competition, from preparation to operation. Chem-E-Car champions are finalized based on poster presentation, vehicle precision, safety consistency, and collaborative spirit."
     ],
-    rules:
-      'https://docs.google.com/document/d/1APqVwdXNsxPZMzA3S1zQXkGnXlz-ud6j/edit?usp=sharing&ouid=100456363558753448293&rtpof=true&sd=true'
+    rules: 'https://drive.google.com/file/d/1EPdT6qUFLCotilmC0hG2W-Eh2PLg_ZbS/view?usp=drivesdk'
   },
   {
     id: 2,
@@ -25,7 +24,7 @@ export const events = [
   {
     id: 3,
     img: 'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717655996/ndoqb3l9m6no38kehat8.svg',
-    title: 'K-12 STEM OUTREACH',
+    title: 'K-12 STEM',
     subtitle: 'Unleash the STEM genius within!',
     details: [
       'The K-12 STEM Outreach Program empowers you to ignite a passion for science, technology, engineering, and math (STEM) in students from kindergarten through 12th grade.',
@@ -38,7 +37,7 @@ export const events = [
     id: 4,
     img: 'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717655995/kspdwtblyqcwoqqqeddc.svg',
     title: 'Student Poster Competition',
-    subtitle: 'Unleash ur poster making skills',
+    subtitle: 'Unleash your poster making skills',
     details: [
       'To stimulate student creativity, the annual AIChE Poster Competition empowers chemical engineering students to showcase their research journey – methodology, findings, and groundbreaking conclusions – through informative and visually stunning posters. Impress a panel of expert chemical engineers with your research and communication skills.',
       'This event fosters a dynamic exchange of ideas, where students connect with fellow attendees and the wider audience, gaining valuable insights from industry experts who convene to discuss the latest advancements, research breakthroughs, and specific topics.',

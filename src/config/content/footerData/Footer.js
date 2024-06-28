@@ -22,15 +22,25 @@ export default {
       info: [
         { list: 'AIChE-NITR', href: '#' },
         { list: 'National Institute of Technology, Rourkela', href: 'https://www.nitrkl.ac.in/' },
-        { list: 'Donation', href: '#' },
+        // { list: 'Donation', href: '#' },
         { list: 'Schedule', href: '#TIMELINE' },
         { list: 'FAQ', href: '#FAQ' }
       ]
     }
   ],
   bottom: [
-    { item: 'Privacy & Cookies', href: '#' },
-    { item: 'Terms and Conditions', href: '#' }
+    {
+      item: 'Privacy & Cookies',
+      href: 'https://docs.google.com/document/d/1ZIYbLScgBDx0BWFzd7xqoW6ys354l_yx5W7O32MYEms/edit?usp=drivesdk'
+    },
+    {
+      item: 'Terms and Conditions',
+      href: 'https://docs.google.com/document/d/1nMcrdW9kjZodSCDXuNShlfw4YmbMNtHybdxc18ZBCdI/edit?usp=drivesdk'
+    },
+    {
+      item: 'Code of Conduct',
+      href: 'https://docs.google.com/document/d/126Dzzc5K900HTXHoWZ7TDLtuP7FDZcXvlR-NVw6hF8Y/edit?usp=drivesdk'
+    }
   ],
   images: {
     socials: [
@@ -53,6 +63,11 @@ export default {
         key: 'linkedin',
         img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1717321885/Linkdin_Mask_ydmzzr.svg',
         href: 'https://www.linkedin.com/company/aiche-nitr/'
+      },
+      {
+        key: 'twitter',
+        img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1718912310/Mediamodifier-Design_1_dukwat.svg',
+        href: 'https://x.com/AicheNit'
       }
     ],
     aichelogo1:

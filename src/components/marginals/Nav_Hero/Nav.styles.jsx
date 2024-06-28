@@ -1,6 +1,6 @@
 import tw from 'twin.macro'
 import styled from 'styled-components'
-import { links } from '../../../config/content/navData/Nav_Hero'
+import { links } from '../../../config/index'
 
 const NavCont = styled.nav`
   ${tw`
@@ -9,7 +9,6 @@ const NavCont = styled.nav`
   fixed
   top-0
   z-50
-  
   `}
 `
 
@@ -20,32 +19,22 @@ export const InnrNavCont = styled.div`
 
 export const Logo = styled.div`
   ${tw`
-  h-[80px]
-  md:w-[160px]
-  sm:h-[40px] 
-  sm:w-[80px] 
-  md:h-[54px] 
   cursor-pointer
   z-50
   flex
+  items-center
+  gap-1
   `}
 `
 export const LogoImg = styled.img`
-  @media (max-width: 573px) {
-    margin-top: 20px;
-  }
-  ${tw`object-contain w-full sm:h-full h-[65%] mt-3`}
+  ${tw`object-contain w-auto h-[50px] sm:h-[70px]`}
 `
 export const NitImg = styled.img`
-  @media (max-width: 573px) {
-    margin-top: 10px;
-    margin-right: 5px;
-  }
-  ${tw`object-contain w-full sm:h-[130%] ml-3 h-[80%]`}
+  ${tw`object-contain w-auto h-[50px] sm:h-[70px]`}
 `
 
 export const Menu = styled.div`
-  ${tw`items-center hidden min-[1090px]:flex`}
+  ${tw`items-center hidden min-[1090px]:flex ml-[8.25rem]`}
 `
 export const InnerMenu = styled.div`
   ${tw`
@@ -69,17 +58,18 @@ export const MenuItem = styled.div`
 
 export const Register = styled.button`
   @media (max-width: 671px) {
-    width: 20%;
+    width: 30%;
     height: 50px;
   }
   @media (max-width: 1090px) {
     display: none;
   }
   ${tw`
-  w-[150px] 
-  h-[60px] 
+  w-[190px] 
+  py-2
+  px-2
   font-semibold 
-  text-2xl 
+  text-xl 
   bg-orange-1 
   text-black-1 
   font-Poppins 
@@ -94,8 +84,10 @@ export const Register = styled.button`
 
 export const SecRegister = styled.button`
   ${tw`
-  w-[120px] 
-  h-[50px] 
+  w-auto 
+  h-auto
+  py-2
+  px-4
   font-semibold 
   text-2xl 
   bg-orange-1 

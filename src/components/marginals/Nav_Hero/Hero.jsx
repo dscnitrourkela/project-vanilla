@@ -2,13 +2,16 @@ import SmoothScroll from 'smooth-scroll'
 import HeroCont, {
   MainFrame,
   MainImg,
-  LogoImg,
+  AicheLogo,
+  AicheNit,
   LogoCont,
   Presents,
   DateTime,
-  InnerLogoCont
+  InnerLogoCont,
+  MainImgText,
+  AicheLogonit
 } from './Hero.style'
-import { links, heroContent } from '../../../config/content/navData/Nav_Hero'
+import { links, heroContent } from '../../../config/index'
 
 const Hero = () => {
   const registerRefId = 'registerRefId'
@@ -36,21 +39,24 @@ const Hero = () => {
   }
 
   return (
-    <HeroCont id="home">
+    <HeroCont
+      // id="home"
+      onClick={(e) => {
+        e.preventDefault()
+        onClick(registerRefId)
+      }}
+    >
       <section>
-        <MainFrame
-          onClick={(e) => {
-            e.preventDefault()
-            onClick(registerRefId)
-          }}
-        >
+        <MainFrame>
           <LogoCont>
             <InnerLogoCont>
-              <LogoImg src={links.Alche} alt="Main Frame" />
-              <LogoImg src={links.AlcheNITR} alt="Main Frame" />
+              <AicheLogonit src={links.nit} alt="Main Frame" />
+              <AicheLogo src={links.Alche} alt="Main Frame" />
+              <AicheNit src={links.AlcheNITR} alt="Main Frame" />
             </InnerLogoCont>
             <Presents>{heroContent.Presents}</Presents>
             <MainImg src={links.main} alt="Main Frame" />
+            <MainImgText>{heroContent.ImgText}</MainImgText>
             <DateTime>{heroContent.Dates}</DateTime>
           </LogoCont>
         </MainFrame>

@@ -13,20 +13,18 @@ import NavCont, {
   ResList,
   ResItem,
   ResAnchor,
-  NitImg,
+  // NitImg,
   Register,
   SecRegister
 } from './Nav.styles'
 import { Link } from 'react-router-dom'
-import { navLinks } from '../../../config/content/navData/Nav_Hero'
-import { links } from '../../../config/content/navData/Nav_Hero'
+import { navLinks } from '../../../config/index'
+import { links } from '../../../config/index'
 import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
 
 const Nav = () => {
-  const { userInfo, handleGoogleSignIn, handleSignOut } = useContext(AuthContext)
-  console.log(userInfo)
-
+  const { userInfo, handleSignOut } = useContext(AuthContext)
   const [isOpen, setIsOpen] = useState(false)
 
   function handleToggle() {
@@ -59,7 +57,7 @@ const Nav = () => {
     <NavCont>
       <InnrNavCont>
         <Logo>
-          <NitImg src={links.nit} alt="NIT Rkl" />
+          {/* <NitImg src={links.nit} alt="NIT Rkl" /> */}
           <LogoImg src={links.logo} alt="logo" />
         </Logo>
 
@@ -68,7 +66,9 @@ const Nav = () => {
             {navLinks.map((navLink) => (
               <MenuItem key={navLink.id}>
                 {navLink.id == 'home' ? (
-                  <Link to="/">{navLink.name}</Link>
+                  <Link to="/" onClick={navLink.href ? null : () => onClick(navLink.id)}>
+                    {navLink.name}
+                  </Link>
                 ) : (
                   <Link
                     to={navLink.href}
@@ -88,9 +88,9 @@ const Nav = () => {
             <Register>Logout</Register>
           </Link>
         ) : (
-          <Link to="/register" onClick={handleGoogleSignIn}>
-            <Register>Register</Register>
-          </Link>
+          <button to="/register">
+            <Register>Starting Soon...</Register>
+          </button>
         )}
         <Menu2>
           <MenuIcon>
@@ -102,18 +102,30 @@ const Nav = () => {
       {isOpen && (
         <ResMen>
           <ResList>
-            <Link to="/register" onClick={userInfo.name ? handleSignOut : handleGoogleSignIn}>
-              <SecRegister>{userInfo.name ? 'Logout' : 'Register'}</SecRegister>
-            </Link>
+            {userInfo.name ? (
+              <Link to="/" onClick={handleSignOut}>
+                <SecRegister>Logout</SecRegister>
+              </Link>
+            ) : (
+              <button to="/register">
+                <SecRegister>Starting Soon...</SecRegister>
+              </button>
+            )}
             {navLinks.map((navLink) => (
               <ResItem key={navLink.id}>
-                <ResAnchor
-                  // onClick={() => setIsOpen(false)}
-                  tabIndex={0}
-                  onClick={navLink.href ? null : () => onClick(navLink.id)}
-                >
-                  {navLink.name}
-                </ResAnchor>
+                {navLink.id == 'home' ? (
+                  <ResAnchor>
+                    <Link to="/">{navLink.name} </Link>
+                  </ResAnchor>
+                ) : (
+                  <ResAnchor
+                    // onClick={() => setIsOpen(false)}
+                    tabIndex={0}
+                    onClick={navLink.href ? null : () => onClick(navLink.id)}
+                  >
+                    {navLink.name}
+                  </ResAnchor>
+                )}
               </ResItem>
             ))}
           </ResList>

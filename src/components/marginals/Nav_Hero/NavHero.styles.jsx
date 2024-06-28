@@ -1,6 +1,6 @@
 import tw from 'twin.macro'
 import styled from 'styled-components'
-import { links } from '../../../config/content/navData/Nav_Hero'
+import { links } from '../../../config/index'
 
 export const NavHeroContainer = styled.div`
   font-family: 'Poppins', sans-serif;
