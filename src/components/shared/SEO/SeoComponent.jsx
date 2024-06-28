@@ -1,4 +1,3 @@
-/* eslint-disable*/
 import { Helmet } from 'react-helmet'
 import { useLocation } from 'react-router-dom'
 import propTypes from 'prop-types'
