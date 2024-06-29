@@ -13,13 +13,13 @@ import NavCont, {
   ResList,
   ResItem,
   ResAnchor,
-  NitImg,
+  // NitImg,
   Register,
   SecRegister
 } from './Nav.styles'
 import { Link } from 'react-router-dom'
-import { navLinks } from '../../../config/content/navData/Nav_Hero'
-import { links } from '../../../config/content/navData/Nav_Hero'
+import { navLinks } from '../../../config/index'
+import { links } from '../../../config/index'
 import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
 
@@ -57,7 +57,7 @@ const Nav = () => {
     <NavCont>
       <InnrNavCont>
         <Logo>
-          <NitImg src={links.nit} alt="NIT Rkl" />
+          {/* <NitImg src={links.nit} alt="NIT Rkl" /> */}
           <LogoImg src={links.logo} alt="logo" />
         </Logo>
 
@@ -66,7 +66,9 @@ const Nav = () => {
             {navLinks.map((navLink) => (
               <MenuItem key={navLink.id}>
                 {navLink.id == 'home' ? (
-                  <Link to="/">{navLink.name}</Link>
+                  <Link to="/" onClick={navLink.href ? null : () => onClick(navLink.id)}>
+                    {navLink.name}
+                  </Link>
                 ) : (
                   <Link
                     to={navLink.href}
@@ -87,7 +89,7 @@ const Nav = () => {
           </Link>
         ) : (
           <button to="/register">
-            <Register>Starting from 22nd</Register>
+            <Register>Starting Soon...</Register>
           </button>
         )}
         <Menu2>
@@ -106,7 +108,7 @@ const Nav = () => {
               </Link>
             ) : (
               <button to="/register">
-                <SecRegister>Starting from 22nd</SecRegister>
+                <SecRegister>Starting Soon...</SecRegister>
               </button>
             )}
             {navLinks.map((navLink) => (

@@ -4,7 +4,7 @@ import {
   RegistrationHelpContentText
 } from './registrationhelp.styles'
 
-import { apostrophe } from '../../config/content/registrationHelp/registrationHelp'
+import { apostrophe } from '../../config/index'
 
 export const RegistrationHelp = () => {
   return (
