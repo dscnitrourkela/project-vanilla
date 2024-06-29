@@ -4,7 +4,7 @@ import { events, nextArrowIcon, prevArrowIcon } from '../../config/content/event
 import EventModal from './EventModal'
 import EventsWrapper from './EventsWrapper'
 import { createPortal } from 'react-dom'
-import { RegisterModal } from './RegisterModal'
+import { RegisterModal } from './Register2Modal'
 import PropTypes from 'prop-types'
 import useGetEventsByOrgid from '../eventsqueries/getventbyorgid'
 

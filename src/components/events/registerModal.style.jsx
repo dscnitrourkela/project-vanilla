@@ -14,11 +14,11 @@ const fadeInAnimation = keyframes`
 
 export const Container = styled.main`
   ${tw`fixed inset-0 z-50 bg-black-1/[0.4] bg-opacity-75 backdrop-blur-md flex justify-center items-center h-screen  w-screen px-[1rem] md:px-[10px] `}
-  animation: ${fadeInAnimation} 0.3s ease-out border-2 border-black-1 overflow-y-auto;
+  animation: ${fadeInAnimation} 0.3s ease-out border-2 border-black-1 o;
 `
 
 export const Section = styled.section`
-  ${tw`bg-brown-2 border-4 border-black-1 relative max-w-[600px] w-full rounded-[23.06px] font-Poppins h-auto `}
+  ${tw`bg-brown-2 border-4 border-black-1 relative max-w-[600px] w-full rounded-[23.06px] font-Poppins max-h-[100vh] h-auto overflow-y-aut `}
 `
 export const Text = styled.div`
   ${tw`text-[34px] 0.8xsm:text-[37px]
