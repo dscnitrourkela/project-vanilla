@@ -3,7 +3,7 @@ export default [
     id: 1,
     question: 'What is the registration fee?',
     answer:
-      'The cost of registration is Rs.2500. Please note that if you avail our accommodation and food, charges for the same will be collected upon your arrival.'
+      'The cost of registration is Rs.2600. Please note that if you avail our accommodation and food, charges for the same will be collected upon your arrival.'
   },
   {
     id: 2,

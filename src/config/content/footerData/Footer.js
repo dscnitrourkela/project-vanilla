@@ -31,7 +31,7 @@ export default {
   bottom: [
     {
       item: 'Privacy & Cookies',
-      href: 'https://docs.google.com/document/d/1ZIYbLScgBDx0BWFzd7xqoW6ys354l_yx5W7O32MYEms/edit?usp=drivesdk'
+      href: 'https://docs.google.com/document/d/1S7MWDctiukWJ9ZYiVyh1pJaTWoKfKIcvznV8bJqaONk/edit'
     },
     {
       item: 'Terms and Conditions',
@@ -70,6 +70,14 @@ export default {
         href: 'https://x.com/AicheNit'
       }
     ],
+    location: {
+      key: 'map-pin',
+      img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1719597548/MapPin_n8girv.svg'
+    },
+    map: {
+      title: 'NIT Rourkela',
+      src: 'https://maps.google.com/maps?width=100%25&height=500&hl=en&q=National%20Institute%20of%20Technology%20Sector%201,%20Rourkela,%20Odisha+(NIT%20Rourkela)&t=&z=15&ie=UTF8&iwloc=B&output=embed'
+    },
     aichelogo1:
       'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1717322107/Mask_group_ag1tam.png',
     aichelogo2:

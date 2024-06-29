@@ -27,7 +27,7 @@ export const SocialLogo = styled.div`
 
 export const SocialLogoIndv = styled.div`
   ${tw`
-    w-[105px] h-[21.98px] 1.5xl:w-[229.37px] 1.5xl:h-[48px] flex justify-between items-center gap-[5.7px] 2xl:gap-[12.45px]
+    w-[105px] h-[21.98px] 1.5xl:w-[229.37px] 1.5xl:h-[48px] flex justify-between items-center gap-[5.7px] 2xl:gap-[12.45px] cursor-pointer
   `}
 `
 
@@ -100,8 +100,36 @@ export const HeartIcon = styled.img`
   `}
 `
 
+export const IframeContainer = styled.div`
+  ${tw`
+     w-full
+  `}
+`
+
+export const Iframe = styled.iframe`
+  ${tw`
+     w-full h-[500px]
+  `}
+`
+
 export const PhoneNumberContainer = styled.div`
   white-space: nowrap;
   width: auto;
   ${tw` `}
+`
+
+export const CustomToastContainer = styled.div`
+  .Toastify__toast-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    width: 95%;
+  }
+
+  .Toastify__toast {
+    border-radius: 8px;
+  }
+
+  ${tw``}
 `
