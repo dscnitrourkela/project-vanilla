@@ -8,10 +8,23 @@ import {
   Ellipse,
   CardHeaderText,
   ContentWrapper,
-  Section
+  Section,
+  Button1
 } from './FlagshipCard.styles'
+import { eventss } from '../../config/content/events/events'
 
-export default function FlagshipCard() {
+import PropTypes from 'prop-types'
+
+import { useState } from 'react'
+import { useEffect } from 'react'
+
+export default function FlagshipCard({ handlerFlagshipEvent }) {
+  const [EventId, setEventId] = useState('')
+
+  useEffect(() => {
+    setEventId(eventss.EventId)
+  }, [])
+
   return (
     <Container>
       <GradientContainer>
@@ -28,9 +41,15 @@ export default function FlagshipCard() {
 
               <CardHeaderText>Coming Soon...</CardHeaderText>
             </CardHeader>
+            <Button1 onClick={() => handlerFlagshipEvent(EventId)}> Register </Button1>
           </ContentWrapper>
         </Section>
       </GradientContainer>
     </Container>
   )
+}
+
+FlagshipCard.propTypes = {
+  EventId: PropTypes.number,
+  handlerFlagshipEvent: PropTypes.func
 }
