@@ -17,12 +17,10 @@ import {
   SeeMoreText
 } from './eventCard.styles'
 
-
 import { seeMoreIcon } from '../../config/content/events/events'
 import useGetRegisteredEvents from '../eventsqueries/GetRegisteredEvents'
 import { useEffect, useState } from 'react'
 import { seeMoreIcon } from '../../config/index'
-
 
 EventCard.propTypes = {
   event: PropTypes.shape({

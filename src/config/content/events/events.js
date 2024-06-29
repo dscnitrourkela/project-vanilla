@@ -1,5 +1,3 @@
-
-
 export const eventss = [
   {
     EventId: 6,
