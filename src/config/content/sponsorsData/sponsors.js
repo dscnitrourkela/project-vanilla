@@ -1,6 +1,6 @@
 import tw from 'twin.macro'
 
-export const SponsorsData = [
+export default [
   {
     styles: tw`max-md:m-[70px] md:w-[220px] md:h-[40px] md:m-[110px] `,
     url: 'https://res.cloudinary.com/dfe8sdlkc/image/upload/v1717761140/Logo_jc3ia8.png'

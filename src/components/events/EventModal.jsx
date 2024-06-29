@@ -15,7 +15,7 @@ import {
   ButtonRules
 } from './eventModal.styles'
 
-import { XIcon } from '../../config/content/events/events'
+import { XIcon } from '../../config/index'
 import PropTypes from 'prop-types'
 
 EventModal.propTypes = {

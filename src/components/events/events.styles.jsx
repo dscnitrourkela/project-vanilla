@@ -12,7 +12,7 @@ export const Arrow = styled.img`
       cursor-pointer hidden md:block active:transform active:scale-95 duration-300 ease-in-out`}
 `
 export const EventWrapper = styled.div`
-  ${tw`overflow-hidden md:h-[700px] flex items-center justify-center`}
+  ${tw`overflow-hidden md:h-[650px] flex items-center justify-center`}
 `
 export const EventsPillar = styled.div`
   ${tw`hidden w-[180.95px] h-[640px] rounded-[28.52px] bg-brown-4 shadow-events 2.3xl:flex justify-center items-center`}
@@ -21,7 +21,7 @@ export const EventsTitle = styled.h3`
   ${tw`w-[300px] h-[128px] transform -rotate-90 font-semibold text-7.3xl`}
 `
 export const EventsTitleMobile = styled.h3`
-  ${tw`text-[40px] xxsm:text-5.5xl xsm:text-6.5xl mb-1 md:text-7.2xl 1.5lg:text-8.5xl 2.3xl:text-8.55xl 2.5xl:text-9xl font-[700] text-brown-4 ml-5 2xl:text-10xl block`}
+  ${tw`text-[40px] xxsm:text-5.5xl xsm:text-6.5xl mb-1 md:text-7.2xl 1.5lg:text-8.5xl 2.3xl:text-8.5xl 2.5xl:text-8.5xl font-[700] text-brown-4 ml-5 2xl:text-10xl block`}
 `
 export const EventsBgPillar = styled.div`
   ${tw`hidden 2.5xl:block w-[80px] h-[640px] rounded-[28.52px] bg-brown-5`}
