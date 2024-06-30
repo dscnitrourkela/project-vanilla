@@ -1,7 +1,5 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
@@ -220,6 +218,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="http://ashishpadhy.live"><img src="https://avatars.githubusercontent.com/u/100484401?v=4?s=100" width="100px;" alt="Ashish Padhy"/><br /><sub><b>Ashish Padhy</b></sub></a><br /><a href="#maintenance-Shurtu-gal" title="Maintenance">🚧</a> <a href="https://github.com/dscnitrourkela/project-vanilla/pulls?q=is%3Apr+reviewed-by%3AShurtu-gal" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/dscnitrourkela/project-vanilla/commits?author=Shurtu-gal" title="Code">💻</a> <a href="#ideas-Shurtu-gal" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://linktr.ee/m_srishty"><img src="https://avatars.githubusercontent.com/u/68679980?v=4?s=100" width="100px;" alt="Srishty Mangutte"/><br /><sub><b>Srishty Mangutte</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-vanilla/commits?author=Srish-ty" title="Code">💻</a> <a href="#ideas-Srish-ty" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ayanSCYY"><img src="https://avatars.githubusercontent.com/u/157117125?v=4?s=100" width="100px;" alt="ayanSCYY"/><br /><sub><b>ayanSCYY</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-vanilla/commits?author=ayanSCYY" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
