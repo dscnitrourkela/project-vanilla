@@ -24,7 +24,7 @@ export const navLinks = [
 export const DescriptionContent = {
   title: 'Conference Registration',
   content: `Grab a minute, youthful learners, to remind yourself that registration is now open for the Student Regional Conference 2024! Click on the REGISTER link that appears below. The main goal of this conference is to bring individuals from all across the globe to exchange concepts, expertise, and real-world experiences. We have a fantastic lineup of guests, engaging workshops, and hands-on events.Don’t miss this opportunity to take part in something unique. Enrol right away, and be ready for a fantastic conference.`,
-  HeroButton: 'Help',
+  HeroButton: 'Brochure',
   RegisterButton: 'Register'
 }
 
