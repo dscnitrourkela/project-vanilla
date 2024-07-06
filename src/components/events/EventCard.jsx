@@ -16,7 +16,7 @@ import {
   ButtonRules,
   SeeMoreText
 } from './eventCard.styles'
-import { seeMoreIcon } from '../../config/content/events/events'
+import { seeMoreIcon } from '../../config/index'
 
 EventCard.propTypes = {
   event: PropTypes.shape({

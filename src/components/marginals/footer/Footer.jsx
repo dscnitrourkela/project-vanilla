@@ -16,11 +16,14 @@ import {
   FooterBottom,
   MadeBy,
   HeartIcon,
+  IframeContainer,
+  Iframe,
   PhoneNumberContainer
 } from './Styles'
 
 import footerData from '../../../config/content/footerData/Footer.js'
 import PropTypes from 'prop-types'
+import { toast } from 'react-toastify'
 
 RenderListItem.propTypes = {
   item: PropTypes.oneOfType([
@@ -36,6 +39,25 @@ RenderListItem.propTypes = {
 }
 
 export default function MyFooter() {
+  function showLocation() {
+    toast(
+      <IframeContainer>
+        <Iframe src={footerData.images.map.src} title={footerData.images.map.title} />
+      </IframeContainer>,
+
+      {
+        position: 'bottom-right',
+        autoClose: false,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: 1,
+        theme: 'dark'
+      }
+    )
+  }
+
   return (
     <>
       <Footer id="contact">
@@ -48,6 +70,13 @@ export default function MyFooter() {
                     <SocialImg src={item.img} alt={item.key} />
                   </a>
                 ))}
+                <a>
+                  <SocialImg
+                    onClick={showLocation}
+                    src={footerData.images.location.img}
+                    alt={footerData.images.location.key}
+                  ></SocialImg>
+                </a>
               </SocialLogoIndv>
             </SocialLogo>
             <MainLogo>

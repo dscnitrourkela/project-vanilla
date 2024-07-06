@@ -1,4 +1,4 @@
-export const TeamMembers = [
+export default [
   {
     role: 'Accommodation',
     name: 'Umesh Chandra Sahoo',
@@ -64,5 +64,11 @@ export const TeamMembers = [
     name: 'Kiran Khairnar',
     image:
       'https://res.cloudinary.com/dhv234qct/image/upload/v1717692333/AICHE_SRC/team_members/Sponshorship.jpg'
+  },
+  {
+    role: 'Design Head',
+    name: 'Amitesh Patra',
+    image:
+      'https://res.cloudinary.com/dhv234qct/image/upload/v1719943038/AICHE_SRC/team_members/design_head_ikkdeb.jpg'
   }
 ]

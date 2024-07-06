@@ -19,8 +19,8 @@ import NavCont, {
   ProfileBtn
 } from './Nav.styles'
 import { Link } from 'react-router-dom'
-import { navLinks } from '../../../config/content/navData/Nav_Hero'
-import { links } from '../../../config/content/navData/Nav_Hero'
+import { navLinks } from '../../../config/index'
+import { links } from '../../../config/index'
 import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
 import ProfileMenu from './ProfileMenu'

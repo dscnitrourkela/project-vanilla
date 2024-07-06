@@ -29,13 +29,17 @@ export default {
         },
         blue: {
           1: '#00A1FC'
+        },
+        gray: {
+          1: '#DFDFDF'
         }
       },
 
       boxShadow: {
         button: '3px 3px 0px #FFEEDA',
         events: '5px 5px 0px #1D1D1D',
-        customShadow: '6px 5px 0px 0px rgba(64, 46, 50, 1)'
+        customShadow: '6px 5px 0px 0px rgba(64, 46, 50, 1)',
+        customShadow2: '5px 5px #FFEEDA, 5px 5px 0 2px #1D1D1D'
       },
       borderRadius: {
         max: '241px'

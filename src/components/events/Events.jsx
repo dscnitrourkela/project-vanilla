@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { Container, Arrow, Section, EventsTitleMobile } from './events.styles'
-import { events, nextArrowIcon, prevArrowIcon } from '../../config/content/events/events'
+import { events, nextArrowIcon, prevArrowIcon } from '../../config/index'
 import EventModal from './EventModal'
 import EventsWrapper from './EventsWrapper'
 import { createPortal } from 'react-dom'

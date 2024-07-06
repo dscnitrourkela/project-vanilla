@@ -1,5 +1,5 @@
 import AboutCard from './AboutCard'
-import { data, srcData } from '../../config/content/about/about'
+import { data, srcData } from '../../config/index'
 import { Container, CardContainer, Title } from './about.styles'
 import AboutCarousel from './AboutCarousel'
 function About() {

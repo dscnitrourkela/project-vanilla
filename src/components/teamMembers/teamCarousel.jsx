@@ -6,7 +6,7 @@ import {
   CardImageName,
   CardImageRole
 } from './teamCards.styles'
-import { TeamMembers } from '../..//config/content/teamsData/team'
+import { TeamMembers } from '../../config/index'
 import Marquee from 'react-fast-marquee'
 import { Suspense } from 'react'
 
