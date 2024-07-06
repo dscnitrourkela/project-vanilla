@@ -11,7 +11,7 @@ import { ButtonWrapper } from './Description.styles'
 
 const Description = () => {
   function redirect() {
-    window.open('https://drive.google.com/file/d/1Fe5JPiswzNDkKLihI0BJ2oUYHIj7anDN/view', '_blank')
+    window.open('https://drive.google.com/file/d/1wEdNjtT4zmo7eePrLRpzAUch1eeKEXDB/view?usp=drivesdk', '_blank')
   }
 
   return (
