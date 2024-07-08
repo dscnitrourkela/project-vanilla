@@ -1,8 +1,10 @@
-import { createContext, useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
-import { auth, signInWithGoogle, signOutUser } from '../firebase/login'
+import { createContext, useEffect, useState } from 'react'
+
 import { onAuthStateChanged } from 'firebase/auth'
+import PropTypes from 'prop-types'
 import { toast } from 'react-toastify'
+
+import { auth, signInWithGoogle, signOutUser } from '../firebase/login'
 
 export const AuthContext = createContext()
 
@@ -12,7 +14,13 @@ export const AuthProvider = ({ children }) => {
   const listenForAuthChanges = () => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
-        const userData = { name: user.displayName, email: user.email, uid: user.uid }
+        const idToken = await user.getIdToken()
+        localStorage.setItem('auth-token', idToken)
+        const userData = {
+          name: user.displayName,
+          email: user.email,
+          uid: user.uid
+        }
         setUserData(userData)
       } else {
         setUserData({})

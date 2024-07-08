@@ -84,11 +84,11 @@ export default function RegistrationForm() {
     if (userInfo.uid) {
       setIsLoggedIn(true)
       setUid(userInfo.uid)
-      const userData = userDataInDb
-      if (userData?.getUser) {
-        toast.info('You have already registered!')
-        navigate(`/`)
-      }
+      // const userData = userDataInDb
+      // if (userData?.getUser) {
+      //   toast.info('You have already registered!')
+      //   navigate(`/`)
+      // }
       setformData((p) => ({ ...p, name: userInfo.name, email: userInfo.email }))
     }
 
@@ -116,7 +116,8 @@ export default function RegistrationForm() {
 
       const createdAt = new Date().toISOString()
       const uid = userInfo.uid
-      const newFormData = { ...formData, idCardPhoto: imageUrl, uid, createdAt }
+      const id = uid
+      const newFormData = { ...formData, idCardPhoto: imageUrl, id, uid, createdAt }
       await createUser({
         variables: {
           user: newFormData
