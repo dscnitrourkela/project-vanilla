@@ -1,5 +1,5 @@
 import {
-  // HelpButton,
+  HelpButton,
   RegisterButton,
   ButtonContainer,
   DescriptionContainer,
@@ -10,13 +10,17 @@ import { DescriptionContent } from '../../../config/index'
 import { ButtonWrapper } from './Description.styles'
 
 const Description = () => {
+  function redirect() {
+    window.open(DescriptionContent.brochureLink, '_blank')
+  }
+
   return (
     <DescriptionContainer id="home">
       <DescriptionTitle>{DescriptionContent.title}</DescriptionTitle>
       <DescriptionParagraph>{DescriptionContent.content}</DescriptionParagraph>
       <ButtonWrapper>
         <ButtonContainer>
-          {/* <HelpButton>{DescriptionContent.HeroButton}</HelpButton> */}
+          <HelpButton onClick={redirect}>{DescriptionContent.HeroButton}</HelpButton>
           {/* <RegisterButton>{DescriptionContent.RegisterButton}</RegisterButton> */}
           <RegisterButton>Starting Soon....</RegisterButton>
         </ButtonContainer>
