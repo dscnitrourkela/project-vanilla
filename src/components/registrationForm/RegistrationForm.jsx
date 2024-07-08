@@ -1,36 +1,39 @@
-import { useState, useContext, useEffect } from 'react'
-import { AuthContext } from '../../context/AuthContext'
-import { useMutation, skipToken, useSuspenseQuery } from '@apollo/client'
+import { useContext, useEffect, useState } from 'react'
+
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import Loader from '../loader/Loader'
 
+import { skipToken, useMutation, useSuspenseQuery } from '@apollo/client'
+
+import { formSchema } from '../../config/content/registrationForm/formSchema'
 import {
-  logo2,
-  logo1,
   bg,
   date,
   formInputs,
+  logo1,
+  logo2,
   mobileLogo
 } from '../../config/content/registrationForm/Registration'
+import { AuthContext } from '../../context/AuthContext'
+import { CREATE_USER } from '../../graphQL/mutations/userMutation'
+import { GET_USER_BY_ID } from '../../graphQL/queries/userQueries'
+import Loader from '../loader/Loader'
+import FileInput from './FileInput'
+import InputField from './InputField'
 import {
-  Container,
   BackgroundImage,
-  LogoSection,
-  LogoContainer,
+  Button,
+  Container,
   DateTxT,
   FormContainer,
-  Button,
-  MobileHeader,
+  LogoContainer,
+  LogoSection,
   MobileDate,
+  MobileHeader,
   SignInContainer
 } from './RegisterForm.styles'
-import InputField from './InputField'
-import FileInput from './FileInput'
 import { uploadToCloudinary } from './uploadToCloudinary'
-import { CREATE_USER } from '../../graphQL/mutations/userMutation'
-import { formSchema } from '../../config/content/registrationForm/formSchema'
-import { GET_USER_BY_ID } from '../../graphQL/queries/userQueries'
+
 export default function RegistrationForm() {
   const [formData, setformData] = useState({
     name: '',
@@ -84,11 +87,11 @@ export default function RegistrationForm() {
     if (userInfo.uid) {
       setIsLoggedIn(true)
       setUid(userInfo.uid)
-      // const userData = userDataInDb
-      // if (userData?.getUser) {
-      //   toast.info('You have already registered!')
-      //   navigate(`/`)
-      // }
+      const userData = userDataInDb
+      if (userData?.getUser) {
+        toast.info('You have already registered!')
+        navigate(`/`)
+      }
       setformData((p) => ({ ...p, name: userInfo.name, email: userInfo.email }))
     }
 
@@ -113,16 +116,16 @@ export default function RegistrationForm() {
         toast.error('Failed to upload ID card! Please try again!')
         return
       }
-
-      const createdAt = new Date().toISOString()
       const uid = userInfo.uid
-      const id = uid
-      const newFormData = { ...formData, idCardPhoto: imageUrl, id, uid, createdAt }
+      const orgId = '668bd9deff0327a608b9b6ea'
+      const newFormData = { ...formData, idCardPhoto: imageUrl, uid }
       await createUser({
         variables: {
-          user: newFormData
+          user: newFormData,
+          orgId: orgId
         }
       })
+
       toast.success('You have been registered successfully!')
     } catch (e) {
       console.error(e)

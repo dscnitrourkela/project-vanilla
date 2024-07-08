@@ -1,11 +1,14 @@
-import { ProfileMenuButton } from './ProfileMenu.styles'
-import { createPortal } from 'react-dom'
 import { useContext, useEffect, useState } from 'react'
-import ProfileMenuDropDown from './ProfileMenuDropDown'
+import { createPortal } from 'react-dom'
+
 import propTypes from 'prop-types'
+
+import { skipToken, useSuspenseQuery } from '@apollo/client'
+
 import { AuthContext } from '../../../context/AuthContext'
-import { useSuspenseQuery, skipToken } from '@apollo/client'
 import { GET_USER_BY_ID } from '../../../graphQL/queries/userQueries'
+import { ProfileMenuButton } from './ProfileMenu.styles'
+import ProfileMenuDropDown from './ProfileMenuDropDown'
 
 ProfileMenu.propTypes = {
   isProfileOpen: propTypes.bool,
@@ -24,7 +27,7 @@ function ProfileMenu({ isProfileOpen, setProfileOpen }) {
       setUid(userInfo.uid)
       if (userDataInDb?.getUser) {
         setUser(userDataInDb.getUser)
-        // console.log(userDataInDb.getUser)
+        console.log(userDataInDb.getUser)
       }
     }
   }, [userInfo, userDataInDb, uid])

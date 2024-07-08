@@ -1,19 +1,21 @@
+import { useContext } from 'react'
+
+import propTypes from 'prop-types'
+import { Link, useNavigate } from 'react-router-dom'
+
+import { XIcon } from '../../../config/content/events/events'
+import { AuthContext } from '../../../context/AuthContext'
 import {
-  ProfileDropDown,
-  ProfileDropDownItem,
-  Label,
-  LogoutButton,
-  Value,
   CloseButton,
   Container,
-  NotRegistered
+  Label,
+  LogoutButton,
+  NotRegistered,
+  ProfileDropDown,
+  ProfileDropDownItem,
+  Value
 } from './ProfileMenu.styles'
-import propTypes from 'prop-types'
-import { XIcon } from '../../../config/content/events/events'
-import { useContext } from 'react'
-import { AuthContext } from '../../../context/AuthContext'
-import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+
 ProfileMenuDropDown.propTypes = {
   setProfileOpen: propTypes.func,
   user: propTypes.object
@@ -24,7 +26,7 @@ function ProfileMenuDropDown({ setProfileOpen, user }) {
     { label: 'Name', value: user.name },
     { label: 'Email', value: user.email },
     { label: 'College', value: user.college },
-    { label: 'Src Id', value: user.srcID }
+    { label: 'Src Id', value: user.srcId ? user.srcId : 'Available shortly...' }
   ]
   const { handleSignOut } = useContext(AuthContext)
   function logout() {
