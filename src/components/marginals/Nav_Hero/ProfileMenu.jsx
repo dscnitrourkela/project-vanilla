@@ -28,7 +28,7 @@ function ProfileMenu({ isProfileOpen, setProfileOpen }) {
       setUid(userInfo.uid)
       if (userDataInDb?.getUser) {
         setUser(userDataInDb.getUser)
-        console.log(userDataInDb.getUser)
+        // console.log(userDataInDb.getUser)
       }
     }
   }, [userInfo, userDataInDb, uid])

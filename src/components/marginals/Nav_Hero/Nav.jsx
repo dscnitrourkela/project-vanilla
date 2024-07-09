@@ -100,9 +100,9 @@ const Nav = () => {
             <ProfileMenu isProfileOpen={profileOpen} setProfileOpen={setProfileOpen} />
           </ProfileBtn>
         ) : (
-          <button to="/register">
-            <Register>Starting Soon...</Register>
-          </button>
+          <Link to="/register">
+            <Register>Register</Register>
+          </Link>
         )}
         <Menu2>
           <MenuIcon>
@@ -123,7 +123,7 @@ const Nav = () => {
               </button>
             ) : (
               <button to="/register">
-                <SecRegister>Starting Soon...</SecRegister>
+                <SecRegister>Register...</SecRegister>
               </button>
             )}
             {navLinks.map((navLink) => (
