@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from 'react'
 
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-
 import { skipToken, useMutation, useSuspenseQuery } from '@apollo/client'
 
 import { formSchema } from '../../config/content/registrationForm/formSchema'
@@ -12,8 +11,10 @@ import {
   formInputs,
   logo1,
   logo2,
-  mobileLogo
+  mobileLogo,
+  tshirtSizeLink
 } from '../../config/content/registrationForm/Registration'
+import Modal from '../modal/Modal'
 import { AuthContext } from '../../context/AuthContext'
 import { CREATE_USER } from '../../graphQL/mutations/userMutation'
 import { GET_USER_BY_ID } from '../../graphQL/queries/userQueries'
@@ -30,12 +31,19 @@ import {
   LogoSection,
   MobileDate,
   MobileHeader,
-  SignInContainer
+  SignInContainer,
+  TshirtContainer,
+  TshirtImage
 } from './RegisterForm.styles'
 import { uploadToCloudinary } from './uploadToCloudinary'
+// import SwitchInput from './SwitchInput'
 
 export default function RegistrationForm() {
   const orgId = '668bd9deff0327a608b9b6ea'
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
+
   const [formData, setformData] = useState({
     name: '',
     email: '',
@@ -45,6 +53,7 @@ export default function RegistrationForm() {
     rollNumber: '',
     idCardPhoto: null,
     tSize: ''
+    // isHostelRequired: false
   })
   const initialFormErrors = {
     name: '',
@@ -88,9 +97,7 @@ export default function RegistrationForm() {
     if (userInfo.uid) {
       setIsLoggedIn(true)
       setUid(userInfo.uid)
-      console.log(userInfo.uid)
       const userData = userDataInDb
-      console.log(userData)
       if (userData?.getUser) {
         toast.info('You have already registered!')
         navigate(`/`)
@@ -132,7 +139,12 @@ export default function RegistrationForm() {
       toast.success('You have been registered successfully!')
     } catch (e) {
       console.error(e)
-      toast.error('Failed to register! Please try again!')
+
+      if (e.message.includes('Unique constraint failed')) {
+        toast.error('user already exist!')
+      } else {
+        toast.error(e.message)
+      }
     } finally {
       setIsLoading(false)
     }
@@ -166,55 +178,71 @@ export default function RegistrationForm() {
     }
   }
 
+  function showTshirtSizes() {
+    openModal()
+  }
+
   return (
-    <Container>
-      {(isloading || loading) && <Loader />}
-      <LogoSection>
-        <BackgroundImage src={bg} />
-        <LogoContainer>
-          <img src={logo1} alt="logo" />
+    <>
+      <Modal open={isModalOpen} onClose={closeModal}>
+        <TshirtContainer>
+          <TshirtImage src={tshirtSizeLink} alt="tshirt sizes" />
+        </TshirtContainer>
+      </Modal>
+      <Container>
+        {(isloading || loading) && <Loader />}
+        <LogoSection>
+          <BackgroundImage src={bg} />
+          <LogoContainer>
+            <img src={logo1} alt="logo" />
+            <img src={logo2} alt="logo2" />
+            <DateTxT>{date}</DateTxT>
+          </LogoContainer>
+        </LogoSection>
+
+        <MobileHeader>
+          <img src={mobileLogo} alt="logo" />
           <img src={logo2} alt="logo2" />
-          <DateTxT>{date}</DateTxT>
-        </LogoContainer>
-      </LogoSection>
+          <MobileDate>{date}</MobileDate>
+        </MobileHeader>
 
-      <MobileHeader>
-        <img src={mobileLogo} alt="logo" />
-        <img src={logo2} alt="logo2" />
-        <MobileDate>{date}</MobileDate>
-      </MobileHeader>
-
-      {isLoggedIn ? (
-        <FormContainer>
-          {formInputs.map((input) =>
-            input.type === 'file' ? (
-              <FileInput
-                key={input.id}
-                input={input}
-                handleFormData={handleFormData}
-                error={formErrors[input.id]}
-              />
-            ) : (
-              <InputField
-                key={input.id}
-                input={input}
-                value={formData[input.id]}
-                handleFormData={handleFormData}
-                error={formErrors[input.id]}
-              />
-            )
-          )}
-          <Button onClick={(e) => handleSubmit(e)} disabled={loading}>
-            Register
-          </Button>
-        </FormContainer>
-      ) : (
-        <SignInContainer>
-          <Button onClick={signInWithGoogle} disabled={isloading}>
-            Sign in with Google
-          </Button>
-        </SignInContainer>
-      )}
-    </Container>
+        {isLoggedIn ? (
+          <FormContainer>
+            {formInputs.map((input) =>
+              input.type === 'file' ? (
+                <FileInput
+                  key={input.id}
+                  input={input}
+                  handleFormData={handleFormData}
+                  error={formErrors[input.id]}
+                />
+              ) : (
+                <InputField
+                  key={input.id}
+                  input={input}
+                  value={formData[input.id]}
+                  handleFormData={handleFormData}
+                  error={formErrors[input.id]}
+                  showTshirtSizes={showTshirtSizes}
+                />
+              )
+            )}
+            {/* <SwitchInput
+            value={formData.isHostelRequired}
+            handleHostelRequired={handleHostelRequired}
+          /> */}
+            <Button onClick={(e) => handleSubmit(e)} disabled={loading}>
+              Register
+            </Button>
+          </FormContainer>
+        ) : (
+          <SignInContainer>
+            <Button onClick={signInWithGoogle} disabled={isloading}>
+              Sign in with Google
+            </Button>
+          </SignInContainer>
+        )}
+      </Container>
+    </>
   )
 }

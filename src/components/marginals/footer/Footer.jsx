@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import { toast } from 'react-toastify'
-
+import { useState } from 'react'
 import footerData from '../../../config/content/footerData/Footer.js'
+import Modal from '../../modal/Modal'
 // import React from "react";
 import {
   AicheLogo1,
@@ -39,29 +39,20 @@ RenderListItem.propTypes = {
 }
 
 export default function MyFooter() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
   function showLocation() {
-    toast(
-      <IframeContainer>
-        <Iframe src={footerData.images.map.src} title={footerData.images.map.title} />
-      </IframeContainer>,
-
-      {
-        position: 'bottom-left',
-        autoClose: false,
-        hideProgressBar: true,
-        draggable: true,
-
-        theme: 'dark',
-        style: {
-          width: '200%',
-          height: '100%'
-        }
-      }
-    )
+    openModal()
   }
 
   return (
     <>
+      <Modal open={isModalOpen} onClose={closeModal}>
+        <IframeContainer>
+          <Iframe src={footerData.images.map.src} title={footerData.images.map.title} />
+        </IframeContainer>
+      </Modal>
       <Footer id="contact">
         <FooterTop>
           <Logos>

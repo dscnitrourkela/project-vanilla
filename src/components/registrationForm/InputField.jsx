@@ -15,10 +15,16 @@ function InputField({
   input: { id, label, placeholder, type, extras },
   handleFormData,
   value,
-  error
+  error,
+  showTshirtSizes
 }) {
   const handleChange = (e) => {
     handleFormData(id, e.target.value)
+  }
+
+  function handleTshirtCLick(e) {
+    e.preventDefault()
+    showTshirtSizes()
   }
 
   return (
@@ -33,7 +39,7 @@ function InputField({
           onChange={handleChange}
         />
         {extras && (
-          <InfoBtn>
+          <InfoBtn onClick={(e) => handleTshirtCLick(e)}>
             <Info src={info} alt="info-icon" />
           </InfoBtn>
         )}
@@ -59,7 +65,8 @@ InputField.propTypes = {
   }).isRequired,
   handleFormData: PropTypes.func.isRequired,
   value: PropTypes.string,
-  error: PropTypes.string
+  error: PropTypes.string,
+  showTshirtSizes: PropTypes.func
 }
 
 export default InputField

@@ -65,3 +65,6 @@ export const formInputs = [
     extras: 'To know the details about the size'
   }
 ]
+
+export const tshirtSizeLink =
+  'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1720530749/sizes_mpslmi.jpg'
