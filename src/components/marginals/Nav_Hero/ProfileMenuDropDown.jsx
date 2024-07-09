@@ -13,8 +13,11 @@ import {
   NotRegistered,
   ProfileDropDown,
   ProfileDropDownItem,
-  Value
+  Value,
+  PaymentButton
 } from './ProfileMenu.styles'
+
+import { DescriptionContent } from '../../../config/index'
 
 ProfileMenuDropDown.propTypes = {
   setProfileOpen: propTypes.func,
@@ -47,6 +50,12 @@ function ProfileMenuDropDown({ setProfileOpen, user }) {
                 <Label>{detail.label}:</Label> <Value>{detail.value}</Value>
               </ProfileDropDownItem>
             ))}
+            <PaymentButton>
+              <Link target="_blank" to={DescriptionContent.paymentLink}>
+                {' '}
+                Pay Now
+              </Link>
+            </PaymentButton>
             <LogoutButton onClick={logout}>Logout</LogoutButton>
           </>
         ) : (

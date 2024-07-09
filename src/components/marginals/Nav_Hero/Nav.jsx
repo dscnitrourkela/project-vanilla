@@ -57,7 +57,6 @@ const Nav = () => {
 
   function onClick(id) {
     handleScroll(id)
-    console.log(id)
     handleToggle()
   }
 
@@ -92,10 +91,6 @@ const Nav = () => {
         </Menu>
 
         {userInfo.name ? (
-          // <Link to="/" onClick={handleSignOut}>
-          //   <Register>Logout</Register>
-          // </Link>
-
           <ProfileBtn onMouseEnter={() => setProfileOpen(true)}>
             <ProfileMenu isProfileOpen={profileOpen} setProfileOpen={setProfileOpen} />
           </ProfileBtn>
@@ -115,16 +110,13 @@ const Nav = () => {
         <ResMen>
           <ResList>
             {userInfo.name ? (
-              // <Link to="/" onClick={handleSignOut}>
-              //   <SecRegister>Logout</SecRegister>
-              // </Link>
               <button onClick={handleProfileOpen}>
                 <ProfileMenu isProfileOpen={profileOpen} setProfileOpen={setProfileOpen} />
               </button>
             ) : (
-              <button to="/register">
-                <SecRegister>Register...</SecRegister>
-              </button>
+              <Link to="/register">
+                <SecRegister>Register</SecRegister>
+              </Link>
             )}
             {navLinks.map((navLink) => (
               <ResItem key={navLink.id}>
