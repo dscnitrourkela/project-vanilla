@@ -35,6 +35,7 @@ import {
 import { uploadToCloudinary } from './uploadToCloudinary'
 
 export default function RegistrationForm() {
+  const orgId = '668bd9deff0327a608b9b6ea'
   const [formData, setformData] = useState({
     name: '',
     email: '',
@@ -64,7 +65,7 @@ export default function RegistrationForm() {
     useMutation(CREATE_USER)
   const { data: userDataInDb } = useSuspenseQuery(
     GET_USER_BY_ID,
-    uid ? { variables: { uid: uid } } : skipToken
+    uid ? { variables: { uid: uid, orgId } } : skipToken
   )
 
   const navigate = useNavigate()
@@ -87,7 +88,9 @@ export default function RegistrationForm() {
     if (userInfo.uid) {
       setIsLoggedIn(true)
       setUid(userInfo.uid)
+      console.log(userInfo.uid)
       const userData = userDataInDb
+      console.log(userData)
       if (userData?.getUser) {
         toast.info('You have already registered!')
         navigate(`/`)
@@ -117,7 +120,7 @@ export default function RegistrationForm() {
         return
       }
       const uid = userInfo.uid
-      const orgId = '668bd9deff0327a608b9b6ea'
+
       const newFormData = { ...formData, idCardPhoto: imageUrl, uid }
       await createUser({
         variables: {

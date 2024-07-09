@@ -15,12 +15,13 @@ ProfileMenu.propTypes = {
   setProfileOpen: propTypes.func
 }
 function ProfileMenu({ isProfileOpen, setProfileOpen }) {
+  const orgId = '668bd9deff0327a608b9b6ea'
   const { userInfo } = useContext(AuthContext)
   const [uid, setUid] = useState(null)
   const [user, setUser] = useState({})
   const { data: userDataInDb } = useSuspenseQuery(
     GET_USER_BY_ID,
-    uid ? { variables: { uid: uid } } : skipToken
+    uid ? { variables: { uid: uid, orgId } } : skipToken
   )
   useEffect(() => {
     if (userInfo.uid) {
