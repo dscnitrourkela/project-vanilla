@@ -68,13 +68,14 @@ export const events = [
   // },
   // {
   //   id: 7,
-  //   img: 'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717655996/ndoqb3l9m6no38kehat8.svg',
+  //   img: 'dfdf',
   //   title: 'Workshop',
   //   subtitle: '',
   //   details: [
-  //     'Get ready to experience the magical corners of science and engineering where mathematics, chemistry, physics and other fields converge. So we present different workshops for you, to combat the education and professional skills gracefully.',
-  //     'Our experts will guide you, equipping you with the necessary skills in the domain of education, research and industry by unlocking your tremendous potential.'
-  //   ]
+  //     'gffgfgresent dgf.',
+  //     'Our egfgf ur tremendous potential.'
+  //   ],
+  // rules: 'https://drive.google.com/file/d/1M3lMX_u7Ip0ySnNo-tK5MH_wIaKFoRjo/view?usp=sharing'
   // },
   // {
   //   id: 8,

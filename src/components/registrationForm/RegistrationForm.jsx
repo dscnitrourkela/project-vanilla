@@ -1,38 +1,41 @@
-import { useState, useContext, useEffect } from 'react'
-import { AuthContext } from '../../context/AuthContext'
-import { useMutation } from '@apollo/client'
-import Cookies from 'js-cookie'
+import { useContext, useEffect, useState } from 'react'
+
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import Loader from '../loader/Loader'
 
+import { skipToken, useMutation, useSuspenseQuery } from '@apollo/client'
+
+import { formSchema } from '../../config/content/registrationForm/formSchema'
 import {
-  logo2,
-  logo1,
   bg,
   date,
   formInputs,
+  logo1,
+  logo2,
   mobileLogo
 } from '../../config/content/registrationForm/Registration'
+import { AuthContext } from '../../context/AuthContext'
+import { CREATE_USER } from '../../graphQL/mutations/userMutation'
+import { GET_USER_BY_ID } from '../../graphQL/queries/userQueries'
+import Loader from '../loader/Loader'
+import FileInput from './FileInput'
+import InputField from './InputField'
 import {
-  Container,
   BackgroundImage,
-  LogoSection,
-  LogoContainer,
+  Button,
+  Container,
   DateTxT,
   FormContainer,
-  Button,
-  MobileHeader,
+  LogoContainer,
+  LogoSection,
   MobileDate,
+  MobileHeader,
   SignInContainer
 } from './RegisterForm.styles'
-import InputField from './InputField'
-import FileInput from './FileInput'
 import { uploadToCloudinary } from './uploadToCloudinary'
-import { CREATE_USER } from '../../graphQL/mutations/userMutation'
-import { formSchema } from '../../config/content/registrationForm/formSchema'
 
 export default function RegistrationForm() {
+  const orgId = '668bd9deff0327a608b9b6ea'
   const [formData, setformData] = useState({
     name: '',
     email: '',
@@ -56,15 +59,21 @@ export default function RegistrationForm() {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [isloading, setIsLoading] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [uid, setUid] = useState(null)
   const { userInfo, handleGoogleSignIn } = useContext(AuthContext)
-  const [createUser, { loading, data }] = useMutation(CREATE_USER)
+  const [createUser, { loading: createUserLoading, data: createUserData }] =
+    useMutation(CREATE_USER)
+  const { data: userDataInDb } = useSuspenseQuery(
+    GET_USER_BY_ID,
+    uid ? { variables: { uid: uid, orgId } } : skipToken
+  )
+
   const navigate = useNavigate()
 
   async function signInWithGoogle() {
     setIsLoading(true)
     try {
       await handleGoogleSignIn()
-      setIsLoggedIn(true)
     } catch (e) {
       console.error(e)
       toast.error('Failed to sign in!')
@@ -73,26 +82,34 @@ export default function RegistrationForm() {
     }
   }
 
+  const loading = createUserLoading
+
   useEffect(() => {
-    const user = Cookies.get('user')
-    if (user) {
-      navigate(`/`)
-    } else {
-      userInfo.name ? setIsLoggedIn(true) : setIsLoggedIn(false)
-      userInfo.name && setformData((p) => ({ ...p, name: userInfo.name, email: userInfo.email }))
+    if (userInfo.uid) {
+      setIsLoggedIn(true)
+      setUid(userInfo.uid)
+      console.log(userInfo.uid)
+      const userData = userDataInDb
+      console.log(userData)
+      if (userData?.getUser) {
+        toast.info('You have already registered!')
+        navigate(`/`)
+      }
+      setformData((p) => ({ ...p, name: userInfo.name, email: userInfo.email }))
     }
 
-    if (data) {
-      Cookies.set('user', JSON.stringify(data.createUser), { expires: 10 })
-      navigate(`/`)
+    if (createUserData) {
+      setTimeout(() => {
+        window.location.href = '/'
+      }, 2000)
     }
-  }, [userInfo, data, navigate])
+  }, [userInfo, createUserData, navigate, userDataInDb])
 
   async function handleSubmit(e) {
     e.preventDefault()
 
     if (!isFormValid()) return
-    if (!userInfo.name) return
+    if (!userInfo.name) return toast.error('Please sign in with Google!')
 
     setIsLoading(true)
     try {
@@ -102,15 +119,16 @@ export default function RegistrationForm() {
         toast.error('Failed to upload ID card! Please try again!')
         return
       }
-
-      const createdAt = new Date().toISOString()
       const uid = userInfo.uid
-      const newFormData = { ...formData, idCardPhoto: imageUrl, uid, createdAt }
+
+      const newFormData = { ...formData, idCardPhoto: imageUrl, uid }
       await createUser({
         variables: {
-          user: newFormData
+          user: newFormData,
+          orgId: orgId
         }
       })
+
       toast.success('You have been registered successfully!')
     } catch (e) {
       console.error(e)

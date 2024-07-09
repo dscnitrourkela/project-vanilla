@@ -1,29 +1,29 @@
-// import React from "react";
-import {
-  Footer,
-  FooterTop,
-  Logos,
-  SocialLogo,
-  SocialLogoIndv,
-  SocialImg,
-  MainLogo,
-  AicheLogo1,
-  AicheLogo2,
-  Text,
-  Heading,
-  List,
-  ListItems,
-  FooterBottom,
-  MadeBy,
-  HeartIcon,
-  IframeContainer,
-  Iframe,
-  PhoneNumberContainer
-} from './Styles'
-
-import footerData from '../../../config/content/footerData/Footer.js'
 import PropTypes from 'prop-types'
 import { toast } from 'react-toastify'
+
+import footerData from '../../../config/content/footerData/Footer.js'
+// import React from "react";
+import {
+  AicheLogo1,
+  AicheLogo2,
+  Footer,
+  FooterBottom,
+  FooterTop,
+  Heading,
+  HeartIcon,
+  Iframe,
+  IframeContainer,
+  List,
+  ListItems,
+  Logos,
+  MadeBy,
+  MainLogo,
+  PhoneNumberContainer,
+  SocialImg,
+  SocialLogo,
+  SocialLogoIndv,
+  Text
+} from './Styles'
 
 RenderListItem.propTypes = {
   item: PropTypes.oneOfType([
@@ -46,14 +46,16 @@ export default function MyFooter() {
       </IframeContainer>,
 
       {
-        position: 'bottom-right',
+        position: 'bottom-left',
         autoClose: false,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
+        hideProgressBar: true,
         draggable: true,
-        progress: 1,
-        theme: 'dark'
+
+        theme: 'dark',
+        style: {
+          width: '200%',
+          height: '100%'
+        }
       }
     )
   }

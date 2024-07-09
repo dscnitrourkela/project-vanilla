@@ -8,12 +8,16 @@ import {
 } from './Description.styles'
 import { DescriptionContent } from '../../../config/index'
 import { ButtonWrapper } from './Description.styles'
+import { useContext } from 'react'
+import { AuthContext } from '../../../context/AuthContext'
+import { Link } from 'react-router-dom'
 
 const Description = () => {
+  const { userInfo } = useContext(AuthContext)
+
   function redirect() {
     window.open(DescriptionContent.brochureLink, '_blank')
   }
-
   return (
     <DescriptionContainer id="home">
       <DescriptionTitle>{DescriptionContent.title}</DescriptionTitle>
@@ -21,8 +25,11 @@ const Description = () => {
       <ButtonWrapper>
         <ButtonContainer>
           <HelpButton onClick={redirect}>{DescriptionContent.HeroButton}</HelpButton>
-          {/* <RegisterButton>{DescriptionContent.RegisterButton}</RegisterButton> */}
-          <RegisterButton>Starting Soon....</RegisterButton>
+          {!userInfo.name && (
+            <Link to="/register">
+              <RegisterButton>{DescriptionContent.RegisterButton}</RegisterButton>
+            </Link>
+          )}
         </ButtonContainer>
       </ButtonWrapper>
     </DescriptionContainer>

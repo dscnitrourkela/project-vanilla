@@ -15,17 +15,20 @@ import NavCont, {
   ResAnchor,
   // NitImg,
   Register,
-  SecRegister
+  SecRegister,
+  ProfileBtn
 } from './Nav.styles'
 import { Link } from 'react-router-dom'
 import { navLinks } from '../../../config/index'
 import { links } from '../../../config/index'
 import Hamburger from 'hamburger-react'
 import SmoothScroll from 'smooth-scroll'
+import ProfileMenu from './ProfileMenu'
 
 const Nav = () => {
-  const { userInfo, handleSignOut } = useContext(AuthContext)
+  const { userInfo } = useContext(AuthContext)
   const [isOpen, setIsOpen] = useState(false)
+  const [profileOpen, setProfileOpen] = useState(false)
 
   function handleToggle() {
     setIsOpen(!isOpen)
@@ -45,6 +48,11 @@ const Nav = () => {
         scroll.animateScroll(anchor)
       }
     }
+  }
+
+  function handleProfileOpen() {
+    setIsOpen(false)
+    setProfileOpen(true)
   }
 
   function onClick(id) {
@@ -84,13 +92,17 @@ const Nav = () => {
         </Menu>
 
         {userInfo.name ? (
-          <Link to="/" onClick={handleSignOut}>
-            <Register>Logout</Register>
-          </Link>
+          // <Link to="/" onClick={handleSignOut}>
+          //   <Register>Logout</Register>
+          // </Link>
+
+          <ProfileBtn onMouseEnter={() => setProfileOpen(true)}>
+            <ProfileMenu isProfileOpen={profileOpen} setProfileOpen={setProfileOpen} />
+          </ProfileBtn>
         ) : (
-          <button to="/register">
-            <Register>Starting Soon...</Register>
-          </button>
+          <Link to="/register">
+            <Register>Register</Register>
+          </Link>
         )}
         <Menu2>
           <MenuIcon>
@@ -103,12 +115,15 @@ const Nav = () => {
         <ResMen>
           <ResList>
             {userInfo.name ? (
-              <Link to="/" onClick={handleSignOut}>
-                <SecRegister>Logout</SecRegister>
-              </Link>
+              // <Link to="/" onClick={handleSignOut}>
+              //   <SecRegister>Logout</SecRegister>
+              // </Link>
+              <button onClick={handleProfileOpen}>
+                <ProfileMenu isProfileOpen={profileOpen} setProfileOpen={setProfileOpen} />
+              </button>
             ) : (
               <button to="/register">
-                <SecRegister>Starting Soon...</SecRegister>
+                <SecRegister>Register...</SecRegister>
               </button>
             )}
             {navLinks.map((navLink) => (
