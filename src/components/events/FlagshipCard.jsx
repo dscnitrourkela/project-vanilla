@@ -20,7 +20,7 @@ export default function FlagshipCard() {
           <ContentWrapper>
             <CardHeader>
               <CardImage
-                src="https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717655995/kspdwtblyqcwoqqqeddc.svg"
+                src="https://res.cloudinary.com/dhv234qct/image/upload/v1720612216/AICHE_SRC/event_icons/flagship_mjcdj1.svg"
                 alt="{title}"
               />
               <CardTitle>Flagship Event</CardTitle>
