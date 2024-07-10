@@ -9,6 +9,7 @@ const NavCont = styled.nav`
   fixed
   top-0
   z-50
+  py-2
   `}
 `
 
@@ -79,6 +80,15 @@ export const Register = styled.button`
   items-center 
   cursor-pointer 
   sm:mt-4
+  `}
+`
+
+export const ProfileBtn = styled.button`
+  @media (max-width: 1090px) {
+    display: none;
+  }
+  ${tw`
+    hover:opacity-80
   `}
 `
 

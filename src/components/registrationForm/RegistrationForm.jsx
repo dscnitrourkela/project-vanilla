@@ -1,38 +1,49 @@
-import { useState, useContext, useEffect } from 'react'
-import { AuthContext } from '../../context/AuthContext'
-import { useMutation } from '@apollo/client'
-import Cookies from 'js-cookie'
+import { useContext, useEffect, useState } from 'react'
+
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import Loader from '../loader/Loader'
+import { skipToken, useMutation, useSuspenseQuery } from '@apollo/client'
 
+import { formSchema } from '../../config/content/registrationForm/formSchema'
 import {
-  logo2,
-  logo1,
   bg,
   date,
   formInputs,
-  mobileLogo
+  logo1,
+  logo2,
+  mobileLogo,
+  tshirtSizeLink
 } from '../../config/content/registrationForm/Registration'
+import Modal from '../modal/Modal'
+import { AuthContext } from '../../context/AuthContext'
+import { CREATE_USER } from '../../graphQL/mutations/userMutation'
+import { GET_USER_BY_ID } from '../../graphQL/queries/userQueries'
+import Loader from '../loader/Loader'
+import FileInput from './FileInput'
+import InputField from './InputField'
 import {
-  Container,
   BackgroundImage,
-  LogoSection,
-  LogoContainer,
+  Button,
+  Container,
   DateTxT,
   FormContainer,
-  Button,
-  MobileHeader,
+  LogoContainer,
+  LogoSection,
   MobileDate,
-  SignInContainer
+  MobileHeader,
+  SignInContainer,
+  TshirtContainer,
+  TshirtImage
 } from './RegisterForm.styles'
-import InputField from './InputField'
-import FileInput from './FileInput'
 import { uploadToCloudinary } from './uploadToCloudinary'
-import { CREATE_USER } from '../../graphQL/mutations/userMutation'
-import { formSchema } from '../../config/content/registrationForm/formSchema'
+// import SwitchInput from './SwitchInput'
 
 export default function RegistrationForm() {
+  const orgId = '668bd9deff0327a608b9b6ea'
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
+
   const [formData, setformData] = useState({
     name: '',
     email: '',
@@ -42,6 +53,7 @@ export default function RegistrationForm() {
     rollNumber: '',
     idCardPhoto: null,
     tSize: ''
+    // isHostelRequired: false
   })
   const initialFormErrors = {
     name: '',
@@ -56,15 +68,21 @@ export default function RegistrationForm() {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [isloading, setIsLoading] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [uid, setUid] = useState(null)
   const { userInfo, handleGoogleSignIn } = useContext(AuthContext)
-  const [createUser, { loading, data }] = useMutation(CREATE_USER)
+  const [createUser, { loading: createUserLoading, data: createUserData }] =
+    useMutation(CREATE_USER)
+  const { data: userDataInDb } = useSuspenseQuery(
+    GET_USER_BY_ID,
+    uid ? { variables: { uid: uid, orgId } } : skipToken
+  )
+
   const navigate = useNavigate()
 
   async function signInWithGoogle() {
     setIsLoading(true)
     try {
       await handleGoogleSignIn()
-      setIsLoggedIn(true)
     } catch (e) {
       console.error(e)
       toast.error('Failed to sign in!')
@@ -73,26 +91,32 @@ export default function RegistrationForm() {
     }
   }
 
+  const loading = createUserLoading
+
   useEffect(() => {
-    const user = Cookies.get('user')
-    if (user) {
-      navigate(`/`)
-    } else {
-      userInfo.name ? setIsLoggedIn(true) : setIsLoggedIn(false)
-      userInfo.name && setformData((p) => ({ ...p, name: userInfo.name, email: userInfo.email }))
+    if (userInfo.uid) {
+      setIsLoggedIn(true)
+      setUid(userInfo.uid)
+      const userData = userDataInDb
+      if (userData?.getUser) {
+        toast.info('You have already registered!')
+        navigate(`/`)
+      }
+      setformData((p) => ({ ...p, name: userInfo.name, email: userInfo.email }))
     }
 
-    if (data) {
-      Cookies.set('user', JSON.stringify(data.createUser), { expires: 10 })
-      navigate(`/`)
+    if (createUserData) {
+      setTimeout(() => {
+        window.location.href = '/'
+      }, 2000)
     }
-  }, [userInfo, data, navigate])
+  }, [userInfo, createUserData, navigate, userDataInDb])
 
   async function handleSubmit(e) {
     e.preventDefault()
 
     if (!isFormValid()) return
-    if (!userInfo.name) return
+    if (!userInfo.name) return toast.error('Please sign in with Google!')
 
     setIsLoading(true)
     try {
@@ -102,19 +126,25 @@ export default function RegistrationForm() {
         toast.error('Failed to upload ID card! Please try again!')
         return
       }
-
-      const createdAt = new Date().toISOString()
       const uid = userInfo.uid
-      const newFormData = { ...formData, idCardPhoto: imageUrl, uid, createdAt }
+
+      const newFormData = { ...formData, idCardPhoto: imageUrl, uid }
       await createUser({
         variables: {
-          user: newFormData
+          user: newFormData,
+          orgId: orgId
         }
       })
+
       toast.success('You have been registered successfully!')
     } catch (e) {
       console.error(e)
-      toast.error('Failed to register! Please try again!')
+
+      if (e.message.includes('Unique constraint failed')) {
+        toast.error('user already exist!')
+      } else {
+        toast.error(e.message)
+      }
     } finally {
       setIsLoading(false)
     }
@@ -148,55 +178,71 @@ export default function RegistrationForm() {
     }
   }
 
+  function showTshirtSizes() {
+    openModal()
+  }
+
   return (
-    <Container>
-      {(isloading || loading) && <Loader />}
-      <LogoSection>
-        <BackgroundImage src={bg} />
-        <LogoContainer>
-          <img src={logo1} alt="logo" />
+    <>
+      <Modal open={isModalOpen} onClose={closeModal}>
+        <TshirtContainer>
+          <TshirtImage src={tshirtSizeLink} alt="tshirt sizes" />
+        </TshirtContainer>
+      </Modal>
+      <Container>
+        {(isloading || loading) && <Loader />}
+        <LogoSection>
+          <BackgroundImage src={bg} />
+          <LogoContainer>
+            <img src={logo1} alt="logo" />
+            <img src={logo2} alt="logo2" />
+            <DateTxT>{date}</DateTxT>
+          </LogoContainer>
+        </LogoSection>
+
+        <MobileHeader>
+          <img src={mobileLogo} alt="logo" />
           <img src={logo2} alt="logo2" />
-          <DateTxT>{date}</DateTxT>
-        </LogoContainer>
-      </LogoSection>
+          <MobileDate>{date}</MobileDate>
+        </MobileHeader>
 
-      <MobileHeader>
-        <img src={mobileLogo} alt="logo" />
-        <img src={logo2} alt="logo2" />
-        <MobileDate>{date}</MobileDate>
-      </MobileHeader>
-
-      {isLoggedIn ? (
-        <FormContainer>
-          {formInputs.map((input) =>
-            input.type === 'file' ? (
-              <FileInput
-                key={input.id}
-                input={input}
-                handleFormData={handleFormData}
-                error={formErrors[input.id]}
-              />
-            ) : (
-              <InputField
-                key={input.id}
-                input={input}
-                value={formData[input.id]}
-                handleFormData={handleFormData}
-                error={formErrors[input.id]}
-              />
-            )
-          )}
-          <Button onClick={(e) => handleSubmit(e)} disabled={loading}>
-            Register
-          </Button>
-        </FormContainer>
-      ) : (
-        <SignInContainer>
-          <Button onClick={signInWithGoogle} disabled={isloading}>
-            Sign in with Google
-          </Button>
-        </SignInContainer>
-      )}
-    </Container>
+        {isLoggedIn ? (
+          <FormContainer>
+            {formInputs.map((input) =>
+              input.type === 'file' ? (
+                <FileInput
+                  key={input.id}
+                  input={input}
+                  handleFormData={handleFormData}
+                  error={formErrors[input.id]}
+                />
+              ) : (
+                <InputField
+                  key={input.id}
+                  input={input}
+                  value={formData[input.id]}
+                  handleFormData={handleFormData}
+                  error={formErrors[input.id]}
+                  showTshirtSizes={showTshirtSizes}
+                />
+              )
+            )}
+            {/* <SwitchInput
+            value={formData.isHostelRequired}
+            handleHostelRequired={handleHostelRequired}
+          /> */}
+            <Button onClick={(e) => handleSubmit(e)} disabled={loading}>
+              Register
+            </Button>
+          </FormContainer>
+        ) : (
+          <SignInContainer>
+            <Button onClick={signInWithGoogle} disabled={isloading}>
+              Sign in with Google
+            </Button>
+          </SignInContainer>
+        )}
+      </Container>
+    </>
   )
 }

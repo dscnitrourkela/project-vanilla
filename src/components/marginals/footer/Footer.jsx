@@ -1,29 +1,29 @@
+import PropTypes from 'prop-types'
+import { useState } from 'react'
+import footerData from '../../../config/content/footerData/Footer.js'
+import Modal from '../../modal/Modal'
 // import React from "react";
 import {
-  Footer,
-  FooterTop,
-  Logos,
-  SocialLogo,
-  SocialLogoIndv,
-  SocialImg,
-  MainLogo,
   AicheLogo1,
   AicheLogo2,
-  Text,
+  Footer,
+  FooterBottom,
+  FooterTop,
   Heading,
+  HeartIcon,
+  Iframe,
+  IframeContainer,
   List,
   ListItems,
-  FooterBottom,
+  Logos,
   MadeBy,
-  HeartIcon,
-  IframeContainer,
-  Iframe,
-  PhoneNumberContainer
+  MainLogo,
+  PhoneNumberContainer,
+  SocialImg,
+  SocialLogo,
+  SocialLogoIndv,
+  Text
 } from './Styles'
-
-import footerData from '../../../config/content/footerData/Footer.js'
-import PropTypes from 'prop-types'
-import { toast } from 'react-toastify'
 
 RenderListItem.propTypes = {
   item: PropTypes.oneOfType([
@@ -39,27 +39,20 @@ RenderListItem.propTypes = {
 }
 
 export default function MyFooter() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
   function showLocation() {
-    toast(
-      <IframeContainer>
-        <Iframe src={footerData.images.map.src} title={footerData.images.map.title} />
-      </IframeContainer>,
-
-      {
-        position: 'bottom-right',
-        autoClose: false,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: 1,
-        theme: 'dark'
-      }
-    )
+    openModal()
   }
 
   return (
     <>
+      <Modal open={isModalOpen} onClose={closeModal}>
+        <IframeContainer>
+          <Iframe src={footerData.images.map.src} title={footerData.images.map.title} />
+        </IframeContainer>
+      </Modal>
       <Footer id="contact">
         <FooterTop>
           <Logos>

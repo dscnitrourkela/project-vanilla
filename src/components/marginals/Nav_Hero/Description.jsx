@@ -1,24 +1,42 @@
 import {
-  // HelpButton,
+  HelpButton,
   RegisterButton,
   ButtonContainer,
   DescriptionContainer,
   DescriptionParagraph,
-  DescriptionTitle
+  DescriptionTitle,
+  PaymentButton
 } from './Description.styles'
 import { DescriptionContent } from '../../../config/index'
 import { ButtonWrapper } from './Description.styles'
+import { useContext } from 'react'
+import { AuthContext } from '../../../context/AuthContext'
+import { Link } from 'react-router-dom'
 
 const Description = () => {
+  const { userInfo } = useContext(AuthContext)
+
+  function redirect() {
+    window.open(DescriptionContent.brochureLink, '_blank')
+  }
   return (
     <DescriptionContainer id="home">
       <DescriptionTitle>{DescriptionContent.title}</DescriptionTitle>
       <DescriptionParagraph>{DescriptionContent.content}</DescriptionParagraph>
       <ButtonWrapper>
         <ButtonContainer>
-          {/* <HelpButton>{DescriptionContent.HeroButton}</HelpButton> */}
-          {/* <RegisterButton>{DescriptionContent.RegisterButton}</RegisterButton> */}
-          <RegisterButton>Starting Soon....</RegisterButton>
+          <HelpButton onClick={redirect}>{DescriptionContent.HeroButton}</HelpButton>
+          {userInfo.name ? (
+            <PaymentButton>
+              <Link target="_blank" to={DescriptionContent.paymentLink}>
+                Pay Now
+              </Link>
+            </PaymentButton>
+          ) : (
+            <Link to="/register">
+              <RegisterButton>{DescriptionContent.RegisterButton}</RegisterButton>
+            </Link>
+          )}
         </ButtonContainer>
       </ButtonWrapper>
     </DescriptionContainer>
