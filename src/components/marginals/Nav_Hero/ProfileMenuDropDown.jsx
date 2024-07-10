@@ -29,7 +29,7 @@ function ProfileMenuDropDown({ setProfileOpen, user }) {
     { label: 'Name', value: user.name },
     { label: 'Email', value: user.email },
     { label: 'College', value: user.college },
-    { label: 'Src Id', value: user.srcId ? user.srcId : 'Available shortly...' }
+    { label: 'Src Id', value: user.srcID || 'Available shortly...' }
   ]
   const { handleSignOut } = useContext(AuthContext)
   function logout() {
