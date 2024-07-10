@@ -53,7 +53,7 @@ export const CardSubtitle = styled.h3`
 `
 
 export const CardBody = styled.div`
-  ${tw`my-5 px-5`}
+  ${tw`my-5 h-[280px] overflow-scroll px-5`}
 `
 
 export const CardList = styled.ul`
