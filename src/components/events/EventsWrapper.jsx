@@ -24,8 +24,17 @@ function EventsWrapper({
     }
   }, [swiperRef])
 
-  // const combinedArray = [...registeredEventsArray, ...registeredTeamEventsarray]
-  console.log('cs2', combinedArray)
+  function giveRegisteredEvent(currEvent) {
+    let registeredEvent = null
+
+    combinedArray.forEach((event) => {
+      if (currEvent.id === event.eventID) {
+        registeredEvent = event
+      }
+    })
+
+    return registeredEvent
+  }
 
   return (
     <EventWrapper>
@@ -46,15 +55,11 @@ function EventsWrapper({
         }}
       >
         {events.map((event) => {
-          const hasRegistered =
-            combinedArray.find((item) => item.eventID === event.id) !== undefined
-          console.log('cs3', hasRegistered)
-          console.log('cs4', event.id)
+          const registeredEvent = giveRegisteredEvent(event)
           return (
             <SwiperSlide key={event.id}>
               <EventCard
-                combinedArray={combinedArray.id === event.id}
-                hasRegistered={hasRegistered}
+                registeredEvent={registeredEvent}
                 event={event}
                 handleSelectEvent={handleSelectEvent}
                 handleRegisterEvent={handleRegisterEvent}

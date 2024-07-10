@@ -84,23 +84,29 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
     }
 
     try {
-      const response = await teamRegisterEvent({
+      const uIds = [splitId(formData.teamleadid), ...formData.userIds.map(splitId)]
+      await teamRegisterEvent({
         variables: {
           orgId: '668bd9deff0327a608b9b6ea',
           teamRegistration: {
             eventID: EventId,
             teamName: formData.teamname,
-            userIDs: [formData.teamleadid, ...formData.userIds]
+            userIDs: uIds
           }
         }
       })
-      console.log('mutation response', response)
-
-      toast.success('You have been registered successfully!')
       setShow(false)
+      setTimeout(() => {
+        window.location.reload()
+      }, 2000)
     } catch (err) {
+      console.error(err)
       setError('Error registering. Please try again.')
     }
+  }
+
+  function splitId(id) {
+    return id.split('-')[1]
   }
 
   return (

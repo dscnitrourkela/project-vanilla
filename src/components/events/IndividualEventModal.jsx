@@ -1,53 +1,52 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
-import { useMutation } from '@apollo/client';
-import { Button1, Input, InputContainer1, Text, TextHead, TextSub } from './registerModal.style';
-import { CREATE_EVENT_REGISTRATION } from '../../graphQL/mutations/eventRegistration';
-import CustomAlert from '../customcomponents/CustomAlert';
+import { useState } from 'react'
+import PropTypes from 'prop-types'
+import { useMutation } from '@apollo/client'
+import { Button1, Input, InputContainer1, Text, TextHead, TextSub } from './registerModal.style'
+import { CREATE_EVENT_REGISTRATION } from '../../graphQL/mutations/eventRegistration'
+import CustomAlert from '../customcomponents/CustomAlert'
 
 import {
   RegisterCompleteCardText,
   RegisterCompleteCardTextContainer
-} from './teamRegistrationModal';
-import { RegistrationSchema } from '../../config/content/teamRegistration/registerSchema';
+} from './teamRegistrationModal'
+import { RegistrationSchema } from '../../config/content/teamRegistration/registerSchema'
 
+export const IndiEventModal = ({ EventId, EventTitle, mongoId }) => {
+  const [alcheID, setAlcheID] = useState(mongoId)
+  const [show, setShow] = useState(true)
+  const [error, setError] = useState(null)
+  const [registerEvent, { loading, error: mutationError }] = useMutation(CREATE_EVENT_REGISTRATION)
 
-export const IndiEventModal = ({ EventId, EventTitle }) => {
-  const [alcheID, setAlcheID] = useState('');
-  const [show, setShow] = useState(true);
-  const [error, setError] = useState(null);
-  const [registerEvent, { loading, error: mutationError }] = useMutation(CREATE_EVENT_REGISTRATION);
-  
-  const orgId="668bd9deff0327a608b9b6ea";
+  const orgId = '668bd9deff0327a608b9b6ea'
 
   async function handleSubmit() {
     const validationResult = RegistrationSchema.safeParse({
       alcheID,
       eventID: EventId
-    });
+    })
 
     if (!validationResult.success) {
-      const validationError = validationResult.error.errors[0]?.message;
-      setError(validationError);
-      return;
+      const validationError = validationResult.error.errors[0]?.message
+      setError(validationError)
+      return
     }
 
     try {
-      console.log('Submitting Registration: ', { eventID: EventId, userID: alcheID });
+      console.log('Submitting Registration: ', { eventID: EventId, userID: alcheID })
 
       const response = await registerEvent({
-        variables: { eventRegistration: { eventID: EventId, userID: alcheID },orgId:orgId }
-      });
+        variables: { eventRegistration: { eventID: EventId, userID: alcheID }, orgId: orgId }
+      })
 
-      console.log('Mutation Response: ', response);
+      console.log('Mutation Response: ', response)
       setTimeout(() => {
         window.location.reload()
-      }, 2000);
-      
-      setShow(false);
+      }, 2000)
+
+      setShow(false)
     } catch (error) {
-      console.error('Error registering:', error);
-      setError(error.message || 'Error registering. Please try again.');
+      console.error('Error registering:', error)
+      setError(error.message || 'Error registering. Please try again.')
     }
   }
 
@@ -64,8 +63,8 @@ export const IndiEventModal = ({ EventId, EventTitle }) => {
               placeholder="Enter your alche id"
               value={alcheID}
               onChange={(e) => {
-                setAlcheID(e.target.value);
-                setError(null);
+                setAlcheID(e.target.value)
+                setError(null)
               }}
             />
           </InputContainer1>
@@ -83,12 +82,12 @@ export const IndiEventModal = ({ EventId, EventTitle }) => {
         </RegisterCompleteCardTextContainer>
       )}
     </>
-  );
-};
-
+  )
+}
 
 IndiEventModal.propTypes = {
   EventId: PropTypes.string.isRequired,
   EventTitle: PropTypes.string.isRequired,
-  closeRegisterModal: PropTypes.func
+  closeRegisterModal: PropTypes.func,
+  mongoId: PropTypes.string
 }

@@ -15,6 +15,7 @@ import { GET_EVENTS_BY_ORGID } from '../../graphQL/queries/getEvents'
 import { skipToken, useSuspenseQuery } from '@apollo/client'
 import { GET_EVENTS_REGISTERED } from '../../graphQL/queries/eventRegistration'
 import { GET_TEAM_REGISTRATIONS_BY_USER } from '../../graphQL/queries/teamRegistration'
+import { GET_USER_BY_ID } from '../../graphQL/queries/userQueries'
 
 export default function Events() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -22,8 +23,10 @@ export default function Events() {
   const [isFlagshipEventModalOpen, setIsFlagshipEventModalOpen] = useState(false)
   const [event, setEvent] = useState(null)
   const [events, setEvents] = useState([])
-  const [registeredEvents, setRegisteredEvents] = useState([])
-  const [registeredTeamEvents, setRegisteredTeamEvents] = useState([])
+  const [mongoId, setMongoId] = useState(null)
+  const [soloRegistration, setSoloRegistration] = useState([])
+  const [teamRegistration, setTeamRegistration] = useState([])
+  const [combinedRegistrations, setCombinedRegistrations] = useState([])
 
   const [loading, setLoading] = useState(true)
   const [uid, setUid] = useState(null)
@@ -34,38 +37,60 @@ export default function Events() {
 
   const orgId = '668bd9deff0327a608b9b6ea'
 
-  const { data } = useSuspenseQuery(GET_EVENTS_BY_ORGID, uid ? { variables: { orgId } } : skipToken)
-  const { data: registeredData } = useSuspenseQuery(
-    GET_EVENTS_REGISTERED,
-    uid ? { variables: { orgId, userId: '668c3707b8cca2f5e9a5d6f8' } } : skipToken
+  const { data: allEventsMade } = useSuspenseQuery(
+    GET_EVENTS_BY_ORGID,
+    uid ? { variables: { orgId } } : skipToken
   )
-  const { data: registeredTeamData } = useSuspenseQuery(
+  const { data: soloRegistrations } = useSuspenseQuery(
+    GET_EVENTS_REGISTERED,
+    mongoId ? { variables: { orgId, userId: mongoId } } : skipToken
+  )
+  const { data: teamRegistrations } = useSuspenseQuery(
     GET_TEAM_REGISTRATIONS_BY_USER,
-    uid ? { variables: { orgId, userId: '668c3707b8cca2f5e9a5d6f8' } } : skipToken
+    mongoId ? { variables: { orgId, userId: mongoId } } : skipToken
+  )
+
+  const { data: userDataInDb } = useSuspenseQuery(
+    GET_USER_BY_ID,
+    uid ? { variables: { uid: uid, orgId } } : skipToken
   )
 
   useEffect(() => {
-    if (userInfo.name) {
-      setUid(userInfo.name)
-      const details = data
-      const registeredEventDetails = registeredData
-      const registeredTeamEventDetails = registeredTeamData
-      if (details?.getEvents) {
-        const allEvents = details.getEvents
-        const allRegisteredEvents = registeredEventDetails.eventRegistration
-        const allRegisteredTeamEvents = registeredTeamEventDetails.teamRegistrations
-        getAllEvents(allEvents, allRegisteredEvents, allRegisteredTeamEvents)
+    if (userInfo.uid) {
+      setUid(userInfo.uid)
+      if (allEventsMade) {
+        getAllEvents(allEventsMade.getEvents)
       }
-    }
-  }, [userInfo, data, registeredData, registeredTeamData])
 
-  async function getAllEvents(allEvents, allRegisteredEvents, allRegisteredTeamEvents) {
+      if (userDataInDb) {
+        setMongoId(userDataInDb.getUser.id)
+      }
+      if (soloRegistrations) {
+        setSoloRegistration(soloRegistrations.eventRegistration)
+      }
+
+      if (teamRegistrations) {
+        setTeamRegistration(teamRegistrations.teamRegistrations)
+      }
+
+      const combinedRegistrations = [...(soloRegistration || []), ...(teamRegistration || [])]
+      setCombinedRegistrations(combinedRegistrations)
+    }
+  }, [
+    userInfo,
+    allEventsMade,
+    soloRegistrations,
+    teamRegistrations,
+    userDataInDb,
+    soloRegistration,
+    teamRegistration
+  ])
+
+  async function getAllEvents(allEvents) {
     try {
       const filteredEvents = allEvents.filter((event) => event.status === 'ACTIVE')
       if (filteredEvents.length > 0) {
         setEvents(filteredEvents)
-        setRegisteredEvents(allRegisteredEvents)
-        setRegisteredTeamEvents(allRegisteredTeamEvents)
       } else setEvents([])
     } catch (error) {
       console.error('Error fetching events:', error)
@@ -74,12 +99,6 @@ export default function Events() {
       setLoading(false)
     }
   }
-  console.log(events)
-  console.log(registeredEvents)
-  console.log(registeredTeamEvents)
-
-  const combinedAray = registeredEvents.concat(registeredTeamEvents)
-  console.log('ca', combinedAray)
 
   function handleRegisterModalOpen(EventId) {
     setIsRegisterModalOpen(true)
@@ -139,7 +158,7 @@ export default function Events() {
       )}
       {createPortal(
         isRegisterModalOpen && (
-          <RegisterModal closeModal={handleRegisterModalClose} event={event} />
+          <RegisterModal mongoId={mongoId} closeModal={handleRegisterModalClose} event={event} />
         ),
         overlay
       )}
@@ -154,8 +173,8 @@ export default function Events() {
         <Section>
           <Arrow src={prevArrowIcon} alt="Previous" onClick={handlePrev} />
           <EventsWrapper
-            combinedArray={combinedAray}
-            events={!loading ? events : staticEventsData} //
+            combinedArray={combinedRegistrations}
+            events={!loading ? events : staticEventsData}
             handleSelectEvent={handleModalOpen}
             handleRegisterEvent={handleRegisterModalOpen}
             handlerFlagshipEvent={handleFlagshipCardModalOpen}
@@ -168,7 +187,3 @@ export default function Events() {
     </div>
   )
 }
-
-/* Events.propTypes = {
-  eventsArr: PropTypes.array
-} */

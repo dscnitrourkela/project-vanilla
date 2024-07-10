@@ -23,7 +23,6 @@ import { RegisteredEventModal } from './RegisteredEventModal'
 import { createPortal } from 'react-dom'
 
 EventCard.propTypes = {
-  hasRegistered: PropTypes.bool,
   event: PropTypes.shape({
     poster: PropTypes.string,
     id: PropTypes.string,
@@ -34,18 +33,17 @@ EventCard.propTypes = {
     isTeamEvent: PropTypes.bool
   }),
   handleSelectEvent: PropTypes.func,
-  handleRegisterEvent: PropTypes.func
+  handleRegisterEvent: PropTypes.func,
+  registeredEvent: PropTypes.any
 }
 
 export default function EventCard({
-  combinedArray,
-  hasRegistered,
   event: { poster, id, name, subHeading, description, rules, isTeamEvent },
   handleSelectEvent,
-  handleRegisterEvent
+  handleRegisterEvent,
+  registeredEvent
 }) {
   const [openModal, setOpenModal] = useState(false)
-
   function genDetails(str, length) {
     str = str.trim()
     if (str.length > length) {
@@ -73,6 +71,7 @@ export default function EventCard({
             closeModal={() => setOpenModal(false)}
             isTeamEvent={isTeamEvent}
             eventId={id}
+            registerdEvent={registeredEvent}
           />
         ),
         overlay
@@ -111,7 +110,7 @@ export default function EventCard({
             </CardBody>
             <CardFooter>
               <ButtonRules onClick={redirectToRules}>Rulebook</ButtonRules>
-              {!hasRegistered ? (
+              {!registeredEvent ? (
                 <Button onClick={() => handleRegisterEvent(id)}>Register</Button>
               ) : (
                 <Button onClick={handleRegisteredEvents}>Registered</Button>

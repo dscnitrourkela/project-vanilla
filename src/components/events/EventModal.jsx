@@ -32,7 +32,7 @@ function EventModal({ closeModal, event: { poster, name, subHeading, description
   function redirectToRules() {
     window.open(rules, '_blank')
   }
-  console.log(event)
+
   return (
     <Container>
       <Section>
