@@ -21,7 +21,7 @@ export const DateTxT = styled.h1`
   ${tw`text-brown-2 2.7md:text-4xl font-semibold text-3xl`}
 `
 export const FormContainer = styled.form`
-  ${tw`flex flex-col justify-center items-center h-full w-full gap-[24px] md:gap-4 py-5 md:py-10 px-4 md:px-14 bg-transparent`}
+  ${tw`flex flex-col justify-center items-center h-full w-full gap-[24px] md:gap-4 py-5 md:py-16 px-4 md:px-14 bg-transparent`}
 `
 
 export const SignInContainer = styled.div`
@@ -55,4 +55,11 @@ export const MobileHeader = styled.div`
 `
 export const MobileDate = styled.h1`
   ${tw`text-brown-4 text-[23px] font-[600]`}
+`
+
+export const TshirtContainer = styled.div`
+  ${tw`flex flex-col justify-center items-center w-full`}
+`
+export const TshirtImage = styled.img`
+  ${tw`w-full`}
 `

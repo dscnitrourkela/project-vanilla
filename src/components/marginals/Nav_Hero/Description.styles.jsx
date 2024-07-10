@@ -108,7 +108,33 @@ export const InnerSpan = styled.span`
 export const RegisterButton = styled.button`
   ${tw`
   px-2 
-  py-2
+  py-2 
+  w-full
+  0.4xsm:w-[140px]
+  rounded-[11.53px] 
+  bg-orange-1 
+  text-brown-5 
+  font-semibold 
+  text-1.5lg 
+  md:text-2xl  
+  border-brown-5 
+  border-2 
+  transition 
+  duration-300 
+  ease-in-out 
+  active:transform 
+  active:translate-x-[3px] 
+  active:translate-y-[3px] 
+  active:shadow-none 
+  shadow-[3px 3px 0px #1d1d1d ]`}
+`
+
+export const PaymentButton = styled.button`
+  ${tw`
+  px-2 
+  py-2 
+  w-full
+  0.4xsm:w-[140px]
   rounded-[11.53px] 
   bg-orange-1 
   text-brown-5 

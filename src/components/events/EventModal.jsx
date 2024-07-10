@@ -12,9 +12,11 @@ import {
   CardList,
   ListItems,
   Section,
-  ButtonRules
+  ButtonRules,
+  ProgressBar
 } from './eventModal.styles'
 
+import { useState } from 'react'
 import { XIcon } from '../../config/index'
 import PropTypes from 'prop-types'
 
@@ -29,13 +31,24 @@ EventModal.propTypes = {
   })
 }
 function EventModal({ closeModal, event: { poster, name, subHeading, description, rules } }) {
+  const [scrollPosition, setScrollPosition] = useState(0)
+
+  function handleScroll(e) {
+    const element = e.target
+    const scrollTop = element.scrollTop
+    const scrollHeight = element.scrollHeight - element.clientHeight
+    const scrollPercentage = (scrollTop / scrollHeight) * 100
+    setScrollPosition(scrollPercentage)
+  }
+
   function redirectToRules() {
     window.open(rules, '_blank')
   }
 
   return (
     <Container>
-      <Section>
+      <Section onScroll={handleScroll}>
+        <ProgressBar width={scrollPosition} />
         <CloseButton onClick={closeModal}>
           <img src={XIcon} alt="close" />
         </CloseButton>

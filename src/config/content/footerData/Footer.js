@@ -31,7 +31,7 @@ export default {
   bottom: [
     {
       item: 'Privacy & Cookies',
-      href: 'https://docs.google.com/document/d/1S7MWDctiukWJ9ZYiVyh1pJaTWoKfKIcvznV8bJqaONk/edit'
+      href: 'https://docs.google.com/document/d/1_5VD6pC50PJ135Y7E83nRPIB7NMDcpIViTzyIEdE4QY/edit'
     },
     {
       item: 'Terms and Conditions',
@@ -40,6 +40,10 @@ export default {
     {
       item: 'Code of Conduct',
       href: 'https://docs.google.com/document/d/126Dzzc5K900HTXHoWZ7TDLtuP7FDZcXvlR-NVw6hF8Y/edit?usp=drivesdk'
+    },
+    {
+      item: 'Payment Policy',
+      href: 'https://docs.google.com/document/d/1S7MWDctiukWJ9ZYiVyh1pJaTWoKfKIcvznV8bJqaONk/edit'
     }
   ],
   images: {

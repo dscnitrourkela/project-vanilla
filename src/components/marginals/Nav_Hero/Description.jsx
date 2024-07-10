@@ -4,7 +4,8 @@ import {
   ButtonContainer,
   DescriptionContainer,
   DescriptionParagraph,
-  DescriptionTitle
+  DescriptionTitle,
+  PaymentButton
 } from './Description.styles'
 import { DescriptionContent } from '../../../config/index'
 import { ButtonWrapper } from './Description.styles'
@@ -25,7 +26,13 @@ const Description = () => {
       <ButtonWrapper>
         <ButtonContainer>
           <HelpButton onClick={redirect}>{DescriptionContent.HeroButton}</HelpButton>
-          {!userInfo.name && (
+          {userInfo.name ? (
+            <PaymentButton>
+              <Link target="_blank" to={DescriptionContent.paymentLink}>
+                Pay Now
+              </Link>
+            </PaymentButton>
+          ) : (
             <Link to="/register">
               <RegisterButton>{DescriptionContent.RegisterButton}</RegisterButton>
             </Link>

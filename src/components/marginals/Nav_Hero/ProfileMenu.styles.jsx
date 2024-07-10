@@ -89,10 +89,19 @@ export const ProfileDropDownItem = styled.div`
 export const NotRegistered = styled.div`
   ${tw`
   text-lg
-  text-brown-2
+  bg-[#1D1D1D]
+  text-[#FFEEDA]
+  rounded-md
+  py-2
+  px-4
   font-Poppins
   font-[500]
   text-center
+  hover:bg-[#FFEEDA]
+  hover:text-[#1D1D1D]
+  active:scale-95
+  duration-300
+  ease-in-out
   `}
 `
 
@@ -112,6 +121,24 @@ export const LogoutButton = styled.button`
   ${tw`
   mt-5
   bg-[#1D1D1D]
+  text-[#FFEEDA]
+  rounded-md
+  py-2
+  px-4
+  cursor-pointer
+  font-[500]
+  font-Poppins
+  duration-300
+  ease-in-out
+  hover:bg-[#FFEEDA]
+  hover:text-[#1D1D1D]
+  active:scale-95
+  `}
+`
+export const PaymentButton = styled.button`
+  ${tw`
+  mt-5
+  bg-orange-1
   text-[#FFEEDA]
   rounded-md
   py-2
