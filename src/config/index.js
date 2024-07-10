@@ -19,8 +19,14 @@ import { links, navLinks, DescriptionContent, heroContent } from './content/navD
 export { links, navLinks, DescriptionContent, heroContent }
 
 // Events data
-import { events, seeMoreIcon, XIcon, nextArrowIcon, prevArrowIcon } from './content/events/events'
-export { events, seeMoreIcon, XIcon, nextArrowIcon, prevArrowIcon }
+import {
+  seeMoreIcon,
+  XIcon,
+  nextArrowIcon,
+  prevArrowIcon,
+  staticEventsData
+} from './content/events/events'
+export { seeMoreIcon, XIcon, nextArrowIcon, prevArrowIcon, staticEventsData }
 
 // AboutUs data
 import { data, srcData, data2, aicheData, aboutImage } from './content/about/about'

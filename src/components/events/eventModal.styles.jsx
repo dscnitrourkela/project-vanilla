@@ -18,11 +18,11 @@ export const Container = styled.main`
 `
 
 export const Section = styled.section`
-  ${tw`bg-black-1 text-brown-2 relative max-w-[600px] w-full rounded-[23.06px] font-Poppins max-h-[95vh]`}
+  ${tw`bg-black-1 text-brown-2  relative max-w-[600px] w-full rounded-[23.06px] font-Poppins h-[97vh] `}
 `
 
 export const ContentWrapper = styled.div`
-  ${tw`px-2 py-8 0.8xsm:px-10`}
+  ${tw`px-2 py-8 0.8xsm:px-10 flex flex-col justify-between`}
 `
 
 export const CardHeader = styled.div`
@@ -38,7 +38,7 @@ export const CardImage = styled.img`
 `
 
 export const CardTitle = styled.h1`
-  ${tw`mt-5 font-semibold text-2.5xl 0.8xsm:text-3.5xl leading-none text-center`}
+  ${tw`mt-5 font-semibold text-2xl 0.8xsm:text-2.5xl leading-none text-center`}
 `
 
 export const CardSubtitle = styled.h3`
@@ -46,7 +46,7 @@ export const CardSubtitle = styled.h3`
 `
 
 export const CardBody = styled.div`
-  ${tw`my-5 h-[180px] 0.5xxsm:h-[250px] xxsm:h-[300px] overflow-y-scroll px-5`}
+  ${tw`my-2 h-[180px] 0.5xxsm:h-[150px] xxsm:h-[180px] overflow-y-scroll px-5`}
 `
 
 export const CardList = styled.ul`
@@ -58,7 +58,7 @@ export const ListItems = styled.li`
 `
 
 export const CardFooter = styled.div`
-  ${tw`flex flex-col gap-5 xxsm:flex-row w-full justify-between mt-2 px-5`}
+  ${tw`flex flex-col gap-5 xxsm:flex-row w-full justify-between  px-5`};
 `
 
 export const RegisterButton = styled.button`
