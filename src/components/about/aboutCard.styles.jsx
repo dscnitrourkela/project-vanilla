@@ -19,6 +19,6 @@ export const Title = styled.h1(({ isSuperTitle }) => [
 ])
 
 export const Paragraph = styled.p(({ isSuperTitle }) => [
-  tw`w-full font-[400] leading-[27px] xsm:text-base text-sm xxsm:text-1.5sm 1.3lg:text-lg xsm:tracking-tight`,
+  tw`w-full font-[400] leading-[27px] xsm:text-base text-sm xxsm:text-1.5sm 1.3lg:text-lg xsm:tracking-tight text-center`,
   isSuperTitle ? tw`mt-10 xxsm:mt-16 xsm:mt-20 xsm:mb-10` : tw`xxsm:my-10 mt-10`
 ])
