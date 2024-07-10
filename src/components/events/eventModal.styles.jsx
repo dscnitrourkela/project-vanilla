@@ -1,5 +1,5 @@
-import tw from 'twin.macro'
 import styled, { keyframes } from 'styled-components'
+import tw from 'twin.macro'
 
 const fadeInAnimation = keyframes`
   from {
@@ -11,14 +11,20 @@ const fadeInAnimation = keyframes`
     transform: scale(1);
   }
 `
-
 export const Container = styled.main`
-  ${tw`fixed inset-0 z-50 bg-brown-2 bg-opacity-75 backdrop-blur-md flex justify-center items-center  w-screen px-[1rem] md:px-[10px] `}
-  animation: ${fadeInAnimation} 0.3s ease-out;
+  ${tw`fixed inset-0 z-50 bg-brown-2 bg-opacity-75 backdrop-blur-md flex justify-center items-center w-screen px-[1rem] md:px-[10px]`}
 `
 
 export const Section = styled.section`
-  ${tw`bg-black-1 text-brown-2 relative max-w-[600px] w-full rounded-[23.06px] font-Poppins max-h-[95vh]`}
+  ${tw`bg-black-1 text-brown-2 relative max-w-[600px] w-full rounded-[23.06px] font-Poppins max-h-[95vh] h-auto overflow-scroll`}
+  padding-top: 10px;
+  scrollbar-width: none;
+`
+
+export const ProgressBar = styled.div`
+  ${tw`fixed top-0 left-0 h-1 bg-orange-500`}
+  width: ${({ width }) => width}%;
+  transition: width 0.1s ease-out;
 `
 
 export const ContentWrapper = styled.div`
@@ -46,7 +52,7 @@ export const CardSubtitle = styled.h3`
 `
 
 export const CardBody = styled.div`
-  ${tw`my-5 h-[180px] 0.5xxsm:h-[250px] xxsm:h-[300px] overflow-y-scroll px-5`}
+  ${tw`my-5 px-5`}
 `
 
 export const CardList = styled.ul`
