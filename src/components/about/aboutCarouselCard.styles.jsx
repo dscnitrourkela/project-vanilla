@@ -9,5 +9,5 @@ export const Title = styled.h1`
 `
 
 export const Paragraph = styled.p`
-  ${tw`font-[400] leading-[27px] xsm:text-base text-sm xxsm:text-1.5sm 1.3lg:text-lg xsm:tracking-tight xxsm:my-10 mt-10`}
+  ${tw`font-[400] leading-[27px] xsm:text-base text-sm xxsm:text-1.5sm 1.3lg:text-lg xsm:tracking-tight xxsm:my-10 mt-10 text-center`}
 `
