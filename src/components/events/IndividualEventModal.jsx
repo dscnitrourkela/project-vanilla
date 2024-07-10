@@ -12,7 +12,7 @@ import {
 import { RegistrationSchema } from '../../config/content/teamRegistration/registerSchema'
 
 export const IndiEventModal = ({ EventId, EventTitle, mongoId }) => {
-  const [alcheID, setAlcheID] = useState(mongoId)
+  const [aicheID, setAicheID] = useState('')
   const [show, setShow] = useState(true)
   const [error, setError] = useState(null)
   const [registerEvent, { loading, error: mutationError }] = useMutation(CREATE_EVENT_REGISTRATION)
@@ -21,7 +21,7 @@ export const IndiEventModal = ({ EventId, EventTitle, mongoId }) => {
 
   async function handleSubmit() {
     const validationResult = RegistrationSchema.safeParse({
-      alcheID,
+      aicheID,
       eventID: EventId
     })
 
@@ -32,10 +32,16 @@ export const IndiEventModal = ({ EventId, EventTitle, mongoId }) => {
     }
 
     try {
-      console.log('Submitting Registration: ', { eventID: EventId, userID: alcheID })
+      console.log('aicheID:', mongoId)
+      if (aicheID.split('-')[1] !== mongoId) {
+        setError('Invalid aicheID')
+      }
 
       const response = await registerEvent({
-        variables: { eventRegistration: { eventID: EventId, userID: alcheID }, orgId: orgId }
+        variables: {
+          eventRegistration: { eventID: EventId, userID: aicheID.split('-')[1] },
+          orgId: orgId
+        }
       })
 
       console.log('Mutation Response: ', response)
@@ -46,7 +52,9 @@ export const IndiEventModal = ({ EventId, EventTitle, mongoId }) => {
       setShow(false)
     } catch (error) {
       console.error('Error registering:', error)
-      setError(error.message || 'Error registering. Please try again.')
+      setError(
+        'Error registering. Please check your Aiche ID again. If the problem persists, please try again later.'
+      )
     }
   }
 
@@ -60,10 +68,10 @@ export const IndiEventModal = ({ EventId, EventTitle, mongoId }) => {
           <InputContainer1>
             <Input
               type="text"
-              placeholder="Enter your alche id"
-              value={alcheID}
+              placeholder="Enter your aiche id"
+              value={aicheID}
               onChange={(e) => {
-                setAlcheID(e.target.value)
+                setAicheID(e.target.value)
                 setError(null)
               }}
             />
