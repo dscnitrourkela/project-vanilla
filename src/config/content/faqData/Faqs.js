@@ -8,8 +8,7 @@ export default [
   {
     id: 2,
     question: 'When will the registration portal open?',
-    answer:
-      'The registration portal is live. Event specific registration will start soon and the Event Brochure will also be shared soon.'
+    answer: 'The registration portal is live and the event specific registration have started.'
   },
   {
     id: 3,
