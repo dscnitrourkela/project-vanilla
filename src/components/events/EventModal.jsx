@@ -23,14 +23,14 @@ import PropTypes from 'prop-types'
 EventModal.propTypes = {
   closeModal: PropTypes.func,
   event: PropTypes.shape({
-    img: PropTypes.string,
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-    details: PropTypes.array,
+    poster: PropTypes.string,
+    name: PropTypes.string,
+    subHeading: PropTypes.string,
+    description: PropTypes.string,
     rules: PropTypes.string
   })
 }
-function EventModal({ closeModal, event: { img, title, subtitle, details, rules } }) {
+function EventModal({ closeModal, event: { poster, name, subHeading, description, rules } }) {
   const [scrollPosition, setScrollPosition] = useState(0)
 
   function handleScroll(e) {
@@ -54,13 +54,13 @@ function EventModal({ closeModal, event: { img, title, subtitle, details, rules 
         </CloseButton>
         <ContentWrapper>
           <CardHeader>
-            <CardImage src={img} alt={title} />
-            <CardTitle>{title}</CardTitle>
-            {subtitle && <CardSubtitle>{subtitle}</CardSubtitle>}
+            <CardImage src={poster} alt={name} />
+            <CardTitle>{name}</CardTitle>
+            {subHeading && <CardSubtitle>{subHeading}</CardSubtitle>}
           </CardHeader>
           <CardBody>
             <CardList>
-              {details.map((detail, index) => (
+              {JSON.parse(description).map((detail, index) => (
                 <ListItems key={index}>{detail}</ListItems>
               ))}
             </CardList>

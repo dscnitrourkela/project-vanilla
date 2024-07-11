@@ -35,7 +35,7 @@ import {
   TshirtContainer,
   TshirtImage
 } from './RegisterForm.styles'
-import { uploadToCloudinary } from './uploadToCloudinary'
+import { uploadToCloudinary } from '../../utils/uploadToCloudinary'
 // import SwitchInput from './SwitchInput'
 
 export default function RegistrationForm() {

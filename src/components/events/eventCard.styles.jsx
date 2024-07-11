@@ -39,7 +39,7 @@ export const SeemoreIcon = styled.img`
 `
 
 export const CardFooter = styled.div`
-  ${tw`items-center px-3 xxsm:px-5 w-full  md:w-[95%] flex flex-row gap-5 justify-between md:absolute md:bottom-8 mb-5 md:mb-0`}
+  ${tw` px-3 xxsm:px-5 w-full  md:w-[95%] flex flex-row gap-5 items-center justify-between md:absolute md:bottom-8 mb-5 md:mb-0`}
 `
 export const Button = styled.button`
   ${tw`h-[50px] w-full

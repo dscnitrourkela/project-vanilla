@@ -17,7 +17,7 @@
     "axios": "^1.7.2",
     "firebase": "^10.12.2",
     "framer-motion": "^11.2.10",
-    "graphql": "^16.8.2",
+    "graphql": "^16.9.0",
     "hamburger-react": "^2.5.1",
     "ldrs": "^1.0.2",
     "prop-types": "^15.8.1",

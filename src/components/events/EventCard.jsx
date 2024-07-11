@@ -16,24 +16,34 @@ import {
   ButtonRules,
   SeeMoreText
 } from './eventCard.styles'
-import { seeMoreIcon } from '../../config/index'
+
+import { useState } from 'react'
+import { seeMoreIcon } from '../../config'
+import { RegisteredEventModal } from './RegisteredEventModal'
+import { createPortal } from 'react-dom'
 
 EventCard.propTypes = {
   event: PropTypes.shape({
-    img: PropTypes.string,
-    id: PropTypes.number,
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-    details: PropTypes.array,
-    rules: PropTypes.string
+    poster: PropTypes.string,
+    id: PropTypes.string,
+    name: PropTypes.string,
+    subHeading: PropTypes.string,
+    description: PropTypes.string,
+    rules: PropTypes.string,
+    isTeamEvent: PropTypes.bool
   }),
-  handleSelectEvent: PropTypes.func
+  handleSelectEvent: PropTypes.func,
+  handleRegisterEvent: PropTypes.func,
+  registeredEvent: PropTypes.any
 }
 
 export default function EventCard({
-  event: { img, id, title, subtitle, details, rules },
-  handleSelectEvent
+  event: { poster, id, name, subHeading, description, rules, isTeamEvent },
+  handleSelectEvent,
+  handleRegisterEvent,
+  registeredEvent
 }) {
+  const [openModal, setOpenModal] = useState(false)
   function genDetails(str, length) {
     str = str.trim()
     if (str.length > length) {
@@ -47,30 +57,68 @@ export default function EventCard({
     window.open(rules, '_blank')
   }
 
+  const handleRegisteredEvents = () => {
+    setOpenModal(true)
+  }
+
+  const overlay = document.getElementById('overlay')
+
   return (
-    <Container>
-      <Section>
-        <ContentWrapper>
-          <CardHeader>
-            <CardImage src={img} alt={title} />
-            <CardTitle>{title}</CardTitle>
-            {subtitle !== '' && <CardSubtitle>{subtitle}</CardSubtitle>}
-          </CardHeader>
-          <CardBody>
-            <CardList>
-              <div>{genDetails(details[0], 150)}</div>
-            </CardList>
-            <CardModalBtn onClick={() => handleSelectEvent(id)}>
-              <SeeMoreText>See More</SeeMoreText>
-              <SeemoreIcon src={seeMoreIcon} />
-            </CardModalBtn>
-          </CardBody>
-          <CardFooter>
-            <ButtonRules onClick={redirectToRules}>Rulebook</ButtonRules>
-            <Button id={id}>Register</Button>
-          </CardFooter>
-        </ContentWrapper>
-      </Section>
-    </Container>
+    <>
+      {createPortal(
+        openModal && (
+          <RegisteredEventModal
+            closeModal={() => setOpenModal(false)}
+            isTeamEvent={isTeamEvent}
+            eventId={id}
+            registerdEvent={registeredEvent}
+          />
+        ),
+        overlay
+      )}
+      <Container>
+        <Section>
+          <ContentWrapper>
+            <CardHeader>
+              <CardImage src={poster} alt={name} />
+              <CardTitle>{name}</CardTitle>
+              {subHeading !== '' && <CardSubtitle>{subHeading}</CardSubtitle>}
+            </CardHeader>
+            <CardBody>
+              <CardList>
+                {(() => {
+                  try {
+                    const parsedDescription = JSON.parse(description)
+                    if (Array.isArray(parsedDescription) && parsedDescription.length > 0) {
+                      const firstDesc = genDetails(parsedDescription[0], 150)
+                      return <div key={0}>{firstDesc}</div>
+                    }
+                  } catch (error) {
+                    return (
+                      <div>
+                        {error.toString()}, {typeof description}
+                      </div>
+                    )
+                  }
+                  return null
+                })()}
+              </CardList>
+              <CardModalBtn onClick={() => handleSelectEvent(id)}>
+                <SeeMoreText>See More</SeeMoreText>
+                <SeemoreIcon src={seeMoreIcon} />
+              </CardModalBtn>
+            </CardBody>
+            <CardFooter>
+              <ButtonRules onClick={redirectToRules}>Rulebook</ButtonRules>
+              {!registeredEvent ? (
+                <Button onClick={() => handleRegisterEvent(id)}>Register</Button>
+              ) : (
+                <Button onClick={handleRegisteredEvents}>Registered</Button>
+              )}
+            </CardFooter>
+          </ContentWrapper>
+        </Section>
+      </Container>
+    </>
   )
 }
