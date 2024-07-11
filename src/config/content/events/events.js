@@ -95,6 +95,12 @@ export const eventss = [
   }
 ]
 
+export const eventsWithPdfs = [
+  'K-12 STEM OUTREACH',
+  'Student Poster Competition',
+  'Student Technical Paper Competition'
+]
+
 export const seeMoreIcon =
   'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1717748808/xycpeayh1uywatzl4rqa.svg'
 

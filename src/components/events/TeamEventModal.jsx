@@ -17,13 +17,16 @@ import {
   RemoveButton,
   IconButtonContainer,
   RegisterCompleteCardText,
-  RegisterCompleteCardTextContainer
+  RegisterCompleteCardTextContainer,
+  Container
 } from './teamRegistrationModal'
 import { TeamRegistrationSchema } from '../../config/content/teamRegistration/registerSchema'
 import { toast } from 'react-toastify'
 import { MinusButtonUrl, PlusButtonUrl } from '../../config/content/teamRegistration/registermodal'
+import { InputContainer1, FileUpload } from './registerModal.style'
+import { uploadToCloudinary } from '../../utils/uploadToCloudinary'
 
-export const TeamEventModal = ({ EventId, EventTitle }) => {
+export const TeamEventModal = ({ EventId, EventTitle, hasPdfUpload, mongoId }) => {
   const [formData, setFormData] = useState({
     teamname: '',
     teamleadid: '',
@@ -32,9 +35,10 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
 
   const [show, setShow] = useState(true)
   const [error, setError] = useState(null)
+  const [pdf, setPdf] = useState(null)
+  const [loading, setLoading] = useState(false)
 
-  const [teamRegisterEvent, { loading, error: mutationError }] =
-    useMutation(CREATE_TEAM_REGISTRATIONS)
+  const [teamRegisterEvent] = useMutation(CREATE_TEAM_REGISTRATIONS)
 
   const handleChange = (key, value) => {
     setFormData({
@@ -43,6 +47,8 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
     })
     setError(null)
   }
+
+  console.log(mongoId)
 
   const handleUserIdChange = (index, value) => {
     const newUserIds = [...formData.userIds]
@@ -83,15 +89,32 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
       return
     }
 
+    if (hasPdfUpload && !pdf) {
+      setError('Please upload a PDF file')
+      if (pdf.type !== 'application/pdf') {
+        setError('Please upload a valid PDF file')
+      }
+      return
+    }
+    const uIds = [splitId(formData.teamleadid), ...formData.userIds.map(splitId)]
+    if (!uIds.includes(mongoId)) {
+      setError('You must be part of the team')
+      return
+    }
+    setLoading(true)
     try {
-      const uIds = [splitId(formData.teamleadid), ...formData.userIds.map(splitId)]
+      let pdfUrl = null
+      if (hasPdfUpload) {
+        pdfUrl = await uploadToCloudinary(pdf)
+      }
       await teamRegisterEvent({
         variables: {
           orgId: '668bd9deff0327a608b9b6ea',
           teamRegistration: {
             eventID: EventId,
             teamName: formData.teamname,
-            userIDs: uIds
+            userIDs: uIds,
+            submittedPDF: pdfUrl
           }
         }
       })
@@ -102,6 +125,28 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
     } catch (err) {
       console.error(err)
       setError('Error registering. Please try again.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0]
+
+    if (!file) {
+      console.error('No file selected')
+      return
+    }
+
+    const validTypes = ['application/pdf']
+    const fileType = file.type
+    if (validTypes.includes(fileType)) {
+      setPdf(file)
+      setError('')
+    } else {
+      setError('Please upload a valid PDF file.')
+      setPdf(null)
+      return
     }
   }
 
@@ -112,7 +157,7 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
   return (
     <>
       {show ? (
-        <>
+        <Container>
           <Text>{EventTitle}</Text>
           <TextSub>(*Team Participation*)</TextSub>
           <GridContainer>
@@ -159,14 +204,24 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
             </Grid2>
           </GridContainer>
 
+          {hasPdfUpload && (
+            <InputContainer1>
+              <TextHead className="text-lg font-bold">Upload PDF</TextHead>
+              <FileUpload
+                type="file"
+                placeholder="Upload PDF here"
+                onChange={handleFileChange}
+                accept="application/pdf"
+              />
+            </InputContainer1>
+          )}
+
           {error && <CustomAlert message={error} onClose={() => setError(null)} />}
 
           <Button1 onClick={handleSubmit} disabled={loading}>
             {loading ? 'Registering...' : 'Register'}
           </Button1>
-
-          {mutationError && <Text className="error">{mutationError.message}</Text>}
-        </>
+        </Container>
       ) : (
         <RegisterCompleteCardTextContainer>
           <RegisterCompleteCardText>Hurray! Your Registration Completed</RegisterCompleteCardText>
@@ -179,7 +234,9 @@ export const TeamEventModal = ({ EventId, EventTitle }) => {
 TeamEventModal.propTypes = {
   EventId: PropTypes.number.isRequired,
   EventTitle: PropTypes.string.isRequired,
-  closeRegisterModal: PropTypes.func
+  closeRegisterModal: PropTypes.func,
+  hasPdfUpload: PropTypes.bool,
+  mongoId: PropTypes.string
 }
 
 export default TeamEventModal
