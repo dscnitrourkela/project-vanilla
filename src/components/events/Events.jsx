@@ -59,18 +59,18 @@ export default function Events() {
     if (userInfo.uid) {
       setUid(userInfo.uid)
       if (allEventsMade) {
-        getAllEvents(allEventsMade.getEvents)
+        getAllEvents(allEventsMade?.getEvents)
       }
 
       if (userDataInDb) {
-        setMongoId(userDataInDb.getUser.id)
+        setMongoId(userDataInDb?.getUser?.id)
       }
       if (soloRegistrations) {
-        setSoloRegistration(soloRegistrations.eventRegistration)
+        setSoloRegistration(soloRegistrations?.eventRegistration)
       }
 
       if (teamRegistrations) {
-        setTeamRegistration(teamRegistrations.teamRegistrations)
+        setTeamRegistration(teamRegistrations?.teamRegistrations)
       }
 
       const combinedRegistrations = [...(soloRegistration || []), ...(teamRegistration || [])]
