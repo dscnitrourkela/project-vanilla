@@ -153,3 +153,11 @@ export const PaymentButton = styled.button`
   active:scale-95
   `}
 `
+export const LoaderContainer = styled.div`
+  ${tw`
+  flex
+  items-center
+  justify-center
+  mb-5
+  `}
+`

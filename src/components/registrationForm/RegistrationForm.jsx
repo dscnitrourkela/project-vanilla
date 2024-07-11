@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { skipToken, useMutation, useSuspenseQuery } from '@apollo/client'
+import { useMutation, useQuery } from '@apollo/client'
 
 import { formSchema } from '../../config/content/registrationForm/formSchema'
 import {
@@ -68,14 +68,15 @@ export default function RegistrationForm() {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [isloading, setIsLoading] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [userDataInDb, setUserDataInDb] = useState(null)
   const [uid, setUid] = useState(null)
   const { userInfo, handleGoogleSignIn } = useContext(AuthContext)
   const [createUser, { loading: createUserLoading, data: createUserData }] =
     useMutation(CREATE_USER)
-  const { data: userDataInDb } = useSuspenseQuery(
-    GET_USER_BY_ID,
-    uid ? { variables: { uid: uid, orgId } } : skipToken
-  )
+  const { refetch: refetchUser } = useQuery(GET_USER_BY_ID, {
+    variables: { uid: uid, orgId },
+    skip: true
+  })
 
   const navigate = useNavigate()
 
@@ -91,14 +92,25 @@ export default function RegistrationForm() {
     }
   }
 
+  async function getUserData() {
+    setIsLoading(true)
+    try {
+      const { data } = await refetchUser({ uid: userInfo.uid, orgId })
+      setUserDataInDb(data.getUser)
+      setIsLoading(false)
+    } catch (err) {
+      console.error('Error fetching user data', err)
+    }
+  }
+
   const loading = createUserLoading
 
   useEffect(() => {
     if (userInfo.uid) {
       setIsLoggedIn(true)
       setUid(userInfo.uid)
-      const userData = userDataInDb
-      if (userData?.getUser) {
+      getUserData()
+      if (userDataInDb) {
         toast.info('You have already registered!')
         navigate(`/`)
       }
