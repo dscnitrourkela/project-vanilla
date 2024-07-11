@@ -118,10 +118,13 @@ export default function Events() {
 
   function handleModalOpen(EventId) {
     setIsModalOpen(true)
-    const event = events.find((event) => event.id === EventId)
-    if (event) {
-      setEvent(event)
+    let event
+    if (events.length === 0) {
+      event = staticEventsData.find((event) => event.id === EventId)
+    } else {
+      event = events.find((event) => event.id === EventId)
     }
+    setEvent(event)
   }
 
   function handleModalClose() {

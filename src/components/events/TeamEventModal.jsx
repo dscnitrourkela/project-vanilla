@@ -80,6 +80,16 @@ export const TeamEventModal = ({ EventId, EventTitle, hasPdfUpload, mongoId }) =
     }
   }
 
+  function hasDuplicates(arr) {
+    let sorted_arr = arr.slice().sort()
+    for (let i = 0; i < sorted_arr.length - 1; i++) {
+      if (sorted_arr[i + 1] === sorted_arr[i]) {
+        return false
+      }
+    }
+    return true
+  }
+
   async function handleSubmit() {
     const validationResult = TeamRegistrationSchema.safeParse(formData)
 
@@ -99,6 +109,11 @@ export const TeamEventModal = ({ EventId, EventTitle, hasPdfUpload, mongoId }) =
     const uIds = [splitId(formData.teamleadid), ...formData.userIds.map(splitId)]
     if (!uIds.includes(mongoId)) {
       setError('You must be part of the team')
+      return
+    }
+
+    if (!hasDuplicates(uIds)) {
+      setError('Duplicate User IDs are not allowed')
       return
     }
     setLoading(true)
