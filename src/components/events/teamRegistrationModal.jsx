@@ -3,6 +3,7 @@ import tw from 'twin.macro'
 
 export const Container = styled.div`
   ${tw`max-h-[85vh] overflow-scroll`}
+  scrollbar-width: none;
 `
 
 export const GridContainer = styled.div`

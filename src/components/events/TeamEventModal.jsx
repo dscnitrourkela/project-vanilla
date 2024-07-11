@@ -26,8 +26,16 @@ import { toast } from 'react-toastify'
 import { MinusButtonUrl, PlusButtonUrl } from '../../config/content/teamRegistration/registermodal'
 import { InputContainer1, FileUpload } from './registerModal.style'
 import { uploadToCloudinary } from '../../utils/uploadToCloudinary'
+import { edpEvents, edpLink } from '../../config/content/events/events'
 
-export const TeamEventModal = ({ EventId, EventTitle, maxTeamSize, hasPdfUpload, mongoId }) => {
+export const TeamEventModal = ({
+  EventId,
+  EventTitle,
+  maxTeamSize,
+  hasPdfUpload,
+  mongoId,
+  handleScroll
+}) => {
   const [formData, setFormData] = useState({
     teamname: '',
     teamleadid: '',
@@ -50,8 +58,6 @@ export const TeamEventModal = ({ EventId, EventTitle, maxTeamSize, hasPdfUpload,
     })
     setError(null)
   }
-
-  console.log(mongoId)
 
   const handleUserIdChange = (index, value) => {
     const newUserIds = [...formData.userIds]
@@ -172,10 +178,11 @@ export const TeamEventModal = ({ EventId, EventTitle, maxTeamSize, hasPdfUpload,
     return id.split('-')[1]
   }
 
+  const doesContainEDP = edpEvents.includes(EventTitle)
   return (
     <>
       {show ? (
-        <Container>
+        <Container onScroll={handleScroll}>
           <Text>{EventTitle}</Text>
           <TextSub>(*Team Participation*)</TextSub>
           <GridContainer>
@@ -221,15 +228,15 @@ export const TeamEventModal = ({ EventId, EventTitle, maxTeamSize, hasPdfUpload,
               ))}
             </Grid2>
           </GridContainer>
-          {EventTitle === 'CHEM-E-CAR' ? (
+          {doesContainEDP && (
             <Button1
               onClick={() => {
-                window.open('https://aiche.app.box.com/f/a00482e56d334db7846454bacc43cdce')
+                window.open(edpLink, '_blank')
               }}
             >
               Click to submit your EDPs here
             </Button1>
-          ) : null}
+          )}
 
           {hasPdfUpload && (
             <InputContainer1>
@@ -259,7 +266,8 @@ TeamEventModal.propTypes = {
   closeRegisterModal: PropTypes.func,
   hasPdfUpload: PropTypes.bool,
   mongoId: PropTypes.string,
-  maxTeamSize: PropTypes.number
+  maxTeamSize: PropTypes.number,
+  handleScroll: PropTypes.func
 }
 
 export default TeamEventModal

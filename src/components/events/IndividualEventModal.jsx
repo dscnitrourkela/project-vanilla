@@ -16,12 +16,13 @@ import CustomAlert from '../customcomponents/CustomAlert'
 import { uploadToCloudinary } from '../../utils/uploadToCloudinary'
 
 import {
+  Container,
   RegisterCompleteCardText,
   RegisterCompleteCardTextContainer
 } from './teamRegistrationModal'
 import { RegistrationSchema } from '../../config/content/teamRegistration/registerSchema'
 
-export const IndiEventModal = ({ EventId, EventTitle, mongoId, hasPdfUpload }) => {
+export const IndiEventModal = ({ EventId, EventTitle, mongoId, hasPdfUpload, handleScroll }) => {
   const [aicheID, setAicheID] = useState('')
   const [show, setShow] = useState(true)
   const [error, setError] = useState(null)
@@ -117,7 +118,7 @@ export const IndiEventModal = ({ EventId, EventTitle, mongoId, hasPdfUpload }) =
   return (
     <>
       {show ? (
-        <div>
+        <Container onScroll={handleScroll}>
           <Text>{EventTitle}</Text>
           <TextSub>(*single member Participation*)</TextSub>
           <TextHead className="text-lg font-bold">User ID</TextHead>
@@ -160,7 +161,7 @@ export const IndiEventModal = ({ EventId, EventTitle, mongoId, hasPdfUpload }) =
           <Button1 onClick={handleSubmit} disabled={loading}>
             {loading ? 'Registering...' : 'Register'}
           </Button1>
-        </div>
+        </Container>
       ) : (
         <RegisterCompleteCardTextContainer>
           <RegisterCompleteCardText>Hurray! Ur Registration Completed</RegisterCompleteCardText>
@@ -175,5 +176,6 @@ IndiEventModal.propTypes = {
   EventTitle: PropTypes.string.isRequired,
   closeRegisterModal: PropTypes.func,
   mongoId: PropTypes.string,
-  hasPdfUpload: PropTypes.bool
+  hasPdfUpload: PropTypes.bool,
+  handleScroll: PropTypes.func
 }
