@@ -145,7 +145,7 @@ export const IndiEventModal = ({ EventId, EventTitle, mongoId, hasPdfUpload }) =
           {errorContent && <Err className="error">{errorContent}</Err>}
           {hasPdfUpload && (
             <InputContainer1>
-              <TextHead className="text-lg font-bold">Upload PDF</TextHead>
+              <TextHead className="text-lg font-bold">Submit your abstracts here</TextHead>
               <FileUpload
                 type="file"
                 placeholder="Upload PDF here"

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Button1 } from './registerModal.style'
+// import { Button1 } from './registerModal.style'
 import { useMutation } from '@apollo/client'
 import { CREATE_TEAM_REGISTRATIONS } from '../../graphQL/mutations/teamRegistration'
 import CustomAlert from '../customcomponents/CustomAlert'
@@ -18,7 +18,8 @@ import {
   IconButtonContainer,
   RegisterCompleteCardText,
   RegisterCompleteCardTextContainer,
-  Container
+  Container,
+  Button1
 } from './teamRegistrationModal'
 import { TeamRegistrationSchema } from '../../config/content/teamRegistration/registerSchema'
 import { toast } from 'react-toastify'
@@ -26,7 +27,7 @@ import { MinusButtonUrl, PlusButtonUrl } from '../../config/content/teamRegistra
 import { InputContainer1, FileUpload } from './registerModal.style'
 import { uploadToCloudinary } from '../../utils/uploadToCloudinary'
 
-export const TeamEventModal = ({ EventId, EventTitle, hasPdfUpload, mongoId }) => {
+export const TeamEventModal = ({ EventId, EventTitle, maxTeamSize, hasPdfUpload, mongoId }) => {
   const [formData, setFormData] = useState({
     teamname: '',
     teamleadid: '',
@@ -39,6 +40,8 @@ export const TeamEventModal = ({ EventId, EventTitle, hasPdfUpload, mongoId }) =
   const [loading, setLoading] = useState(false)
 
   const [teamRegisterEvent] = useMutation(CREATE_TEAM_REGISTRATIONS)
+
+  const maxUsers = maxTeamSize
 
   const handleChange = (key, value) => {
     setFormData({
@@ -60,7 +63,7 @@ export const TeamEventModal = ({ EventId, EventTitle, hasPdfUpload, mongoId }) =
   }
 
   const addUserId = () => {
-    if (formData.userIds.length > 4) {
+    if (formData.userIds.length > maxUsers - 2) {
       return toast.error("you've reached maximum team limit")
     }
     setFormData({
@@ -218,6 +221,15 @@ export const TeamEventModal = ({ EventId, EventTitle, hasPdfUpload, mongoId }) =
               ))}
             </Grid2>
           </GridContainer>
+          {EventTitle === 'CHEM-E-CAR' ? (
+            <Button1
+              onClick={() => {
+                window.open('https://aiche.app.box.com/f/a00482e56d334db7846454bacc43cdce')
+              }}
+            >
+              Click to submit your EDPs here
+            </Button1>
+          ) : null}
 
           {hasPdfUpload && (
             <InputContainer1>
@@ -246,7 +258,8 @@ TeamEventModal.propTypes = {
   EventTitle: PropTypes.string.isRequired,
   closeRegisterModal: PropTypes.func,
   hasPdfUpload: PropTypes.bool,
-  mongoId: PropTypes.string
+  mongoId: PropTypes.string,
+  maxTeamSize: PropTypes.number
 }
 
 export default TeamEventModal

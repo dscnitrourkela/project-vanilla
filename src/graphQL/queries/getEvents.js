@@ -12,6 +12,7 @@ export const GET_EVENTS_BY_ORGID = gql`
       status
       id
       subHeading
+      maxTeamSize
     }
   }
 `
