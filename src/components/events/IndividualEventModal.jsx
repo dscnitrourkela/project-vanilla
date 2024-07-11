@@ -22,8 +22,15 @@ import {
 } from './teamRegistrationModal'
 import { RegistrationSchema } from '../../config/content/teamRegistration/registerSchema'
 
-export const IndiEventModal = ({ EventId, EventTitle, mongoId, hasPdfUpload, handleScroll }) => {
-  const [aicheID, setAicheID] = useState('')
+export const IndiEventModal = ({
+  EventId,
+  EventTitle,
+  mongoId,
+  hasPdfUpload,
+  handleScroll,
+  userSrcId
+}) => {
+  const [aicheID, setAicheID] = useState(userSrcId)
   const [show, setShow] = useState(true)
   const [error, setError] = useState(null)
   const [pdf, setPdf] = useState(null)
@@ -177,5 +184,6 @@ IndiEventModal.propTypes = {
   closeRegisterModal: PropTypes.func,
   mongoId: PropTypes.string,
   hasPdfUpload: PropTypes.bool,
-  handleScroll: PropTypes.func
+  handleScroll: PropTypes.func,
+  userSrcId: PropTypes.string
 }

@@ -9,7 +9,8 @@ import { ProgressBar } from './eventModal.styles'
 export const RegisterModal = ({
   event: { id, name, isTeamEvent, maxTeamSize },
   closeModal,
-  mongoId
+  mongoId,
+  userSrcId
 }) => {
   const [scrollPosition, setScrollPosition] = useState(0)
 
@@ -34,6 +35,7 @@ export const RegisterModal = ({
             mongoId={mongoId}
             maxTeamSize={maxTeamSize}
             hasPdfUpload={hasPdfUpload}
+            userSrcId={userSrcId}
           />
         ) : (
           <IndiEventModal
@@ -43,6 +45,7 @@ export const RegisterModal = ({
             mongoId={mongoId}
             maxTeamSize={maxTeamSize}
             hasPdfUpload={hasPdfUpload}
+            userSrcId={userSrcId}
           />
         )}
       </Section>
@@ -58,5 +61,6 @@ RegisterModal.propTypes = {
     maxTeamSize: PropTypes.number
   }),
   closeModal: PropTypes.func,
-  mongoId: PropTypes.string
+  mongoId: PropTypes.string,
+  userSrcId: PropTypes.string
 }

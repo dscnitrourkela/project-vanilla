@@ -36,7 +36,8 @@ EventCard.propTypes = {
   handleSelectEvent: PropTypes.func,
   handleRegisterEvent: PropTypes.func,
   registeredEvent: PropTypes.any,
-  mongoId: PropTypes.string
+  mongoId: PropTypes.string,
+  userSrcId: PropTypes.string
 }
 
 export default function EventCard({
@@ -44,7 +45,8 @@ export default function EventCard({
   handleSelectEvent,
   handleRegisterEvent,
   registeredEvent,
-  mongoId
+  mongoId,
+  userSrcId
 }) {
   const [openModal, setOpenModal] = useState(false)
   function genDetails(str, length) {
@@ -66,9 +68,15 @@ export default function EventCard({
 
   function handleClick(id) {
     if (!mongoId) {
-      toast.error('Please login to register for the event')
+      toast.info('Please complete your profile to register for the event')
       return
     }
+
+    if (!userSrcId) {
+      toast.info('Please complete your payment to register for the event')
+      return
+    }
+
     handleRegisterEvent(id)
   }
 
@@ -120,6 +128,7 @@ export default function EventCard({
                 <SeemoreIcon src={seeMoreIcon} />
               </CardModalBtn>
             </CardBody>
+
             <CardFooter>
               <ButtonRules onClick={redirectToRules}>Rulebook</ButtonRules>
               {!registeredEvent ? (
