@@ -122,6 +122,7 @@ export default function RegistrationForm() {
         window.location.href = '/'
       }, 2000)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userInfo, createUserData, navigate, userDataInDb])
 
   async function handleSubmit(e) {

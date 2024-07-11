@@ -91,6 +91,7 @@ export default function Events() {
       const combinedRegistrations = [...(soloRegistration || []), ...(teamRegistration || [])]
       setCombinedRegistrations(combinedRegistrations)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userInfo, soloRegistrations, teamRegistrations, soloRegistration, teamRegistration])
 
   async function getAllEvents(allEvents) {

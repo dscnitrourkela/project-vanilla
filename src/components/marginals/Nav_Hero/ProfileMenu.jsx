@@ -29,6 +29,7 @@ function ProfileMenu({ isProfileOpen, setProfileOpen }) {
       setUid(userInfo.uid)
       getUserData()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userInfo, uid])
 
   async function getUserData() {
