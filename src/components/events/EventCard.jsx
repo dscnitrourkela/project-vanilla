@@ -83,6 +83,7 @@ export default function EventCard({
             isTeamEvent={isTeamEvent}
             eventId={id}
             registerdEvent={registeredEvent}
+            eventName={name}
           />
         ),
         overlay
