@@ -34,11 +34,12 @@ export const TeamEventModal = ({
   maxTeamSize,
   hasPdfUpload,
   mongoId,
-  handleScroll
+  handleScroll,
+  userSrcId
 }) => {
   const [formData, setFormData] = useState({
     teamname: '',
-    teamleadid: '',
+    teamleadid: userSrcId,
     userIds: ['']
   })
 
@@ -267,7 +268,8 @@ TeamEventModal.propTypes = {
   hasPdfUpload: PropTypes.bool,
   mongoId: PropTypes.string,
   maxTeamSize: PropTypes.number,
-  handleScroll: PropTypes.func
+  handleScroll: PropTypes.func,
+  userSrcId: PropTypes.string
 }
 
 export default TeamEventModal
