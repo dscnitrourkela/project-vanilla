@@ -25,7 +25,7 @@ export const Section = styled.section`
 export const ProgressBar = styled.div`
   ${tw`fixed top-0 left-0 h-1 bg-orange-500`}
   width: ${({ width }) => width}%;
-  transition: width 0.3s ease-in;
+  transition: width 0.5s linear;
 `
 
 export const ContentWrapper = styled.div`
