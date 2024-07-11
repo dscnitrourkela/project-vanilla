@@ -59,18 +59,18 @@ export default function Events() {
     if (userInfo.uid) {
       setUid(userInfo.uid)
       if (allEventsMade) {
-        getAllEvents(allEventsMade.getEvents)
+        getAllEvents(allEventsMade?.getEvents)
       }
 
       if (userDataInDb) {
-        setMongoId(userDataInDb.getUser.id)
+        setMongoId(userDataInDb?.getUser?.id)
       }
       if (soloRegistrations) {
-        setSoloRegistration(soloRegistrations.eventRegistration)
+        setSoloRegistration(soloRegistrations?.eventRegistration)
       }
 
       if (teamRegistrations) {
-        setTeamRegistration(teamRegistrations.teamRegistrations)
+        setTeamRegistration(teamRegistrations?.teamRegistrations)
       }
 
       const combinedRegistrations = [...(soloRegistration || []), ...(teamRegistration || [])]
@@ -118,10 +118,13 @@ export default function Events() {
 
   function handleModalOpen(EventId) {
     setIsModalOpen(true)
-    const event = events.find((event) => event.id === EventId)
-    if (event) {
-      setEvent(event)
+    let event
+    if (events.length === 0) {
+      event = staticEventsData.find((event) => event.id === EventId)
+    } else {
+      event = events.find((event) => event.id === EventId)
     }
+    setEvent(event)
   }
 
   function handleModalClose() {
@@ -179,6 +182,7 @@ export default function Events() {
             handleRegisterEvent={handleRegisterModalOpen}
             handlerFlagshipEvent={handleFlagshipCardModalOpen}
             swiperRef={swiperRef}
+            mongoId={mongoId}
           />
           <Arrow src={nextArrowIcon} alt="Next" onClick={handleNext} />
         </Section>

@@ -1,3 +1,4 @@
+import { edpEvents, edpLink } from '../../config/content/events/events'
 import {
   Button,
   ModalContainer,
@@ -6,21 +7,24 @@ import {
   TextContent,
   TextHead,
   TextHead1,
-  TextContainer2
+  TextContainer2,
+  EventName
 } from './registeredEventModal.styles'
 import { Container } from './registerModal.style'
 import PropTypes from 'prop-types'
 
-export const RegisteredEventModal = ({ closeModal, isTeamEvent, registerdEvent }) => {
+export const RegisteredEventModal = ({ closeModal, isTeamEvent, registerdEvent, eventName }) => {
+  const doesContainEDP = edpEvents.includes(eventName)
   return (
     <Container>
       <Section>
         <Button onClick={closeModal}>Back</Button>
         <ModalContainer>
+          <EventName>{eventName}</EventName>
           {isTeamEvent ? (
             <div>
               <TextContainer2>
-                <TextHead1>TeamName:&nbsp;</TextHead1>
+                <TextHead1>Team Name:&nbsp;</TextHead1>
                 {registerdEvent.teamName}
               </TextContainer2>
               {registerdEvent.users.map((user, index) => (
@@ -31,10 +35,19 @@ export const RegisteredEventModal = ({ closeModal, isTeamEvent, registerdEvent }
                   </TextContainer>
                 </div>
               ))}
+
+              {doesContainEDP && (
+                <TextContainer>
+                  <TextHead>Submit your EDPs here: </TextHead>
+                  <a href={edpLink} target="_blank" rel="noreferrer">
+                    Link
+                  </a>
+                </TextContainer>
+              )}
             </div>
           ) : (
             <TextContainer>
-              <TextContent>Congratulations you have registered!</TextContent>
+              <TextContent>Congratulations, you have registered!</TextContent>
             </TextContainer>
           )}
         </ModalContainer>
@@ -46,6 +59,6 @@ export const RegisteredEventModal = ({ closeModal, isTeamEvent, registerdEvent }
 RegisteredEventModal.propTypes = {
   closeModal: PropTypes.func.isRequired,
   isTeamEvent: PropTypes.bool.isRequired,
-  eventId: PropTypes.string.isRequired,
-  registerdEvent: PropTypes.any
+  registerdEvent: PropTypes.any,
+  eventName: PropTypes.string
 }

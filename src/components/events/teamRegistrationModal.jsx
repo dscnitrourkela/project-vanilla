@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 import tw from 'twin.macro'
 
+export const Container = styled.div`
+  ${tw`max-h-[85vh] overflow-scroll`}
+`
+
 export const GridContainer = styled.div`
   display: grid;
   gap: 10px;

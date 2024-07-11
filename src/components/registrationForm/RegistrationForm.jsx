@@ -35,8 +35,8 @@ import {
   TshirtContainer,
   TshirtImage
 } from './RegisterForm.styles'
-import { uploadToCloudinary } from './uploadToCloudinary'
-// import SwitchInput from './SwitchInput'
+import SwitchInput from './SwitchInput'
+import { uploadToCloudinary } from '../../utils/uploadToCloudinary'
 
 export default function RegistrationForm() {
   const orgId = '668bd9deff0327a608b9b6ea'
@@ -52,8 +52,8 @@ export default function RegistrationForm() {
     college: '',
     rollNumber: '',
     idCardPhoto: null,
-    tSize: ''
-    // isHostelRequired: false
+    tSize: '',
+    isHostelRequired: false
   })
   const initialFormErrors = {
     name: '',
@@ -178,6 +178,13 @@ export default function RegistrationForm() {
     }
   }
 
+  function handleHostelRequired() {
+    setformData((prevData) => ({
+      ...prevData,
+      isHostelRequired: !prevData.isHostelRequired
+    }))
+  }
+
   function showTshirtSizes() {
     openModal()
   }
@@ -227,10 +234,10 @@ export default function RegistrationForm() {
                 />
               )
             )}
-            {/* <SwitchInput
-            value={formData.isHostelRequired}
-            handleHostelRequired={handleHostelRequired}
-          /> */}
+            <SwitchInput
+              value={formData.isHostelRequired}
+              handleHostelRequired={handleHostelRequired}
+            />
             <Button onClick={(e) => handleSubmit(e)} disabled={loading}>
               Register
             </Button>

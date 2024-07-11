@@ -21,6 +21,7 @@ import { useState } from 'react'
 import { seeMoreIcon } from '../../config'
 import { RegisteredEventModal } from './RegisteredEventModal'
 import { createPortal } from 'react-dom'
+import { toast } from 'react-toastify'
 
 EventCard.propTypes = {
   event: PropTypes.shape({
@@ -34,14 +35,16 @@ EventCard.propTypes = {
   }),
   handleSelectEvent: PropTypes.func,
   handleRegisterEvent: PropTypes.func,
-  registeredEvent: PropTypes.any
+  registeredEvent: PropTypes.any,
+  mongoId: PropTypes.string
 }
 
 export default function EventCard({
   event: { poster, id, name, subHeading, description, rules, isTeamEvent },
   handleSelectEvent,
   handleRegisterEvent,
-  registeredEvent
+  registeredEvent,
+  mongoId
 }) {
   const [openModal, setOpenModal] = useState(false)
   function genDetails(str, length) {
@@ -61,6 +64,14 @@ export default function EventCard({
     setOpenModal(true)
   }
 
+  function handleClick(id) {
+    if (!mongoId) {
+      toast.error('Please login to register for the event')
+      return
+    }
+    handleRegisterEvent(id)
+  }
+
   const overlay = document.getElementById('overlay')
 
   return (
@@ -72,6 +83,7 @@ export default function EventCard({
             isTeamEvent={isTeamEvent}
             eventId={id}
             registerdEvent={registeredEvent}
+            eventName={name}
           />
         ),
         overlay
@@ -111,7 +123,7 @@ export default function EventCard({
             <CardFooter>
               <ButtonRules onClick={redirectToRules}>Rulebook</ButtonRules>
               {!registeredEvent ? (
-                <Button onClick={() => handleRegisterEvent(id)}>Register</Button>
+                <Button onClick={() => handleClick(id)}>Register</Button>
               ) : (
                 <Button onClick={handleRegisteredEvents}>Registered</Button>
               )}
