@@ -3,6 +3,7 @@ import tw from 'twin.macro'
 
 export const Container = styled.div`
   ${tw`max-h-[85vh] overflow-scroll`}
+  scrollbar-width: none;
 `
 
 export const GridContainer = styled.div`
@@ -82,4 +83,29 @@ export const RemoveButton = styled.button`
 
 export const IconButtonContainer = styled.div`
   ${tw`flex justify-center`}
+`
+
+export const Button1 = styled.button`
+  ${tw`  px-2 
+    mt-10
+    mb-12
+    w-[80%]
+    ml-[10%]
+  py-2
+  rounded-[11.53px] 
+  bg-orange-1 
+  text-brown-5 
+  font-semibold 
+  text-1.5lg 
+  md:text-2xl  
+  border-brown-5 
+  border-2 
+  transition 
+  duration-300 
+  ease-in-out 
+  active:transform 
+  active:translate-x-[3px] 
+  active:translate-y-[3px] 
+  active:shadow-none 
+  shadow-[3px 3px 0px #1d1d1d ]`}
 `

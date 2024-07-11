@@ -17,7 +17,7 @@ export const Container = styled.main`
 `
 
 export const Section = styled.section`
-  ${tw`bg-black-1 text-brown-2  relative max-w-[600px] w-full rounded-[23.06px] font-Poppins h-[97vh]  h-auto overflow-scroll`}
+  ${tw`bg-black-1 text-brown-2  relative max-w-[600px] w-full rounded-[23.06px] font-Poppins max-h-[97vh]   overflow-scroll`}
   padding-top: 10px;
   scrollbar-width: none;
 `
@@ -25,7 +25,7 @@ export const Section = styled.section`
 export const ProgressBar = styled.div`
   ${tw`fixed top-0 left-0 h-1 bg-orange-500`}
   width: ${({ width }) => width}%;
-  transition: width 0.1s ease-out;
+  transition: width 0.5s linear;
 `
 
 export const ContentWrapper = styled.div`

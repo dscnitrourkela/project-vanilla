@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Button1 } from './registerModal.style'
+// import { Button1 } from './registerModal.style'
 import { useMutation } from '@apollo/client'
 import { CREATE_TEAM_REGISTRATIONS } from '../../graphQL/mutations/teamRegistration'
 import CustomAlert from '../customcomponents/CustomAlert'
@@ -18,15 +18,24 @@ import {
   IconButtonContainer,
   RegisterCompleteCardText,
   RegisterCompleteCardTextContainer,
-  Container
+  Container,
+  Button1
 } from './teamRegistrationModal'
 import { TeamRegistrationSchema } from '../../config/content/teamRegistration/registerSchema'
 import { toast } from 'react-toastify'
 import { MinusButtonUrl, PlusButtonUrl } from '../../config/content/teamRegistration/registermodal'
 import { InputContainer1, FileUpload } from './registerModal.style'
 import { uploadToCloudinary } from '../../utils/uploadToCloudinary'
+import { edpEvents, edpLink } from '../../config/content/events/events'
 
-export const TeamEventModal = ({ EventId, EventTitle, hasPdfUpload, mongoId }) => {
+export const TeamEventModal = ({
+  EventId,
+  EventTitle,
+  maxTeamSize,
+  hasPdfUpload,
+  mongoId,
+  handleScroll
+}) => {
   const [formData, setFormData] = useState({
     teamname: '',
     teamleadid: '',
@@ -40,6 +49,8 @@ export const TeamEventModal = ({ EventId, EventTitle, hasPdfUpload, mongoId }) =
 
   const [teamRegisterEvent] = useMutation(CREATE_TEAM_REGISTRATIONS)
 
+  const maxUsers = maxTeamSize
+
   const handleChange = (key, value) => {
     setFormData({
       ...formData,
@@ -47,8 +58,6 @@ export const TeamEventModal = ({ EventId, EventTitle, hasPdfUpload, mongoId }) =
     })
     setError(null)
   }
-
-  console.log(mongoId)
 
   const handleUserIdChange = (index, value) => {
     const newUserIds = [...formData.userIds]
@@ -60,7 +69,7 @@ export const TeamEventModal = ({ EventId, EventTitle, hasPdfUpload, mongoId }) =
   }
 
   const addUserId = () => {
-    if (formData.userIds.length > 4) {
+    if (formData.userIds.length > maxUsers - 2) {
       return toast.error("you've reached maximum team limit")
     }
     setFormData({
@@ -169,10 +178,11 @@ export const TeamEventModal = ({ EventId, EventTitle, hasPdfUpload, mongoId }) =
     return id.split('-')[1]
   }
 
+  const doesContainEDP = edpEvents.includes(EventTitle)
   return (
     <>
       {show ? (
-        <Container>
+        <Container onScroll={handleScroll}>
           <Text>{EventTitle}</Text>
           <TextSub>(*Team Participation*)</TextSub>
           <GridContainer>
@@ -218,6 +228,15 @@ export const TeamEventModal = ({ EventId, EventTitle, hasPdfUpload, mongoId }) =
               ))}
             </Grid2>
           </GridContainer>
+          {doesContainEDP && (
+            <Button1
+              onClick={() => {
+                window.open(edpLink, '_blank')
+              }}
+            >
+              Click to submit your EDPs here
+            </Button1>
+          )}
 
           {hasPdfUpload && (
             <InputContainer1>
@@ -246,7 +265,9 @@ TeamEventModal.propTypes = {
   EventTitle: PropTypes.string.isRequired,
   closeRegisterModal: PropTypes.func,
   hasPdfUpload: PropTypes.bool,
-  mongoId: PropTypes.string
+  mongoId: PropTypes.string,
+  maxTeamSize: PropTypes.number,
+  handleScroll: PropTypes.func
 }
 
 export default TeamEventModal

@@ -27,8 +27,10 @@ export const FileUpload = styled.input`
 `
 
 export const Section = styled.section`
-  ${tw`bg-brown-2 border-4 border-black-1 relative max-w-[600px] w-full rounded-[23.06px] font-Poppins max-h-[100vh] h-auto overflow-y-auto `}
+  ${tw`bg-brown-2 border-4 border-black-1 relative max-w-[600px] w-full rounded-[23.06px] font-Poppins max-h-[97vh] overflow-scroll `}
+  scrollbar-width: none;
 `
+
 export const Text = styled.div`
   ${tw`text-[34px] 0.8xsm:text-[37px]
         0.9xsm:text-[40px] text-center w-full  mt-7 font-bold  font-Poppins`}
@@ -98,7 +100,7 @@ export const Button1 = styled.button`
 export const Button2 = styled.button`
   ${tw`p-1
    
-   mt-6 ml-6 mr-6
+   m-6  
     w-[20%]
     
   
