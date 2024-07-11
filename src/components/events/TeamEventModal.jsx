@@ -221,13 +221,8 @@ export const TeamEventModal = ({ EventId, EventTitle, hasPdfUpload, mongoId }) =
 
           {hasPdfUpload && (
             <InputContainer1>
-              <TextHead className="text-lg font-bold">Upload PDF</TextHead>
-              <FileUpload
-                type="file"
-                placeholder="Upload PDF here"
-                onChange={handleFileChange}
-                accept="application/pdf"
-              />
+              <TextHead className="text-lg font-bold">Submit your abstracts here</TextHead>
+              <FileUpload type="file" onChange={handleFileChange} accept="application/pdf" />
             </InputContainer1>
           )}
 

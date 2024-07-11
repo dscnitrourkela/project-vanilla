@@ -39,7 +39,7 @@ export const staticEventsData = [
     prizeMoney: '',
     poster:
       'https://res.cloudinary.com/dhv234qct/image/upload/v1720612217/AICHE_SRC/event_icons/k-12_sys_avc6dc.svg',
-    name: 'K-12 STEM OUTREACH',
+    name: 'K-12 STEM',
     subHeading: 'Unleash the STEM genius within!',
     description: JSON.stringify([
       'The K-12 STEM Outreach Program empowers you to ignite a passion for science, technology, engineering, and math (STEM) in students from kindergarten through 12th grade.',
@@ -97,6 +97,7 @@ export const eventss = [
 
 export const eventsWithPdfs = [
   'K-12 STEM OUTREACH',
+  'K-12 STEM',
   'Student Poster Competition',
   'Student Technical Paper Competition'
 ]

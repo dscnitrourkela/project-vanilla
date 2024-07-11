@@ -14,7 +14,8 @@ function EventsWrapper({
   handleSelectEvent,
   swiperRef,
   handleRegisterEvent,
-  handlerFlagshipEvent
+  handlerFlagshipEvent,
+  mongoId
 }) {
   useEffect(() => {
     if (swiperRef.current) {
@@ -63,6 +64,7 @@ function EventsWrapper({
                 event={event}
                 handleSelectEvent={handleSelectEvent}
                 handleRegisterEvent={handleRegisterEvent}
+                mongoId={mongoId}
               />
             </SwiperSlide>
           )
@@ -82,7 +84,8 @@ EventsWrapper.propTypes = {
   handleRegisterEvent: PropTypes.func.isRequired,
   handlerFlagshipEvent: PropTypes.func.isRequired,
   swiperRef: PropTypes.object.isRequired,
-  combinedArray: PropTypes.array
+  combinedArray: PropTypes.array,
+  mongoId: PropTypes.string
 }
 
 export default EventsWrapper
