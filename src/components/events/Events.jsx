@@ -182,6 +182,7 @@ export default function Events() {
             handleRegisterEvent={handleRegisterModalOpen}
             handlerFlagshipEvent={handleFlagshipCardModalOpen}
             swiperRef={swiperRef}
+            mongoId={mongoId}
           />
           <Arrow src={nextArrowIcon} alt="Next" onClick={handleNext} />
         </Section>
