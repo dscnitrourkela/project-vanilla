@@ -218,7 +218,7 @@ export const TeamEventModal = ({
             <Grid2>
               {formData.userIds.map((userId, index) => (
                 <div className="flex" key={index}>
-                  <TextHead>{`Member ${index + 1} ID`}</TextHead>
+                  <TextHead>{`Member ${index + 1} srcID`}</TextHead>
                   <Input2
                     type="text"
                     placeholder={`Enter Member ${index + 1}'s ID`}
