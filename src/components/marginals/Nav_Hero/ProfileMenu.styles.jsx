@@ -153,3 +153,15 @@ export const PaymentButton = styled.button`
   active:scale-95
   `}
 `
+export const CopyButton = styled.button`
+  ${tw`
+  cursor-pointer
+  bg-[#FFEEDA]
+  text-[#1D1D1D]
+  rounded-md
+  p-2
+  mx-2
+  hover:bg-orange-1
+  hover:text-[#FFEEDA]
+  `}
+`
