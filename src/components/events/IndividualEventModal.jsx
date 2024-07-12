@@ -128,7 +128,7 @@ export const IndiEventModal = ({
         <Container onScroll={handleScroll}>
           <Text>{EventTitle}</Text>
           <TextSub>(*single member Participation*)</TextSub>
-          <TextHead className="text-lg font-bold">User ID</TextHead>
+          <TextHead className="text-lg font-bold">Enter srcID</TextHead>
           <InputContainer1>
             <Input
               type="text"

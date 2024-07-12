@@ -53,7 +53,6 @@ function ProfileMenuDropDown({ setProfileOpen, user }) {
             {!user.srcID && (
               <PaymentButton>
                 <Link target="_blank" to={DescriptionContent.paymentLink}>
-                  {' '}
                   Pay Now
                 </Link>
               </PaymentButton>

@@ -198,10 +198,10 @@ export const TeamEventModal = ({
                 />
               </div>
               <div>
-                <TextHead>Team Lead ID</TextHead>
+                <TextHead>Team Lead srcID</TextHead>
                 <Input
                   type="text"
-                  placeholder="Enter Team Lead ID"
+                  placeholder="Enter Team Lead srcID"
                   value={formData.teamleadid}
                   onChange={(e) => handleChange('teamleadid', e.target.value)}
                 />
