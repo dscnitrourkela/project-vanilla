@@ -54,7 +54,7 @@ function ProfileMenuDropDown({ setProfileOpen, user }) {
                   <Label>{detail.label}: </Label> <br />
                   <Value>{detail.value}</Value>
                   <CopyToClipboard
-                    text={detail.value}
+                    text={user.srcID || detail.value}
                     onCopy={() => {
                       toast.success('SrcID copied to clipboard')
                     }}
