@@ -159,7 +159,8 @@ export const LoaderContainer = styled.div`
   flex
   items-center
   justify-center
-  mb-5`}`
+  mb-5`}
+`
 
 export const CopyButton = styled.button`
   ${tw`

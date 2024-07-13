@@ -71,6 +71,7 @@ export default function Events() {
     try {
       const { data } = await getUserInDB({ uid: userInfo.uid, orgId })
       setMongoId(data.getUser.id)
+      setUserSrcId(data.getUser.srcID)
     } catch (error) {
       console.error('Error fetching user data:', error)
     }
