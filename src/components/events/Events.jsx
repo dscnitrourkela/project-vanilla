@@ -24,6 +24,7 @@ export default function Events() {
   const [event, setEvent] = useState(null)
   const [events, setEvents] = useState([])
   const [mongoId, setMongoId] = useState(null)
+  const [userSrcId, setUserSrcId] = useState(null)
   const [soloRegistration, setSoloRegistration] = useState([])
   const [teamRegistration, setTeamRegistration] = useState([])
   const [combinedRegistrations, setCombinedRegistrations] = useState([])
@@ -169,7 +170,12 @@ export default function Events() {
       )}
       {createPortal(
         isRegisterModalOpen && (
-          <RegisterModal mongoId={mongoId} closeModal={handleRegisterModalClose} event={event} />
+          <RegisterModal
+            mongoId={mongoId}
+            closeModal={handleRegisterModalClose}
+            userSrcId={userSrcId}
+            event={event}
+          />
         ),
         overlay
       )}
@@ -191,6 +197,7 @@ export default function Events() {
             handlerFlagshipEvent={handleFlagshipCardModalOpen}
             swiperRef={swiperRef}
             mongoId={mongoId}
+            userSrcId={userSrcId}
           />
           <Arrow src={nextArrowIcon} alt="Next" onClick={handleNext} />
         </Section>

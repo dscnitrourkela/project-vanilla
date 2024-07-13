@@ -34,11 +34,12 @@ export const TeamEventModal = ({
   maxTeamSize,
   hasPdfUpload,
   mongoId,
-  handleScroll
+  handleScroll,
+  userSrcId
 }) => {
   const [formData, setFormData] = useState({
     teamname: '',
-    teamleadid: '',
+    teamleadid: userSrcId,
     userIds: ['']
   })
 
@@ -197,10 +198,10 @@ export const TeamEventModal = ({
                 />
               </div>
               <div>
-                <TextHead>Team Lead ID</TextHead>
+                <TextHead>Team Lead srcID</TextHead>
                 <Input
                   type="text"
-                  placeholder="Enter Team Lead ID"
+                  placeholder="Enter Team Lead srcID"
                   value={formData.teamleadid}
                   onChange={(e) => handleChange('teamleadid', e.target.value)}
                 />
@@ -217,7 +218,7 @@ export const TeamEventModal = ({
             <Grid2>
               {formData.userIds.map((userId, index) => (
                 <div className="flex" key={index}>
-                  <TextHead>{`Member ${index + 1} ID`}</TextHead>
+                  <TextHead>{`Member ${index + 1} srcID`}</TextHead>
                   <Input2
                     type="text"
                     placeholder={`Enter Member ${index + 1}'s ID`}
@@ -267,7 +268,8 @@ TeamEventModal.propTypes = {
   hasPdfUpload: PropTypes.bool,
   mongoId: PropTypes.string,
   maxTeamSize: PropTypes.number,
-  handleScroll: PropTypes.func
+  handleScroll: PropTypes.func,
+  userSrcId: PropTypes.string
 }
 
 export default TeamEventModal
