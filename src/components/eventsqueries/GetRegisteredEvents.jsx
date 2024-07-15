@@ -7,20 +7,17 @@ const useGetRegisteredEvents = (orgId, uid) => {
     variables: { orgID: orgId, userId: uid }
   })
 
-  console.log(orgId, uid)
+  //console.log(orgId, uid)
 
   const [registeredEvents, setRegisteredEvents] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log('112', data)
         const allRegisteredEvents = await data.eventRegistration
 
-        console.log('filteredEvents', allRegisteredEvents)
         if (allRegisteredEvents > 0) {
           setRegisteredEvents(allRegisteredEvents)
-          console.log(allRegisteredEvents)
         } else setRegisteredEvents([])
       } catch (error) {
         console.error('Error fetching events:', error)
