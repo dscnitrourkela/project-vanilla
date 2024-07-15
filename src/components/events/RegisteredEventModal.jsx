@@ -15,6 +15,7 @@ import PropTypes from 'prop-types'
 
 export const RegisteredEventModal = ({ closeModal, isTeamEvent, registerdEvent, eventName }) => {
   const doesContainEDP = edpEvents.includes(eventName)
+  const teamleadId = registerdEvent.userIDs[0]
   return (
     <Container>
       <Section>
@@ -26,11 +27,14 @@ export const RegisteredEventModal = ({ closeModal, isTeamEvent, registerdEvent, 
               <TextContainer2>
                 <TextHead1>Team Name:&nbsp;</TextHead1>
                 {registerdEvent.teamName}
+                {console.log(registerdEvent)}
               </TextContainer2>
               {registerdEvent.users.map((user, index) => (
                 <div key={index}>
                   <TextContainer>
-                    <TextHead>{index === 0 ? 'Team Lead:' : `Member ${index + 1}:`}</TextHead>
+                    <TextHead>
+                      {user.id === teamleadId ? 'Team Lead:' : `Member ${index + 1}:`}
+                    </TextHead>
                     {user.name + ' - ' + user.college}
                   </TextContainer>
                 </div>
