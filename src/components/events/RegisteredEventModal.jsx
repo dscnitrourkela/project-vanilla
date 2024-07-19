@@ -1,27 +1,30 @@
-import { edpEvents, edpLink } from '../../config/content/events/events'
+import { useState } from 'react'
+import { edpEvents } from '../../config/content/events/events'
 import {
   Button,
   ModalContainer,
   Section,
   TextContainer,
   TextContent,
-  TextHead,
-  TextHead1,
-  TextContainer2,
   EventName
 } from './registeredEventModal.styles'
 import { Container } from './registerModal.style'
 import PropTypes from 'prop-types'
+import RegisteredTeam from './RegisteredTeam'
+import { useEffect } from 'react'
 
 export const RegisteredEventModal = ({ closeModal, isTeamEvent, registerdEvent, eventName }) => {
   const doesContainEDP = edpEvents.includes(eventName)
-  const teamLeadId = registerdEvent.userIDs[0]
-
-  const sortedUsers = [...registerdEvent.users].sort((a, b) => {
-    if (a.id === teamLeadId) return -1
-    if (b.id === teamLeadId) return 1
-    return 0
-  })
+  const isK12 = eventName.includes('K-12')
+  const [currentEvent, setCurrEvent] = useState(isK12 ? registerdEvent[0] : registerdEvent)
+  const [grade, setGrade] = useState(currentEvent?.grade)
+  useEffect(() => {
+    if (isK12) {
+      const findEvent = registerdEvent.find((event) => event.grade === grade)
+      setCurrEvent(findEvent)
+    }
+    // eslint-disable-next-line
+  }, [grade])
 
   return (
     <Container>
@@ -30,28 +33,14 @@ export const RegisteredEventModal = ({ closeModal, isTeamEvent, registerdEvent, 
         <ModalContainer>
           <EventName>{eventName}</EventName>
           {isTeamEvent ? (
-            <div>
-              <TextContainer2>
-                <TextHead1>Team Name:&nbsp;</TextHead1>
-                {registerdEvent.teamName}
-              </TextContainer2>
-              {sortedUsers.map((user, index) => (
-                <div key={index}>
-                  <TextContainer>
-                    <TextHead>{index === 0 ? 'Team Lead:' : `Member ${index + 1}:`}</TextHead>
-                    {user.name + ' - ' + user.college}
-                  </TextContainer>
-                </div>
-              ))}
-              {doesContainEDP && (
-                <TextContainer>
-                  <TextHead>Submit your EDPs here: </TextHead>
-                  <a href={edpLink} target="_blank" rel="noreferrer">
-                    Link
-                  </a>
-                </TextContainer>
-              )}
-            </div>
+            <RegisteredTeam
+              currentEvent={currentEvent}
+              doesContainEDP={doesContainEDP}
+              setGrade={setGrade}
+              isK12={isK12}
+              grade={grade}
+              allEvents={registerdEvent}
+            />
           ) : (
             <TextContainer>
               <TextContent>Congratulations, you have registered!</TextContent>

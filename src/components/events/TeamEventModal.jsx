@@ -19,7 +19,8 @@ import {
   RegisterCompleteCardText,
   RegisterCompleteCardTextContainer,
   Container,
-  Button1
+  Button1,
+  Select
 } from './teamRegistrationModal'
 import { TeamRegistrationSchema } from '../../config/content/teamRegistration/registerSchema'
 import { toast } from 'react-toastify'
@@ -40,9 +41,11 @@ export const TeamEventModal = ({
   const [formData, setFormData] = useState({
     teamname: '',
     teamleadid: userSrcId,
-    userIds: ['']
+    userIds: [''],
+    grade: ''
   })
 
+  const isK12 = EventTitle.includes('K-12')
   const [show, setShow] = useState(true)
   const [error, setError] = useState(null)
   const [pdf, setPdf] = useState(null)
@@ -139,7 +142,8 @@ export const TeamEventModal = ({
             eventID: EventId,
             teamName: formData.teamname,
             userIDs: uIds,
-            submittedPDF: pdfUrl
+            submittedPDF: pdfUrl,
+            grade: formData.grade
           }
         }
       })
@@ -206,6 +210,20 @@ export const TeamEventModal = ({
                   onChange={(e) => handleChange('teamleadid', e.target.value)}
                 />
               </div>
+              {isK12 && (
+                <div>
+                  <TextHead>Select Grade</TextHead>
+                  <Select
+                    value={formData.grade}
+                    onChange={(e) => handleChange('grade', e.target.value)}
+                  >
+                    <option value="0">Kindergarten - Grade 2</option>
+                    <option value="1">Grade 3-5</option>
+                    <option value="2">Grade 6-8</option>
+                    <option value="3">Grade 9-12</option>
+                  </Select>
+                </div>
+              )}
             </Grid1>
             <IconButtonContainer>
               <AddMemberButton onClick={addUserId}>
