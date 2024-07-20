@@ -63,6 +63,16 @@ export const Input = styled.input`
   z-index: 1;
 `
 
+export const Select = styled.select`
+  ${tw`w-[80%] ml-[10%] h-[40px] px-2 bg-brown-2 text-brown-4 focus:outline-none font-normal flex items-center`}
+  border-radius: 8px;
+  border: 1.6px solid black;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  position: relative;
+  z-index: 1;
+`
+
 export const Input2 = styled.input`
   ${tw`w-[80%] ml-[10%] h-[35px] text-[11px] px-2 bg-brown-2 text-brown-4 focus:outline-none font-normal flex items-center`}
   border-radius: 8px;

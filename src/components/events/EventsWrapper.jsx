@@ -28,6 +28,13 @@ function EventsWrapper({
 
   function giveRegisteredEvent(currEvent) {
     let registeredEvent = null
+    let k12Events = []
+    const k12EventId = '668d1b221b94b9c9625372b2'
+    const isK12Event = currEvent.id === k12EventId
+
+    if (isK12Event) {
+      k12Events = combinedArray.filter((event) => event.eventID === k12EventId)
+    }
 
     combinedArray.forEach((event) => {
       if (currEvent.id === event.eventID) {
@@ -35,7 +42,15 @@ function EventsWrapper({
       }
     })
 
-    return registeredEvent
+    if (isK12Event) {
+      if (k12Events.length > 0) {
+        return k12Events
+      } else {
+        return null
+      }
+    } else {
+      return registeredEvent
+    }
   }
 
   return (

@@ -19,7 +19,8 @@ import {
   RegisterCompleteCardText,
   RegisterCompleteCardTextContainer,
   Container,
-  Button1
+  Button1,
+  Select
 } from './teamRegistrationModal'
 import { TeamRegistrationSchema } from '../../config/content/teamRegistration/registerSchema'
 import { toast } from 'react-toastify'
@@ -35,14 +36,17 @@ export const TeamEventModal = ({
   hasPdfUpload,
   mongoId,
   handleScroll,
-  userSrcId
+  userSrcId,
+  grades
 }) => {
   const [formData, setFormData] = useState({
     teamname: '',
     teamleadid: userSrcId,
-    userIds: ['']
+    userIds: [''],
+    grade: grades && grades[0].value ? grades[0].value : ''
   })
 
+  const isK12 = EventTitle.includes('K-12')
   const [show, setShow] = useState(true)
   const [error, setError] = useState(null)
   const [pdf, setPdf] = useState(null)
@@ -132,6 +136,7 @@ export const TeamEventModal = ({
       if (hasPdfUpload) {
         pdfUrl = await uploadToCloudinary(pdf)
       }
+      // console.log('formData', formData)
       await teamRegisterEvent({
         variables: {
           orgId: '668bd9deff0327a608b9b6ea',
@@ -139,7 +144,8 @@ export const TeamEventModal = ({
             eventID: EventId,
             teamName: formData.teamname,
             userIDs: uIds,
-            submittedPDF: pdfUrl
+            submittedPDF: pdfUrl,
+            grade: formData.grade
           }
         }
       })
@@ -206,6 +212,21 @@ export const TeamEventModal = ({
                   onChange={(e) => handleChange('teamleadid', e.target.value)}
                 />
               </div>
+              {isK12 && (
+                <div>
+                  <TextHead>Select Grade</TextHead>
+                  <Select
+                    value={formData.grade}
+                    onChange={(e) => handleChange('grade', e.target.value)}
+                  >
+                    {grades.map((grade) => (
+                      <option key={grade.label} value={grade.value}>
+                        {grade.label}
+                      </option>
+                    ))}
+                  </Select>
+                </div>
+              )}
             </Grid1>
             <IconButtonContainer>
               <AddMemberButton onClick={addUserId}>
@@ -269,7 +290,8 @@ TeamEventModal.propTypes = {
   mongoId: PropTypes.string,
   maxTeamSize: PropTypes.number,
   handleScroll: PropTypes.func,
-  userSrcId: PropTypes.string
+  userSrcId: PropTypes.string,
+  grades: PropTypes.array
 }
 
 export default TeamEventModal

@@ -6,6 +6,7 @@ export const GET_TEAM_REGISTRATIONS_BY_USER = gql`
       eventID
       teamName
       userIDs
+      grade
       users {
         name
         college
