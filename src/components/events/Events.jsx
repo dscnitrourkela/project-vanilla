@@ -28,6 +28,7 @@ export default function Events() {
   const [soloRegistration, setSoloRegistration] = useState([])
   const [teamRegistration, setTeamRegistration] = useState([])
   const [combinedRegistrations, setCombinedRegistrations] = useState([])
+  const [grades, setGrades] = useState(null)
 
   const [loading, setLoading] = useState(true)
   const [uid, setUid] = useState(null)
@@ -102,7 +103,8 @@ export default function Events() {
     }
   }
 
-  function handleRegisterModalOpen(EventId) {
+  function handleRegisterModalOpen(EventId, registeredGrades) {
+    setGrades(registeredGrades)
     setIsRegisterModalOpen(true)
     const event = events.find((event) => event.id === EventId)
     if (event) {
@@ -168,6 +170,7 @@ export default function Events() {
             closeModal={handleRegisterModalClose}
             userSrcId={userSrcId}
             event={event}
+            grades={grades}
           />
         ),
         overlay

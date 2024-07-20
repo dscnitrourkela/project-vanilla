@@ -36,13 +36,14 @@ export const TeamEventModal = ({
   hasPdfUpload,
   mongoId,
   handleScroll,
-  userSrcId
+  userSrcId,
+  grades
 }) => {
   const [formData, setFormData] = useState({
     teamname: '',
     teamleadid: userSrcId,
     userIds: [''],
-    grade: ''
+    grade: grades && grades[0].value ? grades[0].value : ''
   })
 
   const isK12 = EventTitle.includes('K-12')
@@ -135,6 +136,7 @@ export const TeamEventModal = ({
       if (hasPdfUpload) {
         pdfUrl = await uploadToCloudinary(pdf)
       }
+      // console.log('formData', formData)
       await teamRegisterEvent({
         variables: {
           orgId: '668bd9deff0327a608b9b6ea',
@@ -217,10 +219,11 @@ export const TeamEventModal = ({
                     value={formData.grade}
                     onChange={(e) => handleChange('grade', e.target.value)}
                   >
-                    <option value="0">Kindergarten - Grade 2</option>
-                    <option value="1">Grade 3-5</option>
-                    <option value="2">Grade 6-8</option>
-                    <option value="3">Grade 9-12</option>
+                    {grades.map((grade) => (
+                      <option key={grade.label} value={grade.value}>
+                        {grade.label}
+                      </option>
+                    ))}
                   </Select>
                 </div>
               )}
@@ -287,7 +290,8 @@ TeamEventModal.propTypes = {
   mongoId: PropTypes.string,
   maxTeamSize: PropTypes.number,
   handleScroll: PropTypes.func,
-  userSrcId: PropTypes.string
+  userSrcId: PropTypes.string,
+  grades: PropTypes.array
 }
 
 export default TeamEventModal

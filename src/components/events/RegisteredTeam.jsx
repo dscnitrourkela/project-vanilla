@@ -17,7 +17,7 @@ RegisteredTeam.propTypes = {
   allEvents: PropTypes.array
 }
 
-function RegisteredTeam({ currentEvent, doesContainEDP, isK12, setGrade, grade, allEvents }) {
+function RegisteredTeam({ currentEvent, doesContainEDP, isK12, setGrade, grade }) {
   const teamLeadId = currentEvent.userIDs[0]
   const sortedUsers = [...currentEvent.users].sort((a, b) => {
     if (a.id === teamLeadId) return -1
@@ -25,26 +25,16 @@ function RegisteredTeam({ currentEvent, doesContainEDP, isK12, setGrade, grade, 
     return 0
   })
 
-  function genrateOptionsWithGrade() {
-    const options = ['Kindergarten - Grade 2', 'Grade 3-5', 'Grade 6-8', 'Grade 9-12']
-    const gradeIndexes = allEvents.map((event) => event.grade)
-    const optionsResult = gradeIndexes.map((gradeIndex) => {
-      return { value: gradeIndex, label: options[Number(gradeIndex)] }
-    })
-    return optionsResult
-  }
-
   return (
     <div>
       {isK12 && (
         <div>
           <TextHead>Registered Grades</TextHead>
           <Select value={grade} onChange={(e) => setGrade(e.target.value)}>
-            {genrateOptionsWithGrade().map((option) => (
-              <option key={option.label} value={option.value}>
-                {option.label}
-              </option>
-            ))}
+            <option value="0">Kindergarten - Grade 2</option>
+            <option value="1">Grade 3-5</option>
+            <option value="2">Grade 6-8</option>
+            <option value="3">Grade 9-12</option>
           </Select>
         </div>
       )}

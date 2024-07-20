@@ -10,7 +10,8 @@ export const RegisterModal = ({
   event: { id, name, isTeamEvent, maxTeamSize },
   closeModal,
   mongoId,
-  userSrcId
+  userSrcId,
+  grades
 }) => {
   const [scrollPosition, setScrollPosition] = useState(0)
 
@@ -36,6 +37,7 @@ export const RegisterModal = ({
             maxTeamSize={maxTeamSize}
             hasPdfUpload={hasPdfUpload}
             userSrcId={userSrcId}
+            grades={grades}
           />
         ) : (
           <IndiEventModal
@@ -62,5 +64,6 @@ RegisterModal.propTypes = {
   }),
   closeModal: PropTypes.func,
   mongoId: PropTypes.string,
-  userSrcId: PropTypes.string
+  userSrcId: PropTypes.string,
+  grades: PropTypes.array
 }

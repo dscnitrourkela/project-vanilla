@@ -13,7 +13,13 @@ import PropTypes from 'prop-types'
 import RegisteredTeam from './RegisteredTeam'
 import { useEffect } from 'react'
 
-export const RegisteredEventModal = ({ closeModal, isTeamEvent, registerdEvent, eventName }) => {
+export const RegisteredEventModal = ({
+  closeModal,
+  isTeamEvent,
+  registerdEvent,
+  eventName,
+  openEventRegistration
+}) => {
   const doesContainEDP = edpEvents.includes(eventName)
   const isK12 = eventName.includes('K-12')
   const [currentEvent, setCurrEvent] = useState(isK12 ? registerdEvent[0] : registerdEvent)
@@ -21,7 +27,19 @@ export const RegisteredEventModal = ({ closeModal, isTeamEvent, registerdEvent, 
   useEffect(() => {
     if (isK12) {
       const findEvent = registerdEvent.find((event) => event.grade === grade)
-      setCurrEvent(findEvent)
+      const registerdGrades = registerdEvent.map((event) => event.grade)
+      const notRegisterdGrades = ['0', '1', '2', '3'].filter(
+        (grade) => !registerdGrades.includes(grade)
+      )
+      const options = ['Kindergarten - Grade 2', 'Grade 3-5', 'Grade 6-8', 'Grade 9-12']
+      const optionsResult = notRegisterdGrades.map((gradeIndex) => {
+        return { value: gradeIndex, label: options[Number(gradeIndex)] }
+      })
+      if (findEvent) {
+        setCurrEvent(findEvent)
+      } else {
+        openEventRegistration(optionsResult)
+      }
     }
     // eslint-disable-next-line
   }, [grade])
@@ -39,7 +57,6 @@ export const RegisteredEventModal = ({ closeModal, isTeamEvent, registerdEvent, 
               setGrade={setGrade}
               isK12={isK12}
               grade={grade}
-              allEvents={registerdEvent}
             />
           ) : (
             <TextContainer>
@@ -56,5 +73,6 @@ RegisteredEventModal.propTypes = {
   closeModal: PropTypes.func.isRequired,
   isTeamEvent: PropTypes.bool.isRequired,
   registerdEvent: PropTypes.any,
-  eventName: PropTypes.string
+  eventName: PropTypes.string,
+  openEventRegistration: PropTypes.func
 }
