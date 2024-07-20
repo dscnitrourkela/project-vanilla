@@ -12,7 +12,7 @@ import { useEffect } from 'react'
 import { useContext } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import { GET_EVENTS_BY_ORGID } from '../../graphQL/queries/getEvents'
-import { skipToken, useSuspenseQuery } from '@apollo/client'
+import { skipToken, useSuspenseQuery, useQuery } from '@apollo/client'
 import { GET_EVENTS_REGISTERED } from '../../graphQL/queries/eventRegistration'
 import { GET_TEAM_REGISTRATIONS_BY_USER } from '../../graphQL/queries/teamRegistration'
 import { GET_USER_BY_ID } from '../../graphQL/queries/userQueries'
@@ -39,10 +39,10 @@ export default function Events() {
 
   const orgId = '668bd9deff0327a608b9b6ea'
 
-  const { data: allEventsMade } = useSuspenseQuery(
-    GET_EVENTS_BY_ORGID,
-    uid ? { variables: { orgId } } : skipToken
-  )
+  const { refetch: refechEvents } = useQuery(GET_EVENTS_BY_ORGID, {
+    variables: { orgId },
+    skip: true
+  })
   const { data: soloRegistrations } = useSuspenseQuery(
     GET_EVENTS_REGISTERED,
     mongoId ? { variables: { orgId, userId: mongoId } } : skipToken
@@ -52,22 +52,37 @@ export default function Events() {
     mongoId ? { variables: { orgId, userId: mongoId } } : skipToken
   )
 
-  const { data: userDataInDb } = useSuspenseQuery(
-    GET_USER_BY_ID,
-    uid ? { variables: { uid: uid, orgId } } : skipToken
-  )
+  const { refetch: getUserInDB } = useQuery(GET_USER_BY_ID, {
+    variables: { uid: uid, orgId },
+    skip: true
+  })
+
+  async function refetchAllEvents() {
+    try {
+      const { data } = await refechEvents({ orgId })
+      if (data) {
+        getAllEvents(data.getEvents)
+      }
+    } catch (error) {
+      console.error('Error fetching events:', error)
+    }
+  }
+
+  async function refetchUserDetails() {
+    try {
+      const { data } = await getUserInDB({ uid: userInfo.uid, orgId })
+      setMongoId(data.getUser.id)
+      setUserSrcId(data.getUser.srcID)
+    } catch (error) {
+      console.error('Error fetching user data:', error)
+    }
+  }
 
   useEffect(() => {
     if (userInfo.uid) {
       setUid(userInfo.uid)
-      if (allEventsMade) {
-        getAllEvents(allEventsMade?.getEvents)
-      }
-
-      if (userDataInDb) {
-        setMongoId(userDataInDb?.getUser?.id)
-        setUserSrcId(userDataInDb?.getUser?.srcID)
-      }
+      refetchAllEvents()
+      refetchUserDetails()
       if (soloRegistrations) {
         setSoloRegistration(soloRegistrations?.eventRegistration)
       }
@@ -79,15 +94,8 @@ export default function Events() {
       const combinedRegistrations = [...(soloRegistration || []), ...(teamRegistration || [])]
       setCombinedRegistrations(combinedRegistrations)
     }
-  }, [
-    userInfo,
-    allEventsMade,
-    soloRegistrations,
-    teamRegistrations,
-    userDataInDb,
-    soloRegistration,
-    teamRegistration
-  ])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userInfo, soloRegistrations, teamRegistrations, soloRegistration, teamRegistration])
 
   async function getAllEvents(allEvents) {
     try {

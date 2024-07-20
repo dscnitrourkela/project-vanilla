@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom'
 
 import propTypes from 'prop-types'
 
-import { skipToken, useSuspenseQuery } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 
 import { AuthContext } from '../../../context/AuthContext'
 import { GET_USER_BY_ID } from '../../../graphQL/queries/userQueries'
@@ -19,24 +19,38 @@ function ProfileMenu({ isProfileOpen, setProfileOpen }) {
   const { userInfo } = useContext(AuthContext)
   const [uid, setUid] = useState(null)
   const [user, setUser] = useState({})
-  const { data: userDataInDb } = useSuspenseQuery(
-    GET_USER_BY_ID,
-    uid ? { variables: { uid: uid, orgId } } : skipToken
-  )
+  const [loading, setLoading] = useState(false)
+  const { refetch: refetchUser } = useQuery(GET_USER_BY_ID, {
+    variables: { uid: uid, orgId },
+    skip: true
+  })
   useEffect(() => {
     if (userInfo.uid) {
       setUid(userInfo.uid)
-      if (userDataInDb?.getUser) {
-        setUser(userDataInDb.getUser)
-      }
+      getUserData()
     }
-  }, [userInfo, userDataInDb, uid])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userInfo, uid])
+
+  async function getUserData() {
+    setLoading(true)
+    try {
+      const { data } = await refetchUser({ uid: userInfo.uid, orgId })
+      setUser(data.getUser)
+      setLoading(false)
+    } catch (err) {
+      // console.log('Error fetching user data', err)
+    }
+  }
+
   const overlay = document.getElementById('overlay')
 
   return (
     <>
       {createPortal(
-        isProfileOpen && <ProfileMenuDropDown setProfileOpen={setProfileOpen} user={user} />,
+        isProfileOpen && (
+          <ProfileMenuDropDown setProfileOpen={setProfileOpen} user={user} loading={loading} />
+        ),
         overlay
       )}
       <div>
