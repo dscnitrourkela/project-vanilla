@@ -6,7 +6,6 @@ import Footer from '../components/marginals/footer/Footer'
 import { Faq } from '../components/faq/faq'
 import { Leads } from '../components/leads/leads'
 import { Schedule } from '../components/schedule/schedule'
-import { Sponsors } from '../components/sponsors/sponsors'
 
 const Home = () => {
   return (
@@ -17,7 +16,6 @@ const Home = () => {
       <Schedule />
       <Leads />
       <TeamCarousel />
-      <Sponsors />
       <Faq />
       <Footer />
     </div>
