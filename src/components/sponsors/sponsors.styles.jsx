@@ -14,7 +14,7 @@ export const Icon = styled.img(({ src, style }) => ({
 }))
 
 export const InnerSponsorsContainer = styled.div`
-  ${tw` flex flex-row justify-center items-center flex-wrap`}
+  ${tw` flex flex-col 1.4lg:flex-row justify-center items-center`}
 `
 
 export const SponsorsSectionHeading = styled.h1`
