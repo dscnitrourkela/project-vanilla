@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { tailspin } from 'ldrs'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import propTypes from 'prop-types'
 import { toast } from 'react-toastify'
@@ -17,6 +18,7 @@ import {
   ProfileDropDownItem,
   Value,
   PaymentButton,
+  LoaderContainer,
   CopyButton
 } from './ProfileMenu.styles'
 
@@ -24,9 +26,12 @@ import { DescriptionContent } from '../../../config/index'
 
 ProfileMenuDropDown.propTypes = {
   setProfileOpen: propTypes.func,
-  user: propTypes.object
+  user: propTypes.object,
+  loading: propTypes.bool
 }
-function ProfileMenuDropDown({ setProfileOpen, user }) {
+function ProfileMenuDropDown({ setProfileOpen, user, loading }) {
+  tailspin.register()
+
   const navigate = useNavigate()
   const userDetails = [
     { label: 'Name', value: user.name },
@@ -46,7 +51,11 @@ function ProfileMenuDropDown({ setProfileOpen, user }) {
         <CloseButton onClick={() => setProfileOpen(false)}>
           <img src={XIcon} alt="X" />
         </CloseButton>
-        {userDetails[0].value ? (
+        {loading ? (
+          <LoaderContainer>
+            <l-tailspin size="40" stroke="5" speed="0.9" color="#ff8911"></l-tailspin>
+          </LoaderContainer>
+        ) : userDetails[0].value ? (
           <>
             {userDetails.map((detail, index) =>
               detail.label == 'Src Id' ? (
@@ -81,7 +90,7 @@ function ProfileMenuDropDown({ setProfileOpen, user }) {
           </>
         ) : (
           <NotRegistered>
-            <Link to={'/register'}>Finalize Your Registration Now</Link>{' '}
+            You are not registered yet. Please contact the admin for registration.
           </NotRegistered>
         )}
       </ProfileDropDown>

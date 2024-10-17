@@ -71,7 +71,6 @@ export default function EventCard({
       toast.info('Please complete your profile to register for the event')
       return
     }
-
     if (!userSrcId) {
       toast.info('Please complete your payment to register for the event')
       return
